@@ -9,7 +9,7 @@ export SGMLPOWERTOOLS_HOME
 PREFIX=/usr/local
 BINDIR=$(PREFIX)/bin
 MANDIR=$(PREFIX)/man
-INSTALLDIR=$(PREFIX)/lib/sgml-powertools
+INSTALLDIR=$(PREFIX)/share/sgml-powertools
 export PREFIX
 export BINDIR
 export MANDIR
@@ -39,17 +39,15 @@ sgml:
 	done
 
 tools:
-	$(MAKE) -C tools/sgmls-1.1.91 config.h
-	$(MAKE) -C tools/sgmls-1.1.91
 	$(MAKE) -C tools/glosstex 
+#	$(MAKE) -C tools/sgmls-1.1.91 config.h
+#	$(MAKE) -C tools/sgmls-1.1.91
 
 install:
 	-mkdir $(INSTALLDIR)
 	-mkdir $(INSTALLDIR)/bin
 	-mkdir $(INSTALLDIR)/sgml
 	-mkdir $(INSTALLDIR)/scripts
-	$(MAKE) -C tools/sgmls-1.1.91 install
-	-$(MAKE) -C tools/glosstex install
 	for dir in $(SGML_DTDS); do \
 		if [ ! "$$dir" = "sgml/CVS" ]; then \
 	        $(MAKE) -C $$dir install ;\
@@ -70,12 +68,14 @@ install:
 		    chmod 644 $(INSTALLDIR)/$$file ;\
 	    fi \
 	done
+	-$(MAKE) -C tools/glosstex install
+#	$(MAKE) -C tools/sgmls-1.1.91 install
 
 install-man: sgml
 	-mkdir $(INSTALLDIR)
 	-mkdir $(INSTALLDIR)/man
 	$(MAKE) -C man install
-	$(MAKE) -C tools/sgmls-1.1.91 install.man
+#	$(MAKE) -C tools/sgmls-1.1.91 install.man
 
 doc:
 	$(MAKE) -C doc
@@ -91,17 +91,17 @@ install-doc: doc
 		fi \
 	done
 
-test:
-	$(MAKE) -C tools/sgmls-1.1.91 test
+#test:
+#	$(MAKE) -C tools/sgmls-1.1.91 test
 
 clean:
-	-$(MAKE) -C tools/sgmls-1.1.91 clean
-	-$(MAKE) -C tools/glosstex clean	 
 	for dir in $(SGML_DTDS); do \
 		if [ ! "$$dir" = "sgml/CVS" ]; then \
 		    $(MAKE) -C $$dir clean ;\
 		fi \
 	done
+	-$(MAKE) -C tools/glosstex clean	 
+#	-$(MAKE) -C tools/sgmls-1.1.91 clean
 	
 	
 
