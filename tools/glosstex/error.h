@@ -21,7 +21,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: error.h,v 1.1 1997/08/22 04:02:16 jak Exp $ */
+/* $Id: error.h,v 1.1.1.1 1997/08/22 04:02:16 jak Exp $ */
 
 #ifndef __ERROR_H
 #define __ERROR_H

@@ -21,7 +21,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: version.h,v 1.1 1997/08/22 04:02:18 jak Exp $ */
+/* $Id: version.h,v 1.1.1.1 1997/08/22 04:02:18 jak Exp $ */
 
 #ifndef __VERSION_H
 #define __VERSION_H

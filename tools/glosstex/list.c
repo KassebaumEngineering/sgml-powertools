@@ -21,7 +21,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: list.c,v 1.1 1997/08/22 04:02:18 jak Exp $ */
+/* $Id: list.c,v 1.1.1.1 1997/08/22 04:02:18 jak Exp $ */
 
 #include <assert.h>
 #include <stdlib.h>

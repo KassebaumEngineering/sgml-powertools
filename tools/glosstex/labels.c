@@ -22,7 +22,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: labels.c,v 1.1 1997/08/22 04:02:17 jak Exp $ */
+/* $Id: labels.c,v 1.1.1.1 1997/08/22 04:02:17 jak Exp $ */
 
 #include <assert.h>
 #include <string.h>

@@ -22,7 +22,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: glosstex.h,v 1.1 1997/08/22 04:02:17 jak Exp $ */
+/* $Id: glosstex.h,v 1.1.1.1 1997/08/22 04:02:17 jak Exp $ */
 
 #ifndef __GLOSSTEX_H
 #define __GLOSSTEX_H

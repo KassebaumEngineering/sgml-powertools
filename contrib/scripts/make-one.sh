@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: make-one.sh,v 1.1 1997/08/22 03:58:42 jak Exp $
+# $Id: make-one.sh,v 1.1.1.1 1997/08/22 03:58:42 jak Exp $
 #
 # make one user-specified howto into all available formats
 # ---------------------------------------------------------

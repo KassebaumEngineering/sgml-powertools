@@ -21,7 +21,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: labels.h,v 1.1 1997/08/22 04:02:18 jak Exp $ */
+/* $Id: labels.h,v 1.1.1.1 1997/08/22 04:02:18 jak Exp $ */
 
 #ifndef __LABELS_H
 #define __LABELS_H

@@ -22,7 +22,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: error.c,v 1.1 1997/08/22 04:02:15 jak Exp $ */
+/* $Id: error.c,v 1.1.1.1 1997/08/22 04:02:15 jak Exp $ */
 
 #include <errno.h>
 #include <stdarg.h>

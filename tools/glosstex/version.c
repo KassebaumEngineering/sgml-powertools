@@ -22,7 +22,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: version.c,v 1.1 1997/08/22 04:02:18 jak Exp $ */
+/* $Id: version.c,v 1.1.1.1 1997/08/22 04:02:18 jak Exp $ */
 
 char version[] = "This is GlossTeX, version 0.3\n"
 "GlossTeX comes with ABSOLUTELY NO WARRANTY. (C)opyright 1996, 97 Volkan Yavuz";

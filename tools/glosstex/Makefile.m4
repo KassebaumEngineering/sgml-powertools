@@ -2,7 +2,7 @@
 m4_ifelse(1, 1,
 # automatically generated from Makefile.m4
 ,
-# $Id: Makefile.m4,v 1.1 1997/08/22 04:02:14 jak Exp $
+# $Id: Makefile.m4,v 1.1.1.1 1997/08/22 04:02:14 jak Exp $
 
 # GlossTeX, a tool for the automatic preparation of glossaries.
 # Copyright (C) 1997 Volkan Yavuz

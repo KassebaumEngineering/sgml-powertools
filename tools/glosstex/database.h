@@ -21,7 +21,7 @@
    Volkan Yavuz, yavuzv@rumms.uni-mannheim.de
  */
 
-/* $Id: database.h,v 1.1 1997/08/22 04:02:15 jak Exp $ */
+/* $Id: database.h,v 1.1.1.1 1997/08/22 04:02:15 jak Exp $ */
 
 #ifndef __DATABASE_H
 #define __DATABASE_H

@@ -1,7 +1,7 @@
 
 #!/bin/sh
 #
-# $Id: make-all.sh,v 1.1 1997/08/22 03:58:42 jak Exp $
+# $Id: make-all.sh,v 1.1.1.1 1997/08/22 03:58:42 jak Exp $
 #
 # make all available howtos into all available formats
 # -----------------------------------------------------
