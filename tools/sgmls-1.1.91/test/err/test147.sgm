@@ -1,0 +1,6 @@
+sgmls: SGML error at test147.sgm, line 7 at ">":
+       B element cannot be excluded from A element because it is neither inherently optional nor a member of an or group
+       Element structure: DOC A
+sgmls: SGML error at test147.sgm, line 8 at ">":
+       DOC element ended prematurely; required B omitted
+       Element structure: DOC

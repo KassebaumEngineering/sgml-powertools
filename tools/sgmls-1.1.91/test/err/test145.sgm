@@ -1,0 +1,6 @@
+sgmls: Warning at test145.sgm, line 6 at ";":
+       Could not find entity "e" using default declaration
+       Element structure: DOC
+sgmls: Warning at test145.sgm, line 6 at ";":
+       No declaration for entity "e"; default definition used
+       Element structure: DOC

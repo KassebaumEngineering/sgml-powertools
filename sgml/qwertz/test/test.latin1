@@ -1,0 +1,462 @@
+
+
+
+
+
+
+
+
+
+                         TThhee qwertz SGML Document Types
+                         (Version 1.1 Reference Manual)
+
+                                   _T_o_m _G_o_r_d_o_n
+                               The qwertz Project
+               Institute for Applied Information Technology (F3)
+                        German National Research Center
+                           for Computer Science (GMD)
+
+
+          11..  WWhhyy NNoott JJuusstt UUssee LLaaTTeeXX??
+
+          The  qwertz document types are a set of Standard Generalized
+          Markup Language (SGML) document type definitions (DTDs)  for
+          articles,  reports,  books, letters, notes, slides (or over­
+          head  transparencies),  bibliographies,  and  manual  pages.
+          Except  for manual pages, the document types have been heav­
+          ily influenced by the LaTeX document types of the same names
+          Lamport86  ,  so  LaTeX  users  should  feel  right at home.
+          Indeed, we presently translate most  qwertz  documents  into
+          LaTeX  for printing and the LaTeX produced is quite readable
+          by anyone familiar with LaTeX.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        1
+
+
+
+
+
+
+
+
+          22..  TThhee qwertz Document Type Definition
+
+
+             We will be making use of several  _p_a_r_a_m_e_t_e_r  _e_n_t_i_t_i_e_s  in
+          this DTD:
+
+
+          ____________________________________________________________
+          <!entity % emph
+                  " em | it | bf | sf | sl | tt " >
+
+          <!entity % inline
+                  " f | x | %emph; | sq | label | ref |
+                    pageref | cite | ncite " >
+          ____________________________________________________________
+
+
+
+
+
+          22..11..  GGeenneerraall PPuurrppoossee EEnnttiittiieess aanndd EElleemmeennttss
+
+
+             When may it be necessary to use of an entity reference to
+          produce some character?  There are three cases to watch  out
+          for:
+
+
+             SSGGMMLL CCoonnccrreettee SSyynnttaaxx DDeelliimmiitteerrss..
+                Although the SGML standard allows alternative concrete
+                syntaxes to be defined, we use the so-called _r_e_f_e_r_e_n_c_e
+                _c_o_n_c_r_e_t_e _s_y_n_t_a_x in the qwertz document types.  ...
+
+
+             SSGGMMLL SShhoorrtt RReeffeerreennccee DDeelliimmiitteerrss..
+                In  SGML  document  types  _s_h_o_r_t _r_e_f_e_r_e_n_c_e _m_a_p_s may be
+                defined which allow single  characters  to  be  inter­
+                preted as arbitrarily complex sequences of characters,
+                including SGML tags and entity references. ...
+
+
+                " # % ' ( ) * + , - : ; = @ [ ] ^ _ { | } ~
+
+
+
+             For each of these characters, there  is  an  SGML  entity
+             which  may be used to generate the ASCII character in the
+             printed document, listed in table ??.  _U_s_u_a_l_l_y_,  _i_t  _w_i_l_l
+             _n_o_t _b_e _n_e_c_e_s_s_a_r_y _t_o _u_s_e _t_h_e_s_e _e_n_t_i_t_i_e_s_; _t_h_e _c_h_a_r_a_c_t_e_r _c_a_n
+             _s_i_m_p_l_y _b_e _t_y_p_e_d _a_n_d _w_i_l_l _b_e _i_n_t_e_r_p_r_e_t_e_d  _l_i_t_e_r_a_l_l_y_.  How­
+             ever, ...
+
+
+
+
+
+
+                                        2
+
+
+
+
+
+                                              General Purpose Entities
+
+
+             TTeeXX SSppeecciiaall CChhaarraacctteerrss..
+                Ideally, it should be possible to hide the conventions
+                of the underlying formatting  system  completely.   In
+                fact,  SGML parsers which implement the full ISO stan­
+                dard have a feature which makes this possible. ...
+
+
+
+          22..11..11..  SSppaacciinngg,, DDaasshheess aanndd EElllliippssiiss
+
+
+             There are also three different kinds  of  dashes:  hyphen
+          which  was already mentioned above, is to be used for intra-
+          word dashes, as in the word "intra-word".1
+
+
+
+          22..11..22..  FFoorreeiiggnn CChhaarraacctteerrss
+
+          There are a large set of entities for other Western European
+          languages.  Altogether, there are entities for almost all of
+          the foreign language characters in ISO  8859,  the  Latin  1
+          character set for Western European languages.2  ...
+
+                          |            |            |
+               AElig    Æ | Aacute   Á | Acirc    Â | Ae       Ä
+               Ntilde   Ñ | Oacute   Ó | Ocirc    Ô | Oe       Ö
+               Ue       Ü | Ugrave   Ù | Uuml     Ü | Yacute   Ý
+               aacute   á | acirc    â | ae       ä | aelig    æ
+               oe       ö | ograve   ò | oslash   ø | otilde   õ
+               sz       ß | szlig    ß | thinsp     | tilde    ~
+               times    × | uacute   ú | ucirc    û | ue       ü
+
+
+                        (Some) General Purpose Characters
+
+
+
+          22..11..33..  SSeenntteenncceess,, PPaarraaggrraapphhss,, FFoooottnnootteess aanndd EEmmpphhaassiiss
+
+
+             Sentences  or phrases within paragraphs can be emphasized
+          in a number of ways.  The em  tag  is  used  to  choose  the
+          default  form of emphasis, which is usually _i_t_a_l_i_c type, but
+          depends on the style of the background text.  If  the  back­
+          ground  text  is formatted in italics type, as it usually is
+          in definitions, for example, than emphasized  text  will  be
+          formatted  using  a plain, roman typeface.  However, various
+          -----------
+            1. However, the hyphen entity was  not  actually
+          necessary  here,  as the - character was not being
+          used in this context as a short reference.
+            2. Only  the four Icelandic characters are miss­
+          ing.
+
+
+
+                                        3
+
+
+
+
+
+          The qwertz Document Types
+
+
+          forms of emphasis can be explicitly chosen.  These  include:
+          bboolldd ffaaccee (bf), _i_t_a_l_i_c_s (it), sans serif (sf), _s_l_a_n_t_e_d (sl),
+          and typewriter (tt) styles.
+
+
+             Long quotes are formatted in LaTeX by indenting the  left
+          and right margins.  For example, Lamport86 (pp. xiii):
+
+
+                The  LaTeX document preparation system is a special
+             version of Donald  Knuth's  TeX  program.   TeX  is  a
+             sophisticated program designed to produce high-quality
+             typesetting, especially for mathematical text.
+
+                LaTeX represents a  balance  between  functionality
+             and  ease  of  use.   Since  I  implemented most of it
+             myself, there was also a continual compromise  between
+             what  I  wanted to do and what I could do in a reason­
+             able amount of time.  ...
+
+
+          22..11..44..  LLiissttss
+
+          Three types of lists are supported, which  differ  according
+          to  the  type  of  label used to mark each item in the list.
+          Use itemize to create a list in which each  item  is  marked
+          with  some  symbol such as a dash or bullet. The enum tag is
+          used to create an enumeration, i.e. a  list  in  which  each
+          item  is  labelled  with a number (or letter) indicating its
+          rank or position in the list. Finally, use descrip to create
+          a  list  in  which each item is labelled by some tag of your
+          own choice. Lists of various types can nested.  For example:
+
+
+
+          ·   A level one item.
+
+          ·   Here's level two two
+
+             1.  A level two item.
+
+             2.  Here's level three:
+
+                a.  A level three item.
+
+                b.  Here's level four:
+
+                   RReedd..
+                       Is the color of my true love's hair.
+
+                   BBlluuee..
+                       Is a property of some movies.
+
+
+
+
+
+                                        4
+
+
+
+
+
+                                                                 Lists
+
+
+                   YYeellllooww..
+                       Characterizes some forms of journalism.
+
+                c. A last level three item
+
+             3.  A last level two item
+
+          ·  A last level one item.
+
+
+
+          22..11..55..  FFiigguurreess aanndd TTaabblleess
+
+          Encapsulated  PostScript  graphics  can  be  created using a
+          variety of different editors.  If you are using Unix with an
+          X11-based  graphical  user-interface,  you  may  want to try
+          idraw, which stores its documents directly  as  Encapsulated
+          PostScript files. Another interesting X11-based drawing pro­
+          gram is tgif.
+
+
+             Which would then appear as in figure ??.
+
+
+
+
+
+
+                                 An idraw Drawing
+
+
+          22..11..66..  LLiitteerraattee PPrrooggrraammmmiinngg
+
+          The original motivation behind the development of these doc­
+          ument  types  was to create an environment for literate pro­
+          gramming in an arbitrary  programming  language  similar  to
+          Donald Knuth's WEB system for literate programming in Pascal
+          Knuth84 .  ...
+
+             When formatted, spaces and line breaks are preserved:
+
+
+          main ()
+          {
+                  /* This is the famous hello world program */
+
+                  printf("hello world\n");
+          }
+
+
+
+
+
+
+
+
+
+                                        5
+
+
+
+
+
+          The qwertz Document Types
+
+
+          22..11..77..  MMaatthheemmaattiiccaall FFoorrmmuullaass
+
+          The qwertz document types include  elements  for  describing
+          mathematical formulas completely within SGML, similar to the
+          system described in daphne89 .  ...
+
+             So, for example, example,
+
+
+                    sum  from {i=1} to {n}x sub {i} =          int  from {0} to {1}f
+
+           was typed as:
+
+          <dm>
+                  <sum><ll>i=1<ul>n<opd>x<inf>i</></sum> =
+                  <in><ll>0<ul>1<opd>f</in>
+          </dm>
+
+
+
+
+             $LIST$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        6
+
+
+
+
+
+                                                                 Lists
+
+
+                               TTaabbllee ooff CCoonntteennttss
+
+
+
+          1. Why Not Just Use LaTeX?   . . . . . . . . . . . . . .   1
+
+          2. The qwertz Document Type Definition . . . . . . . . .   2
+
+          2.1. General Purpose Entities and Elements . . . . . . .   2
+
+          2.1.1. Spacing, Dashes and Ellipsis  . . . . . . . . . .   3
+
+          2.1.2. Foreign Characters  . . . . . . . . . . . . . . .   3
+
+          2.1.3. Sentences, Paragraphs, Footnotes and Emphasis
+           . . . . . . . . . . . . . . . . . . . . . . . . . . . .   3
+
+          2.1.4. Lists . . . . . . . . . . . . . . . . . . . . . .   4
+
+          2.1.5. Figures and Tables  . . . . . . . . . . . . . . .   5
+
+          2.1.6. Literate Programming  . . . . . . . . . . . . . .   5
+
+          2.1.7. Mathematical Formulas . . . . . . . . . . . . . .   6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        7
+
+

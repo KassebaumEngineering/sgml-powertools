@@ -1,0 +1,8 @@
+sgmls: Warning at test008.sgm, line 8 at record start:
+       Element "X" used in DTD but not defined
+sgmls: SGML error at test008.sgm, line 9 at "/":
+       Undefined X start-tag GI was used in DTD; "X O O ANY" assumed
+       Element structure: GDOC BODY CHAP A
+sgmls: SGML error at test008.sgm, line 9 at ">":
+       B element cannot be excluded from GDOC element because it is neither inherently optional nor a member of an or group
+       Element structure: GDOC BODY CHAP

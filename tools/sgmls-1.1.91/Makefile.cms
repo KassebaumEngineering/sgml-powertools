@@ -1,0 +1,185 @@
+# Makefile for sgmls and sgmlsasp on VM/CMS.
+# Contributed by C. M. Sperberg-McQueen <u35395@uicvm.uic.edu>.
+#
+CC=cw
+# the expansions given work as options for Waterloo C under VM/CMS
+PROFILE=
+INCLUDE=
+OPTIMIZE=NOOPT
+DEBUG=DBG
+WARN=WNG
+#
+CFLAGS=$(DEBUG) $(INCLUDE) $(WARN) $(PROFILE) $(OPTIMIZE)
+LDFLAGS=$(DEBUG) $(PROFILE)
+LIBS=
+
+PROG1=sgmls
+
+OBJS1=\
+  lexrf.text \
+  lextabe.text \
+  pcbrf.text \
+  synrf.text \
+  context.text \
+  md1.text \
+  md2.text \
+  pars1.text \
+  pars2.text \
+  serv.text \
+  sgml1.text \
+  sgml2.text \
+  sgmlmsg.text \
+  sgmlxtrn.text \
+  traceset.text \
+  entgen.text \
+  sgmlio.text \
+  xfprintf.text \
+  main.text \
+  portproc.text \
+  sgmldecl.text \
+  version.text \
+  getopt.text \
+  msgcat.text \
+  lineout.text \
+  ambig.text \
+  exclude.text
+
+OBJFNS = \
+  lexrf \
+  lextabe \
+  pcbrf \
+  synrf \
+  context \
+  md1 \
+  md2 \
+  pars1 \
+  pars2 \
+  serv \
+  sgml1 \
+  sgml2 \
+  sgmlmsg \
+  sgmlxtrn \
+  traceset \
+  entgen \
+  sgmlio \
+  xfprintf \
+  main \
+  portproc \
+  sgmldecl \
+  version \
+  getopt \
+  msgcat \
+  lineout \
+  ambig \
+  exclude
+
+PROG2=sgmlsasp
+
+OBJS2=sgmlsasp.text replace.text sgmls.text getopt.text
+OBJ2FNS=sgmlsasp    replace      sgmls      getopt
+SRCS2a=sgmlsasp.c replace.c sgmls.c
+SRCS2=$(SRCS2a) strerr.c
+
+SRCS=$(SRCS1) $(SRCS2a)
+
+.C.TEXT :
+!   $(CC) $* ( $(CFLAGS) PRM VMCMS Y PRM DEBUGGING Y
+
+.TEXT.MODULE :
+!       global txtlib clib
+!       set ldrtbls 10
+!      -load $*
+!       genmod $*
+
+
+all: $(PROGS)
+
+sgmls  : $(OBJS1)
+!       global txtlib clib
+!       set ldrtbls 10
+!      -load $(OBJFNS)
+!       genmod $(PROG1)
+
+sgmlsasp : $(OBJS2)
+!       global txtlib clib
+!       set ldrtbls 10
+!      -load $(OBJ2FNS)
+!       genmod $(PROG2)
+
+lexrf.text :  lexrf.c config.h latin1.h entity.h tools.h msgcat.h synxtrn.h \
+  action.h lexcode.h
+pcbrf.text :  pcbrf.c config.h latin1.h entity.h tools.h msgcat.h action.h \
+  synxtrn.h adl.h
+synrf.text :  synrf.c config.h latin1.h entity.h tools.h msgcat.h synxtrn.h \
+  adl.h
+context.text :  context.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h \
+  context.h
+md1.text :  md1.c sgmlincl.h config.h latin1.h std.h entity.h tools.h msgcat.h \
+  action.h adl.h error.h etype.h keyword.h lextoke.h source.h synxtrn.h \
+  sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+md2.text :  md2.c sgmlincl.h config.h latin1.h std.h entity.h tools.h msgcat.h \
+  action.h adl.h error.h etype.h keyword.h lextoke.h source.h synxtrn.h \
+  sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+pars1.text :  pars1.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+pars2.text :  pars2.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+serv.text :  serv.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+sgml1.text :  sgml1.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+sgml2.text :  sgml2.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+sgmlmsg.text :  sgmlmsg.c config.h latin1.h sgmlaux.h std.h entity.h tools.h \
+  msgcat.h sgmldecl.h msg.h
+sgmlxtrn.text :  sgmlxtrn.c sgmlincl.h config.h latin1.h std.h entity.h \
+  tools.h msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h \
+  source.h synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h \
+  sgmlfnsm.h
+traceset.text :  traceset.c sgmlincl.h config.h latin1.h std.h entity.h \
+  tools.h msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h \
+  source.h synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h \
+  sgmlfnsm.h
+entgen.text :  entgen.c config.h latin1.h sgmlaux.h std.h entity.h tools.h \
+  msgcat.h sgmldecl.h
+sgmlio.text :  sgmlio.c config.h latin1.h sgmlaux.h std.h entity.h tools.h \
+  msgcat.h sgmldecl.h
+xfprintf.text :  xfprintf.c config.h latin1.h
+main.text :  main.c config.h latin1.h std.h getopt.h entity.h tools.h msgcat.h \
+  adl.h sgmlmain.h appl.h
+unixproc.text :  unixproc.c config.h latin1.h std.h entity.h tools.h msgcat.h \
+  appl.h
+sgmldecl.text :  sgmldecl.c sgmlincl.h config.h latin1.h std.h entity.h \
+  tools.h msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h \
+  source.h synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h \
+  sgmlfnsm.h
+version.text :  version.c
+strerror.text :  strerror.c config.h latin1.h
+getopt.text :  getopt.c config.h latin1.h
+msgcat.text :  msgcat.c config.h latin1.h std.h msgcat.h
+lineout.text :  lineout.c config.h latin1.h std.h entity.h tools.h msgcat.h \
+  adl.h sgmlmain.h lineout.h appl.h
+ambig.text :  ambig.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+exclude.text :  exclude.c sgmlincl.h config.h latin1.h std.h entity.h tools.h \
+  msgcat.h action.h adl.h error.h etype.h keyword.h lextoke.h source.h \
+  synxtrn.h sgmlxtrn.h trace.h sgmlmain.h sgmlaux.h sgmldecl.h sgmlfnsm.h
+lextaba.text :  lextaba.c config.h latin1.h entity.h tools.h msgcat.h \
+  lexcode.h sgmldecl.h lextoke.h
+sgmlsasp.text :  sgmlsasp.c sgmlsasp.h config.h latin1.h std.h sgmls.h \
+  replace.h getopt.h
+replace.text :  replace.c sgmlsasp.h config.h latin1.h std.h replace.h
+sgmls.text :  sgmls.c config.h latin1.h std.h sgmls.h lineout.h
+rast.text :  rast.c config.h latin1.h std.h sgmls.h getopt.h
+genlex.text :  genlex.c config.h latin1.h std.h tools.h
+ebcdic.text :  ebcdic.c ebcdic.h
+lextabe.text :  lextabe.c config.h latin1.h entity.h tools.h msgcat.h \
+  sgmldecl.h

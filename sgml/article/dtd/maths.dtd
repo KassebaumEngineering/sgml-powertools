@@ -1,0 +1,264 @@
+
+<!-- This is the ISO12083:1993 document type definition for Mathematics    -->
+<!-- Copyright: (C) International Organization for Standardization 1993.
+Permission to copy in any form is granted for use with conforming SGML
+systems and applications as defined in ISO 8879:1986, provided this notice
+is included in all copies.                                                 -->
+
+<!--
+This DTD is included by the Book and Article DTDs of ISO12083:1993.
+As it is a separate entity it may also be included by other DTDs.
+Since there is no consensus on how to describe the semantics of formulas,
+it only describes their presentational or visual structure.                -->
+
+<!--  Parameter entities describing the possible contents of formulas.     -->
+<!ENTITY % p.trans "bold|italic|sansser|typewrit|smallcap|roman"
+                   -- character transformations                            -->
+<!ENTITY % m.math "fraction|base|sup|inf|top|bot|mid|fence|mark|
+   post|box|overline|undrline|radical|array|hspace|vspace|break|markref|
+   #PCDATA" -- mathematical formula elements                               -->
+
+<!-- Accessible Document and other Parameter Entities        
+     If this DTD is not imbedded by a ISO12083:1993 Book or Article,
+     the comments should be removed.                                       -->
+<!ENTITY % SDAFORM      "SDAFORM   NAME     #FIXED"                          >
+<!ENTITY % SDARULE      "SDARULE   CDATA    #FIXED"                          > 
+<!ENTITY % SDAPREF      "SDAPREF   CDATA    #FIXED"                          >
+<!ENTITY % SDASUFF      "SDASUFF   CDATA    #FIXED"                          >
+<!ENTITY % a.types "(latin|greek|cyrillic|hebrew|kanji) latin"               >
+<!--        This attribute indicates which alphabet is used in the
+           element (f, df). You may change this to a notation 
+           attribute, where the notation could describe a keyboard mapping. 
+           Please modify the set as necessary.                             -->
+
+
+<!-- character transformations                                             --> 
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT bold                 - -  (%p.trans;|#PCDATA)* -- bold           -->
+<!ELEMENT italic               - -  (%p.trans;|#PCDATA)* -- italic         -->
+<!ELEMENT sansser              - -  (%p.trans;|#PCDATA)* -- sans serif     -->
+<!ELEMENT typewrit             - -  (%p.trans;|#PCDATA)* -- typewriter     -->
+<!ELEMENT smallcap             - -  (%p.trans;|#PCDATA)* -- small caps     -->
+<!ELEMENT roman                - -  (%p.trans;|#PCDATA)* -- roman          -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST italic    %SDAFORM;                   "it"                         >
+<!ATTLIST bold      %SDAFORM;                   "b"                          >
+<!ATTLIST (sansser|typewrit|smallcap|roman)   
+                    %SDAFORM;                   "other"                      >
+
+
+
+<!-- Fractions                                                             -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT fraction             - -  (num, den)      -- fraction            -->
+<!ELEMENT num                  - -  (%p.trans;|%m.math;)* -- numerator     -->
+<!ELEMENT den                  - -  (%p.trans;|%m.math;)* -- denominator   -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST fraction  shape      (built|case) #IMPLIED
+                    align      (left|center|right)   
+                                                center
+                    style      (single|double|triple|dash|dot|bold|blank|none)
+                                                single
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "fraction begin: "
+                    %SDASUFF;                   "fraction end: "             >
+<!ATTLIST num       %SDAFORM;                   "para"
+                    %SDAPREF;                   "numerator: "                >
+<!ATTLIST den       %SDAFORM;                   "para"
+                    %SDAPREF;                   "denominator: "              >
+
+<!-- Superiors, inferiors, accents, over and under                         -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT sup                  - -  (%p.trans;|%m.math;)* -- superior      -->
+<!ELEMENT inf                  - -  (%p.trans;|%m.math;)* -- inferior      -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST sup       location   (pre|post)       post
+                    arrange    (compact|stagger)
+                                                compact
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "superior: "                 >
+<!ATTLIST inf       location   (pre|post) post
+                    arrange    (compact|stagger) compact
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "inferior: "                 >
+
+<!-- Embellishments                                                        -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT top                  - -  (%p.trans;|%m.math;)* 
+                                                    -- top embellishment   -->
+<!ELEMENT mid               - -  (%p.trans;|%m.math;)* 
+                                                   -- middle, or "through" -->  
+<!ELEMENT bot               - -  (%p.trans;|%m.math;)* 
+                                                   -- bottom embellishment -->                                                                                                      
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST top       align      (left|center|right) 
+                                                center
+                    sizeid     ID               #IMPLIED 
+                                                -- to pass on the height   --
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "top: "                      >
+<!ATTLIST mid       align      (left|center|right) 
+                                                center
+                    sizeid     ID               #IMPLIED       
+                                                -- to pass on the height   --
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "middle: "                   >
+<!ATTLIST bot       align      (left|center|right) 
+                                                center
+                    sizeid    ID               #IMPLIED 
+                                                -- to pass on the height   --
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "bottom: "                   >
+
+
+<!-- The base element is defined later                                  -->
+
+<!-- Fences, boxes, overlines and underlines                               -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT mark                 - O  EMPTY                                    >
+<!ELEMENT fence                - -  (%p.trans;|%m.math;)* -- fence         -->
+<!ELEMENT post                 - O  EMPTY            -- post               -->
+<!ELEMENT box                  - -  (%p.trans;|%m.math;)* -- box           -->
+<!ELEMENT overline             - -  (%p.trans;|%m.math;)* -- overline      -->
+<!ELEMENT undrline             - -  (%p.trans;|%m.math;)* -- underline     -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST mark      id         ID               #REQUIRED
+                    %SDAPREF;                   "<?SDATRANS>Mark"            >
+<!ATTLIST fence     lpost      CDATA            "|" -- left post           --
+                    rpost      CDATA            "|" -- right post          --
+                    style      (single|double|triple|dash|dot|bold|blank|none) 
+                                                single
+                    sizeid     ID               #IMPLIED 
+                                                -- to pass on the height   --
+                    sizeref    IDREF            #IMPLIED 
+                                                -- to pick up a height     --
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "<?SDATRANS>Fence: "         >
+<!ATTLIST post      post       ENTITY           "verbar"
+                    style      (single|double|triple|dash|dot|bold|blank|none) 
+                                                single
+                    sizeid     ID               #IMPLIED 
+                                                -- to pass on the height   --
+                    sizeref    IDREF            #IMPLIED 
+                                                -- to pick up a height     --
+                    %SDAFORM;  "para"
+                    %SDAPREF;  "post: "                                      >
+<!ATTLIST box       style      (single|double|triple|dash|dot|bold|blank|none) 
+                                                single
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "Box: "                      >
+<!ATTLIST overline  type       ENTITY           obar -- embellishment type --
+                    style      (single|double|triple|dash|dot|bold|blank|none) 
+                                                single
+                    start      IDREF            #IMPLIED
+                    end        IDREF            #IMPLIED
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "<?SDATRANS>Overline"        >
+
+<!ATTLIST undrline  type       ENTITY           lowbar -- embellishment 
+                                                                       type --
+                    style      (single|double|triple|dash|dot|bold|blank|none) 
+                                                single
+                    start      IDREF            #IMPLIED
+                    end        IDREF            #IMPLIED
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "<?SDATRANS>Underline"       >
+
+<!-- Labelled arrows                                                       -->
+
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT base              - -  (%p.trans;|%m.math;)* -- base element  -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST base      sizeid     ID               #IMPLIED
+                                                -- to pass on a width, or
+                                                a height                   --
+                    sizeref    IDREF            #IMPLIED
+                                                -- to pick up a width      --
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "Base open"
+                    %SDASUFF;                   "Base close"                 >
+
+<!-- Roots                                                                 -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT radical              - -  (radix?, radicand) -- root or radical  -->
+<!ELEMENT radix                - -  (%p.trans;|%m.math;)* -- radix         -->
+<!ELEMENT radicand             O O  (%p.trans;|%m.math;)* -- radicand      -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST radical   %SDAFORM;                   "para"
+                    %SDAPREF;                   "Radical open"
+                    %SDASUFF;                   "Radical close"              >
+<!ATTLIST radix     %SDAFORM;                   "para"
+                    %SDAPREF;                   "Radix open"
+                    %SDASUFF;                   "Radix close"                >
+<!ATTLIST radicand  %SDAFORM;                   "para"
+                    %SDAPREF;                   "Radicand"                   >
+
+<!-- Arrays                                                                -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT array                - -  (arrayrow+|arraycol+) -- array         -->
+<!ELEMENT arrayrow             - O  (arraycel+)      -- array row          -->
+<!ELEMENT arraycol             - O  (arraycel+)      -- array column       -->
+<!ELEMENT arraycel             - O  (%p.trans;|%m.math;)* -- array cell    -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST array     rowalign   NMTOKENS         #IMPLIED -- row alignment  --
+                    colalign   NMTOKENS         #IMPLIED -- column 
+                                                                 alignment --
+                    rowsep     NMTOKENS         #IMPLIED -- row separators --
+                    colsep     NMTOKENS         #IMPLIED -- column 
+                                                                separators --
+                    %SDAFORM;                   "para"
+                    %SDAPREF;                   "<?SDATRANS>Array open"
+                    %SDASUFF;                   "<?SDATRANS>Array close"     >
+<!ATTLIST arrayrow  %SDAFORM;                   "para"
+                    %SDAPREF;                   "Row"                        >
+<!ATTLIST arraycol  %SDAFORM;                   "para"
+                    %SDAPREF;                   "Column"                     >
+<!ATTLIST arraycel  %SDAFORM;                   "para"
+                    %SDAPREF;                   "Cell"                       >
+
+<!-- Spacing                                                               -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT hspace               - O EMPTY            -- horizontal spacing  -->
+<!ELEMENT vspace               - O EMPTY            -- vertical   spacing  -->
+<!ELEMENT break                - O EMPTY            -- turn line, break    -->
+<!ELEMENT markref              - O EMPTY            -- hmark reference     -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST hspace    space      CDATA            "1 mm" 
+                                                    -- units as required   --
+                    %SDAPREF;                   "<!SDATRANS>Horizontal 
+                                                                      space" >
+<!ATTLIST vspace    space      CDATA            "1 mm" 
+                                                    -- units as required   --
+                    %SDAPREF;                   "<!SDATRANS>Vertical space"  >
+<!ATTLIST break     %SDAPREF;                   "<!SDATRANS>Break"           >
+<!ATTLIST markref   refid      IDREF            #REQUIRED
+                    direct     (hor|ver)        hor 
+                                                 -- horizontal or vertical --
+                    %SDAPREF;                   "<!SDATRANS>Reference 
+                                                                  to a mark" >
+
+<!-- the formula elements                                                  -->
+<!--      ELEMENT              MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT f              - -  (%p.trans;|%m.math;)* 
+                                                        -- in-line formula -->
+<!ELEMENT df             - -  (%p.trans;|%m.math;)* 
+                                                        -- display formula -->
+<!ELEMENT dformgrp             - -  (f|df)+ 
+                                                  -- display-formula group -->
+<!--      ELEMENT   NAME       VALUE            DEFAULT                    -->
+<!ATTLIST f   id         ID               #IMPLIED
+                    alphabet   %a.types;
+                    %SDAPREF;                   "<!SDATRANS>Inline formula"  > 
+<!ATTLIST df  id         ID               #IMPLIED
+                    num        CDATA            #IMPLIED
+                    align      (left|center|right) 
+                                                center
+                    alphabet   %a.types;
+                    %SDAPREF;                   "<?SDATRANS>Display formula" >
+<!ATTLIST dformgrp  id         ID               #IMPLIED
+                    num        CDATA            #IMPLIED
+                    align      (left|center|right) 
+                                                center
+                    %SDAPREF                    "<?SDATRANS>Display formula 
+                                                                       group">
+

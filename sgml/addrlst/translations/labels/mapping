@@ -1,0 +1,68 @@
+
+% addrlst replacement file for generating mailing labels in RTF format.
+% RTF is not generated directly. Rather, an AWK database is generated,
+% which is used by the maillabels shell script (in format/bin) to generate
+% RTF.  
+
+% For AWK, records are separated here by carriage returns, and fields by tabs.
+
+% author: Tom Gordon
+% date: 23 July 92
+% last modified: 23 July 93
+
+<addrlst>	
+</addrlst>	
+
+<entry>		+	""			
+</entry>		""			+
+
+<alias>			"alias\t"
+</alias>		"\t"
+
+<title>			"title\t"
+</title>		"\\par\t"
+
+<name>  	        "name\t"
+</name> 		"\\par\t"				
+
+<address>               "address\t"
+</address>		"\\cell\t"	
+
+<line>			
+</line>			"\\par "				
+
+<street>		
+</street>		"\\par "
+
+<pobox>			
+</pobox>		"\\par "
+
+<city>		
+</city>			"\\par "
+
+<country>	
+</country>		"\\par "
+
+<email>		        "email\t"
+</email>		"\t"
+
+<tel>		        "tel\t"
+</tel>			"\t"
+
+<telex>			"telex\t"
+</telex>		"\t"
+
+<fax>			"fax\t"
+</fax>			"\t"
+
+<lists>			"lists\t "
+</lists>		" \t"
+
+<notes>	   		"notes\t"
+</notes>		"\t"			
+
+<date>			"date\t"
+</date>			"\t"
+
+
+

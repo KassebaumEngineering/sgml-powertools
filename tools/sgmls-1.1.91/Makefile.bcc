@@ -1,0 +1,48 @@
+# Makefile for sgmls with Borland C++.
+CC=bcc
+MODEL=l
+WARN=-w-stu -w-pro
+# With 3.1 -Oe makes sgmls not work; -Oi makes rast/sgmlsasp not work.
+#CFLAGS=--m$(MODEL) $(WARN) -O2-e-i
+# With 4.0, -A is desirable (without it __STDC__ is not defined).
+# -Om makes sgmls not work
+CFLAGS=-m$(MODEL) $(WARN) -O2-m -A
+LDFLAGS=-m$(MODEL)
+
+OBJS1=lexrf.obj pcbrf.obj synrf.obj context.obj md1.obj md2.obj \
+      pars1.obj pars2.obj serv.obj sgml1.obj sgml2.obj sgmlmsg.obj \
+      sgmlxtrn.obj traceset.obj entgen.obj sgmlio.obj xfprintf.obj \
+      main.obj dosproc.obj sgmldecl.obj version.obj strerror.obj \
+      getopt.obj msgcat.obj lineout.obj ambig.obj lextaba.obj \
+      catalog.obj stklen.obj
+
+PROG1=sgmls
+
+OBJS2=sgmlsasp.obj replace.obj sgmls.obj strerror.obj getopt.obj
+PROG2=sgmlsasp
+
+OBJS3=rast.obj sgmls.obj strerror.obj getopt.obj
+PROG3=rast
+
+.c.obj:
+	$(CC) -c $(CFLAGS) {$< }
+
+all: $(PROG1).exe $(PROG2).exe $(PROG3).exe
+
+$(PROG1).exe: $(OBJS1)
+	$(CC) $(LDFLAGS) -e$(PROG1) @&&!
+$(OBJS1)
+!
+
+$(PROG2).exe: $(OBJS2)
+	$(CC) $(LDFLAGS) -e$(PROG2) @&&!
+$(OBJS2)
+!
+
+$(PROG3).exe: $(OBJS3)
+	$(CC) $(LDFLAGS) -e$(PROG3) @&&!
+$(OBJS3)
+!
+
+# Enable auto-dependency checking.
+.autodepend

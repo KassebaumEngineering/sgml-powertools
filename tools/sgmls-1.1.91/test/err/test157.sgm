@@ -1,0 +1,2 @@
+sgmls: SGML error at test157.sgm, line 5 at record start:
+       General entity "e" in short reference map "MAP" undeclared

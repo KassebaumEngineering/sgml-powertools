@@ -1,0 +1,11 @@
+BEGIN { # FS="\t"
+	print "cat /home/thomas/format/rep/addrlst/rtf/header" | "/bin/sh" }
+$1 ~ /PATTERN/  { if (NR % 2 != 0) {
+			print "DEBUG " NR, (NR%2) "\\intbl {\\f20\\fs20"
+			print $2, $3
+		   } else {
+			print 
+			print $2, $3
+			print "DEBUG " NR, (NR%2) "}\\pard \\intbl \\row \\pard" 	
+		   } }
+END   { print "{\\f20\\par}}"  }

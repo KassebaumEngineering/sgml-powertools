@@ -1,0 +1,22 @@
+% comment.sty
+% 25-Oct-89
+% By Ed -- modified from verbatim in /usr/loca/lib/tex82/latex.tex
+
+% \documentsyple[...,comment]
+% \begin{comment}
+% \end{comment}
+
+% \makeatletter
+
+\begingroup \catcode `|=0 \catcode `[= 1
+\catcode`]=2 \catcode `\{=12 \catcode `\}=12
+\catcode`\\=12 |gdef|@xcomment#1\end{comment}[|end[comment]]
+|endgroup
+
+\def\@comment{\let\do\@makeother \dospecials\catcode`\^^M=10\def\par{}}
+
+\def\begincomment{\@comment\@xcomment}
+
+% \makeatother
+
+\newenvironment{comment}{\begincomment}{}

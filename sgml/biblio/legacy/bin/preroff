@@ -1,0 +1,12 @@
+#! /bin/sh
+# Author: Tom Gordon
+# Date: 9 Dec 91
+
+# Protects periods ending sentences which happen to occur in the first
+# column of a line from being interpreted as macro calls.
+
+# synopsis: format -T nroff foo.sgml | preroff | nroff -ms 
+
+LIB=/vol/sgmlformat/lib
+
+sed -f $LIB/preroff.sed

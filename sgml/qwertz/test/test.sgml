@@ -1,0 +1,281 @@
+<!doctype qwertz system 
+[
+<!entity TeX "TeX" >   
+<!entity LaTeX "LaTeX">
+<!entity et "&etago;">
+<!entity lhead "The <tt/qwertz/ Document Types">
+]>
+
+<report opts="11pt">
+<title>The <tt/qwertz/ SGML Document Types
+<subtitle>(Version 1.1 Reference Manual)
+<author>Tom Gordon
+<inst>The <tt/qwertz/ Project &nl
+Institute for Applied Information Technology (F3) &nl&nl
+German National Research Center &nl
+for Computer Science (GMD)
+
+<chapt>Why Not Just Use &LaTeX;?</heading>
+
+<p>The <tt/qwertz/ document types are a set of Standard Generalized
+Markup Language (SGML) document type definitions (DTDs) for articles,
+reports, books, letters, notes, slides (or overhead transparencies),
+bibliographies, and manual pages.  Except for manual pages, the
+document types have been heavily influenced by the &LaTeX document
+types of the same names <cite id="Lamport86">, so &LaTeX users should
+feel right at home.  Indeed, we presently translate most <tt/qwertz/
+documents into &LaTeX for printing and the &LaTeX produced is quite
+readable by anyone familiar with &LaTeX;.
+
+&hellip;
+
+<chapt>The <tt/qwertz/ Document Type Definition</heading>
+<header><lhead>&lhead<rhead>The <tt/qwertz/ DTD</header>
+
+<p> &hellip
+
+We will be making use of several <em/parameter entities/ in this
+DTD:
+
+<code>
+<!entity % emph 
+	" em | it | bf | sf | sl | tt " >
+
+<!entity % inline 
+	" f | x | %emph; | sq | label | ref | 
+          pageref | cite | ncite " >
+</code>
+
+&hellip
+
+<sect> General Purpose Entities and Elements</heading>
+<header><lhead>&lhead<rhead>General Purpose Entities</header>
+
+<p> &hellip
+
+When may it be necessary to use of an entity reference to produce
+some character?  There are three cases to watch out for:
+
+<descrip><tag>SGML Concrete Syntax Delimiters.</tag>
+
+Although the SGML standard allows alternative concrete syntaxes to
+be defined, we use the so-called <em/reference concrete syntax/ in
+the <tt/qwertz/ document types.  &hellip
+
+<tag>SGML Short Reference Delimiters.</tag>
+
+In SGML document types <em/short reference maps/ may be defined
+which allow single characters to be interpreted as arbitrarily complex
+sequences of characters, including SGML tags and entity references. &hellip
+
+<verb>
+" # % ' ( ) * + , - : ; = @ [ ] ^ _ { | } ~
+</verb>
+ 
+For each of these characters, there is an SGML entity which may be
+used to generate the ASCII character in the printed document, listed
+in table <ref id="GPC">. <em/Usually, it will not be necessary to use these
+entities; the character can simply be typed and will be interpreted
+literally./ However, &hellip;
+
+<tag>&TeX Special Characters.</tag>
+
+Ideally, it should be possible to hide the conventions of the
+underlying formatting system completely.  In fact, SGML parsers which
+implement the full ISO standard have a feature which makes this
+possible. &hellip
+
+</descrip>
+
+<sect1>Spacing, Dashes and Ellipsis
+<header><lhead>&lhead<rhead>Spacing, Dashes and Ellipsis</header>
+
+<p> &hellip
+
+There are also three different kinds of dashes: <tt/hyphen/
+which was already mentioned above, is to be used for intra-word dashes, as
+in the word "intra-word".<footnote>However, the <tt/hyphen/ entity
+was not actually necessary here, as the - character was not being used
+in this context as a short reference.</footnote>
+
+<p> &hellip
+
+<sect1> Foreign Characters
+<header><lhead>&lhead<rhead>Foreign Characters</header>
+
+<p> There are a large set of entities for other Western European
+languages.  Altogether, there are entities for almost all of the
+foreign language characters in ISO 8859, the Latin 1 character set for
+Western European languages.<footnote/Only the four
+Icelandic characters are missing./ &hellip
+
+<table>
+<tabular ca="ll|ll|ll|ll">
+AElig   |	&AElig  |
+Aacute  |	Á |
+Acirc	|	Â |
+Ae      | 	Ä	@
+Ntilde  |	&Ntilde; |
+Oacute  |	Ó |
+Ocirc   |	Ô |
+Oe      |       Ö     @
+Ue      |       Ü     |
+Ugrave  |	Ù |
+Uuml    |	Ü |
+Yacute  |	Ý @
+aacute  |	á |
+acirc   |	â |
+ae      |       ä | 
+aelig   |	&aelig  @
+oe      |       ö   | 
+ograve  |	ò |
+oslash  |	&oslash |
+otilde  |	&otilde @
+sz      |       ß       | 
+szlig   |	ß  |
+thinsp  |         	|
+tilde   |       &tilde  @
+times   |       &times  |
+uacute  |	ú |
+ucirc   |	û |
+ue      |       ü 
+</tabular>
+<caption><label id="GPC"> (Some) General Purpose Characters</caption>
+</table>
+
+<p>  &hellip
+
+<sect1>Sentences, Paragraphs, Footnotes and Emphasis
+<header>
+<lhead>&lhead
+<rhead>Sentences &hellip Emphasis
+</header>
+
+<p> &hellip
+
+Sentences or phrases within paragraphs can be emphasized in a
+number of ways.  The <tt/em/ tag is used to choose the default form
+of emphasis, which is usually <em/italic/ type, but depends on the
+style of the background text.  If the background text is formatted in
+italics type, as it usually is in definitions, for example, than
+emphasized text will be formatted using a plain, roman typeface.
+However, various forms of emphasis can be explicitly chosen.  These
+include: <bf/bold face/ (<tt/bf/), <it/italics/ (<tt/it/),
+<sf/sans serif/ (<tt/sf/), <sl/slanted/ (<tt/sl/), and
+<tt/typewriter/ (<tt/tt/) styles.
+
+<p> &hellip
+
+Long quotes are formatted in &LaTeX by indenting the left and
+right margins.  For example, <ncite id="Lamport86" note="pp. xiii">:
+
+<lq>
+<p>The &LaTeX document preparation system is a special version of
+Donald Knuth's &TeX program.  &TeX is a sophisticated program designed
+to produce high-quality typesetting, especially for mathematical text.
+&hellip
+
+&LaTeX represents a balance between functionality and ease of use.
+Since I implemented most of it myself, there was also a continual
+compromise between what I wanted to do and what I could do in a
+reasonable amount of time.  &hellip
+</lq>
+
+<sect1>Lists
+<header><lhead>&lhead<rhead>Lists</header>
+
+<p> Three types of lists are supported, which differ according to the
+type of label used to mark each item in the list.  Use <tt/itemize/
+to create a list in which each item is marked with some symbol such as
+a dash or bullet. The <tt/enum/ tag is used to create an
+enumeration, i.e. a list in which each item is labelled with a number
+(or letter) indicating its rank or position in the list. Finally, use
+<tt/descrip/ to create a list in which each item is labelled by some
+tag of your own choice. Lists of various types can nested.  For
+example:
+
+<p> &hellip
+
+<itemize>
+<item> A level one item.
+<item> Here's level two 
+	<enum>
+	<item> A level two item.
+	<item> Here's level three:
+		<enum>
+		<item> A level three item.
+		<item> Here's level four:
+		      <descrip>
+		      <tag/Red./ Is the color of my true love's hair.
+                      <tag/Blue./ Is a property of some movies.
+                      <tag/Yellow./ Characterizes some forms of journalism.
+                      </descrip>
+		<item>A last level three item
+		</enum>
+	<item> A last level two item
+	</enum>
+<item>A last level one item.
+</itemize>
+
+<p> &hellip
+
+<sect1>Figures and Tables
+
+Encapsulated PostScript graphics can be created using a variety of
+different editors.  If you are using Unix with an X11-based graphical
+user-interface, you may want to try <tt/idraw/, which stores its
+documents directly as Encapsulated PostScript files. Another
+interesting X11-based drawing program is <tt/tgif/.
+
+<p> &hellip
+
+Which would then appear as in figure <ref id="issues">.
+
+<figure>
+        <eps file="issues">
+	<caption><label id="issues">An <tt/idraw/ Drawing </>
+</figure>
+
+<sect1>Literate Programming
+
+<p> The original motivation behind the development of these document
+types was to create an environment for literate programming in an
+arbitrary programming language similar to Donald Knuth's WEB system
+for literate programming in Pascal <cite id="Knuth84">.  &hellip
+
+<p> When formatted, spaces and line breaks are preserved:
+
+<verb>
+main ()
+{
+        /* This is the famous hello world program */
+
+        printf("hello world\n");
+}
+</verb>
+
+<sect1>Mathematical Formulas
+
+<p> The <tt/qwertz/ document types include elements for describing
+mathematical formulas completely within SGML, similar to the system
+described in <cite id="daphne89">.  &hellip
+
+<p> So, for example, 
+
+<dm>
+        <sum><ll>i=1<ul>n<opd>x<inf>i</></sum> =
+        <in><ll>0<ul>1<opd>f</in>
+</dm>
+was typed as:
+<verb>
+<dm>
+        <sum><ll>i=1<ul>n<opd>x<inf>i&et>&et;sum> =
+        <in><ll>0<ul>1<opd>f&et;in>
+&et;dm>
+</verb>
+
+<p> &hellip
+
+<biblio files="lit">
+</report>
+

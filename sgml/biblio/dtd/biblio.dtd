@@ -1,0 +1,147 @@
+<!entity % general system -- general purpose characters -- >
+%general;
+
+<!entity   Ae  '&Auml;' >
+<!entity   ae  '&auml;' >
+<!entity   Oe  '&Ouml;' >
+<!entity   oe  '&ouml;' >
+<!entity   Ue  '&Uuml;' >
+<!entity   ue  '&uuml;' >
+<!entity   sz  '&szlig;' >
+
+<!entity   qtag     '<sq>'   -- short quote begin -- >
+<!entity   qendtag  '</sq>'>
+
+<!shortref global
+      '"' qtag 
+      "_" emsp
+      "~" nbsp
+      "#" num
+      "%" percnt
+      "^" circ
+      "{" lcub
+      "}" rcub
+      "|" verbar>
+
+<!usemap global biblio >
+
+<!shortref sqmap 
+      '"' qendtag 
+      "_" emsp
+      "~" nbsp
+      "#" num
+      "%" percnt
+      "^" circ
+      "{" lcub
+      "}" rcub
+      "|" verbar >
+
+<!usemap   sqmap    sq >
+<!entity % etype
+   "( article | book | booklet | inbook | incoll | 
+      inproc  | manual | masters | misc | phd | 
+      proc | report | unpub )" >
+
+<!attlist %etype  id cdata #required >
+<!element biblio - - ((%etype | #pcdata)*) +(x)>
+<!entity % info 
+	"list? & note? &  annote? &  keywrds? &  loc? &  id? &  private?" >
+
+<!entity % emph " em | it | bf | sf | sl | tt " >
+
+<!entity % inline " (#pcdata | %emph; | sq )* " >
+<!element article - o  
+	(author &  title &  journal &  vol? &  no? &   
+	 pp? &  month? &  year &  %info )>
+
+<!element book  - o 
+	((author | editor) &   title &   edition? &  
+	 publish &  series? &  vol? &  address? &   
+ 	 month? &   year &  %info )>
+
+<!element booklet - o   
+	((author | key) &  title &  howpub? &  
+	 address? &  month? &  year? &  %info )>
+
+<!element inbook - o
+	((author|editor) &  title &  ((chap, pp?) | pp) &  
+	 edition? &  publish &  series? &  vol? &  address? &  
+	 month? &  year &  %info )> 
+
+<!element incoll - o 
+	(author &  title &  editor? &  btitle &  chap? &  
+	edition? &  publish &  address? &   month? &  
+	year &  pp? &  %info )>
+
+<!element inproc - o 
+	(author &  title &  editor? &  btitle &  organ? &  
+	 publish? &  address? &  month? &  year &  pp? &  %info )> 
+
+<!element manual - o
+	((author | key) &  title &  edition? &  address? & 
+	 month? &  year? &  organ? &  %info )>
+
+<!element masters - o
+	(author &  title &  school &  address? &  month? &  
+	 year &  %info )>
+
+<!element misc   - o 
+	((author | key) &  title? &  month? &  year? &  
+	 howpub? &  %info )>
+
+<!element phd    - o
+	(author &  title &  school &  address? &  month? &  
+	 year &  %info )>
+
+<!element proc  - o 
+	((editor | key) &  title &   organ? &  publish? &  
+	 address? &  month? &  year &  %info )>
+
+<!element report - o  
+	(author &  title &  inst &  address? &  type? &  no? &  
+	 month? &  year &  %info )>
+
+<!element unpub  - o    
+	(author &  title &  month? &  year &  %info)>
+<!element x  - - rcdata   >
+<!element sq - - (%inline)>
+<!element em - - (%inline)>
+<!element bf - - (%inline)>
+<!element it - - (%inline)>
+<!element sf - - (%inline)>
+<!element sl - - (%inline)>
+<!element tt - - (%inline)>
+<!element address  	- o (%inline) >
+<!element annote        - o (%inline) >
+<!element author  	- o (names) >
+<!element names   	o o 
+	((%inline | (first, last)),(and, names)?) >
+<!element last 	  	- o (%inline)>
+<!element first   	- o (%inline)>
+<!element and 	  	- o empty >
+<!element btitle	- o (%inline) >
+<!element chap  	- o (%inline) >
+<!element edition       - o (%inline) >
+<!element editor    	- o (names) >
+<!element howpub	- o (%inline) >
+<!element id		- o (#pcdata) >
+<!element inst  	- o (%inline)  >
+<!element journal       - o (%inline) >
+<!element key		- o (#pcdata) >
+<!element keywrds	- o (#pcdata) >
+<!element loc		- o (%inline) >
+<!element month 	- o (#pcdata) >
+<!element note  	- o (%inline) >
+<!element list          - o (#pcdata) >
+<!element no    	- o (#pcdata) >
+<!element organ 	- o (%inline) >
+<!element pp    	- o (#pcdata) >
+<!element private	- o (%inline) >
+<!element publish       - o (%inline) >
+<!element series	- o (%inline) >
+<!element school	- o (%inline) >
+<!element title		- o (%inline) >
+<!element type  	- o (%inline) >
+<!element vol  		- o (#pcdata) >
+<!element year  	- o (#pcdata) >
+<!-- end of biblio dtd -->

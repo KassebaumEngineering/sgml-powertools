@@ -1,0 +1,132 @@
+.if n .ds Q \&"
+.if t .ds Q ``
+.if n .ds U \&"
+.if t .ds U ''
+.TH qtex 1 
+.tr \&
+.nr bi 0
+.nr ll 0
+.nr el 0
+.de Pp
+.ie \\n(ll>0 \{\
+.ie \\n(bi=1 \{\
+.nr bi 0
+.if \\n(t\\n(ll=0 \{.IP \\(bu\}
+.if \\n(t\\n(ll=1 \{.IP \\n+(e\\n(el.\}
+.\}
+.el .sp 
+.\}
+.el \{\
+.ie \\nh=1 \{\
+.LP
+.nr h 0
+.\}
+.el .PP 
+.\}
+..
+.SH NAME
+qtex -- translate a LaTeX file into PostScript
+
+.Pp
+.SH SYNOPSIS
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+qtex [-dsxgbv] file[.tex] | lpr
+cat file.tex | qtex [-dsxgbv] | lpr
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH DESCRIPTION
+
+.Pp
+\f(CRqtex\fP is a front-end to LaTeX, BibTeX and a \f(CRdvi\fP to
+PostScript driver, which makes them considerably easier, and more
+Unix-like, to use.  Unlike LaTeX, it can also process LaTeX files
+read from the standard input file, or in a Unix pipe.  By default,
+\f(CRqtex\fP writes PostScript to the standard output file, but there is
+a command line switch, described below, for generating the usual TeX\f(CRdvi\fP file instead.   The \*Q.tex\*U file extension is optional.  If
+LaTeX finds an error in your input file, a message will be printed to
+the standard error file and execution is terminated, with a non-zero
+exit status.   There will be a \*Q.log\*U file in the same directory as
+the input file describing the errors.
+.Pp
+.SH OPTIONS
+
+.Pp
+.RS
+.nr ll +1
+.nr t\n(ll 2
+.IP "\f(CR-help\fP"
+.nr bi 1
+.Pp
+If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+.Pp
+.IP "\f(CR-d\fP"
+.nr bi 1
+.Pp
+Create a TeX device-independent file, i.e. a \f(CRdvi\fP file,
+instead of PostScript.  This is piped to the standard output
+file.  To save the \f(CRdvi\fP file, write, for example:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+qtex -d foo > foo.dvi
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.IP "\f(CR-s\fP"
+.nr bi 1
+.Pp
+\fISave\fP all temporary files, such as \f(CRfoo.tex\fP,
+\f(CRfoo.dvi\fP, and \f(CRfoo.aux\fP.   PostScript is generated and
+written to standard out as usual.
+.Pp
+.IP "\f(CR-x\fP"
+.nr bi 1
+.Pp
+Use this option if the input file contains \fIcross
+references\fP.  This option causes the LaTeX file to be processed by
+TeX twice, to resolve the references.
+.Pp
+.IP "\f(CR-g\fP"
+.nr bi 1
+.Pp
+Use this option if the document is written in \fIGerman\fP.  It
+causes TeX to use another algorithm for hyphenation.  Remember to
+\fIalso\fP use the \f(CRgerman\fP option in the options list of the
+document itself. 
+.Pp
+.IP "\f(CR-b\fP"
+.nr bi 1
+.Pp
+Use this option if the file includes a list of references or
+\fIbibliography\fP.  The option causes LaTeX, then BibTeX and then
+LaTeX (twice) again to be run.   The bibliography referenced in the
+document is expected to be a BibTeX \f(CRbib\fP file in the same
+directory as the document.   If your bibliography is being
+maintained in the \f(CRbiblio\fP SGML format, use the \f(CRbiblio\fP
+command to first translate it into \f(CRbib\fP format.  The \f(CR-b\fP
+option implies the \f(CR-x\fP option, for cross-references, described above.
+.Pp
+.IP "\f(CR-v\fP"
+.nr bi 1
+.Pp
+\fIVerbose\fP mode.  If your document is particularly long, you
+may want to use this mode to be kept posted about just what
+\f(CRqtex\fP is doing at the moment.  The messages are written to
+standard error, so that they are not mixed with the PostScript being
+piped to the printer!
+.nr ll -1
+.RE
+.Pp

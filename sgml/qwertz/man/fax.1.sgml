@@ -1,0 +1,50 @@
+<!doctype qwertz system>
+
+<manpage title="fax">
+<sect1> NAME
+fax &mdash send a Telefax message
+
+<sect1> SYNOPSIS
+
+<p>
+<verb>
+format file | qtex | fax [-a]
+</verb>
+
+<sect1> DESCRIPTION
+
+<p><tt/fax/ is simple front-end to the <tt/lpr/ command, customized for
+sending Telefax messages.   It is designed to be used within a Unix
+pipe, as shown in the synopsis.
+
+<sect1> OPTIONS
+
+<p><descrip>
+<tag><tt/-help/
+
+If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+
+<tag><tt/-a/
+
+Send an acknowledgement, by electronic mail, if the fax message was
+received without difficulty.
+
+</descrip>
+
+<sect1> BUGS
+
+<p>The telefax number is written to a file named ".fax=num", in the
+current directory, by <tt/qtex/.  This file is read and then deleted
+by this <tt/fax/ program.   Should there coincidentally be a file
+with this name which is not write protected, it will be removed.
+
+
+<sect1> SEE ALSO
+
+<p>
+<verb>
+format(1), qtex(1)
+</verb>
+
+</manpage>

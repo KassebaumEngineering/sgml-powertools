@@ -1,0 +1,97 @@
+.if n .ds Q \&"
+.if t .ds Q ``
+.if n .ds U \&"
+.if t .ds U ''
+.TH biblio 1 
+.tr \&
+.nr bi 0
+.nr ll 0
+.nr el 0
+.de Pp
+.ie \\n(ll>0 \{\
+.ie \\n(bi=1 \{\
+.nr bi 0
+.if \\n(t\\n(ll=0 \{.IP \\(bu\}
+.if \\n(t\\n(ll=1 \{.IP \\n+(e\\n(el.\}
+.\}
+.el .sp 
+.\}
+.el \{\
+.ie \\nh=1 \{\
+.LP
+.nr h 0
+.\}
+.el .PP 
+.\}
+..
+.SH NAME
+biblio -- convert SGML bibliographies 
+
+.Pp
+.SH SYNOPSIS
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+biblio [-T (bibtex | refer | ps | ascii)] file[.sgml] 
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH DESCRIPTION
+
+.Pp
+\f(CRbiblio\fP translates a bibliograhy written using the
+\f(CRbiblio\fP SGML document type into BibTeX's \f(CRbib\fP format,
+Unix's \f(CRrefer\fP format, PostScript, and an ASCII representation
+suitable electronic mail. By default, \f(CRbiblio\fP generates \f(CRbib\fP
+files.  Use the \f(CR-T\fP option to select another format.  The \*Q.sgml\*U
+extenstion of the input file is optional.  \f(CRbiblio\fP writes to the
+standard output.  To create a \f(CRbib\fP file from a \f(CRfoo.sgml\fP file,
+type:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+biblio foo > foo.bib
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+To print a formatted version of the bibliography on a PostScript
+printer, type:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+biblio -T ps foo | lpr
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+To send a formatted version of the bibliography to someone via
+email, type, for example:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+biblio -T ascii foo | mail joe@somewhere
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH SEE ALSO
+
+.Pp
+\f(CRbibtex (1)\fP, \f(CRrefer (1)\fP, \f(CRmail (1)\fP, \f(CRlpr (1)\fP,
+\f(CRlookbib (1)\fP
+.Pp

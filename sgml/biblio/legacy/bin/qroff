@@ -1,0 +1,89 @@
+#! /bin/sh
+# Author: Tom Gordon
+# Date: 6 Dec 91
+
+
+PATH=/vol/sgmlformat/bin:/vol/gnu/bin:$PATH
+export PATH
+
+GROFF_TMAC_PATH=/vol/gnu/lib/groff-1.06/tmac
+GROFF_TYPESETTER=ps
+export GROFF_TMAC_PATH
+ASCII="/vol/gnu/bin/groff -T ascii -t -mgs"
+LATIN1="/vol/gnu/bin/groff -T latin1 -t -mgs"
+# POSTSCRIPT="/vol/gnu/bin/groff -M/home/thomas/tmp/mgm -et -mm"
+POSTSCRIPT="/vol/gnu/bin/groff -et -mgs"
+REFER="/vol/gnu/bin/grefer -sA+E+D+ -ne -p"
+
+TYPE="ascii"	 # default
+DATABASE="NONE"      # refer database
+
+# set terminal to lowest common denominator,
+# appropriate for email
+
+
+cleanup () {	# remove temporary files
+	if [ -f $$.refer  ]
+	then
+		/bin/rm $$.refer
+	fi
+}
+
+trap 'cleanup; exit 1' 1 2 3 9
+
+usage () { 
+echo "	qroff 	[-p]		         * PostScript instead of ASCII";
+echo "          [-l]                     * Latin 1 instead of ASCII";
+echo "		[-b <sgml bibliography>] * bibliography, without .sgml extension";
+exit 1 
+}
+
+case "$1" in
+	"help" | "HELP" | "Help" | "-help" ) usage
+esac
+
+set -- `getopt plb: $*`
+
+
+if [ $? != 0 ]
+then
+	usage
+fi
+
+for i in $*
+do
+        case $i in
+	      -p)	TYPE="PostScript"; shift;;
+	      -l)       TYPE="latin1"; shift;;
+	      -b)	DATABASE=$2; shift; shift;;
+              --)       shift; break;;
+        esac
+done
+
+roff () {
+	if [ "$TYPE" = "PostScript" ]
+	then
+		$POSTSCRIPT
+	elif [ "$TYPE" = "latin1" ]
+        then	
+		$LATIN1 
+        else
+		$ASCII | col -b
+	fi
+}
+
+if [ "$DATABASE" = "NONE" ]
+then
+	preroff | roff
+else
+	if [ "$TYPE" = "PostScript" ]
+	then
+		biblio -T grops $DATABASE.sgml > $$.refer
+	else
+		biblio -T refer $DATABASE.sgml > $$.refer
+	fi
+	preroff | $REFER $$.refer | roff
+fi
+
+cleanup
+

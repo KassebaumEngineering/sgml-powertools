@@ -1,0 +1,55 @@
+<!doctype qwertz system 
+[
+<!entity TeX sdata "TeX" >
+<!entity et "&etago;">
+<!entity l "&lsqb;">
+<!entity r "&rsqb;">
+]>
+
+<manpage title="biblio">
+
+<sect1> NAME
+biblio &mdash convert SGML bibliographies 
+
+<sect1> SYNOPSIS
+
+<p>
+<verb>
+biblio [-T (bibtex | refer | ps | ascii)] file[.sgml] 
+</verb>
+
+<sect1> DESCRIPTION
+
+<p><tt>biblio</> translates a bibliograhy written using the
+<tt>biblio</> SGML document type into Bib&TeX's <tt>bib</> format,
+Unix's <tt/refer/ format, PostScript, and an ASCII representation
+suitable electronic mail. By default, <tt/biblio/ generates <tt/bib/
+files.  Use the <tt/-T/ option to select another format.  The ".sgml"
+extenstion of the input file is optional.  <tt/biblio/ writes to the
+standard output.  To create a <tt/bib/ file from a <tt/foo.sgml/ file,
+type:
+
+<verb>
+biblio foo > foo.bib
+</verb>
+
+<p> To print a formatted version of the bibliography on a PostScript
+printer, type:
+
+<verb>
+biblio -T ps foo | lpr
+</verb>
+
+<p> To send a formatted version of the bibliography to someone via
+email, type, for example:
+
+<verb>
+biblio -T ascii foo | mail joe@somewhere
+</verb>
+
+<sect1> SEE ALSO
+
+<p><tt>bibtex (1)</>, <tt/refer (1)/, <tt/mail (1)/, <tt/lpr (1)/,
+<tt/lookbib (1)/
+
+</manpage>

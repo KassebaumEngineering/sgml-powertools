@@ -1,0 +1,122 @@
+#! /bin/sh
+
+# synopsis:  biblio filename.sgml
+#                 cat filename.sgml | biblio 
+
+# author: Tom Gordon 
+
+# description: biblio parses and translate an sgml file of the qwertz
+# biblio document type into various other formats:
+
+#	1) BibTeX
+#	2) Refer
+#	3) PostScript
+#	4) ASCII
+
+# The translation is written to standard out.
+
+PATH=/vol/sgmlformat/bin:/vol/gnu/bin:$PATH; export PATH
+FORMAT=/vol/sgmlformat    
+SGMLS=/home/qwertz/local/sgmls/sgmls
+SGMLSASP=/home/qwertz/local/sgmls/sgmlsasp
+
+SGML_PATH=${SGML_PATH:=$FORMAT/dtd/%N.dtd}
+export SGML_PATH
+BIN=$FORMAT/bin
+LIB=$FORMAT/lib
+
+REPDIR=$FORMAT/rep/biblio
+TYPE=bibtex	  # default format 
+AWK=/usr/bin/awk
+
+CHECK="no"    # just check SGML syntax
+
+cleanup () {
+	for i in sgml bib
+	do
+		if [ -f $$.$i ]
+		then
+			/bin/rm $$.$i
+		fi
+	done
+}
+
+trap 'cleanup; exit 1' 1 2 3 9
+
+usage () {
+echo "biblio  [-c] [-T (bibtex | refer | grops |  ps | ascii) ] filename[.sgml]";
+exit 1 
+}
+
+case "$1" in
+	"-h" | "h" | "help" | "HELP" | "Help" | "-help" ) usage
+esac
+
+set -- `getopt cT: $*`
+
+if [ $? != 0 ]
+then
+	usage
+fi
+
+for i in $*
+do
+        case $i in
+	   -c)  CHECK="yes"; shift;;
+	   -T)	TYPE=$2; shift; shift;;
+	   --)     shift;
+		if [ "$1" = "" ] 
+		then
+			cat 1> $$.sgml  # write standard input to file
+			FILE=$$
+		else
+		FILE=$1
+		fi;
+			break;;
+        esac
+done
+
+if [ -f $FILE.sgml ] 
+then
+	FILE=$FILE.sgml
+elif [ ! -f $FILE ] 
+then
+	echo $PROGNAME: cannot find $FILE or $FILE.sgml  >&2
+	exit 1
+fi
+
+map () {
+	SGML_PATH=$REPDIR/$2/%N:$SGML_PATH
+	export SGML_PATH
+	$SGMLS $FILE | $SGMLSASP $REPDIR/$2/mapping
+}
+
+roff () {
+	map $FILE $1 | $AWK -f $FORMAT/lib/refer.post \
+	| grefer -sA+E+Q+D1 -en -BX.ip | groff -T $TYPE -me
+}
+
+if [ $CHECK = "yes" ]
+then
+	SGML_PATH=$REPDIR/refer/ascii/%N:$SGML_PATH
+	export SGML_PATH
+	$SGMLS $FILE > /dev/null
+	exit 0
+fi
+	
+case $TYPE in
+  bibtex ) map $FILE bibtex; break;;
+  refer ) map $FILE refer/ascii | $AWK -f $LIB/refer.post ; break;;
+  grops ) map $FILE refer/grops | $AWK -f $LIB/refer.post ; break;;
+  ps ) map $FILE bibtex > $$.bib; 
+       sed "s/BIBFILE/$$/" $LIB/annbib.tex | qtex -b; break;;
+  ascii) roff refer/ascii | col -b ; break;;
+esac
+
+cleanup
+
+# end of biblio script
+
+
+
+

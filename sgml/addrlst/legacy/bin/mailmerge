@@ -1,0 +1,21 @@
+#! /bin/sh
+
+# synoposis:  mailmerge <address list> <letter>
+# author: Tom Gordon
+
+# Prints the letter for each address in the list.
+
+FORMAT=/vol/sgmlformat
+SGMLS=/home/qwertz/local/sgmls/sgmls
+SGMLSASP=/home/qwertz/local/sgmls/sgmlsasp
+REPDIR=$FORMAT/rep/addrlst/mailmerge
+
+# default directory of replacement files
+
+SGML_PATH=$FORMAT/dtd/%N.dtd:$FORMAT/dtd/%P.dtd:$REPDIR/%N
+export SGML_PATH
+
+$SGMLS $1 | $SGMLSASP $REPDIR/mapping > /tmp/$$.sh
+/usr/bin/ksh /tmp/$$.sh $2
+/usr/bin/rm /tmp/$$.sh
+

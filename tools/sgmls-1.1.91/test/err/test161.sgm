@@ -1,0 +1,2 @@
+sgmls: SGML error at test161.sgm, line 8 at entity e, line 1 at ">":
+       Document element end tag can only occur in document element because entity end not allowed in other prolog

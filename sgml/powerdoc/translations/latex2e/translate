@@ -1,0 +1,283 @@
+#!/bin/sh
+#
+# Translation Script
+# to be run as a pipe on the output of the preprocessing script
+#
+# usually called by sgmltrans
+#
+# The following environment variables should contain information from
+# sgmltrans:
+#   Variable        Value
+#     VVERBOSE		"yes" or "no" - very verbose (default "no")
+#     VERBOSE		"yes" or "no" - "no" means very quiet (default "yes")
+#     STYLE			An additional translation style mapping file
+#     MAP			The translation mapping file.
+#     FORMAT		The target format for translation.
+#     FILE			The base filename of the sgml file to be translated.
+#     SGMLFILE		The whole filename of the sgml file to be translated.
+#     SCRIPTDIR		The directory containing the translation scripts.
+#     DOCTYPE		The SGML type of the current document.
+#     SGML_PATH		The sgmls parser path for dtd and entity files.
+#     SGMLDECL		The filename for an sgml dcl file.
+#     SCRIPT_OPTS	Command line arguments for the translate script/program.
+# 
+
+#
+# USE THESE PROGRAMS FOR TRANSLATION
+#
+SGMLS=sgmls
+SGMLSASP=sgmlsasp
+
+# Put your primary output filename extension here
+EXT=tex
+
+# set DASHI to appropriate setting for SGMLS
+DASHI=-ifmtlatex 
+#DASHI=-ifmttex
+
+#
+# local variables : 
+# --
+    TEMPFILE=/tmp/sgml2latex2e$$tmp
+	TABS="-8"		      # expand replaces tabs with 8 spaces
+	DVI="no"              # no DVI
+	TEX="yes"		      # just output TEX file
+	PS="no"			      # default is to create ps file
+    PAGE=letter
+	SAVE="no"
+	CHAPTER="no"
+	#SUFFIXES="log blg aux toc lof lot dlog bbl"
+	SUFFIXES="log blg aux toc lof lot dlog bbl ind idx ilg glo glx gxg gxs glg blg bib bbl"
+	#LATEX="latex2e"
+	LATEX="latex"
+	GLOSSTEX="glosstex"
+	GLOSSTEXMST=glosstex.mst
+	MAKEINDEX="makeindex"
+	GERMAN="no"
+	GLOSS="yes"
+	INDEX="yes"
+# --
+
+usage () {
+	echo "Usage: $PROGNAME [...] $FORMAT <file> [ARGS]";
+	echo "ARGS in: ";
+	echo "  -t <n>      tabstops each <n>th col (default 8)";
+	echo "  -dvi        requests .dvi file instead of .tex";
+	echo "  -ps         requests .ps  file instead of .tex";
+	echo "  -s          save all intermediate TEX files";
+	echo "  -chapt      make a latex report from a single chapter";
+	echo "  -page <n>   <n> page layout (a4, letter) (default US letter)";
+	echo "  -german     use german.sty";
+	echo "  -nogloss    do not use glossary";
+	echo "  -noindex    do not use index";
+	echo "  anything else is ignored";
+	echo 
+	exit 1 
+}
+
+trap 'cleanup; exit 1' 1 2 3 9
+trap 'cleanup' 0 15
+
+cleanup () {
+	rm -f $TEMPFILE 
+	rm -f $GLOSSTEXMST
+	if [ $SAVE = "no" ] 
+	then
+		for SFX in $SUFFIXES
+		do
+			if [ -f $FILE.$SFX ]
+			then
+				rm $FILE.$SFX
+			fi
+		done
+	fi
+	if [ -f /tmp/$$.tex ]
+	then
+		mv /tmp/$$.tex $FILE.tex
+	fi
+}
+
+
+announce () {   
+	if [ $VERBOSE = "yes" ]
+	then
+		echo  $1 >&2
+	fi
+}
+
+
+# do they need help?
+case "$1" in
+	"-h" | "--help" | "-help") usage
+	exit 1
+esac
+
+# do they need help?
+for i in $*; do
+	case $i in 
+		"-h" | "--help" | "-help") usage
+		exit 1
+	esac
+done
+
+#
+# getopt - Parse Command Line
+#
+for i in $*
+do
+	case $i in
+		-t)       TABS="-"$2; shift; shift;;
+		-dvi)     DVI="yes"; TEX="no"; shift;;
+		-ps)      PS="yes"; TEX="no"; shift;;
+		-s)       SAVE="yes"; shift;;
+		-chapt)   CHAPTER="yes"; shift;;
+		-page)    PAGE=$2; shift; shift;;
+		-german)  GERMAN="yes"; shift;;
+		-nogloss) GLOSS="no"; shift;;
+		-noindex) INDEX="no"; shift;;
+		--)       shift; break;;
+	esac
+done
+
+# set and export TEXINPUTS
+TEXLIB=$SCRIPTDIR/tex
+TEXINPUTS="$TEXINPUTS:$TEXLIB"
+export TEXLIB
+export TEXINPUTS
+
+if [ $VVERBOSE = "yes" ]; then
+	announce TABS=$TABS
+	announce DVI=$DVI
+	announce TEX=$TEX
+	announce PS=$PS
+	announce SAVE=$SAVE
+	announce CHAPTER=$CHAPTER
+	announce SUFFIXES=$SUFFIXES
+	announce DASHI=$DASHI
+	announce LATEX=$LATEX
+	announce GERMAN=$GERMAN
+	announce GLOSS=$GLOSS
+	announce INDEX=$INDEX
+	announce TEXINPUTS=$TEXINPUTS
+	announce TEXLIB=$TEXLIB
+	announce GLOSSTEXMST=$GLOSSTEXMST
+fi
+
+# if we want only TeX file no DVI or PS file is created
+if [ $TEX = "yes" ]
+then
+	DVI="no"
+	PS="no"
+fi
+if [ $DVI = "yes" ]
+then
+	PS="no"
+fi
+
+if [ $TEX = "yes" ]
+then
+	announce "Making $FILE.tex from $SGMLFILE."
+elif [ $DVI = "yes" ]
+then
+	announce "Making $FILE.dvi from $SGMLFILE."
+else
+	announce "Making $FILE.ps from $SGMLFILE."
+fi
+
+#
+# call sgmls or nsgmls
+# reads from the standard input and writes to the standard output
+#
+announce "$SGMLS $DASHI $SGMLDECL $SGMLFILE > $TEMPFILE"
+
+$SGMLS $DASHI $SGMLDECL $SGMLFILE > $TEMPFILE
+
+# test for errors
+if [ $? = 1 ] 
+then 
+	echo "SGML parsing error, no formatting done..."
+	exit 1
+fi
+
+# if there are no SGML parse errors, continue...
+
+if [ $GLOSS = "yes" ]
+then
+	announce "$SGMLSASP $STYLE $MAP < $TEMPFILE | \\ ";
+	announce "    expand $TABS |€\\ ";
+	announce "    $SCRIPTDIR/makeglossary.perl $FILE \\ ";
+	announce "    > $FILE.$EXT ;";
+	
+	$SGMLSASP $STYLE $MAP  < $TEMPFILE | \
+	    expand $TABS | \
+	    $SCRIPTDIR/makeglossary.perl $FILE \
+	    > $FILE.$EXT ;
+	cp $TEXLIB/$GLOSSTEXMST .
+else
+	announce "$SGMLSASP $STYLE $MAP < $TEMPFILE | \\ ";
+	announce "    expand $TABS \\ ";
+	announce "    > $FILE.$EXT ";
+		
+	$SGMLSASP $STYLE $MAP < $TEMPFILE | \
+	    expand $TABS \
+	    > $FILE.$EXT ;
+fi
+
+case $PAGE in
+      a4)     cp $FILE.tex /tmp/$$.tex; \
+	          sed '/^\\documentstyle/ s/linuxdoc-sgml/linuxdoc-sgml-a4/g' < /tmp/$$.tex > $FILE.tex ;;
+      letter) ;;
+      *)      echo unknown page style '$PAGE' ... using 'letter' style.;;
+esac
+
+if [ $GERMAN = "yes" ]
+then
+       mv $FILE.tex /tmp/$$.tex
+       sed 's/\(documentstyle\[linuxdoc-sgml,\)/\1german,/' < /tmp/$$.tex > $FILE.tex
+       rm -f /tmp/$$.tex
+fi
+
+if [ $CHAPTER = "yes" ]
+then
+	announce "Creating report from a chapter."
+	cp $FILE.tex /tmp/$$.tex
+	awk -f $TEXLIB/chapt.awk /tmp/$$.tex > $FILE.tex
+fi
+
+# run TeX ...
+if [ $TEX = "no" ]
+then
+	SUFFIXES="$SUFFIXES tex"
+	announce "Making $FILE.dvi from $FILE.tex."
+	# must LaTeX many times to get references right
+	/bin/rm -f $FILE.dvi
+	$LATEX $FILE.tex
+    if [ $GLOSS = "yes" ]; then
+        $GLOSSTEX $FILE.aux $FILE.gdf
+	    $MAKEINDEX $FILE.gxs -o $FILE.glx -t $FILE.glg -s $TEXLIB/$GLOSSTEXMST
+	    $LATEX $FILE.tex
+        $GLOSSTEX $FILE.aux $FILE.gdf
+	    $MAKEINDEX $FILE.gxs -o $FILE.glx -t $FILE.glg -s $TEXLIB/$GLOSSTEXMST
+	fi
+    if [ $INDEX = "yes" ]; then
+	    $MAKEINDEX $FILE
+	    $LATEX $FILE.tex
+	fi
+	$LATEX $FILE.tex
+fi
+
+# cleanup for DVI
+if [ $DVI = "no" ]
+then 
+	SUFFIXES="$SUFFIXES dvi"
+fi
+
+# translate to PS
+if [ $PS = "yes" ]
+then 
+	announce "Translating $FILE.dvi to PostScript."
+	dvips -q -t $PAGE -o $FILE.ps $FILE.dvi
+fi
+
+
+exit 0

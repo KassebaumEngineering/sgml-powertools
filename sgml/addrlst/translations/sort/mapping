@@ -1,0 +1,66 @@
+
+% author: Tom Gordon
+% date: 27 July 92
+
+
+% addrlst replacement file for sorting.  Maps SGML into a flat data
+% base for AWK.  Records are separated by new lines, fields
+% by tabs.  The fields are are sequence of (key, value) pairs.  Except
+% for <line> elements, there is at most one value for each key.  For 
+% an element <foo>, its key is "foo", without the "<" and ">" characters.
+
+
+<addrlst>	
+</addrlst>	
+
+<entry>		+	""			
+</entry>		""			+
+
+<alias>			"alias\t"
+</alias>		"\t"
+
+<title>			"title\t"
+</title>		"\t"
+
+<name>  	        "name\t"
+</name> 		"\t" 	
+
+<address>              
+</address>		
+
+<line>			"line\t"
+</line>			"\t"
+
+<street>		"street\t"
+</street>		"\t"
+
+<pobox>			"pobox\t"
+</pobox>		"\t"
+
+<city>			"city\t"
+</city>			"\t"
+
+<country>		"country\t"
+</country>		"\t"
+
+<email>		        "email\t"
+</email>		"\t"
+
+<tel>		        "tel\t"
+</tel>			"\t"
+
+<telex>			"telex\t"
+</telex>		"\t"
+
+<fax>			"fax\t"
+</fax>			"\t"
+
+<lists>			"lists\t "
+</lists>		" \t"
+
+<notes>	   		"notes\t"
+</notes>		"\t"			
+
+<date>			"date\t"
+</date>			"\t"
+

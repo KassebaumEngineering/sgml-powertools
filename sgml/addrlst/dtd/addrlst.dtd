@@ -1,0 +1,63 @@
+
+<!-- DTD for address lists -->
+
+<!element addrlst - - (entry+) >
+
+<!entity % general system -- general purpose characters -- >
+%general;
+
+<!entity   Ae  '&Auml;' >
+<!entity   ae  '&auml;' >
+<!entity   Oe  '&Ouml;' >
+<!entity   oe  '&ouml;' >
+<!entity   Ue  '&Uuml;' >
+<!entity   ue  '&uuml;' >
+<!entity   sz  '&szlig;' >
+
+<!element alias         - o (#pcdata) >
+<!element title         - o (#pcdata) >
+<!element name		- o (#pcdata) >
+<!element address       o o (line*, (pobox | street)?, city?, country?)>
+<!element line          - o (#pcdata) >
+<!element pobox        	- o (#pcdata) >
+<!element street        - o (#pcdata) >
+<!element city          - o (#pcdata) >
+<!element country	- o (#pcdata) >
+<!element email		- o (#pcdata) >
+<!element tel		- o (#pcdata) >
+<!element telex         - o (#pcdata) >
+<!element fax 		- o (#pcdata) >
+<!element lists         - o (#pcdata) >
+<!element date          - o (#pcdata) >
+<!element notes         - o (#pcdata) >
+
+
+<!element entry o o 
+   (alias, title?, name, address,  
+    (tel? & telex? & fax? & email? & lists? & date? & notes?))>
+
+<!-- Minimization -->
+
+<!entity space " ">
+<!entity null "">
+<!entity ee "</entry>" >
+
+<!shortref oneline
+      "&#RE;" space
+      "B&#RE;" space  
+      "&#TAB;" space
+      "&#RS;&#RE;" ee
+      "&#RS;B&#RE;" ee
+      "BB" space
+      "~" nbsp
+      "_" lowbar
+      "#" num
+      "%" percnt
+      "^" circ
+      "{" lcub
+      "}" rcub
+      "|" verbar >
+
+<!usemap oneline entry>
+
+<!-- end of addrlst dtd -->

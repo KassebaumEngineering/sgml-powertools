@@ -1,0 +1,71 @@
+$! Script to build sgmls on VAX/VMS
+$! Contributed by John Lavagnino <LAV@BINAH.CC.BRANDEIS.EDU>
+$!
+$ cc = "cc/lis"
+$ link = "link/nomap"
+$!
+$ cc ambig.c
+$ cc lexrf.c
+$ cc lextaba.c
+$ cc pcbrf.c
+$ cc synrf.c
+$ cc context.c
+$ cc entgen.c
+$ cc exclude.c
+$ cc getopt.c
+$ cc lineout.c
+$ cc main.c
+$ cc md1.c
+$ cc md2.c
+$ cc pars1.c
+$ cc pars2.c
+$ cc serv.c
+$ cc sgml1.c
+$ cc sgml2.c
+$ cc msgcat.c
+$ cc portproc.c
+$ cc replace.c
+$ cc sgmldecl.c
+$ cc sgmlio.c
+$ cc sgmlmsg.c
+$ cc sgmls.c
+$ cc sgmlsasp.c
+$ cc sgmlxtrn.c
+$ cc strerror.c
+$ cc traceset.c
+$ cc version.c
+$ cc xfprintf.c
+$ cc catalog.c
+$!
+$ link/exe=sgmls.exe -
+lexrf.obj, lextaba.obj, pcbrf.obj, synrf.obj, context.obj, -
+md1.obj, md2.obj, pars1.obj, -
+pars2.obj, serv.obj, sgml1.obj, sgml2.obj, -
+sgmlmsg.obj, sgmlxtrn.obj, -
+traceset.obj, entgen.obj, exclude.obj, sgmlio.obj, -
+xfprintf.obj, main.obj, portproc.obj, sgmldecl.obj, -
+version.obj, strerror.obj, getopt.obj, msgcat.obj, -
+lineout.obj, ambig.obj, catalog.obj, -
+sys$input:/options
+sys$share:vaxcrtl/share
+$!
+$ link/exe=sgmlsasp.exe -
+sgmlsasp.obj, replace.obj, sgmls.obj, strerror.obj, getopt.obj, -
+sys$input:/options
+sys$share:vaxcrtl/share
+$!
+$ cc rast.c
+$!
+$ link/exe=rast.exe -
+rast.obj, sgmls.obj, strerror.obj, getopt.obj, -
+sys$input:/options
+sys$share:vaxcrtl/share
+$!
+$ cc genlex.c
+$ cc ebcdic.c
+$!
+$ link/exe=genlex.exe -
+genlex.obj, ebcdic.obj, lextaba.obj, lexrf.obj, -
+sys$input:/options
+sys$share:vaxcrtl/share
+$!

@@ -1,0 +1,210 @@
+#! /bin/sh
+######################################################################
+#
+# Authors:        Alexander Horz and Tom Gordon
+# Date:           11-28-89
+# Last Modified:  22 May 92
+#
+######################################################################
+
+FORMATDIR=/vol/sgmlformat
+
+TEXDIR=/vol/tex
+LATEX=$TEXDIR/etc.sun4/elatex		  # English LaTeX
+DLATEX=$TEXDIR/etc.sun4/latex		  # German LaTeX
+DVI2PS="/vol/tex/etc.sun4/dvips -t a4"
+TEXINPUTS=.:$FORMATDIR/lib:$TEXDIR/lib/inputs:$TEXDIR/lib/dvips-5.47/inputs
+TEXFORMATS=$TEXDIR/etc.sun4
+FONTDIR=$TEXDIR/lib/fonts
+
+TEXFONTS=$FORMATDIR/fonts:$TEXDIR/lib/dvips-5.47/PStfms:$FONTDIR/TFM
+case $PRINTER in
+	agfa | p400) TEXFONTS=$FONTDIR/PK406:$TEXFONTS;;
+		  *) TEXFONTS=$FONTDIR/PK300:$TEXFONTS;;
+esac
+
+export TEXFONTS
+export TEXFORMATS
+export TEXINPUTS
+
+######################################################################
+## all switches are "no" by default
+######################################################################
+
+DVI="no"
+TWO_PASSES="no"
+SAVE="no"
+BIBTEX="no"
+CHAPTER="no"
+VERBOSE="no"
+
+######################################################################
+## 
+######################################################################
+
+FILE=" "
+SUFFIXES="log blg aux toc lof lot log dlog bbl"
+PROGNAME=$0
+
+######################################################################
+# synopsis: announce <string>
+#
+# 	     echo string on std_err if verbose mode is set on
+######################################################################
+
+announce () {   
+	if [ $VERBOSE = "yes" ]
+	then
+		echo  $1 >&2
+	fi
+}
+
+######################################################################
+# synopsis: cleanup
+#
+# remove all the files $FILE.$SFX, where $SFX is in $SUFFIXES
+######################################################################
+
+cleanup () {
+	if [ $SAVE = "no" ] 
+	then
+		announce "removing temporary files "
+		for SFX in  $SUFFIXES
+		do
+			if [ -f $FILE.$SFX ]
+			then
+				/bin/rm $FILE.$SFX
+			fi
+		done
+	fi
+	if [ -f /tmp/$$.tex ]
+	then
+		mv /tmp/$$.tex $FILE.tex
+	fi
+}
+
+######################################################################
+# synopsis: usage
+#
+# print a short help message
+######################################################################
+
+usage () {
+echo "	qtex 	[-d]		* dvi instead of PostScript";
+echo "		[-s]		* save all temporary files";
+echo "		[-x]		* cross references";
+echo "		[-g]		* german";
+echo "		[-b]		* bibliography";
+echo "		[-v]		* verbose";
+echo "		[-c]		* single chapter";
+echo "		<filename>	* .tex extension MUST be ommitted (BUG)";
+exit 1 
+}
+
+######################################################################
+# synopsis: LaTeX  $FILE
+#
+# run LaTeX on $FILE 
+######################################################################
+
+
+LaTeX () {   
+	if [ $VERBOSE = "no" ]
+	then
+		$LATEX "\batchmode \input{$1.tex}"  > /dev/null
+	else
+		$LATEX "\input{$1.tex}" >&2
+	fi
+	if [ $? != 0 ]    # some TeX error
+	then
+		echo $PROGNAME: LaTeX error. See $1.log  >&2
+		mv $1.log /tmp/x$$.log
+		cleanup
+		mv /tmp/x$$.log $1.log
+		exit 1
+	fi
+}
+
+######################################################################
+## 		command line argument processing ...
+######################################################################
+
+case "$1" in
+	"help" | "HELP" | "Help" | "-help" ) usage
+esac
+
+trap 'cleanup; exit 1' 1 2 3 9
+
+set -- `getopt dxgbsvc $*`
+
+if [ $? != 0 ]
+then
+	usage
+fi
+
+for i in $*
+do
+        case $i in
+	      -c)       CHAPTER="yes"; shift;;
+	      -d)	DVI="yes"; shift;;
+	      -x)  	TWO_PASSES="yes"; shift;;
+	      -g) 	LATEX=$DLATEX;  shift;;
+	      -b)  	BIBTEX="yes"; shift;;
+	      -s)    	SAVE="yes"; shift;;
+	      -v)	VERBOSE="yes"; shift;;
+              --)       shift;
+			break;;
+        esac
+done
+
+if [ "$1" = "" ] 
+then
+	cat > $$.tex  # write standard input to file
+	FILE=$$
+	SUFFIXES=$SUFFIXES" tex"
+else
+	FILE=$1
+fi
+
+
+if [ $CHAPTER = "yes" ]
+then
+	announce "creating report from a chapter ..."
+	mv $FILE.tex /tmp/$$.tex
+	awk -f $FORMATDIR/lib/chapt.awk /tmp/$$.tex > $FILE.tex
+fi
+
+######################################################################
+
+announce "producing $FILE.dvi ..."
+
+LaTeX $FILE
+
+if [ $BIBTEX = "yes" ]
+then
+	TWO_PASSES="yes"
+	announce "BiBTeXing $FILE ... "
+	bibtex $FILE > /dev/null
+	
+	announce "LaTeXing again ... "
+	LaTeX $FILE  
+fi
+
+if [ $TWO_PASSES = "yes" ]
+then
+	announce "LaTeXing again ... "
+        LaTeX $FILE
+fi
+
+if [ $DVI = "no" ]
+then 
+	SUFFIXES="$SUFFIXES dvi"
+	announce "translating $FILE.dvi to PostScript ... "
+	$DVI2PS $FILE.dvi  2> /dev/null
+fi
+
+cleanup
+
+# end of qtex script 
+
+

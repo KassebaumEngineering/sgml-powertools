@@ -1,0 +1,87 @@
+# -*- Makefile -*-
+# automatically generated from Makefile.m4
+
+# ======================================================================
+# you may need to set some of these
+# ======================================================================
+
+
+
+CFLAGS += -Wall -ansi -pedantic
+
+
+
+CC = gcc
+ SHELL = sh
+ EXE = .exe
+ EMXBIND = emxbind
+
+
+
+LATEX = latex
+MAKEINDEX = makeindex
+GLOSSTEX = glosstex$(EXE)
+MV = mv
+RM = rm -f
+
+# ======================================================================
+# you shouldn't need to touch anything below
+# ======================================================================
+
+TEXAUX = *.aux *.lof *.lot *.log *.toc *.glo 
+GLOSSTEXAUX = *.gxs *.gxg
+MAKEINDEXAUX = *.glg *.glx
+
+
+O=\
+	database.o\
+	error.o\
+	labels.o\
+	list.o\
+	main.o\
+	version.o\
+
+DTX=\
+	glosstex.sty\
+	glosstex.std\
+	glosstex.mst\
+	glosstex.gdf
+
+C=$(O:%.o=%.c)
+
+all: glosstex$(EXE)
+
+glosstex: $(O)
+	$(CC) $(LDFLAGS) $(O) $(LOADLIBS) -o $@
+
+glosstex$(EXE): glosstex
+	$(EMXBIND) $<
+	$(EMXBIND) -s $<
+	$(RM) glosstex
+ # OSTYPE
+
+doc: glosstex$(EXE) glosstex.dvi
+
+glosstex.dvi: $(DTX) glosstex.dtx
+
+%.dvi: %.dtx
+	$(LATEX) $<
+	$(GLOSSTEX) $*.aux $*.gdf
+	$(MAKEINDEX) $*.gxs -o $*.glx -t $*.glg -s glosstex.mst
+	$(LATEX) $<
+	$(GLOSSTEX) $*.aux $*.gdf
+	$(MAKEINDEX) $*.gxs -o $*.glx -t $*.glg -s glosstex.mst
+	$(LATEX) $<
+
+$(DTX): glosstex.dtx glosstex.ins
+	latex glosstex.ins
+
+clean:
+	$(RM) $(O) $(TEXAUX) $(MAKEINDEXAUX) $(GLOSSTEXAUX) $(DTX) *~
+
+proper: clean
+	$(RM) .depend glosstex glosstex.dvi
+
+ # MASTER
+
+# eof

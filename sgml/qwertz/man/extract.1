@@ -1,0 +1,82 @@
+.if n .ds Q \&"
+.if t .ds Q ``
+.if n .ds U \&"
+.if t .ds U ''
+.TH extract 1 
+.tr \&
+.nr bi 0
+.nr ll 0
+.nr el 0
+.de Pp
+.ie \\n(ll>0 \{\
+.ie \\n(bi=1 \{\
+.nr bi 0
+.if \\n(t\\n(ll=0 \{.IP \\(bu\}
+.if \\n(t\\n(ll=1 \{.IP \\n+(e\\n(el.\}
+.\}
+.el .sp 
+.\}
+.el \{\
+.ie \\nh=1 \{\
+.LP
+.nr h 0
+.\}
+.el .PP 
+.\}
+..
+.SH NAME
+extract -- filter the source code out of a \*Qliterate program\*U
+
+.Pp
+.SH SYNOPSIS
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+extract file[.sgml]
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH DESCRIPTION
+
+.Pp
+Extracts the source code out of a literate program written using
+the \f(CRqwertz\fP SGML document type.  The syntax of the document is
+checked while the source code is being extracted.  If syntax errors
+are found, error messages are written to standard error and the
+program may terminate before all code has been extracted.  The code
+being extracted is written to standard out, but this will usually be
+redirected to a file with some appropriate file name extension,
+depending on the programming language being used. The \*Q.sgml\*U filename
+extension of the input file is optional.
+.Pp
+For example, if the input file is named \f(CRfoo.sgml\fP and
+contains the source code of a C program, you could extract and compile
+the program by typing:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+extract foo > foo.c
+cc foo
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+In this example, as standard error has not been redirected, error
+messages will appear on the terminal.
+.Pp
+.SH DIAGNOSTICS
+
+.Pp
+SGML syntax errors are written to standard error.  If the input file
+contains such errors, \f(CRextract\fP will terminate with exit status 1
+before all the code has been extracted from the file.
+.Pp
+.Pp

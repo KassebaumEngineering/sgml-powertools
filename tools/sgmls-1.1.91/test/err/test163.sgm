@@ -1,0 +1,8 @@
+sgmls: SGML error at test163.sgm, line 3 at "-":
+       Length of name, number, or token exceeded NAMELEN or LITLEN limit
+sgmls: SGML error at test163.sgm, line 3 at "-":
+       Length of name, number, or token exceeded NAMELEN or LITLEN limit
+sgmls: SGML error at test163.sgm, line 3 in declaration parameter 2:
+       "PUBLIC" or "SYSTEM" required; declaration terminated
+sgmls: SGML error at test163.sgm, line 4 at "]":
+       Invalid character(s) ignored; attempting to resume DOCTYPE subset

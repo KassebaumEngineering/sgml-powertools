@@ -1,0 +1,420 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         The qwertz SGML Document Types
+
+         (Version 1.1 Reference Manual)
+
+
+                   Tom Gordon
+
+               The qwertz Project
+Institute for Applied Information Technology (F3)
+
+
+         German National Research Center
+           for Computer Science (GMD)
+
+                January 27, 1993
+
+
+
+
+
+
+
+
+
+
+
+Chapter 1
+
+
+
+Why Not Just Use LaTeX?
+
+
+
+The qwertz document types  are a set  of Standard Generalized  Markup
+Language  (SGML)  document  type  definitions  (DTDs)  for  articles,
+reports, books, letters, notes, slides (or overhead  transparencies),
+bibliographies, and  manual pages.    Except  for manual  pages,  the
+document types have  been heavily  influenced by  the LaTeX  document
+types of the  same names  [2], so  LaTeX users should  feel right  at
+home.   Indeed,  we presently  translate most  qwertz documents  into
+LaTeX for printing and the LaTeX produced is quite readable by anyone
+familiar with LaTeX.
+  : ::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  1
+
+
+
+
+
+
+
+
+
+
+
+Chapter 2
+
+
+
+The qwertz Document Type Definition
+
+
+
+:::
+  We will be making use of several parameter entities in this DTD:
+______________________________________________________________________
+
+<!entity % emph
+        " em _ it _ bf _ sf _ sl _ tt " >
+
+<!entity % inline
+        " f _ x _ %emph; _ sq _ label _ ref _
+          pageref _ cite _ ncite " >
+
+______________________________________________________________________
+  : ::
+
+
+2.1 General Purpose Entities and Elements
+
+:::
+  When may it  be necessary to use of an entity reference  to produce
+some character?  There are three cases to watch out for:
+
+SGML Concrete Syntax Delimiters.
+
+    Although the SGML  standard allows alternative concrete  syntaxes
+    to be defined, we use the so-called reference concrete  syntax in
+    the qwertz document types.  :::
+
+SGML Short Reference Delimiters.
+
+    In  SGML document  types  short  reference maps  may  be  defined
+    which allow  single characters to  be interpreted as  arbitrarily
+    complex sequences of  characters, including SGML tags and  entity
+    references.  :::
+
+
+    " # % ' ( ) * + , - : ; = @ [ ] ^ ` { _ } ~
+
+
+
+
+                                  2
+
+
+Spacing, Dashes and Ellipsis                                        3
+
+
+
+             AElig   AE |Aacute 'A |Acirc  ^A |Ae
+             Ntilde  ~N |Oacute 'O |Ocirc  ^O |Oe
+             Ue        |Ugrave  `U |Uuml   "U |Yacute 'Y
+             aacute  'a |acirc  ^a |ae     "a |aelig  ae
+             oe      "o |ograve `o |oslash o |otilde  ^o
+             sz        |szlig   ss |thinsp   |tilde   ~
+             times   x |uacute  'u |ucirc  ^u |ue     "u
+
+
+            Table 2.1:  (Some) General Purpose Characters
+
+
+    For each of these  characters, there is an SGML entity which  may
+    be used to generate the ASCII character in the  printed document,
+    listed in table  2.1.  Usually, it  will not be necessary to  use
+    these entities;  the character  can simply be  typed and will  be
+    interpreted literally.  However, :::
+
+TeX Special Characters.
+
+    Ideally, it  should be possible  to hide  the conventions of  the
+    underlying formatting system completely.   In fact, SGML  parsers
+    which implement the full ISO standard have a feature  which makes
+    this possible.  :::
+
+2.1.1 Spacing, Dashes and Ellipsis
+
+:::
+  There are  also three different kinds of dashes:  hyphen which  was
+already mentioned above, is to be  used for intra-word dashes, as  in
+the word ``intra-word''.(1)
+  : ::
+
+2.1.2 Foreign Characters
+
+There are  a  large  set  of  entities  for  other  Western  European
+languages.   Altogether, there  are entities  for almost  all of  the
+foreign language characters in  ISO 8859, the  Latin 1 character  set
+for Western European languages.(2)  :::
+  : ::
+
+2.1.3 Sentences, Paragraphs, Footnotes and Emphasis
+
+:::
+
+---------------------------
+ 1. However, the hyphen  entity was not  actually necessary here,  as
+the -  character  was not  being  used in  this  context as  a  short
+reference.
+ 2. Only the four Icelandic characters are missing.
+
+
+Lists                                                               4
+
+  Sentences  or phrases  within  paragraphs can  be emphasized  in  a
+number of ways.   The em tag  is used to  choose the default form  of
+emphasis, which is usually italic type,  but depends on the style  of
+the background text.  If the background text is formatted  in italics
+type, as it usually is  in definitions, for example, than  emphasized
+text will  be formatted  using a  plain, roman  typeface.    However,
+various forms of emphasis can be  explicitly chosen.  These  include:
+bold face (bf),  italics (it),  sans  serif (sf),  slanted (sl),  and
+typewriter (tt) styles.
+  : ::
+  Long quotes are formatted in LaTeX by indenting  the left and right
+margins.  For example, [2, pp.  xiii]:
+
+
+     The  LaTeX document preparation system is a special version
+    of  Donald Knuth's  TeX program.    TeX  is  a sophisticated
+    program  designed   to  produce   high-quality  typesetting,
+    especially for mathematical text.  :::
+     LaTeX  represents a balance between  functionality and ease
+    of use.   Since I  implemented most of it  myself, there was
+    also a continual compromise between  what I wanted to do and
+    what I could do in a reasonable amount of time.  :::
+
+2.1.4 Lists
+
+Three types of  lists are  supported, which differ  according to  the
+type of label used  to mark each item  in the list.   Use itemize  to
+create a list in which each item  is marked with some symbol such  as
+a dash or bullet.   The  enum tag is used  to create an  enumeration,
+i.e.  a list in which each item is labelled with a number (or letter)
+indicating its rank or position in the list.  Finally, use descrip to
+create a list in which each item is labelled by some tag of  your own
+choice.  Lists of various types can nested.  For example:
+  : ::
+
+  o A level one item.
+
+  o Here's level two
+
+
+     1. A level two item.
+
+     2. Here's level three:
+
+
+        (a)  A level three item.
+
+        (b)  Here's level four:
+
+
+             Red.
+
+                 Is the color of my true love's hair.
+
+
+Lists                                                               5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   Figure 2.1:  An idraw Drawing
+
+
+             Blue.
+
+                 Is a property of some movies.
+
+             Yellow.
+
+                 Characterizes some forms of journalism.
+
+
+        (c)  A last level three item
+
+
+     3. A last level two item
+
+
+  o A last level one item.
+
+  : ::
+
+2.1.5 Figures and Tables
+
+Encapsulated PostScript graphics  can be created  using a variety  of
+different editors.  If you are using Unix with an X11-based graphical
+user-interface, you may want to try idraw, which stores its documents
+directly as  Encapsulated  PostScript  files.    Another  interesting
+X11-based drawing program is tgif.
+  : ::
+  Which would then appear as in figure 2.1.
+
+
+2.1.6 Literate Programming
+
+The original  motivation behind  the  development of  these  document
+types was to  create an  environment for literate  programming in  an
+arbitrary programming language similar  to Donald Knuth's WEB  system
+for literate programming in Pascal [1].  :::
+
+
+Lists                                                               6
+
+  When formatted, spaces and line breaks are preserved:
+
+
+main ()
+{
+        /* This is the famous hello world program */
+
+        printf("hello world\n");
+}
+
+2.1.7 Mathematical Formulas
+
+The  qwertz   document   types  include   elements   for   describing
+mathematical formulas completely within  SGML, similar to the  system
+described in [3].  :::
+  So, for example,
+
+                             nX     Z1
+                                xi=    f
+                            i=1      0
+
+  was typed as:
+
+<dm>
+        <sum><ll>i=1<ul>n<opd>x<inf>i</></sum> =
+        <in><ll>0<ul>1<opd>f</in>
+</dm>
+
+  : ::
+
+
+
+
+
+
+
+
+
+
+
+Bibliography
+
+
+
+[1] Donald  E. Knuth.  Literate  Programming. The  Computer  Journal,
+    27(2):97--111, 1984.
+
+[2] Leslie Lamport.  LaTeX, A  Document Preparation System.  Addison-
+    Wesley, 1986.
+
+[3] A.  Scheller,  C.  Smith,  C.  Fuhrhop,  and  E.  Wilde.  DAPHNE:
+    Document  Application  Processing  in  a   Heterogeneous  Network
+    Environment.  Technical report,  Deutsches Forschungsnetz  (DFN),
+    April 1989.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  7

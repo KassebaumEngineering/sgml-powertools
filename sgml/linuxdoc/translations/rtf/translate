@@ -1,0 +1,139 @@
+#!/bin/sh
+#
+# Translation Script
+# to be run as a pipe on the output of the preprocessing script
+#
+# usually called by sgmltrans
+#
+# The following environment variables should contain information from
+# sgmltrans:
+#   Variable        Value
+#     VVERBOSE		"yes" or "no" - very verbose (default "no")
+#     VERBOSE		"yes" or "no" - "no" means very quiet (default "yes")
+#     STYLE			An additional translation style mapping file
+#     MAP			The translation mapping file.
+#     FORMAT		The target format for translation.
+#     FILE			The base filename of the sgml file to be translated.
+#     SGMLFILE		The whole filename of the sgml file to be translated.
+#     SCRIPTDIR		The directory containing the translation scripts.
+#     DOCTYPE		The SGML type of the current document.
+#     SGML_PATH		The sgmls parser path for dtd and entity files.
+#     SGMLDECL		The filename for an sgml dcl file.
+#     SCRIPT_OPTS	Command line arguments for the translate script/program.
+#
+
+#
+# USE THESE PROGRAMS FOR TRANSLATION
+#
+SGMLS=sgmls
+SGMLSASP=sgmlsasp
+
+# Put your primary output filename extension here
+EXT=rtf
+
+# set DASHI to appropriate setting for SGMLS
+DASHI=
+
+#
+# local variables : 
+# --
+	TEMPFILE1=/tmp/sgml2html$$tmp1
+	TEMPFILE2=/tmp/sgml2html$$tmp2
+	TEMPFILE3=/tmp/sgml2html$$tmp3
+	
+	# expand replaces tabs with 8 spaces
+	TABS="-8"
+	
+# --
+
+usage () {
+	echo "Usage: $PROGNAME [...] $FORMAT <file> [ARGS]";
+	echo "ARGS in: [-t <n>]";
+	echo "  -t <n>     tabstops each <n>th col (default 8)";
+	echo "  anything else is ignored";
+	echo 
+	exit 1 
+}
+
+trap 'cleanup; exit 1' 1 2 3 9
+trap 'cleanup' 0 15
+
+cleanup () {
+    if [ $VVERBOSE = "yes" ]; then
+        announce "rm -f $TEMPFILE1 $TEMPFILE2 $TEMPFILE3"
+	fi
+	rm -f $TEMPFILE1 $TEMPFILE2 $TEMPFILE3
+}
+
+announce () {   
+	if [ $VERBOSE = "yes" ]
+	then
+		echo  $1 >&2
+	fi
+}
+
+# do they need help?
+case "$1" in
+	"-h" | "--help" | "-help") usage
+	exit 1
+esac
+
+# do they need help?
+for i in $*; do
+	case $i in 
+		"-h" | "--help" | "-help") usage
+		exit 1
+	esac
+done
+
+#
+# getopt - Parse Command Line
+#
+for i in $*
+do
+	case $i in
+		-t)    TABS="-"$2; shift; shift;;
+		--)    shift; break;;
+	esac
+done
+
+if [ $VVERBOSE = "yes" ]; then
+    announce TABS=$TABS
+    announce DASHI=$DASHI
+fi
+
+#
+# call sgmls or nsgmls
+# reads from the standard input and writes to the standard output
+#
+announce "$SGMLS $DASHI $SGMLDECL $SGMLFILE \\ "
+announce "    > $TEMPFILE1 "
+	
+$SGMLS $DASHI $SGMLDECL $SGMLFILE \
+    > $TEMPFILE1 
+
+# test for errors
+if [ $? = 1 ]; then 
+    echo "SGML parsing error, no formatting done..."
+    exit 1
+fi
+
+# if there are no SGML parse errors, continue...
+announce "sed -f $SCRIPTDIR/prertf.sed < $TEMPFILE1 > $TEMPFILE2"
+sed -f $SCRIPTDIR/prertf.sed < $TEMPFILE1 > $TEMPFILE2
+
+#
+announce "$SGMLSASP $STYLE $MAP < $TEMPFILE2 | \\ " 
+announce "    expand $TABS |€\\ " 
+announce "    > $TEMPFILE3 " 
+#
+$SGMLSASP $STYLE $MAP < $TEMPFILE2 | \
+    expand $TABS | \
+    > $TEMPFILE3
+
+#
+announce "$SCRIPTDIR/rtf-fix/rtf2rtf $FILE < $TEMPFILE3 > $FILE.$EXT"
+#
+$SCRIPTDIR/rtf-fix/rtf2rtf $FILE < $TEMPFILE3 > $FILE.$EXT
+
+exit 0

@@ -1,0 +1,18 @@
+*** This file describes the installation of the sgml-powertools package ***
+
+You need to do the following things to get sgml-powertools installed:
+
+o Check Makefile for local modifications (and Makefiles in tools/* directories)
+
+o Make tools and translation specific programs with "make".
+
+o Install tools with "make install"
+
+(Note, you must be root to install in /usr/local and other system directories)
+
+o the contrib directory has some interesting programs that may be
+  useful to you
+
+o Documentation from the LinuxDoc and Qwertz distributions are retained for 
+  the time being. 
+

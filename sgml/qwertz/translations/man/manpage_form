@@ -1,0 +1,24 @@
+
+<manpage title="_title_">
+
+<sect1> NAME
+
+<p> _name_ &mdash _one_line_description_
+
+<sect1> SYNOPSIS
+
+<p> _name_ _options_ _arguments_
+
+<sect1> DESCRIPTION
+
+<sect1> OPTIONS
+
+<sect1> FILES
+
+<sect1> SEE ALSO
+
+<sect1> DIAGNOSTICS
+
+<sect1> BUGS
+
+</manpage>

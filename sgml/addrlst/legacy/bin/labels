@@ -1,0 +1,39 @@
+#! /bin/sh 
+
+# synoposis:  labels <pattern>  <address list> 
+# author: Tom Gordon
+
+# Generates an RTF file of mailing labels for the entries of the 
+# address list whose distribution list includes the key.  The file
+# is written to the standard output.
+
+FORMAT=/vol/sgmlformat
+SGMLS=/home/qwertz/local/sgmls/sgmls
+SGMLSASP=/home/qwertz/local/sgmls/sgmlsasp
+REPDIR=$FORMAT/rep/addrlst/labels
+AWK=/vol/gnu/bin/gawk
+SORT=/vol/gnu/gnubin/sort
+IS1TOMAC=$FORMAT/bin/is1tomac
+SGML_PATH=$FORMAT/dtd/%N.dtd:$FORMAT/dtd/%P.dtd:$REPDIR/%N
+export SGML_PATH
+
+TMPFILES=/tmp/$$.awk
+
+cleanup () {	# remove temporary files
+	for i in $TMPFILES
+	do
+		if [ -f $i ]
+		then
+			/bin/rm $i
+		fi	
+	done
+}
+
+trap 'cleanup; exit 1' 1 2 3 9
+
+sed "s/PATTERN/$1/" $REPDIR/labels.awk > /tmp/$$.awk
+
+$SGMLS $2 | $SGMLSASP $REPDIR/mapping | $SORT -df +1 -2 | $AWK  -f /tmp/$$.awk | $IS1TOMAC
+
+cleanup
+

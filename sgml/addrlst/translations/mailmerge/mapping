@@ -1,0 +1,78 @@
+
+% addrlst replacement file, for mail merge using LaTeX
+
+% generates a Bourne shell script for creating a PostScript file for 
+% for each entry in the addrlst.
+
+% TO DO:
+%
+%	1. Use list field to print the letter for just those entries in
+%	   a particular distribution list.
+%       2. Change implementation so that a single LaTeX file is created 
+%	   for the whole distribution list.  A single print job should be
+%	   sent for the whole list, rather than one per letter.
+
+
+% BUG:   In the current hack, a postscript file for each letter is placed
+% in the "/home/thomas/tmp/letters".
+
+% author: Tom Gordon
+% date  : 23 July 92
+% last modified : 30 July 92
+
+<addrlst>	+	"rm -f /home/thomas/tmp/letters/*\n"
+			"let i=1"			+
+</addrlst>
+
+<entry>		+	"cat <<End > recipient.sgml"	+
+</entry>	+	"End\n"
+			"format $1 | qtex > /home/thomas/tmp/letters/l$i.ps\n"
+			"let i=i+1"		+
+
+<alias>		+	"<!-- "				+
+</alias>	+	"-->"				+
+
+<title>		+	"<!entity title \""
+</title>		"\">"				+
+
+<name>  	+	"<!entity name \""
+</name> 	        "\">"				+
+
+<line>		
+</line>		        "&nl"				+
+
+<pobox>
+</pobox>		"&nl"				+
+
+<street>	
+</street>		"&nl"				+
+
+<city>
+</city>			"&nl"				+
+
+<country>
+</country>		"&nl"				+
+
+<address> 	+	"<!entity to \"\n"
+			"<to>&title; &name\n"
+			"<address> "			+
+</address>		"\">"				+
+
+<email>		+	"<!-- "			+
+</email>	+	"-->"			+
+
+<tel>		+	"<!-- "			+
+</tel>		+	"-->"			+
+
+<telex>		+	"<!-- "			+
+</telex>	+	"-->"			+
+
+<fax>		+	"<!-- "			+
+</fax>		+	"-->"			+
+
+<notes>		+ 	"<!-- "		  	+
+</notes>	+ 	"-->"			+
+
+<date>		+	"<!-- "			+
+</date>		+	"-->"			+
+

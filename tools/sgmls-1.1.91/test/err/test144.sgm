@@ -1,0 +1,5 @@
+sgmls: SGML error at test144.sgm, line 6 at "]":
+       DSC within marked section; marked section terminated
+sgmls: SGML error at test144.sgm, line 8 at ">":
+       Marked section end ignored; not in a marked section
+       Element structure: DOC

@@ -1,0 +1,153 @@
+<article>	+ 	"@article{[ID]"		
+</article>		"} \n \n"
+
+<book>		+	"@book{[ID]"		
+</book>			"} \n \n"
+
+<booklet>	+	"@booklet{[ID]"
+</booklet>		"} \n \n"
+
+<inbook>	+	"@inbook{[ID]"
+</inbook>		"} \n \n"
+
+<incoll>	+	"@incollection{[ID]"
+</incoll>		"} \n \n"
+
+<inproc>	+	"@inproceedings{[ID]"
+</inproc>		"} \n \n"
+
+<manual>	+	"@manual{[ID]"
+</manual>		"} \n \n"
+
+<masters>	+	"@mastersthesis{[ID]"
+</masters>		"} \n \n"
+
+<misc>		+	"@misc{[ID]"
+</misc>			"} \n \n"
+
+<phd>		+	"@phdthesis{[ID]"
+</phd>			"} \n \n"
+
+<proc>		+	"@proceedings{[ID]"
+</proc>			"} \n \n"
+
+<report>	+	"@techreport{[ID]"
+</report>		"} \n \n"
+
+<unpub>		+	"@unpublished{[ID]"
+</unpub>		"} \n \n"
+
+<and>		" and "
+
+<last>		"{"
+</last>		"}"
+
+<first>		"{"
+</first>	"}"
+
+<author>	", \nauthor={ "
+</author>	" }"
+
+<title>		", \ntitle={ "
+</title>	" }"
+
+<editor>	", \neditor={ "
+</editor>	" }"
+
+<btitle>	", \nbooktitle={ "
+</btitle>	" }"
+
+<chap>		", \nchapter={ "
+</chap>		" }"
+
+<edition>	", \nedition={ "
+</edition>	" }"
+
+<publish>	", \npublisher={ "
+</publish>	" }"
+
+<address>	", \naddress={ "
+</address>	" }"
+
+<series>	", \nseries={ "
+</series>	" }"
+
+<journal>	", \njournal={ "
+</journal>	" }"
+
+<vol>		", \nvolume={ "
+</vol>		" }"
+
+<no>		", \nnumber={ "
+</no>		" }"
+
+<month>		", \nmonth={ "
+</month>	" }"
+
+<year>		", \nyear={ "
+</year>		" }"
+
+<pp>		", \npages={ "
+</pp>		" }"
+
+<inst>		", \ninstitution={ "
+</inst>		" }"
+
+<organ>		", \norganization={ "
+</organ>	" }"
+
+<school>	", \nschool={ "
+</school>	" }"
+
+<howpub>	", \nhowpublished={ "
+</howpub>	" }"
+
+<type>		", \ntype={ "
+</type>		" }"
+
+<note>		", \nnote={ "
+</note>		" }"
+
+% for distribution lists.  Requested by S. Wrobel
+
+<list>		", \nlist={ "
+</list>		" }"
+
+<key>		", \nkey={ "
+</key>		" }"
+
+<keywrds>	", \nkeywords={ "
+</keywrds>	" }"
+
+<annote>	", \nannote={ "
+</annote>	" }"
+
+<private>	", \nprivate={ "
+</private>	" }"
+
+<loc>		", \nloc={ "
+</loc>		" }"
+
+<id>		", \nid={ "
+</id>		" }"
+
+<sq>		"``"
+</sq>		"''"
+
+<em>		 	"{\\em "
+</em>			"\\/}"
+
+<bf>			"{\\bf "
+</bf>			"}"
+
+<it>			"{\\it "
+</it>			"\\/}"
+
+<sf>			"{\\sf "
+</sf>			"}"
+
+<sl>			"{\\sl "
+</sl>			"}"
+
+<tt>			"{\\tt "
+</tt>			"}"

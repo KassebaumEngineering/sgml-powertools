@@ -1,0 +1,2 @@
+sgmls: SGML error at test168.sgm, line 18 in declaration parameter 43:
+       Value assigned to capacity ENTCAP exceeds value assigned to TOTALCAP

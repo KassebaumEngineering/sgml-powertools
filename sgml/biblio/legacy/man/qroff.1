@@ -1,0 +1,98 @@
+.if n .ds Q \&"
+.if t .ds Q ``
+.if n .ds U \&"
+.if t .ds U ''
+.TH qroff 1 
+.tr \&
+.nr bi 0
+.nr ll 0
+.nr el 0
+.de Pp
+.ie \\n(ll>0 \{\
+.ie \\n(bi=1 \{\
+.nr bi 0
+.if \\n(t\\n(ll=0 \{.IP \\(bu\}
+.if \\n(t\\n(ll=1 \{.IP \\n+(e\\n(el.\}
+.\}
+.el .sp 
+.\}
+.el \{\
+.ie \\nh=1 \{\
+.LP
+.nr h 0
+.\}
+.el .PP 
+.\}
+..
+.SH NAME
+qroff -- translate a \f(CRgroff ms\fP file into ASCII
+
+.Pp
+.SH SYNOPSIS
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format -T nroff file | qroff [-b <sgml bibliography>] 
+format -T grops file | qroff -p [-b <sgml bibliography>] | lpr
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH DESCRIPTION
+
+.Pp
+\f(CRqroff\fP is a greatly simplified front end to \f(CRgroff\fP and
+\f(CRgrefer\fP.  Its primary purpose is to generate formatted \f(CRASCII\fP
+versions of \f(CRqwertz\fP SGML documents suitable, e.g., for electronic
+messages.  However, it may also be used as an alternative to LaTeX for printing the document.  Some may prefer \f(CRgroff\fP's layout style.
+(Unfortunately, \f(CRgroff\fP does not support cross-references, so if
+you use these, you will need to LaTeX .)
+.Pp
+\f(CRqroff\fP only reads from the standard input; it is designed to be
+used in a pipe, as in the examples in the synopsis, above.  
+.Pp
+.SH OPTIONS
+
+.Pp
+.RS
+.nr ll +1
+.nr t\n(ll 2
+.IP "\f(CR-help\fP"
+.nr bi 1
+.Pp
+If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+.Pp
+.IP "\f(CR-p\fP"
+.nr bi 1
+.Pp
+Create a PostScript file, instead of \f(CRASCII\fP.
+.Pp
+.IP "\f(CR-b <sgml bibliography>\fP"
+.nr bi 1
+.Pp
+If the document contains a list of references, you will need to use
+this option to provide the name of the file containing the
+bibliography, which must be in the format defined in the \f(CRbiblo\fP
+document type definition.  See also \f(CRbiblio (1)\fP.
+.Pp
+.nr ll -1
+.RE
+.Pp
+.SH SEE ALSO
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+grefer(1), gtbl(1), geqn(1), groff(1), biblio(1)
+.fi 
+.ec
+.ft P
+.sp
+.Pp

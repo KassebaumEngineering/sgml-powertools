@@ -1,0 +1,5 @@
+sgmls: SGML error at test037.sgm, line 5 at record start:
+       General entity "num" in short reference map "MAP" undeclared
+sgmls: SGML error at test037.sgm, line 6 at ";":
+       No declaration for entity "num"; reference ignored
+       Element structure: DOC

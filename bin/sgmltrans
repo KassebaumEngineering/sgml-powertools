@@ -1,0 +1,293 @@
+#! /bin/sh 
+#
+# sgmltrans - SGML Translation driver program for sgml-powertools
+#
+# adapted from the sgmltools written by
+# Greg Hankins, 27 August 1995
+#
+# by John Kassebaum, 22 July 1997
+#
+
+#
+# Local variables :
+# --
+	# this variable is set by "make install"
+	SGML_PT_HOME=sgml_pt_home
+	
+	# The translation script/program to be used
+	TRANSLATE=
+	
+	# a user's tranlation directory
+	TRANSDIR=
+
+	# Command line arguments for the translate script/program.
+	SCRIPT_OPTS=
+	
+# --
+# variables passed to translation subscript/program
+# --
+	# Set the verbosity level.
+	VERBOSE="yes"
+	VVERBOSE="no"
+	
+	# additional translation style mapping file.
+	STYLE=
+	
+	# The translation mapping file.
+	MAP=
+	
+	# The directory containing the translation scripts.
+	SCRIPTDIR=
+	
+	# The target format for translation.
+	FORMAT=
+	
+	# The base filename of the sgml file to be translated.
+	FILE=
+	
+	# The whole filename of the sgml file to be translated.
+	SGMLFILE=
+	
+	# The sgmls parser path for dtd and entity files.
+	SGML_PATH=
+	
+	# The filename for an sgml dcl file.
+	SGMLDECL=
+
+	# The SGML type of the current document.
+    DOCTYPE=
+	
+	# The document uses latin1 characters.
+	LATIN1="no"
+# --
+
+trap "CleanUp" 0 1 2 3 9 15
+
+PROGNAME=`basename $0`
+export PROGNAME
+usage () {
+	echo "Usage: $PROGNAME [-v] [-q] [-sty <s>] [-map <m>] [-trans <s>] [-dir <d>] "
+	echo "       [-latin1] <format> <filename> [<OPTS>]";
+	echo
+	echo "  -v          verbose - print everything (usually for debugging only)";
+	echo "  -q          quiet - no announcements please";
+	echo "  -sty  <s>   use <s>.dcl and <s>mapping as in addition to the default mapping";
+	echo "  -map  <m>   use <m> mapping file instead of the default mapping";
+	echo "  -trans <s>  use <s> as translation script instead of the default";
+	echo "  -dir <d>    use <d> as the sgml translations directory";
+	echo "  -latin1     character set is latin1"; 
+	echo "  <format>    specify the format to translate to (eg. html, latex2e, etc.)";
+	echo "  <filename>  SGML source file, .sgml extension is optional";
+	echo 
+	echo "  [<OPTS>]    Arguments to pre and post-processing scripts for <format>";
+	echo 
+	exit 1 
+}
+
+TEMPFILE1=/tmp/sgmltrans$$tmp1
+TEMPFILE2=/tmp/sgmltrans$$tmp2
+
+CleanUp() {
+    rm -f $TEMPFILE1 $TEMPFILE2
+}
+
+announce () {   
+	if [ $VERBOSE = "yes" ]
+	then
+		echo  $1 >&2
+	fi
+}
+
+# check argc
+if [ $# = 0 ]
+then
+	usage
+fi
+
+# do they need help?
+case "$1" in
+	"-h" | "--help" | "-help") usage
+	exit 1
+esac
+
+#
+# getopt - Parse Command Line
+#
+for i in $*
+do
+	case $i in
+		-v)      VVERBOSE="yes"; shift;;
+		-q)      VERBOSE="no"; shift;;
+		-sty)    style=$2; shift; shift;;
+		-map) 	 MAP=$2; shift; shift;;
+		-trans)  TRANSLATE=$2; shift; shift;;
+		-dir) 	 TRANSDIR=$2; shift; shift;;
+		-latin1) LATIN1="yes"; shift;;
+		--)      shift; break;;
+	esac
+done
+FORMAT=$1; shift;
+FILE=$1; shift;
+SCRIPT_OPTS=$@
+
+# check to see if there is a source file
+if [ -f $FILE.sgml ] 
+then
+	SGMLFILE=$FILE.sgml
+elif [ ! -f $FILE ] 
+then
+	echo "sgml2html: can't find $FILE or $FILE.sgml" >&2
+	exit 1
+else
+	SGMLFILE=$FILE
+fi
+FILE=`basename $SGMLFILE .sgml`
+
+DOCTYPE=`getdoctype $SGMLFILE`
+
+if [ "$style" != "" ]; then
+	if [-f ./${style}mapping ]; then
+		STYLE=./${style}mapping
+	elif [ $TRANSDIR != "" ]; then
+		STYLE=$TRANSDIR/translations/$FORMAT/${style}mapping
+	else
+		STYLE=$SGML_PT_HOME/sgml/$DOCTYPE/translations/$FORMAT/${style}mapping
+	fi
+fi
+
+if [ ! "$TRANSDIR" = "" ]; then
+    SCRIPTDIR=$TRANSDIR/translations/$FORMAT
+else
+	SCRIPTDIR=$SGML_PT_HOME/sgml/$DOCTYPE/translations/$FORMAT
+fi
+
+#
+# SGML_PATH for sgmls - must be exported
+#
+# note: sgmls substitutes the sgml DOCTYPE for %N 
+#       and any sgml PUBLIC identifier for %P
+#
+if [ ! "$TRANSDIR" = "" ]; then
+	SGML_PATH=$TRANSDIR/dtd/%N.dtd:$TRANSDIR/dtd/%P.dtd:$TRANSDIR/translations/$FORMAT/%N
+	if [ -f ./${style}.dcl ]; then
+		SGMLDECL=./${style}.dcl
+	elif [ -f $TRANSDIR/dtd/${style}.dcl ]; then
+		SGMLDECL=$LINUXDOCLIB/dtd/${style}.dcl
+	elif [ -f $TRANSDIR/dtd/sgml.dcl ]; then
+		SGMLDECL=$TRANSDIR/dtd/sgml.dcl
+	# else just use sgmls's defaults
+	fi
+else
+    SGML_PATH=$SGML_PT_HOME/sgml/$DOCTYPE/dtd/%N.dtd:$SGML_PT_HOME/sgml/$DOCTYPE/dtd/%P.dtd:$SGML_PT_HOME/sgml/$DOCTYPE/translations/$FORMAT/%N
+	if [ -f ./${style}.dcl ]; then
+		SGMLDECL=./${style}.dcl
+	elif [ -f $SGML_PT_HOME/sgml/$DOCTYPE/dtd/${style}.dcl ]; then
+		SGMLDECL=$SGML_PT_HOME/sgml/$DOCTYPE/dtd/${style}.dcl
+	elif [ -f $SGML_PT_HOME/sgml/$DOCTYPE/dtd/sgml.dcl ]; then
+		SGMLDECL=$SGML_PT_HOME/sgml/$DOCTYPE/dtd/sgml.dcl
+	# else just use sgmls's defaults
+	fi
+fi
+
+#
+# set MAP file if not set from command line
+#
+if [ "$MAP" = "" ]; then
+    MAP=$SCRIPTDIR/mapping
+fi
+
+#Export all variables for use in the pre and post-processing scripts
+export VVERBOSE
+export VERBOSE
+export STYLE
+export MAP
+export FORMAT
+export DOCTYPE
+export SCRIPTDIR
+export SCRIPT_OPTS
+export SGMLFILE
+export LATIN1
+export FILE
+export SGML_PATH
+if [ ! "$SGMLDECL" = "" ]; then
+    export SGMLDECL
+fi
+
+if [ $VVERBOSE = "yes" ]; then
+	announce VVERBOSE=$VVERBOSE
+	announce VERBOSE=$VERBOSE
+	announce STYLE=$STYLE
+	announce MAP=$MAP
+	announce FORMAT=$FORMAT
+	announce DOCTYPE=$DOCTYPE
+    announce FILE=$FILE
+	announce SGMLFILE=$SGMLFILE
+	announce LATIN1=$LATIN1
+	announce SCRIPTDIR=$SCRIPTDIR
+	announce SCRIPT_OPTS=$SCRIPT_OPTS
+	announce SGML_PATH=$SGML_PATH
+	announce SGMLDECL=$SGMLDECL
+	announce
+fi
+
+# No need to export these:
+# export TRANSDIR
+# export TRANSLATE
+# export SGML_PT_HOME
+if [ $VVERBOSE = "yes" ]; then
+    announce SGML_PT_HOME=$SGML_PT_HOME
+    announce TRANSLATE=$TRANSLATE
+	announce TRANSDIR=$TRANSDIR
+fi
+
+announce "Translating $DOCTYPE '$SGMLFILE' to $FORMAT format."
+
+#
+# Handle latin1 character set (ick)
+#
+if [ $LATIN1 = "yes" ]; then
+	if [ -d latin1 ]; then
+		mkdir latin1
+	elif [ -f latin1 ]; then
+		echo "moving file latin1 to latin1.orig"
+		mv latin1 latin1.orig
+	else
+		echo "removing old latin1 directory"
+		rm -rf latin1
+		mkdir latin1
+	fi
+	for file in *.sgml; do
+		sed -f $SGML_PT_HOME/scripts/latin1.sed < $file > latin1/$file
+	done
+	cd latin1
+fi
+
+#
+# Perform SGML Translation
+#
+
+if [ ! "$TRANSLATE" = "" ] 
+then
+	$TRANSLATE ;
+elif [ ! "$TRANSDIR" = "" ]
+then
+	if [ -f $TRANSDIR/translations/$FORMAT/translate ]
+	then
+		$TRANSDIR/translations/$FORMAT/translate $SCRIPT_OPTS;
+	else
+		echo "Stop! Cannot find '$TRANSDIR/translations/$FORMAT/translate' !"  >&2 ;
+		exit 1 ;
+	fi
+elif [ -f $SGML_PT_HOME/sgml/$DOCTYPE/translations/$FORMAT/translate ]
+then
+    $SGML_PT_HOME/sgml/$DOCTYPE/translations/$FORMAT/translate $SCRIPT_OPTS;
+else
+	echo "Stop! Cannot find '$SGML_PT_HOME/sgml/$DOCTYPE/translations/$FORMAT/translate' !"  >&2 ;
+	exit 1 ;
+fi
+
+if [ $LATIN1 = "yes" ]; then
+    announce "For latin1, all results are in latin1 subdirectory."
+fi
+
+exit 0

@@ -1,0 +1,4 @@
+#! /bin/sh
+# deps: delete empty paragraphs
+
+sed -e "s%<P></P>%%"

@@ -1,0 +1,2 @@
+sgmls: SGML error at test117.sgm, line 6 at record start:
+       Short reference map "MYMAP" used in USEMAP declaration but not defined; declaration will be ignored

@@ -1,0 +1,4 @@
+#! /bin/sh
+# Convert ISO Latin 1 file to Macintosh text file
+
+sed -f /vol/sgmlformat/lib/is1tomac.awk $1

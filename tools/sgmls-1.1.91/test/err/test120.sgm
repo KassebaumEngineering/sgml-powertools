@@ -1,0 +1,13 @@
+sgmls: SGML error at test120.sgm, line 37 in declaration parameter 118:
+       Unrecognized keyword "FOO"
+sgmls: SGML error at test120.sgm, line 37 at " ":
+       No DOCTYPE declaration; document type is unknown
+sgmls: SGML error at test120.sgm, line 44 at "e":
+       DOCTYPE markup declaration not permitted here; declaration ended
+       Element structure: *DOCTYPE
+sgmls: SGML error at test120.sgm, line 45 at "t":
+       ELEMENT markup declaration not permitted here; declaration ended
+       Element structure: *DOCTYPE
+sgmls: SGML error at test120.sgm, line 47 at ">":
+       Undefined DOC start-tag GI ignored; not used in DTD
+       Element structure: *DOCTYPE

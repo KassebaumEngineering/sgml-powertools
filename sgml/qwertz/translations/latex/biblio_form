@@ -1,0 +1,145 @@
+%info =
+<note> ?
+<annote> ?
+<keywrds> ?
+<loc> ?
+<id> ?
+<private>?
+
+<article id="">
+<author>
+<title>
+<journal>
+<vol> ?
+<no> ?
+<pp> ?
+<month> ?
+<year>
+%info
+
+<book id="">
+<author> | <editor>
+<title> 
+<edition> ?
+<publish>
+<series> ?
+<vol> ?
+<address> ?
+<month> ?
+<year> 
+%info
+
+<booklet id="">
+<author> | <key>
+<title>
+<howpub> ?
+<address> ?
+<month> ?
+<year> ?
+%info
+
+<inbook id="">
+<author> | <editor>
+<title>
+<chap> | <pp>
+<pp>?
+<edition> ?
+<publish>
+<series> ?
+<vol> ?
+<address> ?
+<month> ?
+<year>
+%info
+
+<incoll id="">
+<author>
+<title>
+<editor> ?
+<btitle> 
+<chap> ?
+<edition> ?
+<publish> 
+<address> ?
+<month> ?
+<year>
+<pp> ?
+%info
+
+<inproc id="">
+<author>
+<title>
+<editor> ?
+<btitle>
+<organ> ?
+<publish> ?
+<address> ?
+<month> ?
+<year>
+<pp> ?
+%info
+
+<manual id="">
+<author> | <key>
+<title> 
+<edition> ?
+<address> ?
+<month> ?
+<year> ?
+<organ> ?
+%info
+
+<masters id="">
+<author>
+<title>
+<school>
+<address> ?
+<month> ?
+<year>
+%info
+
+<misc id="">
+<author> | <key>
+<title> ?
+<month> ?
+<year> ?
+<howpub> ?
+%info
+
+<phd id="">
+<author>
+<title>
+<school>
+<address> ?
+<month> ?
+<year>
+%info
+
+<proc id="">
+<editor> | <key>
+<title> 
+<organ> ?
+<publish> ?
+<address> ?
+<month> ?
+<year>
+%info
+
+<report id="">
+<author>
+<title>
+<inst>
+<address> ?
+<type> ?
+<no> ?
+<month> ?
+<year>
+%info
+
+<unpub id="">
+<author>
+<title>
+<month> ?
+<year> 
+<note>
+%info

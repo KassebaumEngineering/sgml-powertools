@@ -1,0 +1,17 @@
+#! /bin/sh
+# Synopsis: latin12sgml file
+
+# Translates latin1 SGML character references into their ISO entity names.
+
+# The list is needs to be completed.
+
+sed   ' s/&#196;/\&Auml;/g
+      	s/&#214;/\&Ouml;/g
+	s/&#220;/\&Uuml;/g
+	s/&#228;/\&auml;/g
+	s/&#246;/\&ouml;/g
+	s/&#252;/\&uuml;/g
+	s/&#223;/\&szlig;/g
+	s/&#240;/\&nbsp;/g
+	s/&#167;/\&sect;/g' $1
+

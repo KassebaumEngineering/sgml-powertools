@@ -1,0 +1,71 @@
+
+% author: Tom Gordon
+% date: 27 July 92
+
+
+% addrlst replacement file for printing distribution lists using LaTeX.
+% LaTeX  is not generated directly. Rather, an AWK database is generated,
+% which is used by the praddr shell script (in format/bin) to generate
+% LaTeX, and the PostScript. 
+
+% For AWK, records are separated here by carriage returns, and fields
+% by tabs.
+
+% Each AWK record is an association list of key/value pairs, except
+% <line> elements. 
+
+
+<addrlst>	
+</addrlst>	
+
+<entry>		+	""			
+</entry>		""			+
+
+<alias>			"alias\t"
+</alias>		"\t"
+
+<title>			"title\t"
+</title>		"\t"
+
+<name>  	        "name\t"
+</name> 		"\t"				
+
+<address>               "address\t "
+</address>		"\t"	
+
+<line>			
+</line>			"\\\\ "				
+
+<pobox>			
+</pobox>		"\\\\ "				
+
+<street>			
+</street>		"\\\\ "				
+
+<city>			
+</city>			"\\\\ "				
+
+<country>			
+</country>		"\\\\ "				
+
+<email>		        "email\t"
+</email>		"\t"
+
+<tel>		        "tel\t"
+</tel>			"\t"
+
+<telex>			"telex\t"
+</telex>		"\t"
+
+<fax>			"fax\t"
+</fax>			"\t"
+
+<lists>			"lists\t "
+</lists>		" \t"
+
+<notes>	   		"notes\t"
+</notes>		"\t"			
+
+<date>			"date\t"
+</date>			"\t"
+

@@ -1,0 +1,123 @@
+$Id: LIESMICH,v 1.1 1997/08/22 04:02:14 jak Exp $
+
+
+* Einleitung
+
+GlossTeX ist ein Tool für die automatische Erstellung eines Glossars,
+Abk"urzungsverzeichnisses oder sortierten Listen allgemein. Es wird
+zusammen mit LaTeX und MakeIndex verwendet. Um GlossTeX zu compilieren
+ist ein ANSI C Compiler notwendig.
+
+GlossTeX kombiniert die Funktionalität von acronym, nomencl und
+GloTeX. Es verwendet dasselbe Format f"ur die Glossar-Datenbank wie
+GloTeX. Trotzdem kann GlossTeX zusammen mit nomencl verwendet werden.
+
+Ein Begriff besteht aus einem <label> zur Identifikation, einem <item>
+für die Darstellung, einer optionalen ausgeschriebenen Form (z.B. bei
+Abk"urzungen) und einem beschreibenden Text. Diese Elemente k"onnen
+innerhalb des Dokumentes auf vielf"altige Weise angesprochen
+werden. Au"serdem ist es m"oglich, Querverweise zwischen Begriffen zu
+verwenden sowie Seitenreferenzen. Es sind beliebig viele unabh"angige
+Listen m"oglich.
+
+Die aktuellste Version findet sich immer auf
+CTAN:/support/glosstex. Im binaries Unterverzeichniss gibt es
+au"serdem Binaries (bis jetzt allerdings lediglich OS/2 -- gibt es
+Freiwillige?). 
+
+F"ur GlossTeX wird KEINERLEI Gew"ahrleistung "ubernommen. Es
+unterliegt der GNU General Public License (siehe Datei COPYING).
+
+		   Copyright (C) 1997 Volkan Yavuz
+
+
+* Verwendung
+
+Folgendes kommt in die LaTeX-Datei:
+
+
+	\documentclass{article}
+	\usepackage{glosstex}
+	\begin{document}
+
+	\printglosstex(acr)
+	Diese Dokument wurde mit \gls{LaTeX} gesetzt.
+
+	Die Datenbank\glosstex{gdf-file} f"ur \gls{GlossTeX} ist eine
+	einfache \ac{ASCII} Datei.
+
+	\printglosstex(glo)
+	\end{document}
+
+Die .gdf-Datei enth"alt die Definitionen der Begriffe, die im Glossar
+erscheinen.
+
+	@entry{LaTeX, \LaTeX{}} \LaTeX{} ist ein \TeX{}-Format.
+
+	@entry{ASCII, ASCII, American Standard Code for Information
+	Interchange} ASCII ist eine Zeichensatzcodierung. Siehe auch
+	\glxref{EBCDIC}.
+
+Um das Glossar zu erstellen, werden latex, glosstex, makeindex und
+schlie"slich ein weiteres Mal latex aufgerufen. Es kann n"otig sein,
+dies bis zu 4 Mal zu wiederholen, bis alle Referenzen aufgel"ost sind.
+
+
+* Installation
+
+Zun"achst mu"s glosstex mit Hilfe der C-Quellen compiliert
+werden. Wenn MAKE vorhanden ist, gen"ugt ein Aufruf von "make". (Siehe
+auch die diversen Makefiles, namentlich "Makefile", "Makefile.unx" und
+"Makefile.os2".) Ansonsten gen"ugen die folgenden Befehle:
+
+     cc -c database.c -o database.o
+     cc -c error.c -o error.o
+     cc -c labels.c -o labels.o
+     cc -c list.c -o list.o
+     cc -c main.c -o main.o
+     cc -c version.c -o version.o
+     cc database.o error.o labels.o list.o main.o version.o  -o glosstex
+
+
+Die Datei "glosstex" -- oder "glosstex.exe", je nach System -- kommt
+in ein Verzeichnis zu den anderen ausf"uhrbaren Dateien.
+
+Nun wird glosstex.dtx ausgepackt. Um das Package zu erhalten, bitte
+folgendes eingeben
+
+	  latex glosstex.ins
+
+und die Hinweise befolgen.  
+
+Um die Dokumentation zu erstellen, "make doc" eingeben. Alternativ
+sind die folgenden Befehle ein paar Mal auszuf"uhren:
+
+	latex glosstex.dtx
+	glosstex glosstex glosstex
+	makeindex glosstex.gxs -o glosstex.glx -t glosstex.glg -s glosstex.mst
+	latex glosstex.dtx
+
+Falls etwas schief geht, kann ein Blick in die Protokolldatei von
+LaTeX (glosstex.log), GlossTeX (glosstex.gxg) oder MakeIndex
+(glosstex.glg) hilfreich sein.
+
+Falls alles klappt, befindet sich die komplette Dokumentation und der
+Dokumentierte LaTeX-Quelltext in "glosstex.dvi".
+
+* Binaries
+
+Eine kompilierte Version von GlossTeX f"ur OS/2 findet sich in
+CTAN:/support/glosstex/binaries/os2.
+
+
+* Kommentare
+
+Bei Anregungen, Kommentaren und sonstigem, bitte Mail an:
+	
+	yavuzv@rumms.uni-mannheim.de 
+
+
+;;; Local Variables:
+;;; mode: indented-text
+;;; mode: outline-minor
+;;; End:

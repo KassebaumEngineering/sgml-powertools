@@ -1,0 +1,57 @@
+#! /bin/sh 
+#
+# sgmlcheck
+# Cal Page, October 27, 1995 - This code stolen from sgml2ps
+# Greg Hankins, 2 November 1995 - trimmed excess junk
+#
+
+# Don't make any changes here, it is all done by install!
+LINUXDOCBIN=linuxdocbin
+LINUXDOCLIB=linuxdoclib
+
+# SGML_PATH for sgmls - must be exported
+# no particular reason to use latex rep files - just chose it at random, 
+# because sgmls needs it
+SGML_PATH=$LINUXDOCLIB/dtd/%N.dtd:$LINUXDOCLIB/dtd/%P.dtd:$LINUXDOCLIB/rep/latex/%N
+export SGML_PATH
+
+usage () {
+echo "  Usage: sgmlcheck <filename> ";
+echo "  <filename> SGML source file, .sgml extension is optional";
+exit 1 
+}
+
+# check argc
+if [ $# = 0 ]
+then
+	usage
+fi
+
+# do they need help?
+case "$1" in
+	"-h" | "--help" | "-help") usage
+	exit 1
+esac
+
+# check to see if there is a source file
+FILE=$1
+if [ -f $FILE.sgml ] 
+then
+	SGMLFILE=$FILE.sgml
+elif [ ! -f $FILE ] 
+then
+	echo "sgmlcheck: can't find $FILE or $FILE.sgml" >&2
+	exit 1
+else
+	SGMLFILE=$FILE
+fi
+
+# just check the file
+$LINUXDOCBIN/sgmls -s $SGMLFILE
+if [ $? = 1 ] 
+then 
+	exit 1
+else
+	exit 0
+fi
+

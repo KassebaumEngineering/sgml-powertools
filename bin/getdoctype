@@ -1,0 +1,28 @@
+#!/usr/local/bin/perl
+
+$SGMLFILE=shift @ARGV ;
+open SGMLFILEHANDLE, "$SGMLFILE" ;
+
+while($line = <SGMLFILEHANDLE>){
+    if (($pos = index( $line, "<!", $pos)) > -1 ){
+		if(($pos = index( $line, "doctype", $pos)) > -1 ){
+			$doctype = (substr $line, $pos+8);
+			break;
+		} elsif (($pos = index( $line, "DOCTYPE", $pos)) > -1 ){
+			$doctype = (substr $line, $pos+8);
+			break;
+		} 
+	}
+}
+
+while ( (substr $doctype, 0, 1) eq " " ){
+    $doctype = (substr $doctype, 1);
+}
+if (($pos = index( $doctype, " ", $pos )) > -1 ){
+    $doctype = substr $doctype, 0, $pos;
+} elsif (($pos = index( $doctype, "\n", $pos )) > -1 ){
+    $doctype = substr $doctype, 0, $pos;
+}
+print STDOUT "$doctype";
+
+close SGMLFILEHANDLE;

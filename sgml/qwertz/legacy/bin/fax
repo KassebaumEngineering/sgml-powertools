@@ -1,0 +1,49 @@
+#!/bin/sh
+
+
+# Author:  Tom Gordon and Hans Werner Guesgen
+# Date:    17 Dec 91	
+
+ACK=""
+
+cleanup () {	# remove temporary files
+	for i in .fax=num $$.msg
+	do
+		if [ -f $i ]
+		then
+			/bin/rm $i
+		fi	
+	done
+}
+
+trap 'cleanup; exit 1' 1 2 3 9
+
+usage () {
+echo "	fax    [-a]		* acknowledge receipt by email ";
+exit 1 
+}
+
+case "$1" in
+	"help" | "HELP" | "Help" | "-help" ) usage
+esac
+
+set -- `getopt a $*`
+
+if [ $? != 0 ]
+then
+	usage
+fi
+
+for i in $*
+do
+        case $i in
+	      -a)	ACK="-m"; shift;;
+#	      -n)	PHONE=$2; shift; shift;;
+              --)       break ;;
+        esac
+done
+
+cat 1> $$.msg
+cat $$.msg | lpr -P Fax $ACK -J `cat .fax=num`
+cleanup
+

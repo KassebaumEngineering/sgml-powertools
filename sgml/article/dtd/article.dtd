@@ -1,0 +1,695 @@
+
+<!-- This is the ISO12083:1993 document type definition for an Articles
+     It can be embedded in a Serial.                                       -->
+
+<!-- Copyright: (C) International Organization for Standardization 1993. 
+Permission to copy in any form is granted for use with conforming SGML
+systems and applications as defined in ISO 8879:1986, provided this notice is
+included in all copies.                                                    -->
+
+<!-- ===================================================================== -->
+<!-- 		PUBLIC DOCUMENT TYPE DEFINITION SUBSET		           -->
+<!-- ===================================================================== -->
+
+<!-- Typical invocation:
+<!DOCTYPE article PUBLIC "ISO 12083:1993//DTD Article//EN"
+ [<!ENTITY % ISOnum PUBLIC "ISO 8879:1986//ENTITIES Numeric and
+             Special Graphic//EN"                                        >
+  <!ENTITY % ISOpub PUBLIC "ISO 8879:1986//ENTITIES
+             Publishing//EN"                                             >
+  <!ENTITY % ISOpub PUBLIC "ISO 8879:1986//ENTITIES 
+             Publishing//EN"                                             >
+  <!ENTITY % ISOtech PUBLIC "ISO 8879:1986//ENTITIES 
+             General Technical//EN"                                      >
+  <!ENTITY % ISOdia PUBLIC "ISO 8879:1986//ENTITIES 
+             Diacritical Marks//EN"                                      >
+  <!ENTITY % ISOlat1 PUBLIC "ISO 8879:1986//ENTITIES 
+             Added Latin 1//EN"                                          >
+  <!ENTITY % ISOlat2 PUBLIC "ISO 8879:1986//ENTITIES 
+             Added Latin 2//EN"                                          >
+  <!ENTITY % ISOamso PUBLIC "ISO 8879:1986//ENTITIES 
+             Added Math Symbols: Ordinary//EN"                           >
+  <!ENTITY % ISOgrk1 PUBLIC "ISO 8879:1986//ENTITIES 
+             Greek Letters//EN"                                          >
+  <!ENTITY % ISOgrk3 PUBLIC "ISO 8879:1986//ENTITIES 
+             Greek Symbols//EN"                                          >
+  %ISOnum; 
+  %ISOpub;
+  %ISOtech;
+  %ISOdia;
+  %ISOlat1;
+  %ISOlat2;
+  %ISOamso;
+  %ISOgrk1;
+  %ISOgrk3;
+  <!ENTITY % ereview PUBLIC "-//USA-DOD//DTD 
+          SUP MIL-M-28001 EREVIEW REV B//EN"                             >
+  %ereview;
+]>                                                                         -->
+ 
+<!-- NOTES: 1. ISO TR9573 Parts 12-16 are currently under review and will 
+               contain complete special character entity sets. 
+            2. MIL-M-28001 EREVIEW are the CALS facilities for electronic
+               review.                                                     -->
+
+ 
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Minimal HyTime Support				           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<?HyTime VERSION "ISO/IEC 10744:1992" HQCNT=32                               >
+<?HyTime MODULE base                                                         >
+<?HyTime MODULE locs multloc                                                 >
+<?HyTime MODULE links                                                        >
+
+
+<!-- ===================================================================== -->
+<!-- 		Entity Naming Conventions			           -->
+<!-- ===================================================================== -->
+
+<!--                  Prefix = where used:
+     p.  = in paragraphs (also in phrases if .ph suffix)
+     s.  = in sections (i.e., among paragraphs)
+     i.  = where allowed by inclusion exceptions
+     m.  = content model or declared content
+     a.  = attribute definition
+     NONE= specific use defined in models
+                 Suffix = allowed content:
+     .ph = elements whose content is %m.ph;
+     .d  = elements whose content has same model as defaults
+     NONE= individually defined elements                                   --> 
+
+<!ENTITY % doctype   "article" -- default document type generic identifier -->
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Specialized Elements				           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ENTITY % ade.ph  "street|city|state|country|postcode|san|email|postbox|
+                   phone|fax"  -- address elements                         -->
+<!ENTITY % bib     "author|corpauth|msn|sertitle|location|date|pages|subject|
+                   othinfo" -- bibliographic, date is the publication date -->
+
+<!-- the following 4 declarations are specific to Articles                 -->
+<!ENTITY % bmsec.d "ack|vita" -- back matter cps elements                  -->
+<!ENTITY % fmsec.d "ded|abstract|supmatl" -- front matter sections         -->
+<!ENTITY % pub     "sponsor|contract|reprint|cpyrt|date|pubname|location|
+                   confgrp|avail|history" 
+                   -- pubfront, date is the publication date               -->
+<!ENTITY % pub.ph  "fpage|lpage|coden|acqno|issn|acidfree|price|extent|artid|
+                   category" -- publication related front matter material  -->
+
+
+<!-- ===================================================================== -->
+<!-- 		Basic Document Elements 			           -->
+<!-- ===================================================================== -->
+
+<!ENTITY % i.float "figgrp|footnote|note" -- floating elements             -->
+<!ENTITY % p.el    "deflist|orgaddr|indaddr|artwork|bq|lit|date|biblist|author
+                   |corpauth|keyword|keyphras|poem|nameloc|indxflag" 
+                   -- general                                              -->
+<!ENTITY % p.em.ph "emph" -- emphasis                         -->
+<!ENTITY % p.lst.d "list" -- list                                          -->
+<!ENTITY % p.rf.ph "noteref|fnoteref|figref|tableref|artref|appref|citeref|
+                   secref|formref" -- references                           -->
+<!ENTITY % p.tbl   "table" -- table matter                                 -->
+<!ENTITY % p.form  "f|df|dformgrp" -- mathematical formula's   -->
+<!ENTITY % p.zz    "(%p.el;)|(%p.tbl;)|(%p.lst.d;)|(%p.form;)"
+                   -- paragraph subelements                                -->
+<!ENTITY % p.zz.ph "q|pages|(%p.em.ph;)|(%p.rf.ph;)" -- phrases            -->
+<!ENTITY % s.zz    "p|(%p.zz;)" -- section subelements                     -->
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Models						           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ENTITY % m.addr  "(%ade.ph;)*" -- address (no name)                      -->
+<!ENTITY % m.bib   "(no?, title, (%bib;)*)" -- bibliographic entry         -->
+<!ENTITY % m.copy  "(date|cpyrtnme|cpyrtclr)+" -- copyright notice data    -->
+<!ENTITY % m.date  "(#PCDATA)" -- date                                     -->
+<!ENTITY % m.fig   "EMPTY" -- default FIG content                          -->
+<!ENTITY % m.sec   "(title?, (%s.zz;)*, section*)" -- section              -->
+<!ENTITY % m.name  "((fname? & surname), (degree|school)*, role*, (%ade.ph;)*,
+                   aff?)" -- name components                               -->
+<!ENTITY % m.org   "(orgname, orgdiv*, %m.addr;)" -- organization name     -->
+<!ENTITY % m.ph    "(#PCDATA|(%p.zz.ph;)|(%p.form;))*" -- phrase model     -->
+<!ENTITY % m.pseq  "(p, (p|(%p.zz;))*)" -- P with sequence                 -->
+<!ENTITY % m.poem  "(stanza+|poemline+)" -- poetry sub-elements            -->
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Attribute Definitions				           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ENTITY % a.id    "id ID #IMPLIED" -- ID attribute definition             -->
+<!ENTITY % a.rid   "rid IDREF #REQUIRED" -- IDREF attribute definition     -->
+<!ENTITY % au.rid  "rids IDREFS #IMPLIED" -- to refer to a unique id of
+                                             an affiliation                -->
+
+<!ENTITY % a.sizes "sizex NUTOKEN #IMPLIED 
+                    sizey NUTOKEN #IMPLIED 
+                    unit CDATA #IMPLIED"
+                    -- unit must be specified if sizex or sizey are.       -->
+<!ENTITY % a.types "(latin|greek|cyrillic|hebrew|kanji) latin"
+                    -- this attribute indicates which alphabet is used in the
+                    element (title, p, q). You may change this to a notation 
+                    attribute, where the notation could describe a keyboard 
+                    mapping. Please modify the set as necessary.           -->
+
+<!ENTITY % d.types "(1 | 2 | 3 | 4 | 5) #IMPLIED"
+                    -- Suggestions for date types:
+                    1=ISO 8601:1988, 2=mm-dd-yy, 3=mm/dd/yy, 4=dd-mm-yy, 
+                    5=month day year; if more needed (e.g. "day month year") 
+                    please extend this list.                               -->                      
+<!ENTITY % e.types "(1|2|3|4|5|6) #IMPLIED"
+                    -- Suggestions for emphasis types:
+                    1=bold, 2=italic, 3=bold italic, 4=underline, 
+                    5=non proportional, 6=smallcaps; if more needed 
+                    please extend this list.                               --> 
+
+<!ENTITY % l.types "(1 | 2 | 3 | 4 | 5| 6) #IMPLIED"
+                    -- Suggestions for list types:
+                    1=arabic, 2=alpha, 3=roman, 4=bullet, 5=dash, 
+                    6=unlabelled; if more needed (e.g. dash) please extend 
+                    this list.                                             -->   
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Accessible Document Parameter Entities 		           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ENTITY % SDAFORM      "SDAFORM   CDATA    #FIXED"                          >
+<!ENTITY % SDARULE      "SDARULE   CDATA    #FIXED"                          >
+<!ENTITY % SDAPREF      "SDAPREF   CDATA    #FIXED"                          >
+<!ENTITY % SDASUFF      "SDASUFF   CDATA    #FIXED"                          >
+
+
+<!-- ===================================================================== -->
+<!-- 		DATA CONTENT NOTATIONS				           -->
+<!-- ===================================================================== -->
+
+
+<!-- These are only some examples. Please add your own as required.        -->
+<!NOTATION eps      PUBLIC 
+"+//ISBN 0-201-18127-4::Adobe//NOTATION PostScript Language Reference 
+Manual//EN"                                                                  >
+<!NOTATION tex      PUBLIC 
+"+//ISBN 0-201-13448-9::Knuth//NOTATION The TeXbook//EN"                     >
+<!NOTATION cgmchar  PUBLIC     "ISO 8632/2//NOTATION Character encoding//EN" >
+<!NOTATION cgmclear PUBLIC     "ISO 8632/4//NOTATION Clear text encoding//EN">
+<!NOTATION tiff     PUBLIC     "ISO 12083:1993//NOTATION TIFF-1//EN"         >
+
+
+<!-- ===================================================================== -->
+<!-- 		THE DOCUMENT STRUCTURE			                   -->
+<!-- ===================================================================== -->
+
+<!--       ELEMENT             MIN  CONTENT               (EXCEPTIONS)     -->
+<!ELEMENT (%doctype;)          - -  (front, body, appmat?, back?)  
+                                                         +(%i.float;)        >
+
+<!-- ===================================================================== -->
+<!-- 		FRONT MATTER ELEMENTS				           -->
+<!-- ===================================================================== -->
+
+<!-- the following declaration is specific to Articles                     -->
+<!ELEMENT front                O O  (titlegrp, authgrp, date?, pubfront?,
+                                    ((%fmsec.d;)|keyword|keyphras)*)         >
+<!ELEMENT (%fmsec.d;)          - O  %m.sec;                                  >
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Title Group				        	   -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT titlegrp             O O  (title, subtitle*)                       >
+<!ELEMENT (title|subtitle)     - O  %m.ph;                                   >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Author Group				                   -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT authgrp              O O  (author|corpauth|aff)*                   >
+<!ELEMENT author               - O  %m.name;                                 >
+<!ELEMENT (fname|surname|role|degree|orgname|orgdiv)
+                               - O  (#PCDATA)                                >
+<!ELEMENT (aff|corpauth|school) 
+                               - O  %m.org;                                  >
+<!ELEMENT (%ade.ph;)           - O  (#PCDATA)                                >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Publisher's Front Matter			           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT pubfront             - O  ((%pub;) | (%pub.ph;))*                  >
+<!ELEMENT (%pub.ph;|contract)  - O  %m.ph;                                   >
+<!ELEMENT (pubname|avail|sponsor)
+                               - O  %m.org;                                  >
+<!ELEMENT reprint              - O  (%m.org;|%m.name;)                       >
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!--            Article's History                                          -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- the following 2 declarations are specific to Articles                 -->
+<!ELEMENT history              - O  (received|accepted|revised|misc)*        >
+<!ELEMENT (received|accepted|revised|misc)
+                               - O  (date)                                   >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Copyright				        	   -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT cpyrt                - -  %m.copy;                                 >
+<!ELEMENT cpyrtclr             - -  %m.org;                                  >
+<!ELEMENT cpyrtnme             - -  (%m.org;|%m.name;)                       >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Conference Group				           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT confgrp              - -  (no?, confname, date?, location?, 
+                                    sponsor?)                                >
+<!ELEMENT confname             - O  (#PCDATA)                                >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Date						           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT date                 - O  %m.date;                                 >
+
+
+<!-- ===================================================================== -->
+<!-- 		BODY ELEMENTS			        	    	   -->
+<!-- ===================================================================== -->
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Body Structure					           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT body                 O O  (part+|chapter+)                         >
+<!ELEMENT part                 - O  (no?, title?, (%s.zz;)*, chapter+)       >
+<!ELEMENT chapter              - O  (no?, %m.sec;)                           >
+<!ELEMENT section              - O  (no?, title?, (%s.zz;)*, subsect1*)      >
+<!ELEMENT subsect1             - O  (no?, title?, (%s.zz;)*, subsect2*)      >
+<!ELEMENT subsect2             - O  (no?, title?, (%s.zz;)*, subsect3*)      >
+<!ELEMENT subsect3             - O  (no?, title?, (%s.zz;)*, subsect4*)      >
+<!ELEMENT subsect4             - O  (no?, title?, (%s.zz;)*, subsect5*)      >
+<!ELEMENT subsect5             - O  (no?, title?, (%s.zz;)*, subsect6*)      >
+<!ELEMENT subsect6             - O  (no?, title?, (%s.zz;)*)                 >
+<!ELEMENT no                   - O  (#PCDATA)                                >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Section Subelements			       	           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT p                    - O  (#PCDATA|(%p.zz.ph;)|(%p.zz;))           >
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Paragraph Subelements		             	           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+ 
+<!ELEMENT bq                   - -  %m.pseq;                                 >
+<!ELEMENT indaddr              - O  %m.name; -- individual address --        >
+<!ELEMENT orgaddr              - O  %m.org;  -- organization address       -->
+<!ELEMENT artwork              - O  EMPTY                                    >
+
+<!ELEMENT lit                  - -  CDATA                                    >
+
+<!ELEMENT (%p.lst.d;)          - -  (head?, item)*                           >
+<!ELEMENT item                 - O  %m.pseq;                                 >
+
+<!ELEMENT deflist              - -  ((head, ddhd)?, term, dd)*               >
+<!ELEMENT (term|head|ddhd)     - O  %m.ph;                                   >
+<!ELEMENT dd                   - O  %m.pseq;                                 >
+
+<!ELEMENT biblist              - O  (head?, citation)*                       >
+<!ELEMENT citation             - O  %m.bib;                                  >
+<!ELEMENT (othinfo|subject|sertitle|pages)   
+                               - O  %m.ph;                                   >
+<!ELEMENT location             - O  %m.addr;                                 >
+<!ELEMENT msn                  - O  (#PCDATA)                                >
+<!ELEMENT keyword              - O  (#PCDATA)                                >
+<!ELEMENT keyphras             - O  (#PCDATA)                                >
+<!ELEMENT indxflag             - O  EMPTY                                    >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Poetry						           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT poem                 - O  %m.poem;                                 >
+<!ELEMENT stanza               - O  (poemline)+                              >
+<!ELEMENT poemline             - O  (#PCDATA|cline|%p.em.ph;)*               >
+<!ELEMENT cline                - O  (#PCDATA|%p.em.ph;)*                     >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Phrases					       	           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT q                    - -  %m.ph;                                   >
+<!ELEMENT (%p.em.ph;)          - -  %m.ph;                                   >
+<!ELEMENT (%p.rf.ph;)          - O  (#PCDATA)                                >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		For HyTime Links				           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT nameloc              - O (nmlist*) -- assigns a local ID to 
+                                   named objects                           -->
+<!ELEMENT nmlist               - O (#PCDATA) -- list of local ID or entity
+                                   names                                   --> 
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Floating Elements				           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!ELEMENT figgrp               - -  (title? & fig*)                          >
+<!ELEMENT fig                  - O  %m.fig;                                  >
+
+<!ELEMENT footnote             - -  (no?, %m.pseq;) -(%i.float;)             >
+
+<!ELEMENT note                 - -  (no?, %m.pseq;)                          > 
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Tables			       			           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ELEMENT table                - -  (no?, title?, tbody) -(%i.float;|%p.tbl;)>
+<!ELEMENT tbody                - O  (head*, tsubhead*, row*)                 >
+<!ELEMENT row                  - O  (tstub?, cell*)                          >
+<!ELEMENT tsubhead             - O  %m.ph;                                   >
+<!ELEMENT (tstub|cell)         - O  %m.pseq;                                 >
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- 		Mathematics					           -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!ENTITY % maths PUBLIC "ISO 12083:1993//DTD Mathematics//EN"                > 
+%maths;
+
+<!-- Remove these comments if the formula's follow a NOTATION rather than SGML 
+<!ELEMENT dformgrp             - O  (df)+ >
+<!ELEMENT (f|df)   - O  CDATA                                    > 
+
+-->
+
+
+<!-- ===================================================================== -->
+<!-- 		APPENDIX ELEMENTS				           -->
+<!-- ===================================================================== -->
+
+<!ELEMENT appmat               - O  (appendix+)                              >
+<!ELEMENT appendix             - O  (no?, %m.sec;)                           >
+
+
+<!-- ===================================================================== -->
+<!-- 		BACK MATTER ELEMENTS				           -->
+<!-- ===================================================================== -->
+
+<!-- the following declaration is specific to Articles                     -->
+<!ELEMENT back                 - O  (%bmsec.d;|biblist)*                     >
+<!ELEMENT (%bmsec.d;)          - O  %m.sec;                                  >
+
+
+<!-- ===================================================================== -->
+<!-- 		ATTRIBUTE DEFINITION LISTS			           -->
+<!-- ===================================================================== -->
+
+<!-- HyTime attributes were added to all references, 
+     the citation and doclink elements                                     -->
+
+<!-- The SGML Document Access attributes for Braille, large print
+and voice synthesis markup have been added to the attributes already
+declared in this DTD in the first section following, and then for
+all elements which have no attributes except for the SDA set.              -->
+
+<!--      ELEMENT   NAME       VALUE           DEFAULT                     -->
+<!ATTLIST abstract  %a.id;
+          %SDAPREF;                            "<h1>Abstract</h1>"           >
+<!ATTLIST ack       %a.id;
+          %SDAPREF;                            "<h1>Acknowledgements</h1>"   >
+<!ATTLIST acqno     
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Acquisition/order number: "  >
+<!ATTLIST aff       %a.id;                                                   >
+<!ATTLIST appendix  %a.id;
+          %SDAPREF;                            "<h1>Appendix</h1>"           >
+<!ATTLIST artwork   %a.id;
+                    %a.sizes;
+                    name       ENTITY          #IMPLIED
+          %SDAFORM;                            "fig #attrib ID"              >
+<!ATTLIST author    %au.rid;
+          %SDAFORM;                            "au"                          >
+<!ATTLIST biblist   file       ENTITY          #IMPLIED
+          %SDAFORM;                            "list"
+          %SDAPREF;                            "Bibliography"                >
+<!ATTLIST chapter   %a.id; 
+          SDABDY    NAMES      #FIXED          "title h1"
+          SDAPART   NAMES      #FIXED          "title h2"                    >
+<!ATTLIST citation  id         ID              #REQUIRED
+                    HyTime     NAME            #FIXED bibloc
+          %SDARULE;                            "title it
+                                               author para
+                                               corpauth para
+                                               sertitle it"                  >
+<!ATTLIST corpauth  %a.id;
+          %SDAFORM;                            "au"                          >
+<!ATTLIST country   cnycode    NAME            #IMPLIED
+                                           -- name should follow ISO 3166  -->
+<!ATTLIST date      type       %d.types;
+          %SDAPREF;                            "Date:"                       >
+<!ATTLIST dd        %a.id; 
+          %SDAFORM;                            "para"                        > <!ATTLIST deflist   %a.id;
+          %SDAFORM;                            "list"
+          %SDAPREF;                            "<?SDATRANS>Definitions "     >
+<!ATTLIST %doctype; HyTime     NAME            #FIXED HyDoc                 
+                    %SDAFORM;                  "article"                     >
+<!ATTLIST emph      type       %e.types; 
+          %SDAPREF;                            "Emphasis: "                  > <!ATTLIST fig       %a.id;
+                    %a.sizes;
+                    name       ENTITY          #IMPLIED
+                    scale      NUMBER          100
+          %SDAPREF;                            "Figure: "
+          %SDARULE;                            "title para"                  >
+<!ATTLIST footnote  %a.id;
+          %SDAFORM;                            "fn"                          >
+<!ATTLIST indxflag  ref1       CDATA           #IMPLIED
+                    ref2       CDATA           #IMPLIED
+                    ref3       CDATA           #IMPLIED
+                    ref4       CDATA           #IMPLIED
+          %SDAPREF;                            "<?SDATRANS>Indexentry:"      >
+<!ATTLIST item      %a.id;  
+          %SDAFORM;                            "litem"                       >
+<!ATTLIST nameloc   HyTime     NAME            nameloc
+                    id         ID              #REQUIRED        
+                    -- multloc attributes --
+                    ordering   (ordered|noorder)
+                                               noorder
+                    -- is ordering of locations significant? --
+                    set        (set|notset)    notset
+                    -- make multiple a set by ignoring duplicates --
+                    aggloc     (aggloc|agglink|nagg) 
+                                               nagg
+                    -- are multiple locations an aggregate? --    
+                    %SDAPREF;                 "<?SDATRANS>Nameloc:"          > 
+<!ATTLIST nmlist    HyTime     NAME            nmlist
+                    nametype   (entity|element)
+                                               entity
+                    -- entity names or IDs of elements --
+                    obnames    (obnames|nobnames)
+                                               nobnames
+                    -- objects treated as names? --                         
+                     %SDAPREF;                 "<?SDATRANS>Namelist:"        > 
+<!ATTLIST note      %a.id;  
+          %SDAFORM;                            "note"                        >
+<!ATTLIST p         %a.id;
+                    alphabet   %a.types;
+          %SDAFORM;                            "para"                        >
+<!ATTLIST part      %a.id;
+          %SDARULE;                            "chapter #use SDAPART"        >
+<!ATTLIST %p.lst.d; %a.id;
+                    type       %l.types;
+          %SDAFORM;                            "list"                        >
+<!ATTLIST (%p.rf.ph;) 
+                    %a.rid;
+                    %a.id;          
+                    HyTime     NAME            #FIXED clink
+                    HyNames    CDATA           #FIXED "rid linkends" 
+          %SDAFORM;                            "xref #attrib IDREF"          >
+<!ATTLIST q         %a.id;
+		    alphabet   %a.types;
+          %SDAPREF;                            "
+          %SDASUFF;                            "                             >
+<!ATTLIST section   %a.id;
+          SDABDY    NAMES      #FIXED          "title h2"
+          SDAPART   NAMES      #FIXED          "title h3"                    >
+<!ATTLIST subsect1  %a.id;
+          SDABDY    NAMES      #FIXED          "title h3"
+          SDAPART   NAMES      #FIXED          "title h4"                    >
+<!ATTLIST subsect2  %a.id;
+          SDABDY    NAMES      #FIXED          "title h4"
+          SDAPART   NAMES      #FIXED          "title h5"                    >
+<!ATTLIST subsect3  %a.id;
+          SDABDY    NAMES      #FIXED          "title h5"
+          SDAPART   NAMES      #FIXED          "title h6"                    >
+<!ATTLIST subsect4  %a.id;
+          SDABDY    NAMES      #FIXED          "title h6"
+          SDAPART   NAMES      #FIXED          "title b"                     >
+<!ATTLIST (subsect5|subsect6)
+                    %a.id;
+          SDABDY    NAMES      #FIXED          "title b"
+          SDAPART   NAMES      #FIXED          "title b"                     >
+<!ATTLIST table     %a.id;
+          %SDAFORM;                            "table"
+          %SDARULE;                            "title h3"
+          %SDAPREF;                            "<?SDATRANS>"                 >
+
+<!ATTLIST term      %a.id;
+          %SDAFORM;                            "term"                        >
+<!ATTLIST title     alphabet   %a.types;
+                    purpose    (normal|run)    normal
+          %SDAFORM;                            "ti"                          >
+
+
+<!-- ===================================================================== -->
+<!-- 		SDA ATTRIBUTES			    		           -->
+<!-- ===================================================================== -->
+
+<!-- The following declarations support elements whose only
+attributes are SDA attributes:                                             -->
+
+
+<!ATTLIST head        
+          %SDAFORM;                            "lhead"                       >
+
+<!ATTLIST avail 
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Available from: "            >
+<!ATTLIST body  
+          %SDARULE;                            "chapter #use SDABDY "        >
+<!ATTLIST bq 
+          %SDAFORM;                            "bq"                          >
+<!ATTLIST cell 
+          %SDAFORM;                            "cell"                        >
+<!ATTLIST cpyrtclr
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Copyright clearance centre: ">
+<!ATTLIST coden
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "CODEN: "                     >
+<!ATTLIST contract
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Contract or grant number: "  >
+<!ATTLIST sponsor
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "(Contract or grant) sponsor:">
+<!ATTLIST confgrp
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Conference group: "          >
+<!ATTLIST confname
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Conference name: "           >
+<!ATTLIST cpyrt
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "<?SDATRANS>Copyright notice:">
+<!ATTLIST ddhd
+          %SDAFORM;                            "lhead"                       >
+<!ATTLIST ded
+          %SDAPREF;                            "<h1>Dedication</h1>"         >
+<!ATTLIST email
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Electronic address: "        >
+<!ATTLIST extent
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Number of pages: "           >
+<!ATTLIST fax
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "FAX number: "                >
+<!ATTLIST (indaddr|orgaddr)  
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Address: "                   >
+<!ATTLIST issn
+          %SDAFORM;                            "para" 
+          %SDAPREF;                            "ISSN: "                      >
+<!ATTLIST (keyphras|keyword)
+          %SDAFORM;                            "term"                        >
+<!ATTLIST lit
+          %SDAFORM;                            "lit"                         >
+<!ATTLIST location  
+          %SDAFORM;                            "para"                         
+          %SDAPREF;                            "Location: "                  >
+<!ATTLIST othinfo
+          %SDAFORM;                            "para"                        >
+<!ATTLIST acidfree
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Acid free paper indicator: " >
+<!ATTLIST phone
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Phone: "                     >
+<!ATTLIST pubid        
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Publisher's ID number: "     >
+<!ATTLIST pubname
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Publisher: "                 >
+<!ATTLIST pages
+          %SDAFORM;                            "pp"                          >
+<!ATTLIST price
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Price: "                     >
+<!ATTLIST row
+          %SDAFORM;                            "row"                         >
+<!ATTLIST reprint
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Reprint source: "            >
+<!ATTLIST san
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Standard address number: "   >
+<!ATTLIST subtitle
+          %SDAFORM;                            "h1"                          >
+<!ATTLIST subject
+          %SDAFORM;                            "it"                          >
+<!ATTLIST supmatl
+          %SDAFORM;                            "para"
+          %SDAPREF;                            "Supporting material: "       >
+<!ATTLIST sertitle
+          %SDAFORM;                            "ti"                          >
+<!ATTLIST tbody
+          %SDAFORM;                            "tbody"                       >
+<!ATTLIST tstub
+          %SDAFORM;                            "cell"                        >
+<!ATTLIST tsubhead
+          %SDAFORM;                            "cell"                        >
+<!-- remove this comment if formula's follow a notation rather than sgml
+<!ATTLIST f
+          %a.id;
+          notation NOTATION tex                #IMPLIED
+          alphabet %a.types;
+          %SDAPREF;                            "<!SDATRANS>Inline formula: " >
+<!ATTLIST df
+          %a.id;
+          alphabet %a.types;
+          notation NOTATION tex                #IMPLIED
+          num      CDATA                       #IMPLIED                   
+          align    (left|center|right) center
+          %SDAPREF;                            "<!SDATRANS>Display formula: ">
+<!ATTLIST dformgrp
+          %a.id;
+          num      CDATA                       #IMPLIED                   
+          align    (left|center|right) center
+          %SDAPREF;                      "<!SDATRANS>Display formula group: ">
+--> 

@@ -1,0 +1,10 @@
+#! /bin/sh
+# Synopsis: mac2sgml sgml-file
+
+# Translates SGML character references for Macintosh characters into
+# their ISO entity names.  Also removes "qwertz.dtd" system identifier.
+
+FORMAT=/home/qwertz/format
+
+sed -f $FORMAT/lib/mac2sgml.awk $1
+

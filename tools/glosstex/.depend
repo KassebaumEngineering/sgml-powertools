@@ -1,0 +1,6 @@
+database.o: database.c glosstex.h error.h list.h database.h labels.h
+error.o: error.c glosstex.h error.h list.h
+labels.o: labels.c glosstex.h error.h list.h labels.h
+list.o: list.c list.h
+main.o: main.c database.h error.h labels.h list.h version.h
+version.o: version.c

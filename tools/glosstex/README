@@ -1,0 +1,118 @@
+$Id: README,v 1.1 1997/08/22 04:02:15 jak Exp $
+
+
+* Introduction
+
+GlossTeX is a tool for the automatic preparation of glossaries, lists
+of acronyms and sorted lists in general for use with LaTeX and
+MakeIndex. In order to build GlossTeX, you need an ANSI C
+compiler.
+
+GlossTeX in some kind combines the functionality of acronym, nomencl
+and GloTeX. Like GloTeX, it uses the same format glossary definition
+files. GlossTeX can be used together with nomencl, nevertheless.
+
+A term consists of a label which is used to identify it, an optional
+typeset representation, an optional long-form (e.g. when it's an
+acronym) and the actual text describing it. These elements can all be
+accessed in several ways within the document. It is also possible to
+place cross-references from one term to another and include
+page-references into the produced lists. You can produce as many
+independent lists as you like.
+
+The most recent version can be found on CTAN:/support/glosstex. Note
+that there are also binaries in the binaries subdirectory (currently
+only OS/2 -- any volunteers?).
+
+GlossTeX comes with absolutely no warranty and is covered by the GNU
+General Public License (see the file COPYING).
+
+		   Copyright (C) 1997 Volkan Yavuz
+
+
+* Usage
+
+In your LaTeX-source, type:
+
+	\documentclass{article}
+	\usepackage{glosstex}
+	\begin{document}
+
+	\printglosstex(acr)
+	This document is typeset using \gls{LaTeX}.
+
+	The database file\glosstex{gdf-file} for use with
+	\gls{GlossTeX} is a flat \ac{ASCII} file.
+
+	\printglosstex(glo)
+	\end{document}
+
+You need a .gdf-file that contains the definitions of the terms you
+want to appear in the glossary. For example:
+
+	@entry{LaTeX, \LaTeX{}} \LaTeX{} is a \TeX{}-format.
+
+	@entry{ASCII, ASCII, American Standard Code for Information
+	Interchange} ASCII is a character encoding. See also
+	\glxref{EBCDIC}.
+
+You then run latex, glosstex, makeindex and latex again to build the
+glossary. It may be necessary to use up to 4 iterations until all
+references are resolved.
+
+
+* Building and Installation 
+
+First, you need to build glosstex from its C sources. If you have
+MAKE, typing "make" from the shell should build the binary (have a
+look at the various makefiles, namely "Makefile", "Makefile.unx"
+(which is the most generic one) and "Makefile.os2"). If you don't have
+make just issue these commands:
+
+     cc -c database.c -o database.o
+     cc -c error.c -o error.o
+     cc -c labels.c -o labels.o
+     cc -c list.c -o list.o
+     cc -c main.c -o main.o
+     cc -c version.c -o version.o
+     cc database.o error.o labels.o list.o main.o version.o  -o glosstex
+
+Then put the binary "glosstex" -- or "glosstex.exe" -- somewhere in
+your path.
+
+Now you have to unpack glosstex.dtx. To get the package, run
+
+	latex glosstex.ins
+
+and follow the directions. 
+
+To build the documentation, just type "make doc", or alternatively a
+few times:
+
+	latex glosstex.dtx
+	glosstex glosstex glosstex
+	makeindex glosstex.gxs -o glosstex.glx -t glosstex.glg -s glosstex.mst
+	latex glosstex.dtx
+
+If something goes wrong, watch glosstex.log or glosstex's log-file
+"glosstex.gxg" and MakeIndex' log-file "glosstex.glg".
+
+If everthing works fine, you have the complete documentation and
+documented LaTeX-soure in glosstex.dvi.
+
+* Binaries
+
+Have a look in CTAN:/support/glosstex/binaries/os2 where you can find a
+complete package of GlossTeX including binaries for OS/2. 
+
+* Comments
+
+If you have any comments, suggestions, mail me at
+	
+	yavuzv@rumms.uni-mannheim.de 
+
+
+;;; Local Variables:
+;;; mode: indented-text
+;;; mode: outline-minor
+;;; End:

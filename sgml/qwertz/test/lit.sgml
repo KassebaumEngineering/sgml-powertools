@@ -1,0 +1,4873 @@
+<!doctype biblio public "-//GMD//DTD biblio//EN" [
+<!entity LaTeX "<x>{\LaTeX}</>" >
+]>
+
+<biblio>
+
+<book id="Abelson85">
+<author> Harold Abelson <and> Gerald Jay Sussman 
+<title> Structure and Interpretation of Computer Programs 
+<publish> MIT Press 
+<year> 1985 
+
+<book id="Adams75">
+<author> E. Adams
+<title> The Logic of Conditionals
+<publish> Reiter
+<address> Dordrecht
+<year> 1975
+
+<book id="Aho83">
+<author> Alfred V. Aho <and> John E. Hopcroft <and> Jeffrey E. Ullman 
+<title> Data Structures and Algorithms 
+<publish> Addison-Wesley 
+<series> Computer Science and Information Processing 
+<year> 1983 
+
+<article id="Ait-Kaci86">
+<author> Hassan Ait-Kaci <and> Roger Nasr 
+<title> Login: A Logic Programming Language with Built-in Inheritance 
+<journal> Journal of Logic Programming 
+<vol> 3 
+<pp> 185--215 
+<year> 1986 
+
+<inproc id="Alchourron89">
+<author> Carlos E. Alchourron <and> Antonio E. Martino 
+<title> Logic Without Truth 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> Proposes a solution to Jorgensen's Paradox in which a logic of norms is possible, without a truth-valued semantics, by arguing that the notion of logical consequence is primitive. 
+
+<inproc id="Alchourron89b">
+<author> Carlos E. Alchourron <and> Eugenio Bulygin
+<title> Limits of Logic and Legal Reasoning
+<editor> Antonio A. Martino
+<btitle> Logica, Informatica, Diritto
+<organ> Consiglio Nazionale delle Ricerche
+<address> Florence
+<year> 1989
+
+<book id="Alexy78">
+<author> Robert Alexy
+<title> Theorie der juristischen Argumentation
+<publish> Suhrkamp Verlag
+<address> Frankfurt am Main
+<year> 1978
+
+<article id="Allen57">
+<author> Layman E. Allen
+<title> Symbolic Logic: A Razor-Edged Tool for Drafting and
+Interpreting Legal Documents
+<journal> The Yale Law Journal
+<vol> 66
+<year> 1957
+
+<article id="Allen60">
+<author> Layman E. Allen
+<title> Deontic Logic
+<journal> Modern Uses of Logic in Law
+<vol> 13
+<year> 1960
+
+<inproc id="Allen85">
+<author> Layman E. Allen <and> Charles S. Saxon 
+<title> Computer Aided Normalizing and Unpacking: Some Interesting Machine-Processable Transformation of Legal Rules 
+<editor> Charles Walter 
+<btitle> Computer Power and Legal Reasoning 
+<publish> West 
+<year> 1985 
+<pp> 495--572 
+
+<misc id="Allen82">
+<author> Layman E. Allen 
+<title> The PLAIN LANGUAGE Game; Legal Writing Made Clear by Structuring it Well 
+<month> March 
+<year> 1982 
+<private> Paper presented at the International Workshop on Formal
+Methods in Law, GMD 
+
+<inproc id="Allen87">
+<author> Laymen E. Allen <and> Charles S. Saxon
+<title> Some Problems in Designing Expert Systems to Aid Legal
+Reasoning
+<btitle> The First International Conference on Artificial Intelligence
+and Law
+<month> May
+<year> 1987
+<pp> 94--103
+
+<inproc id="Allen89">
+<author> Layman E. Allen <and> Sallyanne Payton <and> Charles S. Saxon 
+<title> Sythesizing Related Rules from Statutes and Cases for Legal Expert Systems 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> Describes a propositional legal expert system generated using AUTOPRO for New Jersey law of criminal homicide. Includes transcript of example session. 
+
+<inproc id="Allen89b">
+<author> Layman E. Allen <and> Charles S. Saxon
+<title> Relationship of Expert Systems to the Operation of a Legal
+System
+<btitle> Pre-proceedings of the III International Conference on Logic,
+Informatica, Diritto
+<address> Florence
+<year> 1989
+
+<inproc id="Allen91">
+<author> Layman E. Allen <and> Charles S. Saxon
+<title> More IA Needed in AI: Interpretation Assistance for Coping
+with the Problem of Multiple Structural Interpretations.
+<btitle> Proceedings of the Third International Conference on
+Artificial Intelligence and Law
+<publish> ACM
+<year> 1991
+<pp> 53-61
+
+<article id="Allison83">
+<author>  Lloyd Allison 
+<title> Programming Denotational Semantics 
+<journal> Computer Journal 
+<vol> 26 
+<no> 2 
+<pp> 164--174 
+<year> 1983 
+<private> Describes how to code denotational semantics in Pascal. 
+
+<unpub id="Alschwee84">
+<author>  Brigitte Alschwee <and> Stefan Grundmann 
+<title> System Design for a Computer-Aided Juridical Expert System 
+<year> 1984 
+<note> re the LEX project at IBM, Heidelberg 
+
+<article id="Alvarado90a">
+<author> Sergio J. Alvarado <and> Michael G. Dyer <and> Margot Flowers
+<title> Argument Representation for Editorial Text
+<journal> Knowledge-Based Systems
+<vol> 3
+<no> 2
+<pp> 87-107
+<year> 1990
+
+<article id="Alvarado90b">
+<author> Sergio J. Alvarado <and> Michael G. Dyer <and> Margot Flowers
+<title> Argument Comprehension and Retrieval for Editorial Text
+<journal> Knowledge-Based Systems
+<vol> 3
+<no> 3
+<pp> 130-162
+<year> 1990
+<private> Describes OpEd, a system which answers questions about
+editorials. Uses a "demon-based conceptual parser". Arguments are
+modeled by Argument Units (AUs), which express "support and attack
+relationships among beliefs, where the content of each belief refers
+to goal/plan situations".  The idea that arguments concern beliefs
+relative to goals in plans seems attractive, but the implementation appears
+rather ad hoc.
+
+<book id="Anderson74">
+<author> Ross Anderson <and> Nuel D. Belnap Jr.
+<title> Entailment: The Logic of Relevance and Necessity
+<publish> Princeton University Press
+<year> 1974
+
+<inproc id="Ashley89">
+<author> Kevin D. Ashley
+<title> Toward a Computational Theory of Arguing with Precedents:
+Accomodating Multiple Interpretations of Cases
+<btitle> The Second International Conference on Artificial
+Intelligence and Law
+<organ> ACM
+<month> June
+<year> 1989
+<pp> 93--102
+
+
+<book id="Ashley90">
+<author> Kevin D. Ashley
+<title> Modeling Legal Argument: Reasoning with Cases and Hypotheticals
+<publish> MIT Press
+<year> 1990
+
+<proc id="Ammann84">
+<editor> Armann <and> Urs 
+<title> Programmiersprachen und Programmentwicklung 
+<organ> GI 
+<publish> Springer-Verlag 
+<month> March 
+<year> 1984 
+
+<book id="Anderson81">
+<author> Ronald A. Anderson 
+<title> On the Uniform Commercial Code 
+<publish> Lawyers Co-operative 
+<vol> 1 
+<year> 1982 
+
+<book id="Arnold84">
+<editor> C. Arnold 
+<title> Yearbook of Law, Computers &amp Technology 
+<publish> Leicester Polytechnic 
+<vol> 1 
+<year> 1984 
+
+<book id="Arnold86">
+<editor> C. Arnold 
+<title> Yearbook of Law, Computers &amp Technology 
+<publish> Butterworths 
+<vol> 2 
+<year> 1986 
+
+<book id="Arnold87">
+<editor> C. Arnold 
+<title> Yearbook of Law, Computers &amp Technology 
+<publish> Butterworths 
+<vol> 3 
+<year> 1987 
+
+<misc id="Atari86">
+<key> Atari 
+<title> Atari ST-Serie, Software &Ue;bersicht 
+<month> October 
+<year> 1986 
+<howpub> Atari Corp. 
+
+<inproc id="Baaz87">
+<author>  Matthias Baaz <and> Gerald Quirchmayr 
+<title> The Application of Multiple Valued Logic in Supporting Legal Decision Making 
+<btitle> Proceedings of the Seventeenth Internatinal Symposium on Multiple-Valued Logic 
+<address> Boston 
+<month> May 
+<year> 1987 
+
+<book id="Barr82">
+<editor> Avron Barr <and> Edward A. Feigenbaum 
+<title> The Handbook of Artificial Intelligence 
+<publish> Pitman 
+<vol> II 
+<address> London 
+<year> 1982 
+
+<article id="Barron89">
+<author> David Barron
+<title> Why use SGML?
+<journal> Electronic Publishing
+<vol> 2
+<no> 1
+<pp> 3-24
+<month> April
+<year> 1980
+
+
+<unpub id="Barthel84">
+<author> Thomas H. Barthel 
+<title> Formalisation of the Legal Language and of the Decision Process for Automated Legal Reasoning 
+<year> 1984 
+<note> Critical paper re the effects of computers on the workplace. 
+
+<unpub id="BenchCapon85">
+<author>  Trevor Bench-Capon <and> Marek Sergot 
+<title> Towards a rule based representation of open texture in law 
+<month> April 
+<year> 1985 
+<note> don't know where this was published, it at all 
+
+<inproc id="BenchCapon89">
+<author> Trevor Bench-Capon
+<title> Deep Models, Normative Reasoning and Legal Expert Systems
+<btitle> Proceedings of the Second International Conference on
+Artificial Intelligence and Law
+<publish> ACM Press
+<address> Vancouver
+<year> 1989
+
+<inproc id="BenchCapon91">
+<author> Trevor Bench-Capon <and> Frans Coenen
+<title> Expoiting Isomorphism: Development of a KBS to Support British
+Coal Insurance Claims
+<btitle> Proceedings of the Third International Conference on
+Artificial Intelligence and Law
+<publish> ACM Press
+<address> Oxford
+<year> 1991
+<pp> 62-68
+
+<article id="Berman87">
+<author> Donald H. Berman <and> Carole D. Hafner
+<title> Indeterminancy: A Challenge to Logic-based Models of Legal Reasoning
+<journal> Yearbook of Law, Computers and Technology
+<vol> 3
+<pp> 1--35
+<year> 1987
+
+<inproc id="Bibel89">
+<author> Wolfgang Bibel <and> Luis Farinas del Cerro <and> Bertram Fronh&oe;fer <and> Andreas Herzig
+<title> Plan Generation By Linear Proofs: On Semantics
+<editor> Dieter Metzing
+<btitle> GWAI-89, 13th German Workshop on Artificial Intelligence
+<address> Eringerfeld
+<month> September 
+<year> 1989
+<pp> 49--62
+
+<inproc id="Bilon89">
+<author> Jean Louis Bilon 
+<title> A Knowledge Base of Reasoning and Judgements 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> Project conducted for the French Minister of Justice 
+
+<inproc id="Bing89">
+<author> Jon Bing 
+<title> Three Generations for Computerized Systems for Public Administration and Some Implications for Legal Decision Making 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985  
+
+<book id="Blacks79">
+<author> Henry Campbell Black
+<title> Black's Law Dictionary
+<publish> West Publishing Company
+<year> 1979
+
+<book id="Bodenheimer74">
+<author>  Edgar Bodenheimer 
+<title> Jurisprudence: The Philosophy and Method of the Law 
+<edition> Rev. 
+<publish> Harvard Univ. Press 
+<year> 1974 
+
+<misc id="Bodwin82">
+<author> James Bodwin <and> Laurette Bradley <and> et. al. 
+<title> Experience with an Experimental Compiler Generator ased on Denotational Semantics 
+<year> 1982 
+<private> conference paper; need full reference 
+
+<misc id="Bording88">
+<author> J. B&oe;rding <and> H. W. G&ue;sgen <and> B. M&ue;ller <and> A. Vo&sz; 
+<title> Babylon f&ue;r den Wissensingeniuer 
+<year> 1988 
+<note> WEREX-Bericht Nr. 20, TEX-B-Memo 40-88 
+
+<article id="Boyd81">
+<author> W. Boyd <and> C. Saxon
+<title> The A-9: A Program for Drafting Security Agreements under
+Article 9 of the Uniform Commercial Code
+<journal> American Bar Foundation Research Journal
+<year> 1981
+<private> volume and number and pages?
+
+<article id="Brachman85">
+<author> Ronald J. Brachman 
+<title> "I lied about the trees", or, Defaults and Definitions in Knowledge Representation 
+<journal> AI Magazine 
+<vol> 6 
+<no> 3 
+<pp> 80--93 
+<month> Fall 
+<year> 1985 
+
+<article id="Brachman85a">
+<author> Ronald J. Brachman <and> James G. Schmolze 
+<title> An Overview of the KL-ONE Knowledge Representation System 
+<journal> Cognitive Science 
+<vol> 9 
+<pp> 171--216 
+<year> 1985 
+
+<book id="Brachman85b">
+<editor> Ronald J. Brachman <and> Hector J. Levesque 
+<title> Readings in Knowledge Representation 
+<publish> Morgan Kaufmann 
+<year> 1985 
+
+<misc id="Braeuer89">
+<author> Ingo Br&ae;uer <and> G&ue;nter Gerl <and> Ulrike vom Hau <and> Detlef L. Kowalewski <and> Susanne Wiefel <and> Josef Schneeberger <and> Andreas Strasser 
+<title> KOKON: Konfigurierung von Dokumenten am Beispiel Immobiliarkaufvertr&ae;ge 
+<year> 1989 
+
+<book id="Braitenberg86">
+<author>  Valentin Braitenberg 
+<title> K&ue;nstliche Wesen 
+<publish> Friedr. Vieweg &amp Sohn 
+<year> 1986 
+
+<book id="Bratko86">
+<author> Ivan Bratko 
+<title> Prolog Programming for Artificial Intelligence 
+<publish> Addison-Wesley 
+<year> 1986 
+
+<unpub id="Brenner86">
+<author> Harald Brenner 
+<title> Zukunftsperspektiven formaler Methoden im Recht 
+<year> 1986 
+<note> Seminar held by Prof. Fritjof Haft 
+
+<inproc id="Brewka86">
+<author> Gerhard Brewka
+<title> Tweety --- Still Flying: Some Remarks on Abnormal Birds, Applicable Rules and a Default Prover
+<btitle> Proceedings of the National Conference on Artificial Intelligence
+<organ> AAAI
+<address> Philadelphia
+<year> 1986
+<pp> 8-12
+
+<report id="Brewka">
+<author> Gerhard Brewka <and> Hartmut Freitag
+<title> Proceedings of the Workshop on Nonmonotonic Reasoning
+<inst> GMD
+<type> Arbeitspapier
+<no> 443
+<month> May
+<year> 1990
+
+<report id="Brewka87">
+<author>  Gerhard Brewka 
+<title> Nonmonotonic Logics: An Introductory Overview 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 274 
+<month> November 
+<year> 1987 
+
+<phd id="Brewka89">
+<author> Gerhard Brewka
+<title> Nonmonotonic Reasoning: From Theoretical Foundation Towards
+Efficient Computation
+<school> University of Hamburg
+<year> 1989
+
+<inproc id="Brewka89b">
+<author> Gerhard Brewka
+<title> Preferred Subtheories: An Extended Logical Framework for
+Default Reasoning
+<btitle> Proceedings of the Eleventh International Joint Conference on
+Artificial Intelligence
+<organ> IJCAI
+<publish> Morgan Kaufmann
+<month> August
+<year> 1989
+<pp> 1043--1048
+
+<report id="Brewka90">
+<author> Gerhard Brewka <and> Joachim Hertzberg
+<title> How to do Things with Worlds: On Formalizing Actions and Plans
+<inst> GMD
+<type> TASSO Report
+<no> 11
+<year> 1990
+
+<article id="Brewka91">
+<author> Gerhard Brewka
+<title> Cumulative Default Logic: In Defense of Nonmonotonic Inference Rules
+<journal> Artificial Intelligence
+<vol> 50
+<no> 2
+<pp> 183-205
+<year> 1991
+
+
+<report id="Brooks86">
+<author> Rodney A. Brooks
+<title> Achieving Artificial Intelligence Through Building Robots
+<inst> MIT 
+<type> A.I. Memo
+<no> 899
+<month> May
+<year> 1986
+
+<proc id="Brown87">
+<editor> Frank M. Brown 
+<title> The Frame Problem in Artificial Intelligence 
+<address> Lawrence, Kansas 
+<month> April 
+<year> 1987 
+
+<book id="Brown89">
+<author> David C. Brown <and> B. Chandrasekaran 
+<title> Design Problem Solving 
+<publish> Morgan Kaufmann 
+<year> 1989 
+
+<book id="Bryan88">
+<author>  Martin Bryan 
+<title> SGML, An Author's Guide to the Standard Generalized Markup Language 
+<publish> Addison-Wesley 
+<year> 1988 
+
+<report id="Budde87">
+<author> Reinhard Budde <and> Karin Kuhlenkamp <and> Karl-Heinz Sylla <and> Heinz Z&ue;llighoven 
+<title> Constructing Interactive Tools for Prolab 
+<inst> GMD F2G2 
+<type> Interner Bericht 
+<year> 1987 
+
+<misc id="Budde86">
+<author>  Reinhard Budde 
+<title> Executable Denotational Semantics in Prolog 
+<month> February 
+<year> 1986 
+<private> Prolog source of a denotational semantics for a small imperative language 
+
+<unpub id="Budde84">
+<author> Reinhard Budde <and> Karl-Heinz Sylla 
+<title> Object-Oriented Programming Environments 
+<month> May 
+<year> 1984 
+<note> draft version 
+
+<phd id="Budde90">
+<author> Reinhard Budde <and> Heinz Z&ue;llighoven
+<title> Software- Werkzeuge in einer Programmierwerkstatt --- Ans&ae;tze eines hermeneutisch fundierten Werkzeug- und Machinenbegriffs
+<school> Fachbereich Informatik der Technischen Universit&ae;t Berlin
+<year> 1990
+
+<misc id="Bundestag88">
+<author> Deutscher Bundestag, Enquete-Kommission Technikfolgen-Absch&ae;tzung und -Berwertung 
+<title> &Oe;ffentliche Anh&oe;rung zum Thema Verantwortung und Haftung beim Einsatz von Expertensystemen 
+<month> November 
+<year> 1988 
+
+<misc id="Bundy">
+<author> Alan Bundy 
+<title> Computer Modelling of Mathematical Reasoning 
+<private> copies of two Chapters of Bundy's book: 1) Using Semantic Information to Guide Proofs, and 2) Formalizing Control Information 
+
+<proc id="Bundy83">
+<editor> Alan Bundy 
+<title> Proceedings of the Eighth International Joint Conference on
+Artificial Intelligence 
+<organ> IJCAI 
+<publish> William Kaufmann 
+<address> Los Altos, California 
+<month> August 
+<year> 1983 
+<private> two volumes 
+
+<report id="Bungers84a">
+<author> Dieter Bungers <and> Bernd S. M&ue;ller <and> Peter Raulefs 
+<title> Expertensystem, Beitr&ae;ge aus einem Workshop zur Aufarbeitung des State-of-the-Art 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 104 
+<month> August 
+<year> 1984 
+
+<report id="Bungers84b">
+<author> Dieter Bungers <and> Franco di Primio <and> Walter Klar <and> Erich Rome 
+<title> Konzept einer Expertensystem Architecture 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 91 
+<month> M&ae;rz 
+<year> 1984 
+
+<report id="Burkert85">
+<author> Herbert Burkert <and> Helmut Redeker <and> Peter Dippoldsmann 
+<title> Informationsrecht, Einige ausgew&ae;lte Probleme 
+<inst> GMD 
+<no> 176 
+<month> November 
+<year> 1985 
+
+<article id="Burton82">
+<author> F. W. Burton
+<title> An Efficient Functional Implementation of FIFO Queues
+<journal> Information Processing Letters
+<vol> 14
+<pp> 205-206
+<year> 1982
+
+<inproc id="Bylander90">
+<author> Tom Bylander
+<title> When Efficient Assembly Performs Correct Abduction and Why
+Abduction is Otherwise Trivial or Intractable
+<btitle> Working Notes of the AAAI Spring Symposium on Automated
+Abduction
+<year> 1990
+<pp> 86-90
+
+<book id="Campbell84">
+<editor> J. A. Campbell 
+<title> Implementations of Prolog 
+<publish> Ellis Worwood Ltd. 
+<year> 1984 
+
+<book id="Capurro86">
+<author> Rafael Capurro 
+<title> Hermeneutik der Fachinformation 
+<publish> Verlag Karl Alber 
+<address> Freiburg/M&ue;nchen 
+<year> 1986 3-495-47593-1 
+
+<article id="Capurro88">
+<author> Rafael Capurro 
+<title> Die Verantwortbarkeit des Denkens, K&ue;nstliche Intelligenz aus ethischer Sicht 
+<journal> Forum f&ue;r interdisziplin&ae;re Forschung 
+<vol> 1 
+<pp> 15--21 
+<year> 1988 
+
+<misc id="Cardelli87">
+<author> Luca Cardelli 
+<title> Amber 
+<year> 1987 
+<howpub> AT&amp;T Bell Laboratories 
+<private> Experimental functional programming language implemented on the Macintosh 
+
+<report id="Cardelli89">
+<author> Luca Cardelli 
+<title> Typeful Programming 
+<inst> Digital Equipment Corporation 
+<month> May 
+<year> 1989  
+
+<article id="Carroll87">
+<author> John M. Carroll <and> Penny L. Smith-Kerker <and> James R. Ford <and> Sandra A. Mazur-Rimetz 
+<title> The Minimal Manual 
+<journal> Human-Computer Interaction 
+<vol> 3 
+<pp> 123--153 
+<year> 1987--1988 
+
+<incoll id="Carroll88">
+<author> John M. Carroll <and> Robert L. Mack <and> Wendy A. Kellogg 
+<title> Interface Metaphors and User Interface Design 
+<btitle> Handbook of Human-Computer Interaction 
+<chap> 3 
+<publish> Elsevier
+<year> 1988 
+<pp> 67--83 
+
+<article id="Carroll88b">
+<author> John M. Carroll 
+<title> Modularity and Naturalness in Cognitive Science 
+<journal> Metaphor and Symbolic Activity 
+<vol> 3 
+<no> 2 
+<pp> 61--86 
+<year> 1988 
+
+<incoll id="Carroll88c">
+<author> John M. Carroll <and> Judith Reitman Olson 
+<title> Mental Models in Human-Computer Interaction 
+<btitle> Handbook of Human-Computer Interaction 
+<chap> 2 
+<publish> Elsevier Science Pubishers 
+<year> 1988 
+<pp> 45--65 
+
+<article id="Carroll88d">
+<author> John M. Carroll <and> Amy P. Aaronson 
+<title> Learning by Doing with Simulated Intelligent Help 
+<journal> Communications of the ACM 
+<vol> 31 
+<no> 9 
+<month> September 
+<year> 1988 
+
+<article id="Carroll88e">
+<author> John M. Carroll 
+<title> Prompting, Feedback and Error Correction in the Design of a Scenario Machine 
+<journal> International Journal of Man-Machine Studies 
+<vol> 28 
+<pp> 11--27 
+<year> 1988 
+
+<inproc id="Carroll88f">
+<author> John M. Carroll 
+<title> Taking Artifacts Seriously 
+<btitle> Software Ergonomie '89: Aufgabenorientierte Systemgestaltung und Funktionalit&ae;t 
+<publish> T&ue;bner 
+<address> Stuttgart 
+<year> 1988 
+<pp> 36--50 
+
+<report id="Carroll88g">
+<author> John M. Carroll <and> Wendy A. Kellogg 
+<title> Artifact as Theory-Nexus: Hermeneutics Meets Theory-Based Design 
+<inst> IBM Research Division, T. J. Watson Research Center 
+<no> RC 14392 (&num;63035) 
+<year> 1988 
+
+<report id="Carroll88h">
+<author> John M. Carroll 
+<title> Evaluation, Description and Invention: Paradigms for Human-Computer Interaction 
+<inst> User Interface Institute, IBM T. J. Watson Research Center 
+<no> RC 13926 (&num;62583) 
+<year> 1988 
+
+<report id="Carroll89">
+<author> John M. Carroll 
+<title> Human-Computer Interaction Scenarios as a Design Representation 
+<inst> IBM Research Division, T. J. Watson Research Center 
+<address> Yorktown Heights 
+<no> RC 15033 (&num;67110) 
+<year> 1989 
+
+<report id="Carroll89b">
+<author> John M. Carroll 
+<title> Feeding the Inferface Eaters 
+<inst> IBM Research Division, T. J. Watson Research Center 
+<no> RC 14574 (&num;64723) 
+<year> 1989 
+
+<report id="Carroll89c">
+<author> John M. Carroll 
+<title> An Overview of Minimalist Instruction 
+<inst> IBM Reasearch Division, T. J. Watson Research Center 
+<no> RC 15109 (&num;67329) 
+<year> 1989 
+
+<misc id="CCAI87">
+<key> CCAI87 
+<title> CC AI, The Journal for the Integraged Study of Aritficial Intelligence, Cognitive Science and Applied Epistemology 
+<year> 1987 
+<private> Contains a survey and bibliography on expert systems in law, and articles by Laymen Allen, Charles Saxon and Grayfred Gray 
+
+<book id="Charniak85">
+<author> Eugene Charniak <and> Drew McDermott 
+<title> Introduction to Artificial Intelligence 
+<publish> Addison-Wesley 
+<series> World Student Series 
+<address> Reading, Massachusetts 
+<year> 1985 
+
+<book id="Chernicoff85a">
+<author> Stephan Chernicoff 
+<title> Macintosh Revealed 
+<publish> Hayden 
+<vol> 2 
+<year> 1985 
+
+<book id="Chernicoff85b">
+<author> Stephan Chernicoff 
+<title> Macintosh Revealed 
+<publish> Hayden 
+<vol> 1 
+<year> 1985 
+
+<book id="Christaller89">
+<editor> Thomas Christaller <and> Franco di Primio <and> Angi Voss 
+<title> Die KI-Werkbank Babylon, eine offene und portable Entwicklungsumgebung f&ue;r Expertensysteme 
+<publish> Addison-Wesley 
+<year> 1989 3-89319-155-0 
+
+<proc id="Ciampi82">
+<editor>  C. Ciampi 
+<title> Artificial Intelligence and Legal Information Systems 
+<publish> North-Holland 
+<address> Amsterdam 
+<year> 1982 
+
+<book id="Clark82">
+<editor> K. L. Clark <and> S. A. T&ae;rnlund 
+<title> Logic Programming 
+<publish> Academic Press 
+<year> 1982 
+
+<misc id="Clark">
+<author> K. L. Clark <and> F. G. McCabe 
+<title> PROLOG: a language for implementing expert systems 
+<private> Chapter in book; pp 455-470; need book reference 
+
+<misc id="Clinger91">
+<author> William Clinger <and> Jonathan Rees
+<title> Revised Report on the Algorithmic Language Scheme
+<month> November
+<year> 1991
+
+<book id="Clocksin81">
+<author> W. F. Clocksin <and> C. S. Mellish 
+<title> Programming in Prolog 
+<publish> Springer-Verlag 
+<year> 1981 
+
+<unpub id="clos87">
+<author> Daniel G. Bobrow <and> Linda G. DeMichiel <and> Richard P. Gabriel <and> Sonya Keene <and> Gregor Kiczales <and> David A. Moon 
+<title> Common Lisp Object System Specification 
+<year> 1987 
+<note> draft version of the CLOS object-oriented programming extensions to Common Lisp 
+
+<misc id="Coeloh81">
+<author> Helder Coeloh 
+<title> Logic Programming Bibliography, 2nd ed. 
+<month> December 
+<year> 1981 
+<howpub> Laboratorio Nacional de Engenharia Civil, Centro de Informatica 
+
+<article id="Cohen85">
+<author> Jacques Cohen 
+<title> Describing Prolog by its Interpretation and Compilation 
+<journal> Communications of the ACM 
+<vol> 28 
+<no> 12 
+<pp> 1311--1324 
+<month> December 
+<year> 1985 
+
+<article id="Cohen84">
+<author> Benjamin Cohen <and> Gergory L. Murphy 
+<title> Models of Concepts 
+<journal> Cognitive Science 
+<vol> 8 
+<pp> 27--58 
+<year> 1984 
+
+<book id="Cohen82">
+<editor> Paul A. Cohen <and> Edward A. Feigenbaum 
+<title> The Handbook of Artificial Intelligence 
+<publish> Pitman Books 
+<vol> 3 
+<year> 1982 
+
+<report id="Conklin86">
+<author> Jeff Conklin 
+<title> A Survey of Hypertext 
+<inst> MCC 
+<no> STP-356-86 
+<month> October 
+<year> 1986 
+
+<inproc id="Cox84a">
+<author> P. T. Cox <and> T. Pietrzykowski <and> S. Matwin 
+<title> Concurrent Editing and Executing in PROGRAPH on Graphical Microcomputers 
+<editor> Bari 
+<btitle> Proceedings of the 24th International Symposium MIME 
+<year> 1984 
+
+<report id="Cox84b">
+<author> P. T. Cox <and> T. Pietrzykowski 
+<title> LOGRAPH: a graphical logic programming language 
+<inst> Technical University of Nova Scotia 
+<no> CS 8403 
+<year> 1984 
+
+<article id="Croft88">
+<author> W. B. Croft <and> L. S. Lefkowitz 
+<title> Using a Planner to Support Office Work 
+<journal> SIGOIS Bulletin 
+<vol> 9 
+<no> 2 &amp 3 
+<pp> 55--62 
+<month> April &amp July 
+<year> 1988 
+<private> Proceedings of the Conference on Office Information Systems, March 23-25, Palo Alto 
+
+<book id="Cross76">
+<author> Rupert Cross 
+<title> Statutory Interpretation 
+<publish> Butterworths 
+<year> 1976 
+
+<book id="Dalcin84">
+<author> Mario Dal Cin and Joachim Lutz <and> Thomas Risse 
+<title> Programmierung in Modula-2 
+<publish> B. G. Tuebner 
+<series> Tuebner Studienskripten 
+<vol> 100 
+<address> Stuttgart 
+<year> 1984 
+
+<report id="daphne89">
+<author> A. Scheller <and> C. Smith <and> C. Fuhrhop <and> E. Wilde 
+<title> DAPHNE: Document Application Processing in a Heterogeneous 
+Network Environment
+<inst> Deutsches Forschungsnetz (DFN)
+<year> April 1989
+
+<article id="Davis80">
+<author> Randall Davis 
+<title> Content Reference: Reasoning about Rules 
+<journal> Artificial Intelligence 
+<vol> 15 
+<pp> 223--239 
+<year> 1980 
+
+<article id="Davis80b">
+<author> Randall Davis 
+<title> Meta-Rules: Reasoning about Control 
+<journal> Artificial Intelligence 
+<vol> 15 
+<pp> 179--222 
+<year> 1980 
+
+<report id="deKleer77">
+<author><first>Johan de <last>Kleer<and> Jon Doyle <and> Guy L. Steele <and> Gerald J. Sussman</author>
+<title> Explicit Control of Reasoning 
+<inst> MIT AI Laboratory
+<type> Memo
+<no> 427
+<year> 1977
+<private> AMORD 
+
+<article id="deKleer86">
+<author><first>Johan de <last>Kleer</author>
+<title> An Assumption-Based TMS
+<journal> Artificial Intelligence
+<vol> 28
+<year> 1986
+
+<article id="deKleer86b">
+<author><first>Johan de <last>Kleer</author>
+<title> Extending the Basic ATMS
+<journal> Artificial Intelligence
+<vol> 28
+<year> 1986
+
+<inproc id="deKleer88">
+<author><first>Johan de <last>Kleer</author>
+<title> A General Labeling Algorithm for Assumption-Based Truth Maintenance 
+<btitle> Proceedings of the AAAI-88 
+<year> 1988 
+
+<article id="deBessonet87">
+<author> Cary G. deBessonet <and> George R. Cross 
+<title> An Artificial Intelligence Application in the Law:  CCLIPS, A Computer Program that Processes Legal Information 
+<journal> High Technology Law Journal 
+<vol> 1 
+<no> 2 
+<pp> 329--409 
+<year> 1986 
+<private> A UC Berkeley law journal 
+
+<article id="deBessonet82">
+<author> Cary G. deBessonet 
+<title> An Automated Approach to Scientific Codification 
+<journal> Rutgers Computer &amp Technology Law Journal 
+<vol> 9 
+<pp> 27--75 
+<year> 1982 
+
+<article id="deBessonet84">
+<author> Cary deBessonet 
+<title> An Automated Intelligent System Based on a Model of a Legal System 
+<journal> Rutgers Computer &amp Technology Law Journal 
+<vol> 10 
+<pp> 31--58 
+<year> 1984 
+
+<book id="DeGroot86">
+<editor> Doug DeGroot <and> Gary Lindstrom 
+<title> Logic Programming: Functions, Relations, and Equations 
+<publish> Prentice-Hall 
+<year> 1986 
+
+<inproc id="Delgrande87">
+<author> J. Delgrande
+<title> An Approach to Default Reasoning Based on a First-Order
+Conditional Logic
+<btitle> Proceedings of the National Conference on Artificial
+Intelligence
+<organ> AAAI
+<address> Seattle
+<year> 1987
+<pp> 340-345
+
+<report id="diPrimio83">
+<author> Franco di Primio <and> Thomas Christaller 
+<title> A Poor Man's Flavor System 
+<inst> Univeriste de Geneve 
+<type> Working Paper 
+<no> 47 
+<month> May 
+<year> 1983 
+
+<inproc id="diPrimio85">
+<author> F. di Primio <and> G. Brewka 
+<title> Babylon: Kernel System of an Integrated Environment for Expert System Development and Operation 
+<btitle> Proceedings of the 5th International Workshop on Expert Systems and their Applications, Avignon 
+<month> May 
+<year> 1985 
+<pp> 573--583 
+
+<report id="diPrimio88">
+<author> Franco di Primio 
+<title> Viewing Reasoning as Program Execution 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 299 
+<month> March 
+<year> 1988 
+
+<book id="Dias79">
+<author> R.W.M. Dias 
+<title> A Bibliography of Jurisprudence 
+<edition> third 
+<publish> Butterworths 
+<year> 1979 
+
+<book id="Dickerson75">
+<author> Reed Dickerson 
+<title> The Interpretation and Application of Statutes 
+<publish> Little, Brown and Comany 
+<year> 1975 
+
+<report id="Diederich87">
+<author> Joachim Diederich 
+<title> Wissensakquisition 
+<inst> GMD 
+<type> arbeitspapier 
+<no> 245 
+<month> March 
+<year> 1987 
+
+<masters id="Diestelmeier87">
+<author> Kai Diestelmeier 
+<title> A Denotational Description of OBLOG 
+<school> University of Bonn 
+<month> May 
+<year> 1987 
+
+<inproc id="Dincbas80a">
+<author> Mehmet Dincbas 
+<title> A Knowledge-Based Expert System for Automatic Analysis and Synthesis in CAD 
+<editor> S.H. Lavington 
+<btitle> Information Processing 80 
+<year> 1980 
+<pp> 705--710 
+
+<report id="Dincbas80b">
+<author> Mehmet Dincbas 
+<title> Le systeme de resolution de problemes METALOG 
+<inst> CERT 
+<no> 3146 
+<month> December 
+<year> 1980 
+
+<article id="Dowling84">
+<author> W. F. Dowling <and> J. H. Gallier
+<title> Linear-Time Algorithms for Testing the Satisfiability of Propositional Horn Formulae
+<journal> Journal of Logic Programming
+<vol> 3
+<pp> 267-284
+<year> 1984
+
+<article id="Doyle79">
+<author> Jon Doyle
+<title> A Truth Maintenance System
+<journal> Artificial Intelligence
+<vol> 12
+<pp> 231--272
+<year> 1979
+
+<article id="Doyle89">
+<author> Jon Doyle 
+<title> Constructive Belief and Rational Representation 
+<journal> Computational Intelligence 
+<vol> 5 
+<pp> 1--11 
+<year> 1989 
+
+<misc id="Drach89">
+<author> Angelika Drach <and> Ludger Hovestadt
+<title> Intelligente CAD-Systeme --- Instrumente f&ue;r die Planung und Verwaltung komplexer Geb&ae;ude
+<year> 1990
+<private> Authors were invited by J. Hertzberg to GMD. Relevance to TASSO
+
+<inproc id="Dressler88">
+<author> Oskar Dressler
+<title> An Extended Basic ATMS
+<btitle> Second International Workshop on Nonmonotonic Reasoning
+<publish> Springer-Verlag
+<year> 1988
+
+<book id="Dreyfus72">
+<author> H. Dreyfus 
+<title> What Computers Can't Do: A Critique of Artificial Reason 
+<publish> Harper and Row 
+<year> 1972 
+
+<book id="Dworkin77">
+<editor> R. M. Dworkin 
+<title> The Philosophy of Law 
+<publish> Oxford University 
+<series> Oxford Readings in Philosophy 
+<year> 1977 
+
+<incoll id="Dworkin77b">
+<author> R. M. Dworkin
+<title> Is Law a System of Rules?
+<editor> R. M. Dworkin
+<btitle> The Philosophy of Law
+<publish> Oxford Unviersity Press
+<year> 1977
+<pp> 38--65
+
+<inproc id="Dyer85">
+<author> Michael G. Dyer <and> Margot Flowers 
+<title> Toward Automating Legal Expertise 
+<editor> Charles Walter 
+<btitle> Computing Power and Legal Reasoning 
+<publish> West 
+<address> 50 West Kellogg Boulevard, P.O. Box 64526, St. Paul, MN 55164-1003 
+<year> 1985 
+<pp> 49--68 
+
+<book id="Edwards67">
+<editor> Paul Edwards 
+<title> The Encyclopedia of Philosophy 
+<publish> Macmillan Pub. Co, Inc. &amp The Free Press 
+<vol> 1 
+<year> 1972 
+
+<proc id="Egloff86">
+<editor> P. Egloff 
+<title> Standards der Graphik und Modellierung und deren Verwendung im Deutschen Forschungsnetz DFN 
+<organ> Deutschen Forschungsnetz DFN 
+<month> September 
+<year> 1986 
+
+<report id="Egly91">
+<author> Uwe Egly <and> Joachim Hertzberg <and> Josef Schneeberger
+<and> Thomas F. Gordon <and> Doris Waltescheid-Pischel
+<title> Handlungsplanung unter Unsicherheit &mdash ein Einstieg in die
+Literatur 
+<inst> GMD
+<type> TASSO Report
+<no> 20
+<year> 1991
+
+<book id="Erdmann86">
+<editor> Ulrich Edrmann <and> Herbert Fiedler <and> Fritjof Haft <and> Roland Traunm&ue;ller 
+<title> Computergest&ue;tzte Juristische Expertensysteme 
+<publish> Attempto Verlag 
+<series> Neue Methoden im Recht 
+<address> T&ue;bingen 
+<year> 1986 
+
+<report id="Eshghi88">
+<author> K. Eshghi <and> R. A. Kowalski
+<title> Abduction as Deduction
+<inst> Dept. of Computing, Imperial College of Science and Technology
+<address> London
+<type> Technical Report
+<year> 1988
+
+<inproc id="Etheringtion83">
+<author> David W. Etherington <and> Raymond Reiter 
+<title> On Inheritance Hierarchies with Exceptions 
+<btitle> Proceedings of the AAAI 
+<organ> AAAI 
+<year> 1983 
+<pp> 104--108 
+
+<misc id="Fameli84">
+<key> Fameli84 
+<title> Cumulative Index of Informatica e Diritto 
+<year> 1984 
+
+<report id="Fameli83">
+<author> Elio Fameli <and> Roberta Nannucci 
+<title> The Institute for Legal Documentation of the Italian National Research Council 
+<inst> IDG 
+<address> Florence 
+<month> June 
+<year> 1983 
+
+<book id="Farnsworth83">
+<author> E. Allan Farnsworth 
+<title> An Introduction to the Legal System of the United States 
+<publish> Oceana Publications 
+<year> 1983 
+
+<incoll id="Felscher86">
+<author> Walter Felscher
+<title> Dialogues as a Foundation for Intuitionistic Logic
+<editor> D. Gabby <and> F. G&ue;nthner
+<btitle> Handbook of Philosophical Logic; Vol. III: Alternatives in Classical Logic 
+<publish> D. Reidel
+<year> 1986
+<pp> 341-372
+
+<book id="Feigenbaum83">
+<author> Edward A. Feigenbaum <and> Pamela McCorduck 
+<title> The Fifth Generation 
+<publish> Addison-Wesley 
+<year> 1983 
+
+<article id="Fezer86">
+<author> Karl-Heinz Fezer 
+<title> Aspeckte einer Rechtskritik an der economic analysis of law und am property rights approach 
+<journal> Juristen Zeitung 
+<vol> 18 
+<pp> 817--864 
+<month> September 
+<year> 1986 
+
+<masters id="Fidelak86">
+<author> Manfred Fidelak 
+<title> Wissensdarstellung und -verarbeitung auf der Basis von Petri-Netzen 
+<school> University of Bonn 
+<month> May 
+<year> 1986 
+
+<article id="Fiedler66">
+<author> Herbert Fiedler
+<title> Juristische Logik in mathematischer Sicht
+<journal> ARSP
+<vol> 52
+<year> 1966
+
+<incoll id="Fiedler78">
+<author> Herbert Fiedler 
+<title> Zur logischen Konzeption der Rechtsfindung aus dem Gesetz und ihrem historichen Bedingungen 
+<editor> U. Klug, Th. Ramm, F. Rittner <and> B. Schmiedel 
+<btitle> Gesetzgebungstheorie, Juristische Logik, Zivil- und Proce&sz;recht 
+<publish> Springer-Verlag 
+<year> 1978 
+<pp> 129-139
+
+<incoll id="Fiedler80">
+<author> Herbert Fiedler 
+<title> Functional Relations between Legal Regulations and Software 
+<editor> Bryan Niblett
+<btitle> Computer Science and Law
+<publish> Cambridge University Press
+<year> 1980
+<pp> 137-146
+
+
+<misc id="Fiedler/c">
+<author> Herbert Fiedler 
+<title> Informatics of Law and Legal Tradition 
+<private> need full reference 
+
+
+<book id="Fiedler83">
+<author> Herbert Fiedler, Thomas Barthel <and> Gerhard Voogd 
+<title> Untersuchungen zur Formalisierung im Recht als Beitrag zur Grundlagenforschung juristischer Datenverarbeitung (UFORED) 
+<publish> University of Bonn 
+<month> July 
+<year> 1983 
+
+<incoll id="Fiedler83b">
+<author> Herbert Fiedler 
+<title> Die Rechtsfindung aus dem Gesetz im Lichte der neueren Logik und Methodenlehre 
+<editor> G. Kohlmann
+<btitle> Festschrift f&ue;r Ulrich Klug zum 70. Geburtstag
+<publish>Deubner Verlag 
+<address> Cologne
+<year> 1983
+<pp> 55-67
+
+<inproc id="Fiedler85a">
+<author> Herbert Fiedler 
+<title> Expert Systems as a Tool for Drafting Legal Decisions 
+<editor> Antonio A. Martino <and> Fiorenza Socci Natali
+<btitle> Logica, Informatica, Diritto
+<organ> Consiglio Nazionale delle Richere
+<address> Florence
+<year> 1985
+<pp>	265--274
+
+<incoll id="Fiedler85b">
+<author> Herbert Fiedler 
+<title> Informationspolitik und Informationsrecht 
+<editor> Walter Fischer und Ehrhard Mundhenke 
+<btitle> Verwaltungsorganisation, Dienstrecht und Personalwirtschaft 
+<publish> Nomos 
+<year> 1984 
+
+<misc id="Fiedler85c">
+<author> Herbert Fiedler 
+<title> Logical Structure and Information Technology Support of Judicial Decisions 
+<month> June 
+<year> 1985 
+
+<book id="Fiedler86a">
+<editor> Herbert Fiedler <and> Roland Traunm&ue;ller 
+<title> 1. Workshop des Arbeitskreises Formalisierung im Recht 
+<publish> J. Schweitzer Verlag 
+<series> Formalisierung im Recht und Ans&ae;tze juristischer Expertensysteme und formale Modelle im Recht der Gesellschaft f&ue;r Informatik 
+<year> 1986 
+
+<article id="Fiedler86b">
+<author> Herbert Fiedler 
+<title> Juristenausbildung und Informatik, Warnungen vor einem Mi&sz;tand un Vorschl&ae;ge der Rechtsinformatik 
+<journal> Computer und Recht 
+<vol> 11 
+<pp> 756--761 
+<year> 1986 
+
+<article id="Fiedler87">
+<author> Herbert Fiedler 
+<title> Orientierung &ue;ber juristiche Expertensysteme, Grundlagen und M&oe;glichkeiten 
+<journal> Computer und Recht 
+<vol> 5 
+<pp> 325-331 
+<year> 1987 
+
+<incoll id="Fiedler87b">
+<author> Herbert Fiedler <and> Thomas F. Gordon
+<title> Recht und Rechtsanwendung als Paradigma wissensbasierter
+Systeme
+<editor> W. Brauer <and> W. Wahlster
+<btitle> Tagungsband Wissensbasierte Systeme
+<publish> Springer
+<year> 1987
+
+<book id="Fiedler88">
+<editor> H. Fiedler <and> F. Haft <and> R. Traunm&ue;ller 
+<title> Expert Systems in Law; Impacts on Legal Theory and Computer Law 
+<publish> Attempto Verlag 
+<series> Neue Methoden im Recht 
+<vol> 4 
+<address> T&ue;bingen 
+<year> 1988 
+
+<misc id="Fiedler89a">
+<author> Herbert Fiedler <and> Gerhard Oppenhorst 
+<title> Computer in der Juristenausbildung 
+<year> 1989 
+<private> draft 
+
+<misc id="Fiedler89b">
+<author> Herbert Fiedler 
+<title> Computers and Legal Reasoning - Outline of Developments in the Federal Republic of Germany 
+<year> 1989 
+<howpub> Universit&ae;t Bonn, Forschungsstelle f&ue;r juristische Informatik und Automation 
+
+<inproc id="Fiedler90">
+<author> Herbert Fiedler
+<title> Entmythologisierung von Expertensystemen --- Einf&ue;rung in die Thematik f&ue;r Recht und &Oe;ffentliche Verwaltung
+<editor> Hinrich Bonin
+<btitle> Entscheidungsunterst&ue;tzung in der &Oe;ffentlichen Verwaltung
+<publish> Decker &amp M&ue;ller
+<year> 1989
+<pp> 1-12
+
+<article id="Fikes72">
+<author> Richard E. Fikes <and> Peter E. Hart <and> Nils J. Nilsson 
+<title> Learning and Executing Generalized Robot Plans 
+<journal> Artificial Intelligence 
+<vol> 3 
+<pp> 251--288 
+<year> 1972 
+
+<article id="Fikes71">
+<author> Richard E. Fikes <and> Nils J. Nilsson 
+<title> STRIPS: A New Approach to the Application of Theorem Proving to Problem Solving 
+<journal> Artificial Intelligence 
+<vol> 2 
+<pp> 189--208 
+<year> 1971 
+
+<misc id="Flanagan84">
+<key> Dennis Flanagan 
+<title> Scientific American 
+<month> September 
+<year> 1984 
+<private> Special issue on computer software 
+
+<phd id="Fohmann83">
+<author> Lothar H. Fohmann 
+<title> Die Informationale Programmiersprache IPL, Studie zur Operationalisierung regelorientier schlechtdefinierter nichtschematischer Entscheidungen 
+<school> Technischen Hochschule Darmstadt 
+<year> 1983 
+
+<inproc id="Forbus88">
+<author> Kenneth D. Forbus <and><first> Johan de <last>Kleer</author>
+<title> Focusing the ATMS 
+<btitle> Proceedings of the AAAI-88 
+<year> 1988 
+<private> Introduces the implied-by strategy. Example implements a natural deduction theorem prover. 
+
+<article id="FreemanBenson90">
+<author> Bjorn N. Freeman-Benson <and> John Maloney <and> Alan Borning
+<title> An Incremental Constraint Solver
+<journal> Communications of the ACM
+<vol> 33
+<no> 1
+<pp> 54--63
+<month> January
+<year> 1990
+<private> describes the DeltaBlue algorithm, for solving heirarchical constraints. Would be interesting to compare with an ATMS implementation of Gerd Brewka's extensions to Poole.
+
+<article id="Friedland85">
+<author> Peter E. Friedland <and> Yumi Iwasaki 
+<title> The Concept and Implementation of Skelatal Plans 
+<journal> Journal of Automated Reasoning 
+<vol> 1 
+<pp> 161--208 
+<year> 1985 
+
+<book id="Gabby83">
+<editor> D. Gabbay <and> F. Guenthner 
+<title>Handbook of Philosophical Logic, Volume I: Elements of Classical Logic 
+<publish> D. Reidel 
+<series> Synthese Library 
+<vol> 164 
+<year> 1983 
+
+<book id="Gabby83b">
+<editor> D. Gabby <and> F. Guenthner 
+<title> Handbook of Philosophical Logic, Volume IV: Topics in the Philosophy of Langauge 
+<publish> D. Reidel 
+<series> Synthese Library 
+<vol> 167 
+<year> 1989 
+
+<book id="Gabby84">
+<editor> D. Gabbay <and> F. Guenthner 
+<title> Handbook of Philosophical Logic, Volume II: Extensions of Classical Logic 
+<publish> D. Reidel 
+<series> Synthese Library 
+<vol> 165 
+<year> 1984 
+
+<article id="Gabbay84b">
+<author> D.M. Gabbay <and> U. Reyle
+<title> N-PROLOG: An extension of PROLOG with Hypothetical
+Implications
+<journal> Journal of Logic Programming
+<vol> 1
+<pp> 319-355
+<year> 1984
+
+<book id="Gabby86">
+<editor> D. Gabbay <and> F. Guenthner 
+<title> Handbook of Philosophical Logic, Volume III: Alternatives in Classical Logic 
+<publish> D. Reidel 
+<series> Synthese Library 
+<vol> 166 
+<year> 1986 
+
+<misc id="Gabriel">
+<author> John Gabriel, Tim Lindholm, E.L. Lusk <and> R.A. Overbeek 
+<title> A Tutorial on the Warren Abstract Machine 
+<howpub> Argonne National Laboratory 
+<private> need full reference, loaned to Ulli Junker, 28.1.91
+
+<manual id="Gallagher88">
+<author> Kevin Q. Gallagher <and> Daniel D. Corkill <and> Philip M. Johnson
+<title> GBB Reference Manual
+<month> July
+<year> 1988
+<organ> Department of Computer Science, University of Massachusetts at Amherst
+<private> Generic Blackboard System
+
+<unpub id="Gardner80">
+<author><first>Anne von der Lieth <last>Gardner
+<title> Foundations for a Legal Reasoning Program 
+<month> October 
+<year>  1980 
+<note>  draft version of her Ph.D. thesis 
+
+<book id="Gardner87">
+<author><first>Anne von der Lieth <last>Gardner
+<title> An Artificial Intelligence Approach to Legal Reasoning 
+<publish> MIT Press 
+<series> Artificial Intelligence and Legal Reasoning 
+<year> 1987 
+
+<inproc id="Gardner89">
+<author><first>Anne von der Lieth <last>Gardner
+<title> Representing Developing Legal Doctrine
+<btitle> Proceedings of the Second International Conference on
+Artificial Intelligence and Law
+<organ> ACM
+<month> June
+<year> 1989
+
+<article id="Geffner92">
+<author> Hector Geffner <and> Judea Pearl
+<title> Conditional Entailment: Bridging Two Approaches to Default
+Reasoning
+<journal> Artificial Intelligence
+<vol> 53
+<no> 2-3
+<pp> 209-244
+<year> 1992
+
+
+<book id="Gellhorn79">
+<author> Walter Gellhorn <and> Clark Byse <and> Petter L. Strauss 
+<title> Administrative Law, Cases and Comments 
+<edition> Seventh 
+<publish> The Foundation Press 
+<year> 1979 
+
+<book id="Genesereth87">
+<author> Michael R. Genesereth <and> Nils J. Nilsson 
+<title> Logical Foundations of Artificial Intelligence 
+<publish> Morgan Kaufmann 
+<address> Los Altos 
+<year> 1987 
+
+<report id="Genesereth82">
+<author> Michael R. Genesereth <and> David E. Smith 
+<title> Meta-Level Architecture 
+<inst> Dept. of Computer Science, Stanford University 
+<type> memo 
+<no> HPP-81-6 
+<month> December 
+<year> 1982 
+
+<inproc id="Genesereth83">
+<author> Michael R. Genesereth
+<title> An Overview of Metalevel Architecture
+<btitle> Proceedings of the National Conference on Artificial
+Intelligence
+<organ> AAAI
+<publish> Morgan Kaufmann
+<address> Los Altos
+<year> 1987
+<pp> 119--123
+
+<report id="Genesereth84">
+<author> Michael R. Genesereth 
+<title> Partial Programs 
+<inst> Dept. of Computer Science, Stanford University 
+<no> HPP-84-1 
+<month> January 
+<year> 1984 
+
+<unpub id="Genrich82">
+<author> Helga Genrich 
+<title> Preformal Models of Legal Systems and Processes 
+<month> March 
+<year> 1982 
+<note> presented at the international workshop on formal methods in law, GMD-IDR 
+
+<proc id="Georgeff86">
+<editor> Michael P. Georgeff <and> Amy L. Lansky 
+<title> Reasoning about Actions &amp Plans 
+<organ> AAAI 
+<publish> Morgan Kaufmann 
+<month> June-July 
+<year> 1986 
+
+<proc id="Gero88">
+<editor> J. S. Gero 
+<title> Artificial Intelligence in Engineering: Design 
+<publish> Elsevier 
+<address> Amsterdam 
+<year> 1988 
+
+<book id="Gersting82">
+<author> Judith L. Gersting 
+<title> Mathematical Structures for Computer Science 
+<publish> W.H. Freeman and Company 
+<year> 1982 
+
+<book id="Gethmann80">
+<editor> Carl Friedrich Gethmann
+<title> Theorie des Wissenschaftlichen Argumentierens
+<publish> Suhrkamp Verlag
+<year> 1980
+
+<book id="Ginsberg87">
+<editor> Matthew L. Ginsberg 
+<title> Readings in Nonmonotonic Reasoning 
+<publish> Morgan Kaufmann 
+<address> Los Altos 
+<year> 1987 
+
+<book id="Glaser84">
+<author> Hugh Glaser <and> Chris Hankin <and> David Till 
+<title> Principles of Functional Programming 
+<publish> Prentice Hall 
+<year> 1984 
+
+<misc id="GMD84a">
+<key> GMD84a 
+<title> Institut f&ue;r Angewandte Informationstechnik 
+<month> January 
+<year> 1984 
+<howpub> GMD 
+<private> German description of F3 
+
+<misc id="GMD84b">
+<key> GMD84b 
+<title> Institute for Applied Information Technology 
+<month> April 
+<year> 1984 
+<howpub> GMD 
+<private> English description of F3 
+
+<article id="Goebel86">
+<author> J&ue;rgen W. Goebel <and> Reinhard Schmalz 
+<title> Probleme beim Einsatz juristischer Expertensysteme in der Rechtspraxis 
+<journal> Computer und Recht 
+<pp> 510--515 
+<month> August 
+<year> 1986 
+
+<phd id="Goodwin87">
+<author> James W. Goodwin 
+<title> A Theory and System for Non-Monotonic Reasoning 
+<school> Linkoping University 
+<year> 1987 
+
+<inproc id="Goodwin89">
+<author> Scott D. Goodwin <and> Randy G. Goebel 
+<title> Nonmonotonic Reasoning in Temporal Domains: The Knowledge Independence Problem 
+<btitle> Proceedings of the Second International Workshop on Non-Monotonic Reasoning 
+<publish> Springer 
+<year> 1989 
+<pp> 187-201 
+
+<book id="GordonMJ79">
+<author> Michael J.C. Gordon 
+<title>The Denotational Description of Programming Languages, An Introduction 
+<publish> Springer-Verlag 
+<year> 1979 
+
+<misc id="Gordon82">
+<author> Thomas F. Gordon 
+<title> Notes re an Expert System for UCC Art. 9 in EMYCIN 
+<year> 1982 
+
+<unpub id="Gordon84a">
+<author> Thomas F. Gordon 
+<title> Legal Expert Systems: An Overview of the Expert Systems Work of FS-INFRE 
+<year> 1984 
+<note> outline and transparencies of GMD talk 
+
+<misc id="Gordon84b">
+<author> Thomas F. Gordon 
+<title> Oblog 1 Source Code 
+<month> May 
+<year> 1984 
+
+<incoll id="Gordon84c">
+<author> Thomas F. Gordon
+<title> EMYCIN- Kontroll- und Erkl&ae;rungsfunktionen
+<editor> D. Bungers <and> B.S. M&ue;ller <and> P. Raulefs
+<btitle> Expertensysteme, Beitr&ae;ge aus einem Workshop zur
+Aufbereitung des State-of-the-Art : Architecture und Funktionsanalyse
+<publish> GMD
+<address> Sankt Augustin
+<year> 1984
+<pp> 18-31
+<note> Arbeitspapier Nr. 120
+
+<incoll id="Gordon84d">
+<author> Thomas F. Gordon
+<title> Prolog und Produktionsysteme
+<editor> D. Bungers <and> B.S. M&ue;ller <and> P. Raulefs
+<btitle> Expertensysteme, Beitr&ae;ge aus einem Workshop zur
+Aufbereitung des State-of-the-Art
+<publish> GMD
+<address> Sankt Augustin
+<year> 1984
+<pp> 72-83
+<note> Arbeitspapier Nr. 104
+
+<unpub id="Gordon85a">
+<author> Thomas F. Gordon 
+<title> EMYCIN, Control and Explanation Features 
+<year> 1985 
+<note> talk given at a GMD workshop on expert systems 
+
+<report id="Gordon85b">
+<author> Thomas F. Gordon 
+<title> Object-Oriented Predicate Logic and its Role in Representing Legal Knowledge 
+<inst> GMD 
+<type> Arbeitspapier 
+<no>  135
+<month> February 
+<year> 1985 
+
+<article id="Gordon85c">
+<author> Thomas F. Gordon 
+<title>On the suitability of Modula-2 for artificial intelligence programming 
+<journal> Angewandte Informatik 
+<pp> 296-303 
+<month> July 
+<year> 1985 
+
+<incoll id="Gordon85d">
+<author> Thomas F. Gordon
+<title> Object-Oriented Predicate Logic and its Role in Representing
+Legal Knowledge
+<editor> Charles Walter
+<btitle> Computing Power and Legal Reasoning
+<publish> West Publishing Company
+<year> 1985
+<pp> 163-203
+
+<incoll id="Gordon86a">
+<author> Thomas F. Gordon 
+<title> The Role of Exceptions in Models of the Law 
+<editor> H. Fiedler, R. Traunm&ue;ller 
+<btitle> Formalisierung im Recht und Ans&ae;tze juristicher Expertensysteme
+<publish> J. Schweitzer Verlag 
+<address> Munich 
+<year> 1986 
+<pp> 52-59 
+
+<unpub id="Gordon86b">
+<author> Thomas F. Gordon 
+<title> Formalization of UCC Article 9 in Horn Clauses 
+<year> 1986 
+<note> beginnings of an Article 9 knowledge base 
+
+<unpub id="Gordon86c">
+<author> Thomas F. Gordon 
+<title> Oblog in Prolog 
+<month> December 
+<year> 1986 
+<note> source code for various implementations of Oblog-2 in Prolog 
+
+<inproc id="Gordon86d">
+<author> Thomas F. Gordon <and> Gerald Quirchmayr 
+<title> OBLOG-2: Ein hybrides Wissensrepr&ae;sentationssystem zur Modellierung rechtswissenschaftlicher Probleme 
+<editor> G. Hommel <and> S. Schindler 
+<btitle> GI-16. Jahrestagung, Proceedings, Vol. 2 
+<organ> Gesellschaft f&ue;r Informatik 
+<publish> Springer-Verlag 
+<month> October 
+<year> 1986 
+<pp> 406-420 
+
+<inproc id="Gordon86e">
+<author> Thomas F. Gordon <and> Gerald Quirchmayr 
+<title> OBLOG: eine Programmiersprache f&ue;r juristische Expertensysteme 
+<editor> Ulrich Erdmann <and> Herbert Fiedler <and> Fritjof Haft <and> Roland Traunm&ue;ller 
+<btitle> Computergest&ue;tzte Juristische Expertensysteme 
+<publish> Attempto Verlag 
+<address> T&ue;bingen 
+<month> August 
+<year> 1986 
+<pp> 123-134 
+
+<report id="Gordon87a">
+<author> Thomas F. Gordon 
+<title> OBLOG (Version 2), Reference Manual 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 271 
+<month> October 
+<year> 1987 
+
+<inproc id="Gordon87b">
+<author> Thomas F. Gordon <and> Gerald Quirchmayr 
+<title> Der Einsatz der Modellierungssprache OBLOG zum Entwurf von Juristischen Expertensysteme 
+<editor> R.R. Wagner, R. Traunm&ue;ller <and> H.C. Mayr 
+<btitle> Informationsbedarfsermittlung und Informationsbedarfanalyse 
+<organ> Gesellschaft f&ue;r Informatik 
+<publish> Springer-Verlag 
+<month> July 
+<year> 1987 
+<pp> 137-154 
+
+<misc id="Gordon87c">
+<author> Thomas F. Gordon 
+<title> Oblog 2 Source Code 
+<month> January 
+<year> 1987 
+
+<inproc id="Gordon87d">
+<author> Thomas F. Gordon 
+<title> Oblog-2, A Hybrid Knowledge Representation System for Defeasible Reasoning 
+<btitle> The First International Conference on Artificial Intelligence and Law, Proceedings 
+<organ> ACM 
+<publish> ACM Press 
+<month> May 
+<year> 1987 
+<pp> 231-239 
+
+<incoll id="Gordon87e">
+<author> Thomas F. Gordon 
+<title> Some Problems with Prolog as a Knowledge Representation Language for Legal Expert Systems 
+<editor> C. Arnold 
+<btitle> Yearbook of Law, Computers &amp Technology 
+<publish> Butterworths 
+<address> London
+<year> 1987 
+<pp> 52-67
+
+<incoll id="Gordon88">
+<author> Thomas F. Gordon 
+<title> The Importance of Nonmonotonicity for Legal Reasoning 
+<editor> H. Fiedler, F. Haft, R. Traunm&ue;ller 
+<btitle> Expert Systems in Law; Impacts on Legal Theory and Computer Law 
+<publish> Attempto Verlag 
+<address> T&ue;bingen 
+<year> 1988 
+<pp> 111-126 
+<annote> Laws are usually structured as general rules with exceptions.
+This papers presents arguments showing how this traditional structure
+furthers the normative and dispute resolution goals of legal systems.
+It makes the law easier for lay persons to learn and to apply.  It
+minimizes the effort required to update ones knowledge of the law
+after revisions and modifications.  Finally, rules with exceptions
+lower the cost of deciding cases.
+
+<incoll id="Gordon89a">
+<author> Thomas F. Gordon 
+<title> Partial Logic and Default Reasoning 
+<btitle> Aus der Arbeit der Forschungsgruppe Expertensysteme 
+<publish> GMD 
+<address> Sankt Augustin
+<year> 1989
+<note> Arbeitspapier Nr. 337
+<annote> Partial logic is a three-valued logic where the three values
+are usually interpreted to mean <em/true/, <em/false/, and
+<em/undefined/.   The definitions of the usual logical connectives are
+extended to cover the additional cases introduced by the third
+possible value.  The standard connectives are all monotonic, however,
+and do not support default reasoning.  In this paper, a few
+nonmonotonic connectives are defined, which support a form of
+default reasoning when a functional approach to knowledge
+representation is adopted.  Some standard examples (e.g. Nixon,
+Tweety) demonstrate this approach.
+
+<inproc id="Gordon89b">
+<author> Thomas F. Gordon 
+<title> Issue Spotting in a System for Searching Interpretation Spaces 
+<btitle> Proceedings of the Second International Conference on Artificial Intelligence and Law 
+<organ> ACM 
+<month> June 
+<year> 1989 
+<pp> 157-164 
+
+<incoll id="Gordon92">
+<author> Thomas F. Gordon 
+<title> A Theory Construction Approach to Legal Document Assembly 
+<editor> Antonio A. Martino 
+<btitle> Expert Systems in Law 
+<publish> North-Holland
+<address> Amsterdam
+<year> 1992
+<pp> 211-225
+<annote> An overview of a software system for "assembling" legal
+documents is presented. The system applies Artificial Intelligence
+methods and is founded on a <em/theory construction/ view of legal
+reasoning.  The AI methods employed include an Assumption-based Truth
+Maintenance System (ATMS), a Natural Deduction theorem prover, and an
+implementation of Poole's approach to default reasoning.
+
+<article id="Gordon90a">
+<author> Thomas F. Gordon
+<title> K&ue;nstliche Intelligenz und Recht
+<journal> Jur PC
+<no> 5
+<pp> 605-608
+<year> 1990
+
+<article id="Gordon90b">
+<author> Thomas F. Gordon
+<title> K&ue;nstliche Intelligenz und Recht (Teil 2)
+<journal> Jur PC
+<no> 6
+<pp> 638-639
+<year> 1990
+
+<unpub id="Gordon90c">
+<author> Thomas F. Gordon
+<title> Eine abduktive Theorie juristischer Streitfragen
+<month> December
+<year> 1990
+<note> To appear in proceedings of the GI workshop on AI and law, held in
+Hamburg in September, 1990.
+
+<article id="Gordon91a">
+<author> Thomas F. Gordon
+<title> An Abductive Theory of Legal Issues
+<journal> International Journal of Man-Machine Studies
+<vol> 35
+<pp> 95-118
+<month> July
+<year> 1991
+<annote> A normative theory of legal issues, argument moves and clear
+cases is presented in which abduction, rather than deduction, is of
+central importance.  The theory is a refinement of Fiedler's
+constructive view of legal reasoning. Like legal positivism, the
+theory elaborates the concept of a clear case, but here clearness is
+defined relative to a set of competing interpretations of the law,
+rather than a single consistent set of "valid" rules.  A computational
+model for the theory is described, which uses an ATMS reason
+maintenance system to implement abduction.  Finally, the theory is
+compared with Anne Gardner's program for spotting issues in offer and
+acceptance law school examination questions.  
+
+<report id="Gordon91c">
+<author> Thomas F. Gordon
+<title> The <tt/qwertz/ SGML Document Types, Version 1.1 Reference
+Manual
+<inst> German Research Center for Computer Science (GMD)
+<type> Working Paper
+<no> 588
+<month> November
+<year> 1991
+<annote> This is the reference manual for Format, a SGML to LaTeX
+translator.  It consists of SGML document type definitions for the
+LaTeX document styles (articles, books, reports, letters, slides), for
+BibTeX bibliographies and for Unix manual pages.  The system is used
+within the <tt/qwertz/ project for "literate programming".  A tool for
+extracting the source code of programs from their documentation is
+included in the system.  Format also allows LaTeX documents to be
+created using powerful and comfortable SGML editors, such as
+Author/Editor, in a quasi WYSIWYG manner.  It also provides a layer of
+abstraction from LaTeX, allowing documents to be more easily
+translated into formats for other document processing systems, such as
+nroff/troff or MS-WORD.
+
+<incoll id="Gordon92a">
+<author> Thomas F. Gordon 
+<title> Artificial Intelligence: A Hermeneutic Defense
+<editor> Christiane Floyd <and> Heinz Z&ue;llighoven <and> Reinhard
+Budde <and> Reinhard Keil-Slawik 
+<btitle> Software Development and Reality Construction
+<publish> Springer-Verlag
+<year> 1992
+<pp> 280-290
+<annote> Winograd and Flores used hermenuetic philosophy to criticize
+the field of Artificial Intelligence.  This paper argues just the
+opposite, that Hermeneutics offers a justification for the
+new understanding of intelligence evolving within AI.
+
+<inproc id="gordon:etal:92:acmml">
+<author> T.F. Gordon <and> J. Hertzberg <and> A. Horz
+<title> Experiences with ML for Building an AI Planning Toolbox
+<btitle> Proc. ACM Workshop on ML and its Applications
+<year> 1992
+<note> To appear
+<annote> The <tt/qwertz/ toolbox is a system of ML modules for
+implementing AI planners.  We discuss why ML was chosen to implement
+the system, provide a few guidelines for using the language, based on
+our experience, and make some suggestions for language extensions and
+programming environments. 
+<keywrds> qwertz AC
+
+<book id="Grant82">
+<author> Charles W. Grant <and> Jon Butah 
+<title> Introduction to the UCSD p-System 
+<publish> Sybex 
+<year> 1982 
+
+<masters id="Groth87">
+<author> Klaus Groth 
+<title> Temporale Logik und die logische Repr&ae;sentation von Zeitwissen in der KI 
+<school> Institut f&ue;r Informatik, Universit&ae;t Bonn 
+<month> March 
+<year> 1987 
+
+<misc id="Grundmann">
+<author> Stephan Grundmann 
+<title> Collected papers on CAI and legal expert systems 
+
+<article id="Gruner87">
+<author> Richard Gruner 
+<title> Thinking Like a Lawyer: Expert Systems for Legal Analysis 
+<journal> High Technology Law Journal 
+<year> 1987 
+<private> Seems to be a good overview of the work in the field as of 87.  Gruner is an associate Dean at Whittier School of Law. 
+
+<report id="Guesgen87">
+<author> Hans-Werner G&ue;sgen <and> Joachim Hertzberg 
+<title> A Functional View on Constraints 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 252 
+<month> June 
+<year> 1987 
+
+<book id="Habermas71">
+<editor>J&ue;rgen Habermas <and> Dieter Heinrich <and> Niklas Luhmann 
+<title> Hermeneutik und Ideologiekritik 
+<publish> Suhrkamp 
+<year> 1971 
+
+<proc id="Hafner87">
+<editor> Carole D. Hafner 
+<title> The First International Conference on Artificial Intelligence and Law, Proceedings 
+<organ> ACM Sigart 
+<publish> ACM Press 
+<address> Baltimore 
+<month> May 
+<year> 1987 
+
+<misc id="Hammond">
+<author> Peter Hammond 
+<title> Appendix to PROLOG: a language for implementing expert systems 
+<private> conference paper; need full reference 
+
+<book id="Hammond89">
+<author> Kristian J. Hammond 
+<title> Case-Based Planning 
+<publish> Academic Press 
+<year> 1989 
+<private> describes CHEF 
+
+<manual id="Hammond83">
+<author> Peter Hammond 
+<title> APES: A user manual 
+<year> 1983 
+<organ> Imperial College 
+
+<report id="Hammwoehner88">
+<author> R. Hammw&oe;hner <and> R. Kuhlen <and> G. Sonnenberger <and> U. Thiel 
+<title> TWRM-Topographic, Ein wissensbasiertes System zur situationsgerechten Aufbereitung und Pr&ae;sentation von Textinformation in graphischen Retrievaldialogen 
+<inst> Universit&ae;t Konstanz, Informationswissenschaft 
+<month> June 
+<year> 1988 
+
+<book id="Hancock83">
+<author> Les Hancock <and> Morris Krieger 
+<title> The C Primer 
+<publish> McGraw-Hill 
+<year> 1983 
+
+<inproc id="Hahn89">
+<author> Udo Hahn
+<title> Dialogstrukturen in Gruppendiskussionen, Ein Modell f&ue;r
+argumentative Verhandlungen mehrerer Agenten
+<editor> Dieter Metzing
+<btitle> GWAI-89, 13th German Workshop on Artificial Intelligence
+<address> Eringerfeld
+<month> September
+<year> 1989
+<pp> 410--420
+
+<report id="Hanf89">
+<author> Norbert Hanf 
+<title> Spezifikation eines THEORIST-Konnektionsbeweisers 
+<inst> Technische Hochschule Darmstadt, Fachbereich Informatik 
+<no> AIDA-89-05 
+<month> October 
+<year> 1989 
+
+<unpub id="Hansen82">
+<author> Johs Hansen 
+<title> SMARN - A Language for Modelling Norm Structures 
+<month> March 
+<year> 1982 
+<note> presented at the international workshop on Formal Methods in Law, GMD-IDR 
+
+<report id="Harper86">
+<author> Robert Harper <and> David MacQueen <and> Robin Miller 
+<title> Standard ML 
+<inst> Dept. of Computer Science, Univ. of Edinburgh 
+<no> ECS-LFCS-86-2 
+<month> March 
+<year> 1986 
+
+<report id="Harper86b">
+<author> Robert Harper
+<title> Introduction to Standard ML
+<inst> Dept. of Computer Science, Univ. of Edinburgh
+<no> ECS-LRCS-86-14
+<month> November
+<year> 1986
+
+<report id="Harper88">
+<author> Robert Harper <and> Robin Milner <and> Mads Tofte 
+<title> The Definition of Standard ML, Version 2 
+<inst> Laboratory for Foundations of Computer Science, Department of Computer Science, University of Edinburgh 
+<year> 1988 
+
+<incoll id="Hart49">
+<author> H. L. A. Hart
+<title> The Ascription of Responsibility and Rights
+<editor> Antony Flew
+<btitle> Logic and Language: First and Second Series
+<publish> Anchor Books
+<address> Garden City
+<year> 1965
+<pp> 151-174
+
+<book id="Hart83">
+<author> H.L.A. Hart 
+<title> Essays in Jurisprudence and Philosophy 
+<publish> Oxford University Press 
+<year> 1983 
+
+<book id="Hart61">
+<author> H.L.A. Hart 
+<title> The Concept of Law 
+<publish> Oxford University Press 
+<year> 1961 
+
+<incoll id="Hayes-Roth78">
+<author> Frederick Hayes-Roth <and> D.A. Waterman 
+<title> Principles of Pattern-Directed Inference Systems 
+<editor> D.A. Waterman <and> F. Hayes-Roth 
+<btitle> Pattern-Directed Inference Systems 
+<publish> Academic 
+<year> 1978 
+<pp> 577-601 
+
+<article id="Hayes-Roth79">
+<author> Barbara Hayes-Roth <and> Frederick Hayes-Roth 
+<title> A Cognitive Model of Planning 
+<journal> Cognitive Science 
+<vol> 3 
+<pp> 275-310 
+<year> 1979 
+
+<article id="Hayes-Roth85">
+<author> Barbara Hayes-Roth 
+<title> A Blackboard Architecture for Control 
+<journal> Artificial Intelligence 
+<vol> 26 
+<pp> 251-321 
+<year> 1985 
+
+<article id="Haynes86">
+<author> Christopher T. Haynes <and> Daniel P. Friedman and Mitchell Wand 
+<title> Obtaining Coroutines with Continuations 
+<journal> Computer Languages 
+<vol> 11 
+<no> 3 
+<pp> 143-153 
+<year> 1986 
+<private> Shows how to implement corountines using continuations in Scheme. 
+
+<misc id="Hein87">
+<author> H.W. Hein <and> G.M. Kellerman <and> S.R. Smith <and> C.G. Thomas 
+<title> X-AiD: A Shell for Building Highly Interactive and Adaptive User Interfaces 
+<year> 1987 
+<howpub> in IJCAI 87, Milan 
+<private> draft version 
+
+<proc id="Hein89">
+<editor> Manfred Hein <and> Wolfgang Tank <and> Joachim Hertzberg 
+<title> Beitr&ae;ge zum 3. Workshop Planen und Konfigurieren 
+<publish> GMD 
+<month> May 
+<year> 1989 
+
+<article id="Hertzberg86">
+<author> Joachim Hertzberg 
+<title> Planerstellungs-Methoden der K&ue;nstlichen Intelligenz 
+<journal> Informatik-Spektrum 
+<vol> 9 
+<pp> 149-161 
+<year> 1986 
+
+<report id="Hertzberg87a">
+<author> Joachim Hertzberg 
+<title> Beitr&ae;ge zum Workshop "Planen" 
+<inst> GMD 
+<type> arbeitspapier 
+<no> 247 
+<month> April 
+<year> 1987 
+<private> a collection of papers on planning given at a GMD Workshop 
+
+<misc id="Hertzberg87b">
+<author> Joachim Hertzberg 
+<title> Das Projekt PLANEN 
+<month> July 
+<year> 1987 
+<howpub> internal GMD project proposal 
+<private> draft? 
+
+<misc id="Hertzberg87c">
+<author> Joachim Hertzberg 
+<title> On the Semantics of STRIPS - again 
+<month> October 
+<year> 1987 
+<private> draft 
+
+<unpub id="Hertzberg87d">
+<author> Joachim Hertzberg 
+<title> &Ue;ber die Abh&ae;ngigkeitsstruktur in Pl&ae;nen 
+<month> October 
+<year> 1987 
+<note> draft 
+
+<report id="Hertzberg88a">
+<author> Joachim Hertzberg <and> Andreas G&ue;nter 
+<title> Beitr&ae;ge zum 2. Workshop Planen und Konfigurieren 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 310 
+<month> May 
+<year> 1988 
+
+<article id="Hertzberg88b">
+<author> Joachim Hertzberg <and> Thomas F. Gordon <and> Alexander Horz 
+<title> Aktionsplanung, Ein &Ue;berblick &Ue;ber Planungstechniken der K&ue;nstlichen Intelligenz 
+<journal> Zeitschrift f&ue;r Logistik 
+<vol> 1
+<year> 1988 
+
+<inproc id="Hertzberg89">
+<author> Joachim Hertzberg <and> Alexander Horz 
+<title> Towards a Theory of Conflict Detection and Resolution in Nonlinear Plans 
+<btitle> Proceedings of the IJCAI-89 
+<address> Detroit 
+<year> 1989 
+
+<report id="Hewitt82">
+<author> Carl Hewitt <and> Peter de Jong 
+<title> Open Systems 
+<inst> AI Laboratory, MIT 
+<month> December 
+<year> 1982 
+<private> AIM 691 
+
+<report id="Hick81">
+<author> Bruno Hick <and> Philippe Tirtiaux 
+<title> Systeme Informatique d'Aide au Jugement de Qualification 
+<inst> Facultes Universitaries Notre-Dame de la Paix (Namur) 
+<year> 1981 
+
+<article id="Hill89">
+<author> William C. Hill
+<title> The Mind at AI: Horseless Carriage to Clock
+<journal> AI Magazine
+<vol> Vol. 10
+<no> No. 2
+<pp> 28-41
+<year> 1989
+
+<book id="Hoare85">
+<editor> C.A.R. Hoare <and> J.C. Shepherdson 
+<title> Mathematical Logic and Programming Languages 
+<publish> Prentice-Hall 
+<series> International Series in Computer Science 
+<year> 1985 
+
+<book id="Hobbes51">
+<author> Thomas Hobbes
+<title> Leviathan
+<publish>
+<year> 1651
+
+<inproc id="Hoelldobler89">
+<author> Steffen H&oe;ller <and> Josef Schneeberger
+<title> A New Deductive Approach to Planning
+<editor> Dieter Metzing
+<btitle> GWAI-89, 13th German Workshop on Artificial Intelligence
+<address> Eringerfeld
+<month> September
+<year> 1989
+<pp> 63--73
+
+<report id="Horn">
+<author> Christian Horn
+<title> Interactive Program and Proof Development with NurPRL
+<inst> Sektion Mathematik der Humboldt-Universit&ae;t zu Berlin
+<type> Seminarbericht
+<no> 97
+<month> April
+<year> 1988
+
+<report id="Horn88b">
+<author> Christian Horn
+<title> Deduktive Programmierung
+<inst> Sektion Mathematik der Humboldt-Universit&ae;t zu Berlin
+<type> Seminarbericht
+<no> 100
+<month> September
+<year> 1988
+
+<masters id="Horz88">
+<author> Alexander Horz 
+<title> Aufgabenorientierte Hilfe f&ue;r UNIX-Benutzer, Eine neue Sicht auf Friedlands MOLGEN 
+<school> Institut f&ue;r Informatik, Universit&ae;t Bonn 
+<month> February 
+<year> 1988 
+
+<report id="Hoschka88">
+<author> Peter Hoschka 
+<title> Aus der Arbeit der Forschungsgruppe Expertensysteme 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 337 
+<month> December 
+<year> 1988 
+
+<article id="Hohfeld13">
+<author> Wesley Necomb Hohfeld 
+<title> Some Fundamental Legal Conceptions as Applied in Judicial Reasoning 
+<journal> Yale Law Journal 
+<pp> 16-59 
+<year> 1913 
+<private> First in a series of two articles of the same title by Hohfeld. 
+
+<article id="Hohfeld17">
+<author> Wesley Necomb Hohfeld 
+<title> Fundamental Legal Conceptions as Applied in Judicial Reasoning 
+<journal> Yale Law Journal 
+<vol> 26 
+<pp> 710-770 
+<year> 1917 
+<private> Second in a series of two articles with the same title by Hohfeld. 
+
+<book id="Holmes81">
+<author> Oliver Wendel Holmes
+<title> The Common Law
+<publish> Little, Brown
+<address> Boston
+<year> 1881
+
+<proc id="Hommel86">
+<editor> G. Hommel <and> S. Schindler 
+<title> GI-16. Jahrestagung I 
+<organ> GI 
+<publish> Springer-Verlag 
+<address> Berlin 
+<month> October 
+<year> 1986 
+
+<report id="Hommes80">
+<author> F. Hommes <and> W. Kluge <and> H. Schl&ue;tter 
+<title> A Reduction Machine Architecture ... 
+<inst> GMD 
+<type> internal report 
+<no> ISF 80.04 
+<year> 1980 
+
+<masters id="Hoorens82">
+<author> Jan Hoorens 
+<title> Conception, Specification and Prototyping of a Contract Writing Support System 
+<school> F.N.D.P. Namur 
+<year> 1982 
+
+<proc id="ICAIL89">
+<key> ICAIL89 
+<title> Proceedings of the Second International Conference on Artificial Intelligence and Law 
+<publish> ACM 
+<month> June 
+<year> 1989 
+<private> conference took place in Vancouver, June 13-16 
+
+<misc id="Inoue88">
+<author> Katsumi Inoue 
+<title> Pruning Search Trees in Assumption-based Reasoning 
+<year> 1988 
+<private> appears in Avignon-88, need proper reference 
+
+<misc id="Inoue88b">
+<author> Katsumi Inoue 
+<title> On the Semantics of Hypothetical Reasoning and Truth Maintenance 
+<month> March 
+<year> 1988 
+<howpub> ICOT 
+<private> draft 
+
+<article id="Jackson85">
+<author> Kevin T. Jackson 
+<title> Definition in Legal Reasoning 
+<journal> Jurimetrics Journal 
+<pp> 377-386 
+<year> 1985 
+<private> Summer issue 
+
+<book id="Jensen74">
+<author> Kathleen Jensen <and> Niklaus Wirth 
+<title> Pascal, User Manual and Report 
+<edition> Second 
+<publish> Springer-Verlag 
+<year> 1974 
+
+<misc id="Jones86">
+<author> Richard Jones 
+<title> Papers related to Jones' work on CAI and Legal Expert
+Systems while at IBM, Heidelberg 
+<month> September 
+<year> 1986 
+
+<misc id="Jones89">
+<author> Andrew J. I. Jones 
+<title> Deontic Logic and Legal Knowledge Representation 
+<year> 1989 
+<private> Paper presented in Bologna, May 3-5 
+
+<proc id="Joshi85">
+<editor> Aravind Joshi 
+<title> Proceedings of the Ninth International Joint Conference on Artificial Intelligence 
+<organ> IJCAI 
+<publish> Morgan Kaufmann 
+<address> Los Altos, California 
+<month> August 
+<year> 1985 
+<private> two volumes 
+
+<unpub id="Junker87">
+<author> Ulrich Junker 
+<title> Diskussion und Implementierung eines annahmenbasierten Truth Maintenance Systems 
+<month> August 
+<year> 1987 
+<note> Description of Ulli's ATMS implementation 
+
+<report id="Junker88">
+<author> Ulrich Junker 
+<title> Reasoning in Multiple Contexts 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 334 
+<month> September 
+<year> 1988 
+
+<report id="Junker89">
+<author> Ulrich Junker 
+<title> EXCEPT: A Rule-Based System for Multiple Contexts, Inconsistencies, and Exceptions 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 371 
+<month> February 
+<year> 1989 
+
+<misc id="Junker89b">
+<author> Ulrich Junker 
+<title>Non-Monotonic Theorem Provers for Autoepistemic Logic and Default Logic 
+<year> 1989 
+<howpub> GMD 
+<private> draft 
+
+<inproc id="Junker89c">
+<author> Ulrich Junker
+<title> A Correct Non-Monotonic ATMS
+<btitle> Proceedings of the International Joint Conference on
+Artificial Intelligence
+<address> Detroit
+<year> 1989
+<pp> 1049--1054
+
+<inproc id="Junker90">
+<author> Ulrich Junker <and> Kurt Konolige
+<title> Computing the Extensions of Autoepistemic and Default Logics
+with a TMS
+<btitle> to be present at the Third International Workshop on
+Nonmonotonic Reasoning
+<address> South Lake Tahoe
+<year> 1990
+
+<report id="Junker91">
+<author> Ulrich Junker
+<title> The EXCEPT II Default Reasoning System
+<inst> GMD
+<type> TASSO Report
+<no> 23
+<month> June
+<year> 1991
+
+<misc id="Junker92">
+<author> Ulrich Junker
+<title> Relationship Between Assumptions
+<note> In Preparation
+<year> 1992
+
+<misc id="Kamp81">
+<author> Hans Kamp 
+<title> A Theory of Truth and Semantic Representation 
+<year> 1981 
+<private> theoretical foundation for the knowledge representation approach used in the LEX project 
+
+<report id="Karpf89">
+<author> Jurgen Karpf 
+<title> Isomorphic and Top-Down Modelling of Statutory Law 
+<inst> Institute for Computer and Systems Science, Cophenhagen School of Economics and Business Administration 
+<month> January 
+<year> 1989 
+<private> Extended Abstract 
+
+<inproc id="Karpf89b">
+<author> Jurgen Karpf 
+<title> The Future and Other Time Issues in Legal Representation 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> refers to James Allen's approach 
+
+<inproc id="Karpf89c">
+<author> Jurgen Karpf
+<title> Quality Assurance of Legal Expert Systems
+<btitle> Logica, Informatica, Diritto
+<organ> Consiglio Nazionale delle Ricerche 
+<address> Florence
+<year> 1989
+<pp> 411-440
+
+<book id="Kaufmann81">
+<editor> Arthur Kaufmann <and> Winfried Hassemar 
+<title> Einf&ue;hrung in Rechtsphilosophie und Rechtstheorie der Gegenwart 
+<publish> C. F. M&ue;ller 
+<address> Heidelberg 
+<year> 1979 
+
+<book id="Kelly84">
+<author> Al Kelly <and> Ira Pohl 
+<title> An Introduction to Programming in C 
+<publish> Benjamin Cummings 
+<year> 1984 
+
+<book id="Kernighan81">
+<author> Brian W. Kernighan <and> P.J. Plauger 
+<title> Software Tools in Pascal 
+<publish> Addison-Wesley 
+<year> 1981 
+
+<book id="Kernighan84">
+<author> Brian W. Kernighan <and> Rob Pike 
+<title> The UNIX Programming Environment 
+<publish> Prentice-Hall 
+<year> 1984 
+
+<book id="Klug82">
+<author> Ulrich Klug 
+<title> Juristische Logik 
+<publish> Springer 
+<year> 1982 
+
+<book id="Kneale62">
+<author> William Kneale <and> Martha Kneale 
+<title> The Development of Logic 
+<publish> Clarendon Press 
+<year> 1962 
+<private> in Christoph Lischka's library 
+
+<article id="Knuth84">
+<author> Donald E. Knuth 
+<title> Literate Programming 
+<journal> The Computer Journal 
+<vol> 27 
+<no> 2 
+<pp> 97-111 
+<year> 1984 
+
+<book id="Koers89">
+<author> A. W. Koers <and> D. Kracht <and> J. M. Smith <and> M. C. M. Weusten 
+<title> Knowledge based Systems in Law 
+<publish> Kluwer 
+<address> P.O. Box 23, 7400 GA Deventer, the Netherlands 
+<year> 1989 90 6544 421 1 
+
+<inproc id="Konolige90">
+<author> Kurt Konolige
+<title> A General Theory of Abduction
+<btitle> Working Notes of the AAAI Spring Symposium on Automated
+Abduction
+<organ> American Association for Artificial Intelligence
+<year> 1990
+<pp> 62-66
+
+<masters id="Kopp87">
+<author> J&ue;rgen Kopp 
+<title> Das 1-Clausen-Verfahren in mehrsortiger Logik 
+<school> Universit&ae;t Bonn 
+<month> September 
+<year> 1987 
+
+<inproc id="Kornfeld83">
+<author> William A. Kornfeld 
+<title> Equality for Prolog 
+<btitle> Proceedings of the IJCAI 
+<year> 1983 
+<pp> 514-519 
+
+<report id="Kowalewski87">
+<author> Kawalewski <and> Strasser <and> Schneeberger <and> Br&ae;uer <and> Denzinger 
+<title> Teilvorhaben KOKON: Erfahrungen mit Prototyp 1 
+<inst> TU-M&ue;nchen 
+<type> Forschungsbericht 
+<no> FB-TUM-87-26 
+<month> April 
+<year> 1987 
+<private> Contract construction expert system; 
+
+<report id="Kowalski85">
+<author> Robert Kowalski <and> Marek Sergot 
+<title> A Logic-Based Calculus of Events 
+<inst> Dept. of Computing, Imperial College, London 
+<month> February 
+<year> 1985 
+
+<misc id="Kowalski86">
+<author> Robert Kowalski 
+<title> Database Updates in the Event Calculus 
+<month> July 
+<year> 1986 
+<howpub> Imperial College 
+
+<misc id="Kowalski83">
+<author> Robert Kowalski 
+<title> Logic for Expert Systems 
+<month> November 
+<year> 1983 
+<howpub> Imperial College 
+
+<inproc id="Kowalski89">
+<author> Robert Kowalski <and> Marek Sergot 
+<title> The Use of Logical Models in Legal Problem Solving 
+<btitle> Proceedings of Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1989 
+
+
+<proc id="Kracht90">
+<editor> D. Kracht <and> C. N. J. de Vey Mestdagh <and> J. S. Svensson
+<title> Legal Knowledge Based Systems
+<organ> The Foundation for Legal Knowledge Systems
+<publish> Koninklijke Vermande BV
+<address> Lelystad, The Netherlands
+<year> 1990
+
+<unpub id="Kramer85">
+<author> Axel Kramer 
+<title> A Design of the Oblog User Interface on the Macintosh 
+<month> September 
+<year> 1985 
+<note> End report of his Werkvertrag with FS-INFRE. 
+
+<article id="Kraus90">
+<author> S. Kraus <and> D. Lehmann <and> M. Magidor
+<title> Nonmonotonic Reasoning, Preferential Models and Cumulative Logics
+<journal> Artificial Intelligence
+<vol> 44
+<pp> 167-207
+<year> 1990
+
+
+<book id="Krawietz84">
+<author> Werner Krawietz 
+<title> Recht als Regelsystem 
+<publish> Franz Steiner 
+<address> Wiesbaden 
+<year> 1984 
+
+<misc id="Kriwaczek86">
+<author> Frank Kriwaczek 
+<title> A Critical Analysis Program 
+<year> 1986 
+<howpub> Imperial College 
+<private> revised version of chapter in "micro-Prolog - Programming in Logic", Prentice-Hall, 1984 
+
+<misc id="Kurokawa">
+<author> Toshiaki Korokawa 
+<title> Logic Programming -- What does it bring to the software engineering 
+<private> conference paper; need full reference 
+
+<book id="Lamport86">
+<author> Leslie Lamport 
+<title> &LaTeX;, A Document Preparation System
+<publish> Addison-Wesley
+<year> 1986
+
+<inproc id="Lang86">
+<author> Kevin J. Lang <and> Barak A. Pearlmutter 
+<title> Oaklisp: an Object-Oriented Scheme with First Class Types 
+<btitle> OOPSLA '86 Proceedings 
+<organ> Association of Computing Machinery 
+<year> 1986 
+
+<report id="Latocha">
+<author> Peter Latocha 
+<title> Exploration von Aussagenr&ae;umen, Ein semantischer Anstaz 
+<inst> GMD 
+<type> Studien 
+<no> 164 
+<month> July 
+<year> 1989 
+
+<unpub id="Lauritson91">
+<author> Marc Lauritson
+<title> Technology Report: Building Legal Practice Systems with
+Today's Commercial Authoring Tools
+<month> November
+<year> 1991
+<note> To be published AI and Law.   Update reference then.
+
+<misc id="Lehberger87">
+<author> Kurt Lehberger 
+<title> Know-how, ein Auskunfts- und Beratungssystem f&ue;r Neueinsteiger in die Forschungsgruppe "Expertensysteme" 
+<month> October 
+<year> 1987 
+<private> Prakitumsarbeit 
+
+<report id="Lehmann88">
+<author> D. Lehmann <and> M. Magidor
+<title> Rational Logics and their Models: a Study in Cumulative Logic
+<inst> Department of Computer Science, Hebrew University
+<address> Jerusalem, Israel
+<type> Technical Report
+<year> 1988
+
+<inproc id="Leith85">
+<author> Philip Leith
+<title> Clear Rules and Legal Expert Systems
+<editor> Antonio A. Martino <and> Fiorenza Socci Natali
+<btitle> Logica, Informatica, Diritto
+<organ> Consiglio Nazionale delle Ricerche 
+<address> Florence
+<year> 1985
+
+
+<misc id="Leith86">
+<author> Philip Leith 
+<title> Artificial Intelligence and the Legal Rule 
+<month> April 
+<year> 1986 
+<howpub> presented at the conference on Technology in Legal Education, University of Warwick 
+
+<article id="Leith86b">
+<author> Philip Leith 
+<title> Fundamental Errors in Legal Logic Programming 
+<journal> Computer Journal 
+<vol> 29 
+<no> 6 
+<pp> 545-552 
+<year> 1986 
+
+<misc id="Leith86c">
+<author> Philip Leith 
+<title> The Judge and the Mythical Logic of Legislation 
+<month> February 
+<year> 1986 
+
+<misc id="Leith87">
+<author> Philip Leith 
+<title> Involvement, Detachment and Programming: The Belief in Prolog 
+<year> 1987 
+<private> need chapter number and publisher 
+
+<misc id="Lenat/a">
+<author> Doug Lenat <and> Mayank Prakash <and> Mary Shepherd 
+<title> CYC: Using Common Sense Knowledge to Overcome Brittleness and Knowledge Acquisition Bottlenecks 
+<private> need volume and year 
+
+<misc id="Lenat/b">
+<author> Douglas B. Lenat 
+<title> Heuretics: Theoretical and Experimental Study of Heuristic Rules 
+<private> Conference paper; need full reference 
+
+<article id="Lenat82">
+<author> Douglas B. Lenat <and> William R. Sutherland <and> James Gibbons 
+<title> Heurstic Search for New Microcircuit Structures: An Application of Artificial Intelligence 
+<journal> AI Magazine 
+<vol> Summer 
+<pp> 17-33 
+<year> 1982 
+
+<misc id="Letz89">
+<author> Reinhold Letz <and> Johann Schumann <and> Stephan Bayerl 
+<title> SETHEO, A SEquential THEOremprover for first order logic, Version 2 
+<year> 1989 
+<howpub> Forschungsgruppe K&ue;stliche Intelligenz, Institut f&ue;r Informatik 
+<private> draft of conference paper; which conference? 
+
+<inproc id="Levesque89">
+<author> Hector J. Levesque
+<title> A Knowledge-Level Account of Abduction
+<btitle> IJCAI-89
+<address> Detroit
+<year> 1989
+<pp> 1061--1067
+
+<misc id="Levi87">
+<author> Paul Levi 
+<title> Aufgebenorientierte Planung von Montageoperationen f&ue;r Autonome Roboter 
+<year> 1987 
+<private> book draft 
+
+<book id="LeVine80">
+<author> Robert LeVine 
+<title> The Uniform Commercial Code, An Operational Translation 
+<publish> Browning Publications 
+<address> Atlanta 
+<year> 1980 
+
+<misc id="Lifschitz87">
+<author> Vladimir Lifschitz 
+<title> On the Semantics of STRIPS 
+<year> 1987 
+<private> conference paper; need full reference 
+
+<inproc id="Lingenfelder89">
+<author> Christoph Lingenfelder 
+<title> Structuring Computer Generated Proofs 
+<btitle> IJCAI-89 
+<address> Detroit 
+<year> 1989 
+<pp> 378--383 
+
+<misc id="Lischka87a">
+<author> Christoph Lischka 
+<title> Connectionist Models of Musical Thinking 
+<year> 1987 
+
+<article id="Lischka87b">
+<author> Christoph Lischka 
+<title> Semiotik und Musikwissenschaft 
+<journal> Semiotik 
+<vol> 9 
+<no> 3 
+<pp> 345-355 
+<year> 1987 
+
+<misc id="Lischka87c">
+<author> Christoph Lischka 
+<title> &Ue;ber die Geworfenheit kognitiver Systeme, die Blindheit des Wissensingenieurs and Anderes 
+<year> 1987 
+<private> draft 
+
+<article id="Lischka87d">
+<author> Christoph Lischka 
+<title> Zeichenwandel in der abendl&ae;ndischen Musiknotation 
+<journal> Semiotik 
+<vol> 9 
+<no> 3 
+<pp> 269-281 
+<year> 1987 
+
+<book id="Lloyd84">
+<author> J.W. Lloyd 
+<title> Foundations of Logic Programming 
+<publish> Springer-Verlag 
+<year> 1984 
+
+<article id="Lochovsky88">
+<author> F. H. Lochovsky <and> J. S. Hogg <and> S. P. Weiser <and> A. O. Mendelzon 
+<title> OTM: Specifying Office Tasks 
+<journal> SIGOIS Bulletin 
+<vol> 9 
+<no> 2 &amp 3 
+<pp> 46-54 
+<month> April &amp July 
+<year> 1988 
+<private> Proceedings of the Conference on Office Information Systems, March 23-25, Palo Alto 
+
+<book id="Lorenzen69">
+<author> Paul Lorenzen 
+<title> Normative Logic and Ethics 
+<publish> BI-Hochschultaschenb&ue;cher 
+<year> 1969 
+<private> borrowed from Christoph Lischka 
+
+<masters id="Lorscheid88">
+<author> Gerd Lorscheid <and> Christian Bauer 
+<title> Verteiltes Planen verteilter Probleml&oe;sungen 
+<school> Institut f&ue;r Informatik, Universit&ae;t Bonn 
+<year> 1988 
+<private> Diplomarbeit 
+
+<unpub id="Loui92">
+<author> R. Loui <and> K. Stiefvater
+<title> Corrigenda to Poole's Rules and a Lemma of Simari-Loui
+<year> 1992
+<note> to appear
+
+<article id="Luft85">
+<author> Alfred Lothar Luft 
+<title> Pr&ae;dikation, Regulation und Abstraktion, Ein Beitrag zu den philosophischen und terminologischen Grundlagen der Wissensrepr&ae;sentation 
+<journal> Angewandte Informatik 
+<pp> 91-100 
+<month> March 
+<year> 1985 
+
+<inproc id="Lusk82a">
+<author> Ewing L. Lusk <and> William McCune <and> Ross A. Overbeek 
+<title> Logic Machine Architecture: Inference Mechanisms 
+<btitle> Proceedings of the 6th Conference on Automated Deduction 
+<publish> Springer Verlag 
+<month> June 
+<year> 1982 
+<pp> 85-108 
+
+<inproc id="Lusk82b">
+<author> Ewing L. Lusk, William W. McCune <and> Ross A. Overbeek 
+<title> Logic Machine Architecture: Kernel Functions 
+<btitle> Proceedings of the 6th Conference on Automated Deduction 
+<publish> Springer Verlag 
+<month> June 
+<year> 1982 
+<pp> 70-84 
+
+<article id="Lusti86">
+<author> M. Lusti 
+<title> Expertensysteme im Recht, eine Einf&ue;hrung 
+<journal> IUR 
+<vol> 2 
+<pp> 77-84 
+<year> 1986 
+
+<article id="Lutze88">
+<author> Rainer Lutze 
+<title> Customizing Cooperative Office Procedures by Planning 
+<journal> SIGOIS Bulletin 
+<vol> 9 
+<no> 2 &amp 3 
+<pp> 63-77 
+<month> April &amp July 
+<year> 1988 
+<private> Proceedings of the Conference on Office Information Systems, March 23-25, Palo Alto 
+
+<book id="MacCormick78">
+<author> Neil MacCormick 
+<title> Legal Reasoning and Legal Theory 
+<publish> Oxford University Press 
+<series> Clarendon Law Series 
+<year> 1978 
+
+<inproc id="Mackaay89">
+<author> Ejan Mackaay <and> Daniel Poulin <and> Jacques Fremont <and> Constant Deniger <and> Paul Bratley 
+<title> The Logic of Time in Law and Legal Expert Systems 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> compare with Karpf89; includes short comparison of well-known approaches: McCarthy's, McDermott's, Allen's, Kowalski's and Shoham's 
+
+<article id="Manna86">
+<author> Zohar Manna <and> Richard Waldinger 
+<title> Special Relations in Automated Deduction 
+<journal> Journal of the ACM 
+<vol> 33 
+<no> 1 
+<pp> 1-59 
+<month> January 
+<year> 1986 
+
+<book id="Manna85">
+<author> Zohar Manna <and> Richard Waldinger 
+<title> The Logical Basis for Computer Programming 
+<publish> Addison-Wesley 
+<year> 1985 
+
+<inproc id="Mariani89">
+<author> Paola Mariani <and> Daniela Tiscornia 
+<title> Application of an Expert System to Legislative Drafting 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> includes "simulated application of norms to hypothetical cases" 
+
+<inproc id="Marshall89">
+<author> Catherine C. Marshall
+<title> Representing the Structure of a Legal Argument
+<btitle> The Second Internatinal Conference on Artificial Intelligence
+and Law
+<organ> ACM
+<month> June
+<year> 1989
+<pp> 121--127
+
+
+<article id="Martelli82">
+<author> Alberto Martelli <and> Ugo Montanari 
+<title> An Efficient Unification Algorithm 
+<journal> ACM Transactions on Prog. Lang. and Systems 
+<vol> 4 
+<no> 2 
+<pp> 258-282 
+<month> April 
+<year> 1982 
+
+<incoll id="MartinLoef85">
+<author> P. Martin-L&oe;f
+<title> Constructive Mathematics and Computer Programming
+<editor> C.A.R. Hoare <and> J.C. Shepardson
+<btitle> Mathematical Logic and Programming Languages
+<publish> Prentice-Hall
+<year> 1985
+
+<proc id="Martino81">
+<editor> A. A. Martino <and> E. Maretti <and> C. Ciampi 
+<title> Logica, Informatica, Diritto
+<organ> Consiglio Nazionale delle Ricerche 
+<address> Florence 
+<month> April 
+<year> 1981 
+
+<book id="Martino82">
+<editor> Antonio A. Martino 
+<title> Deontic Logic, Computational Linguistics and Legal Information Systems, Volume II 
+<publish> North-Holland 
+<year> 1982 
+
+<article id="Martins88">
+<author> J. P. Martins <and> S. C. Shapiro
+<title> A Model for Belief Revision
+<journal> Artificial Intelligence
+<vol> 35
+<no> 1
+<pp> 25--80
+<year> 1988
+
+<article id="McCarthy80">
+<author> John McCarthy
+<title> Circumscription --- A Form of Nonmonotonic Reasoning
+<journal> Artificial Intelligence
+<vol> 13
+<pp> 27--39
+<year> 1980
+
+<article id="McCarthy86">
+<author> John McCarthy
+<title> Applications of Circumscription to Formalizing Common-Sense
+Knowledge 
+<journal> Artificial Intelligence
+<vol> 28
+<pp> 89-116
+<year> 1986
+
+<article id="McCarty77">
+<author> L. Thorne McCarty
+<title> Reflections on TAXMAN: An Experiment in Artificial
+Intelligence and Legal Reasoning
+<journal> Harvard Law Review
+<vol> 90
+<no> 5
+<year> 1977
+
+<report id="McCarty82">
+<author> L. Thorne McCarty <and> N. S. Sridharan
+<title> A Computational Theory of Legal Argument
+<inst> Laboratory for Computer Science Research, Rutgers University
+<type> Technical Report
+<no> LRP-TR-13
+<year> 1982
+
+<misc id="McCarty86a">
+<author> L. Thorne McCarty 
+<title> Clausal Intuitionistic Logic: An Outline 
+<month> March 
+<year> 1986 
+<private> draft version of paper submitted to the 1986 Symposium on Logic Programming 
+
+<report id="McCarty86b">
+<author> L. Thorne McCarty 
+<title> Fixed Point Semantics and Tableau Proof Procedures for a Clausal Intuitionistic Logic 
+<inst> Rutgers University 
+<no> LRP-TR-18 
+<month> September 
+<year> 1986 
+
+<inproc id="McCarty86c">
+<author> L. Thorne McCarty 
+<title> Permissions and Obligations: An Informal Introduction 
+<btitle> Logica, Informatica, Diritto 
+<publish> North-Holland 
+<month> May 
+<year> 1986 
+<private> draft version 
+
+<report id="McCarty87">
+<author> L. Thorne McCarty 
+<title> Intelligent Legal Information Systems: An Update 
+<inst> Department of Computer Science, Rutgers University 
+<no> LRP-TR-20 
+<month> May 
+<year> 1987 
+
+<article id="McCarty88a">
+<author> L. Thorne McCarty 
+<title> Clausal Intutionistic Logic, I. Fixed-Point Semantics 
+<journal> The Journal of Logic Programming 
+<vol> 5 
+<pp> 1-31 
+<year> 1988 
+
+<article id="McCarty88b">
+<author> L. Thorne McCarty 
+<title> Clausal Intutitionistic Logic, II. Tableau Proof Procedures 
+<journal> The Journal of Logic Programming 
+<vol> 5 
+<pp> 93-132 
+<year> 1988 
+
+<report id="McCarty88c">
+<author> L. Thorne McCarty 
+<title> Programming Directly in a Nonmonotonic Logic 
+<inst> Computer Science Department, Rutgers University 
+<no> LRP-TR-21 
+<month> September 
+<year> 1988 
+<private> draft 
+
+<inproc id="McCarty89">
+<author> L. Thorne McCarty
+<title> A Language for Legal Discourse, I. Basic Features
+<btitle> The Second International Conference on Artificial
+Intelligence and Law
+<organ> ACM
+<month> June
+<year> 1989
+<pp> 180-189
+
+<misc id="McCarty92">
+<author> L. Thorne McCarty <and> William W. Cohen
+<title> The Case for Explicit Exceptions
+<note> Need full citation
+<year> 1992
+
+<book id="McCorduck79">
+<author> Pamela McCorduck 
+<title> Machines Who Think 
+<publish> W.H. Freeman and Company 
+<year> 1979 
+<private> History of AI 
+
+<incoll id="McDermott78">
+<author> J. McDermott <and> C. Forgy 
+<title> Production System Conflict Resolution Strategies 
+<editor> D.A. Waterman <and> F. Hayes-Roth 
+<btitle> Pattern-Directed Inference Systems 
+<publish> Academic Press 
+<year> 1978 
+<pp> 177-199 
+
+<article id="McDermott82">
+<author> John McDermott 
+<title> R1: A Rule-Based Configurer of Computer Systems 
+<journal> Artificial Intelligence 
+<vol> 19 
+<pp> 39-88 
+<year> 1982 
+
+<book id="McGilton83">
+<author> Henry McGilton <and> Rachel Morgan 
+<title> Introducing the UNIX System 
+<publish> McGraw-Hill 
+<year> 1983 
+
+<inproc id="Meyrowitz86">
+<author> Norman Meyrowitz 
+<title> Intermedia: The Architecture and Construction of an Object-Oriented Hypermedia System and Applications Framework 
+<btitle> OOPSLA '86 Proceedings 
+<month> September 
+<year> 1986 
+<pp> 186-201 
+
+<misc id="Michaelsen">
+<author> Robert H. Michaelsen 
+<title> An Expert System for Federal Tax Planning 
+<private> TAXADVISOR 
+
+<article id="Michalski86">
+<author> Ryszard S. Michalski <and> Patrick H. Winston 
+<title> Variable Precision Logic 
+<journal> Artificial Intelligence 
+<vol> 29 
+<pp> 121-146 
+<year> 1986 
+
+<inproc id="Miller86">
+<author> D. Miller <and> A. Felty 
+<title> An Integration of Resolution and Natural Deduction Theorem Proving 
+<btitle> Proc. AAAI-86 
+<organ> AAAI 
+<address> Philadelphia, PA 
+<month> August 
+<year> 1986 
+<pp> 198--202 
+<private> external 
+
+<book	id="Milner91">
+<author> Robin Milner <and> and Mads Tofte
+<title> Commentary on Standard {ML}
+<publish> MIT Press
+<address> Cambridge, Massachusetts
+<year>	1991
+
+<book id="Minsky86">
+<author> Marvin Minsky 
+<title> The Society of Mind 
+<publish> Simon and Schuster 
+<year> 1986 
+
+<inproc id="Missiaen91">
+<author> Lode Missiaen <and> Maurice Bruynooghe
+<title> Localized Abductive Planning
+<btitle> Proceedings of the European Workshop on Planning (EWSP)
+<organ> GMD
+<address> Sankt Augustin
+<month> March
+<year> 1991
+
+<report id="Miyachi83">
+<author> T. Miyachi, et. al. 
+<title> A Knowledge Assimilation Method for Logic Databases 
+<inst> ICOT 
+<no> TR-025 
+<month> September 
+<year> 1983 
+
+<misc id="MKRP">
+<key> MKRP 
+<title> A list of publications of the Markgraf Karl Refutation Procedure Group of the University of Karlsruhe 
+
+<misc id="ML86">
+<key> ML86 
+<title> Standard ML 
+<year> 1986 
+<howpub> University of Edinburgh 
+<note> A collection of various papers about Standard ML 
+
+<misc id="Moencke">
+<author> Ulrich M&oe;ncke 
+<title> Modellierung komplexer rechtlicher Regelungen - dargestellt am Beispeil einer hypothekenrechtlichen Fallgruppe 
+<note> Universit&ae; t des Saarlandes 
+
+<article id="Moore85">
+<author> Robert C. Moore 
+<title> Semantical Considerations on Nonmonotonic Logic 
+<journal> Artificial Intelligence
+<vol> 25
+<pp> 75--94
+<year> 1985 
+
+<misc id="Moses">
+<author> P. D. Moses 
+<title> Compiler Generation using Denotational Semantics 
+
+<misc id="Moto-oka83">
+<key> T. Moto-oka 
+<title> New Generation Computing 
+<year> 1983 
+
+<misc id="MRS84">
+<author> Michael R. Genesereth <and> Russell Greiner <and> Milton R. Grinberg <and> David E. Smith 
+<title> Manuals for MRS, including the MRS Dictionary, Introduction, Tutor, Casebook and installation instructions. 
+<year> 1984 
+<howpub> Stanford HPP Reports 
+
+<report id="Mukai83">
+<author> Kuniaki Mukai <and> Koichi Furukawa 
+<title> An Ordered Linear Resolution Theorem Proving Program in Prolog 
+<inst> ICOT 
+<no> TM-0027 
+<month> September 
+<year> 1983 
+<private> includes Prolog source code 
+
+<report id="Mueller86">
+<author> Bernd S. M&ue;ller 
+<title> Lehrmaterial BABYLON, Die Beispielwissensbasen zur Pilsbestimmung 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 221 
+<month> Semptember 
+<year> 1986 
+
+<misc id="Munenori87">
+<author> Hajime Munenori <and> Yoshino Kitahra 
+<title> LES - Project 
+<year> 1987 
+<private> about legal expert systems in Japan 
+
+<inproc id="Nagel89">
+<author> Stuart S. Nagel 
+<title> Spreadsheet Software and Legal Expert Systems 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+
+<misc id="Nakashima">
+<author> Hideyuki Nakashima 
+<title> Prolog/KR - Language Features 
+<private> Proceedings paper; need full reference 
+
+<report id="Neidecker85">
+<author> Burkhard Neidecker 
+<title> KAP-Maschine: Maschinenmodell Version 0.4 
+<inst> Universit&ae;t Karlsruhe 
+<month> November 
+<year> 1985 
+
+<article id="Newell76">
+<author> A. Newell <and> H. A. Simon 
+<title> Computer Science as Empirical Inquiry: Symbols and Search 
+<journal> Communications of the ACM 
+<vol> 19 
+<no> 3 
+<month> March 
+<year> 1976 
+<private> reference for the Physical Symbol System Hypothesis (PSSH) 
+
+<article id="Newell82">
+<author> A. Newell
+<title> The Knowledge Level
+<journal> Artificial Intelligence
+<vol> 19
+<no> 2
+<pp> 87-127
+<year> 1982
+
+<misc id="NIAL84">
+<author> M.A. Jenkins <and> J. Glasgow <and> R. Browse <and> C.D. McCrosky <and> Laurie J. Hendren 
+<title> NIAL 
+<year> 1984 
+<howpub> Queen's University 
+<private> a collection of reports and articles about NIAL, the Nested Interactive Array Language 
+
+<book id="Niblett80">
+<editor> Brian Niblett 
+<title> Computer Science and Law, An Advanced Course 
+<publish> Cambridge University Press 
+<year> 1980 
+
+<book id="Nida75">
+<author> Eugene A. Nida 
+<title> Componential Analysis of Meaning 
+<publish> Mouton Publishers 
+<series> Approaches to Semiotics 
+<vol> 57 
+<year> 1975 
+
+<incoll id="Nilsson84">
+<author> J.F. Nilsson 
+<title> Formal Vienna-Definition Method models of Prolog 
+<editor> J.A. Campbell 
+<btitle> Implementations of Prolog 
+<publish> John Wiley &amp Sons 
+<year> 1984 
+<pp> 281-308 
+
+<book id="Nilsson82">
+<author> Nils J. Nilsson 
+<title> Principles of Artificial Intelligence 
+<publish> Tioga Publishing Company 
+<address> Palo Alto, California 
+<year> 1982 
+
+
+<inproc id="Nitta85">
+<author> Katsumi Nitta <and> Juntaro Nagao 
+<title> KRIP: a Knowledge Representation System for Laws relating to Industrial Property 
+<editor> Eiiti Wada 
+<btitle> Logic Programming '85, Proceedings of the 4th Conference 
+<publish> Springer-Verlag 
+<year> 1985 
+<pp> 276-286 
+
+<misc id="Nitta86">
+<author> Katsumi Nitta <and> Juntaro Nagao <and> Tetsuya Mizutori 
+<title> KRIP-2: A Knowledge Representation and Inference System for Procedural Law 
+<year> 1986 
+<private> Describes a legal expert system written in a Prolog extended with object-oriented programming concepts 
+
+<proc id="NonMon84">
+<key> NonMon84 
+<title> Non-Monotonic Reasoning Workshop 
+<organ> AAAI 
+<month> October 
+<year> 1984 
+<private> Preproceedings, 2 volumes 
+
+<report id="North88">
+<author> N. D. North 
+<title> A Denotational Definition of Prolog 
+<inst> National Physical Laboratory 
+<no> DITC 106/88 
+<year> 1988 
+
+<article id="Nossum85">
+<author> Rolf Nossum 
+<title> Automated Theorem Proving Methods 
+<journal> BIT 
+<vol> 25 
+<pp> 51-64 
+<year> 1985 
+<private> Automatic Theorem Proving Overview 
+
+<report id="Novak83">
+<author> Gordon S. Novak Jr. 
+<title> GLISP User's Manual 
+<inst> Stanford University 
+<no> STAN-CS-82-895 
+<year> 1983 
+
+<report id="Nute86">
+<author> Donald Nute 
+<title> LDR: A Logic for Defeasible Reasoning 
+<inst> Forschungsstelle f&ue;r nat&ue;rlich-sprachliche Systeme 
+<address> Universit&ae;t T&ue;bingen, &Oe;sterbergstr. 9, T&ue;bingen 
+<month> July 
+<year> 1986 
+
+<manual id="OSF89a">
+<key> OSF89a 
+<title> Motif Programmer's Reference, Part I: Widget Classes 
+<year> 1989 
+<organ> Open Software Foundation 
+
+<manual id="OSF89b">
+<key> OSF89b 
+<title> Motif Programmer's Reference, Part II: Other Routines 
+<year> 1989 
+<organ> Open Software Foundation 
+
+<inproc id="Osman89">
+<author> Mohamed R. Osman <and> Martha W. Evens <and> Henry Harr <and> James E. Sprowl 
+<title> OLGS - An Office Letter Generation System 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+
+<report id="Patel-Schneider85">
+<author> Peter F. Patel-Schneider 
+<title> A Decideable First-Order Logic for Knowledge Representation 
+<inst> Palo Alto Research, Schlumberger 
+<no> 45 
+<month> October 
+<year> 1985 
+
+<inproc id="Pattaro89">
+<author> Enrico Pattaro <and> Giorgi Casadei <and> Giovanni Sartor 
+<title> An Expert System Project in Environmental Law (IRI-Project) 
+<btitle> Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1989 
+
+<proc id="Paul87">
+<editor> M. Paul 
+<title> Computerintegrierter Arbeitsplatz im B&ue;ro 
+<organ> GI 
+<publish> Springer-Verlag 
+<address> Berlin 
+<month> October 
+<year> 1987 
+<private> 17. Jahrestagung, M&ue;nchen 
+
+<article id="Paulson85">
+<author> Lawrence C. Paulson 
+<title> Lessons learned from LCF: A Survey of Natural Deduction Proofs 
+<journal> The Computer Journal 
+<vol> 28 
+<no> 5 
+<pp> 474-479 
+<year> 1985 
+
+<article id="Paulson86">
+<author> Lawrence C. Paulson 
+<title> Natural Deduction as Higher-Order Resolution 
+<journal> Journal of Logic Programming 
+<vol> 3 
+<pp> 237-258 
+<year> 1986 
+
+<book id="Paulson87">
+<author> L.C. Paulson 
+<title> Logic and Computation, Interactive Proof with Cambridge LCF 
+<publish> Cambridge University Press 
+<year> 1987 
+
+<report id="Paulson88">
+<author> Lawrence C. Paulson 
+<title> A Preliminary User's Manual for Isabelle 
+<inst> University of Cambridge, Computer Laboratory 
+<no> Technical Report No. 133 
+<month> May 
+<year> 1988 
+
+<article id="Paulson89">
+<author> Lawrence C. Paulson
+<title> The Foundation of a Generic Theorem Prover
+<journal> Journal of Automated Reasoning
+<vol> 5
+<pp> 363-397
+<year> 1989
+<private> Isabelle description
+
+<report id="Paulson90">
+<author> Lawrence C. Paulson <and> Tobias Nipkow
+<title> Isabelle Tutorial and User's Manual
+<inst> University of Cambridge, Computer Laboratory
+<no> Technical Report No. 189
+<month> January
+<year> 1990
+
+<book id="Paulson91">
+<author> Lawrence C. Paulson
+<title> ML for the Working Programmer
+<publish> Cambridge University Press
+<year> 1991
+
+<incoll id="Pearl91">
+<author> Judea Pearl
+<title> Probabilistic Semantics for Nonmonotonic Reasoning: A Survey
+<editor> R. Cummins <and> J. Pollock
+<btitle> Philosophical AI: Computational Approaches to Reasoning
+<publish> MIT Press
+<year> 1991
+<pp>  157-187
+
+<phd id="Pednault86">
+<author> Edwin Peter Dawson Pednault
+<title> Toward a Mathematical Theory of Plan Synthesis
+<school> Stanford University
+<month> December
+<year> 1986
+
+<misc id="Pereira">
+<author> Luis Moniz Pereira 
+<title> Logic Control with Logic 
+<howpub> Universidade Nova de Lisboa 
+
+<book id="Perelman79">
+<author> Chaim Perelman 
+<title> Juristiche Logik als Argumentationslehre 
+<publish> Karl Alber Verlag
+<address> Freiburg/M&ue;nchen 
+<year> 1979 
+
+<book id="Perelman79b">
+<author> Chaim Perelman 
+<title> Logik und Argumentation 
+<publish> Athen&ae;um 
+<address> K&oe;nigstein 
+<year> 1979 
+
+<proc id="Periera83">
+<editor> L.M. Pereira <and> A. Porto <and> L. Monteiro <and> M. Filgueiras 
+<title> Proceedings, Logic Programming Workshop '83 
+<publish> Universidada Nova de Lisboa 
+<address> Quinta de Torre, Portugal 
+<month> June-July 
+<year> 1983 
+
+<misc id="Perlis">
+<author> Alan J. Perlis 
+<title> Epigrams on Programming 
+
+<report id="Peterson83">
+<author> Ulrike Petersen 
+<title> Elimination von Rekursionen 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 48 
+<month> August 
+<year> 1983 
+
+<article id="Philipps64">
+<author> Lothar Philipps
+<title> Rechtliche Regelung und formale Logik
+<journal> ARSP
+<vol> 50
+<year> 1964
+
+<incoll id="Philipps89a">
+<author> Lothar Philipps 
+<title> Gibt es ein Recht auch f&ue;r ein Volk von k&ue;nstlichen Wesen, wenn sie nur Verstand haben? 
+<editor> Lothar Philipps <and> Heinrich Scholler 
+<btitle> Jenseits des Funktionalsimus 
+<publish> Decker &amp M&ue;ller 
+<address> Heidelberg 
+<year> 1989 
+
+<incoll id="Philipss89b">
+<author> Lothar Philipps 
+<title> Normentheorie 
+<editor> Arthur Kaufmann <and> Winfried Hassemer 
+<btitle> Einf&ue;rung in Rechtsphilosophie und Rechtstheorie der Gegenwart 
+<chap> 7 
+<publish> C. F. M&ue;ller Juristischer Verlag 
+<address> Heidelberg 
+<year> 1989 
+<pp> 281-293 
+
+<report id="Pietrzykowski84">
+<author> T. Pietrzykowski <and> S. Matwin 
+<title> PROGRAPH: A Preliminary Report 
+<inst> University of Ottawa 
+<no> TR-84-07 
+<month> April 
+<year> 1984 
+<private> a functional language in which programs are expressed graphically, as pictograms 
+
+<report id="Pistor85">
+<author> P. Pistor <and> R. Traunm&ue;ller 
+<title> A Data Base Language for Sets, Lists and Tables 
+<inst> Heidelberg Scientific Center, IBM Germany 
+<no> TR 85.10.004 
+<month> October 
+<year> 1985 
+
+<report id="Plaisted88">
+<author> David A. Plaisted 
+<title> Non-Horn Clause Logic Programming without Contrapositives 
+<inst> Department of Computer Science, University of North Carolina at Chapel Hill 
+<month> January 
+<year> 1988 
+<private> Simplified problem reduction format; similar to natural deduction; I have Plaisted's implementation, in C Prolog; includes benchmarks; should compare with McCarty's Clausal Intuitionistic Logic 
+
+<article id="Pollock87">
+<author> John Pollock
+<title> Defeasible Reasoning
+<journal> Cognitive Science
+<vol> 11
+<pp> 481-518
+<year> 1988
+
+
+<inproc id="Poole85">
+<author> David Poole
+<title> On the Comparison of Theories: Preferring the Most Specific
+Explanation
+<btitle> Proceedings of the International Joint Conference on Articial
+Intelligence 
+<address> Los Angeles
+<year> 1985
+<pp> 144-147
+
+<article id="Poole88">
+<author> David Poole
+<title> A Logical Framework for Default Reasoning
+<journal> Artificial Intelligence
+<vol> 36
+<no> 1
+<year> 1988
+
+<inproc id="Poole90">
+<author> David Poole
+<title> Hypo-deductive Reasoning for Abduction, Default Reasoning and 
+Design
+<btitle> Working Notes of the AAAI Spring Symposium on Automated
+Abduction
+<organ> American Association for Artificial Intelligence
+<year> 1990
+<pp> 106-110
+
+<misc id="Porto">
+<author> Antonio Porto 
+<title> Epilog: a language for extended programming in logic 
+<private> Is a conference contribution but need reference to the conference. 
+
+<book id="Posner77">
+<author> Richard A. Posner
+<title> Economic Analysis of Law
+<edition> Second
+<publish> Little, Brown and Company
+<address> Boston
+<year> 1977
+
+<misc id="Prakken89">
+<author> Henry Prakken 
+<title> Overview of Prakken's Doctoral Research
+<howpub> Computer/Law Institute, Vrije Universiteit Amsterdam 
+
+<inproc id="Prakken91">
+<author> Henry Prakken
+<title> A Tool In Modelling Disagreement in Law: Preferring the Most Specific Argument
+<btitle> Proceedings of the Third International Conference on Artificial Intelligence  and Law
+<address> Oxford
+<year> 1991
+<pp> 165-174
+
+<article id="Puppe86">
+<author> Frank Puppe 
+<title> Expertensysteme 
+<journal> Informatik-Spektrum 
+<vol> 9 
+<pp> 1-13 
+<year> 1986 
+
+<report id="Puppe83a">
+<author> Franziskus Gerhard Puppe 
+<title> MED1, Ein heuristisches Diagnosesystem mit effizienter Kontrollstruktur 
+<inst> Universit&ae;t Kaiserslautern 
+<no> MEMO SEKI-83-04 
+<month> May 
+<year> 1983 
+
+<report id="Puppe83b">
+<author> Frank Puppe <and> Bernhard Puppe 
+<title> Overview of MED1: A Heuristic Diagnostics System with an Efficient Control-Structure 
+<inst> Universit&ae;t Kaiserslautern 
+<no> MEMO SEKI-83-02 
+<year> 1983 
+
+<book id="Quinn78">
+<author> Thomas M. Quinn 
+<title> Uniform Commercial Code Commentary and Law Digest 
+<publish> Warren, Gorham &amp Lamont 
+<address> Boston 
+<year> 1978 
+
+<unpub id="Quirchmayr86">
+<author> Gerald Quirchmayr 
+<title> Die Stellvertretung (Section 164ff BGB) als OBLOG-Modell 
+<month> February 
+<year> 1986 
+<note> result of Gerald's guest researcher contract with FS-INFRE 
+
+<phd id="Quirchmayr89">
+<author> Gerald Quirchmayr 
+<title> Die Unterst&ue;tzung der Inkrementellen Juristischen Fall&oe;sung durch Wissensbasierte Systeme 
+<school> Institut f&ue;r Informatik, Johannes Kepler Universit&ae;t 
+<month> January 
+<year> 1989 
+
+<misc id="Raskovsky82">
+<author> Martin R. Raskovsky 
+<title> Denotational Semantics as a Specification of Code Generators 
+<year> 1982 
+<private> conference paper; need full reference 
+
+<book id="Rechenberg85">
+<author> P. Rechenberg <and> H. M&oe;ssenb&oe;ck 
+<title> Ein Compiler-Generator f&ue;r Mikrocomputer 
+<publish> Carl Hanser Verlag 
+<address> M&ue;nchen 
+<year> 1985 
+<private> Modula-2 based compiler-compiler, includes source code 
+
+<report id="Reddy82">
+<author> Y.V. Reddy <and> Mark S. Fox 
+<title> KBS: An Artificial Intelligence Approach to Flexible Simulation 
+<inst> The Robotics Institute, Caregie-Mellon University 
+<no> CMU-RI-TR-82-1 
+<month> February 
+<year> 1982 
+
+<misc id="Reinfrank86">
+<author> Michael Reinfrank 
+<title> Reason Maintenance Systems 
+<month> November 
+<year> 1986 
+<private> Survery talk presented at the workshop on Truth Maintenance Systems, October 9, in Berlin 
+
+<proc id="Reinfrank88">
+<editor> Michael Reinfrank 
+<title> Proceedings of the Second International Workshop on Non-Monotonic Reasoning 
+<year> 1988 
+<private> Conference was held in Grassau, West Germany, June 12-16 
+
+<article id="Reiter80">
+<author> Raymond Reiter
+<title> A Logic for Default Reasoning
+<journal> Artificial Intelligence
+<vol> 13
+<pp> 81--132
+<year> 1980
+
+<inproc id="Reiter87">
+<author> Raymond Reiter <and> Johnan de Kleer
+<title> Foundations of Assumption-Based Truth Maintenance Systems,
+Preliminary Report
+<btitle> Sixth National Conference on Artificial Intelligence
+<organ> AAAI
+<year> 1987
+<pp> 183-188
+
+<manual id="Reppy90">
+<author> John H. Reppy
+<title> Concurrent Programming with Events
+<edition> Version 0.9
+<month> November
+<year> 1990
+<organ> Department of Computer Science, Cornell University
+
+<book id="Rich83">
+<author> Elain Rich 
+<title> Artificial Intelligence 
+<publish> McGraw-Hill 
+<series> McGraw-Hill series in artificial intelligence 
+<year> 1983 
+
+<inproc id="Rissland87">
+<author> Edwina L. Rissland
+<title> Dimension-Based Analysis of Hypotheticals from Supreme 
+Court Oral Argument
+<btitle> The Second International Conference on Artificial
+Intelligence and Law
+<organ> ACM
+<month> June
+<year> 1989
+<pp> 111--120
+
+<article id="Rissland88">
+<author> Edwina Rissland
+<title> AI and Legal Reasoning
+<journal> AI Magazine
+<vol> 9
+<no> 3
+<pp> 45--55
+<year> 1988
+
+<report id="Roberts77">
+<author> R. Bruce Roberts <and> Ira P. Goldstein 
+<title> The FRL Manual 
+<inst> MIT, AI Laboratory 
+<type> Memo 
+<no> 409 
+<year> 1977 
+
+<article id="Robinson65">
+<author> John A. Robinson
+<title> A Machine-Oriented Logic Based on the Resolution Principle
+<journal> Journal of the American Association of Computing Machinery
+<vol> 12
+<pp> 23--41
+<year> 1965
+
+<book id="Roedig69">
+<author> J&ue;rgen R&oe;dig
+<title> Die Denkform der Alternative in der Jurisprudenz
+<publish> Springer-Verlag
+<year> 1969
+
+<book id="Roedig80">
+<author> J&ue;rgen R&oe;dig
+<title> Schriften zur juristischen Logik
+<publish> Springer Verlag
+<address> Berlin
+<year> 1980
+
+<report id="Rome87">
+<author> Erich Rome <and> Thomas Uthmann 
+<title> KI-Workstations: &Ue;berblick, Marktsituation, Entwicklungstrends 
+<inst> GMD 
+<type> Study 
+<no> 118 
+<month> Februar 
+<year> 1987 
+
+<manual id="Rose89">
+<author> Marshall T. Rose <and> John L. Romine 
+<title> The Rand MH Message Handling System: User's Manual 
+<month> January 
+<year> 1989 
+
+<book id="Rosenberg76">
+<author>Maurice Rosenberg <and> Jack B. Weinstein <and> Hans Smit <and> Harold L. Korn 
+<title> Elements of Civil Procedure 
+<publish> The Foundation Press 
+<series> University Casebook Series 
+<address> New York 
+<year> 1976 
+
+<inproc id="Rostek85a">
+<author> Lothar Rostek <and> Dietrich Fischer 
+<title> An Author's Workstation 
+<editor> J.J.H. Miller 
+<btitle> PROTEXT II, Proceedings of the Second International Conference on Text Processing Systems 
+<publish> Boole Press 
+<month> October 
+<year> 1985 
+
+<inproc id="Rostek85b">
+<author> Lothar Rostek <and> Dietrich Fischer 
+<title> Konzepte f&ue;r ein thesaurusbasiertes Information Retrieval am Arbeitsplatz 
+<editor> J. Krause <and> B. Endres-Niggemeyer 
+<btitle> Sprachverarbeitung in Information und Dokumentation 
+<organ> GLDV/GI 
+<publish> Springer Verlag 
+<month> March 
+<year> 1985 
+
+<article id="Routen91">
+<author> Tom Routen
+<title> Hierarchical Formalizations
+<journal> International Journal of Man-Machine Studies
+<vol> 35
+<year> 1991
+<pp> 69-93
+
+<book id="Sacerdoti77">
+<author> Earl D. Sacerdoti 
+<title> A Structure for Plans and Behavior 
+<publish> Elsevier North-Holland 
+<series> Artificial Intelligence 
+<year> 1977 
+
+<article id="Sacerdoti74">
+<author> Earl D. Sacerdoti 
+<title> Planning in a Hierarchy of Abstraction Spaces 
+<journal> Aritficial Intelligence 
+<vol> 5 
+<pp> 115--135 
+<year> 1974 
+
+<masters id="Sagorny87">
+<author> J&ue;rgen Sagorny 
+<title> SEM - der Versuch einer Reimplementierung von NOAH 
+<school> Universit&ae;t Bonn 
+<month> October 
+<year> 1987 
+
+<report id="Sannella89">
+<author> Donald Sannella
+<title> Formal program development in Extended ML for the working
+programmer.
+<inst> Department of Computer Science, University of Edinburgh
+<no> ECS-LFCS-89-102
+<month> December
+<year> 1989
+
+<inproc id="Shanahan89">
+<author> Murray P. Shanahan
+<title> Prediction is deduction but explanation is abduction
+<btitle> Proceedings of the International Joint Conference on
+Artificial Intelligence
+<year> 1989
+
+<incoll id="Shoham87">
+<author> Yoav Shoham
+<title> A Semantical Approach to Nonmonotonic Logics
+<editor> Matthew L. Ginsberg
+<btitle> Readings in Nonmonotonic Reasoning
+<publish> Morgan Kaufmann
+<year> 1987
+<pp> 227-250
+
+<inproc id="Sartor91">
+<author> Giovanni Sartor
+<title> The Structure of Norm Conditions and Nonmonotonic Reasoning in
+Law
+<btitle> Proceedings of the Third International Conference on
+Artificial Intelligence and Law
+<publish> ACM Press
+<address> Oxford
+<year> 1991
+<pp> 155-164
+
+<article id="Scheifler">
+<author> Robert W. Scheifler <and> Jim Gettys 
+<title> The X Window System 
+<journal> Transaction on Graphics, ACM 
+<vol> 63 
+<year> 1986 
+
+<misc id="Scheschonk82">
+<author> Gert Scheschonk 
+<title> Petri-Netze als formale Basis f&ue;r Informationssysteme 
+<year> 1982 
+<howpub> Vorlesungsmanuskript, Technische Universit&ae;t Berlin 
+
+<misc id="Schneider87">
+<author> Michael Schneider 
+<title> OBLOG --- Andwendungen 
+<month> January 
+<year> 1987 
+<howpub> Seminar paper 
+
+<report id="Schouten89">
+<author> Han Schouten 
+<title> SGML*CASE, The Conceptual Schema of Stored Documents 
+<inst> Center for Technical and Physical Research in Argiculture 
+<address> Wageningen, the Netherlands 
+<no> 1989-02-21 
+<year> 1989 
+<private> draft 
+
+<book id="Schreiber62">
+<author> R. Schreiber
+<title> Logik des Rechts
+<publish> Springer-Verlag
+<address> Berlin
+<year> 1962
+
+<manual id="Schumann90">
+<author> Johann M. Ph. Schumann <and> Norbert Trapp
+<title> SETHEO/PARTHEO Users Manual
+<year> 1990
+<organ> Forschungsgruppe K&ue;nstliche Intelligenz, Technische Universit&ae;t M&ue;nchen
+
+<report id="Schwartz80">
+<author> Richard L. Schwartz <and> Peter M. Melliar-Smith 
+<title> The Suitability of Ada for Artificial Intelligence Applications 
+<inst> SRI International 
+<month> May 
+<year> 1980 
+
+<report id="Schweichhart88">
+<author> Karsten Schweichhart 
+<title> Das Argument Construction Set 
+<inst> GMD 
+<type> Arbeitspapier 
+<no> 348 
+<month> November 
+<year> 1988 
+
+<article id="Scott76">
+<author> Dana Scott 
+<title> Data Types as Lattices 
+<journal> SIAM J. Comput. 
+<vol> 5 
+<no> 3 
+<pp> 522--587 
+<month> September 
+<year> 1976 
+
+<incoll id="Searle81">
+<author> John R. Searle
+<title> Mind, Brains, and Programs
+<editor> Douglas R. Hofstadter <and> Daniel C. Dennet
+<btitle> The Mind's I
+<publish> Basic Books
+<year> 1981
+
+<book id="Sedgewick83">
+<author> Robert Sedgewick 
+<title> Algorithms 
+<publish> Addison-Wesley 
+<series> Series in Computer Science 
+<year> 1983 
+
+<inproc id="Selman90">
+<author> Bart Selman <and> Hector J. Levesque
+<title> Abductive and Default Reasoning: A Computational Core
+<btitle> Proceedings of the Eight National Conference on Artificial
+Intelligence 
+<publish> AAAI Press
+<year> 1990	
+<pp> 343-348
+
+<inproc id="Selman90b">
+<author> Bart Selman
+<title> Computing Explanations
+<btitle> Working Notes of the AAAI Spring Symposium on Automated
+Abduction
+<publish> AAAI
+<year> 1990
+<pp> 82-84
+
+<inproc id="Sernadas87">
+<author> Amilcar Sernadas <and> Cristina Sernadas 
+<title> Object-Oriented Specification of Databases: An Algebraic Approach 
+<editor> P. Hammersley 
+<btitle> Proceedings of the 13th Conference on Very Large Data Bases 
+<year> 1987 
+
+<inproc id="Sernadas88">
+<author> Cristina Sernadas <and> Jose Fiadeiro <and> Amilcar Sernadas 
+<title> Object-Oriented Conceptual Modeling from Law 
+<editor> C. Kung <and> R. Meersman 
+<btitle> IFIP WG 2.6/8.1 Working Conference on The Role of Artificial Intelligence in Databases and Information Systems 
+<publish> North-Holland 
+<year> 1988 
+
+<inproc id="Sernadas88b">
+<author> Amilcar Sernadas <and> Jose Fiadeiro <and> Cristina Sernadas <and> H.-D. Ehrich 
+<title> Abstract Object Types: A Temporal Perspective 
+<editor> A. Pnueli <and> H. Barringer <and> B. Bnieqbal 
+<btitle> Colloquim on Temporal Logic and Specification 
+<publish> Springer-Verlag 
+<year> 1988 
+
+<unpub id="Sergot86a">
+<author> Marek Sergot <and> Richard Susskind 
+<title> Rule-based Representations of the Law, A Reply to the Sceptic 
+<month> May 
+<year> 1986 
+<note> Reply to Philip Leith's article 
+
+<article id="Sergot86b">
+<author> M.J. Sergot <and> F. Sadri <and> R.A. Kowalski <and> F. Kriwaczek <and> P. Hammond <and> H.T. Cory 
+<title> The British Nationality Act as a Logic Program 
+<journal> Communications of the ACM 
+<vol> 29 
+<no> 5 
+<pp> 370--386 
+<year> 1986 
+
+<misc id="Sethi82">
+<author> Ravi Sethi 
+<title> Control flow aspects of semantics directed compiling (summary) 
+<year> 1982 
+<private> appears to be conference paper; need full reference 
+
+<proc id="Shapiro86">
+<editor> Ehud Shapiro 
+<title> Third International Conference on Logic Programming 
+<publish> Springer-Verlag 
+<month> July 
+<year> 1986 
+
+<book id="Sharkey86">
+<editor> N.E. Sharkey 
+<title> Advances in Cognitive Science 1 
+<publish> John Wiley &amp Sons 
+<series> Ellis Horwood Series in Cognitive Science 
+<address> New York 
+<year> 1986 
+
+<article id="Simari92"
+<author> Guillermo R. Simari <and> Ronald P. Loui
+<title> A Mathematical Treatment of Defeasible Reasoning and its
+Implementation
+<journal> Artificial Intelligence
+<vol> 53
+<no> 2-3
+<pp> 125-157
+<year> 1992
+
+
+<book id="Simpson87">
+<author> Rosemary Simpson 
+<title> Common Lisp, The Index 
+<publish> Coral Software Corp. and Franz, Inc. 
+<year> 1987 
+
+<book id="Skinner76">
+<author> B. F. Skinner 
+<title> About Behaviorism 
+<publish> Vintage Books 
+<year> 1974 
+
+<article id="Smith84">
+<author> Edward E. Smith <and> Daniel N. Osherson 
+<title> Conceptual Combination with Prototype Concepts 
+<journal> Cognitive Science 
+<vol> 8 
+<pp> 337--361 
+<year> 1984 
+
+<book id="Smith88">
+<author> Joan M. Smith <and> Robert Stutely 
+<title> SGML: the user's guide to ISO 8879
+<publish> Ellis Horwood
+<year> 1988
+
+<misc id="Smith89">
+<author> Scott Smith 
+<title> Legal Reasoning by Computers -- The Very Idea 
+<month> March 
+<year> 1989 
+<private> Submitted to Fourth Annual Conference on Computers and Philosophy 
+
+<book id="Smullyan84">
+<author> Raymond Smullyan 
+<title> Spottdrosseln und Megav&oe;gel 
+<publish> Wolfgang Kr&ue;ger Verlag 
+<year> 1984 
+<private> German translation, loaned to Gerhard Oppenhorst 
+
+<article id="Soma83">
+<author> John T. Soma <and> Andrea R. Stern 
+<title> A Survey of Computerized Information for Lawyers: Lexis, Juris, Westlaw and Flite 
+<journal> Rutgers Computer &amp Technology Law Journal 
+<vol> 9 
+<pp> 295--314 
+<year> 1983 
+
+<book id="Sowa83">
+<author> John F. Sowa 
+<title> Conceptual Structures 
+<publish> Addison-Wesley 
+<series> System Programming Series 
+<year> 1983 
+
+<book id="Speidel81">
+<author> Richard E. Speidel <and> Robert S. Summers <and> James J. White 
+<title> Teaching Materials on Commercial and Consumer Law 
+<publish> West Publishing Company 
+<series> American Casebook Series 
+<year> 1981 
+
+<inproc id="Sprowl89">
+<author> James A. Sprowl 
+<title> Assembling Standardized Legal Documents in a Semiautomated Fashion with a Rule-Based Expert System 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1989 
+
+<article id="Sridharan85">
+<author> N.S. Sridharan 
+<title> Evolving Systems of Knowledge 
+<journal> AI Magazine 
+<pp> 108--120 
+<month> Fall 
+<year> 1985 
+
+<inproc id="Sridharan81">
+<author> N.S. Sridharan 
+<title> Representing Knowledge in AIMDS 
+<btitle> Informatica e Diritto 
+<year> 1981 
+<pp> 201--221 
+
+<inproc id="Stamper89">
+<author> Ronald K. Stamper 
+<title> The Role of Semantics in Legal Expert Systems and Legal Reasoning 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private>  Argues against predicate logic based legal expert systems in favour of an approach in which agents, intentions and behaviour are primitives, rather than individuals and truth. Discusses the role of metaphor in legal reasoning. Seems to be touching on hermeneutic concerns. 
+
+<inproc id="Staudt89">
+<author> Ronald W. Staudt 
+<title> Practical Applications of Document Assembly Systems: Uses in Large Firms and Law School Curricula 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+
+<book id="Steele84">
+<author> Guy L. Steele, Jr. 
+<title> Common Lisp, The Language 
+<publish> Digital Press 
+<year> 1984 
+
+<misc id="Steels89">
+<author> Luc Steels 
+<title> Expert Systems Terminology 
+<year> 1989 
+<private> Excerpt from a session at the workshop on the foundations of expert systems held at the Paco de Gloria, Portugal. 
+
+<article id="Stefik81a">
+<author> Mark Stefik 
+<title> Planning with Constraints (MOLGEN: Part 1) 
+<journal> Artificial Intelligence 
+<vol> 16 
+<pp> 111--140 
+<year> 1981 
+
+<article id="Stefik81b">
+<author> Mark Stefik 
+<title> Planning and Meta-Planning (MOLGEN: Part 2) 
+<journal> Artificial Intelligence 
+<vol> 16 
+<pp> 141--170 
+<year> 1981  
+
+<misc id="Steiner90">
+<author> Erich Steiner <and> Elisabeth Meier
+<title> Projekt KOMET
+<year> 1990
+<private> Information about the KOMET project, a GMD/Darmstadt project on machine translation and text generation . Possible cooperation partners for the AC text configuration system.x
+
+<article id="Stickel84">
+<author> Mark E. Stickel
+<title> A Prolog Technology Theorem Prover
+<journal> New Generation Computing
+<vol> 2
+<no> 4
+<pp> 371--383
+<year> 1984
+
+<inproc id="Stoyan84">
+<author> Herbert Stoyan 
+<title> Programming Styles in Artificial Intelligence 
+<btitle> Proceedings of the GWAI-84 
+<year> 1984 
+<pp> 154-180 
+
+<report id="Strasser87a">
+<author> Andreas Strasser <and> Josef Schneeberger 
+<title> Ein Ansatz zur Formalisierung von Recht 
+<inst> T&ue; M&ue;nchen, Forschungsgruppe K&ue;nstliche Intelligenz 
+<month> May 
+<year> 1987 
+
+<report id="Strasser87b">
+<author> A. Strasser <and> J. Schneeberger 
+<title> KOKON: Textbaustein-Sprache 
+<inst> T&ue;-M&ue;nchen 
+<type> Arbeitsbericht 
+<no> AB-TUM-87-01 
+<month> January 
+<year> 1987 
+
+<report id="Strasser88a">
+<author> Andreas Strasser 
+<title> Regelsprache und Textrepr&ae;sentation in KOKON 
+<inst> Technischen Universit&ae;t M&ue;nchen 
+<no> AB-TUM-88-08 
+<year> 1988 
+
+<report id="Strasser88b">
+<author> Andreas Strasser <and> Stephan Ring 
+<title> Eine Taxonomie zum Grundst&ue;cksverkehrsrecht 
+<inst> Technischen Universit&ae;t M&ue;nchen 
+<no> FB-TUM-88-04 
+<month> January 
+<year> 1988 
+
+<incoll id="Sundholm83">
+<author> G. Sundholm 
+<title> Systems of Deduction
+<editor> D. Gabbay <and> F. Guenthner
+<btitle> Handbook of Philosophical Logic
+<publish> D. Reidel
+<year> 1984
+
+<article id="Susskind86">
+<author> Richard E. Susskind 
+<title> Expert Systems in Law: A Jurisprudential Approach to Artificial Intelligence and Legal Reasoning 
+<journal> The Modern Law Review 
+<vol> 49 
+<pp> 168-194 
+<month> March 
+<year> 1986 
+
+<book id="Susskind87">
+<author> Richard E. Susskind 
+<title> Expert Systems in Law 
+<publish> Oxford 
+<year> 1987 
+
+<inproc id="Susskind89">
+<author> Richard E. Susskind 
+<title> Pragmatism and Purism in Artificial Intelligence and Legal Reasoning 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+
+<book id="Sussman75">
+<author> Gerald Jay Sussman 
+<title> A Computer Model of Skill Acquisition 
+<publish> American Elsevier 
+<address> New York 
+<year> 1975 
+
+<misc id="Suwa">
+<author> Motoki Suwa <and> Hozumi Tanaka 
+<title> A PROLOG Based Production System 
+
+<book id="Tammelo69">
+<author> Ilmar Tammelo
+<title> Outlines of Modern Legal Logic
+<publish> Steiner
+<address> Wiesbaden
+<year> 1969
+
+<incoll id="Tammelo81">
+<author> Ilmar Tammelo
+<title> Rechtslogik
+<editor> A. Kaufmann <and> W. Hassemer
+<btitle> Einf&ue;rung in Rechtsphilosophie und Rechtstheorie der
+Gegenwart
+<chap> 8
+<publish> C. F. M&ue;ller
+<address> Heidelberg
+<year> 1981
+<pp> 120-131
+
+<misc id="Tasso89">
+<key> TASSO89 
+<title> TASSO, Technische Assistenzsysteme zur Verarbeitung ungenauen Wissens 
+<month> July 
+<year> 1989 
+<private> Vorhabenbeschreibung 
+
+<article id="Tehrani85">
+<author> S. Tehrani <and> G.M. Hijssen 
+<title> UCL: A User-Friendly Conceptual Language 
+<journal> The Australian Computer Journal 
+<vol> 17 
+<no> 4 
+<pp> 174-180 
+<year> 1985 
+
+<report id="Tenenberg87">
+<author> Josh Tenenberg 
+<title> Maintaining Logical Consistency in ABSTRIPS: A Formal Approach 
+<inst> Computer Science Department, University of Rochester 
+<no> TR 205 
+<month> May 
+<year> 1987 
+
+<report id="Tenenberg88">
+<author> Josh D. Tenenberg
+<title> Abstraction in Planning
+<inst> Computer Science Department, University of Rochester 
+<type> Technical Report
+<no> TR 250
+<month> May
+<year> 1988
+
+<report id="Thiebaux91">
+<author> Sylvie Thi&eacute;baux
+<title> Possible Worlds Planning: The System PASCALE
+<inst> GMD
+<year> 1991
+
+<book id="Thomas82">
+<author> Rebecca Thomas <and> Jean Yates 
+<title> A User Guide to the UNIX System 
+<publish> McGraw-Hill 
+<year> 1982 
+
+<misc id="Toenshoff87">
+<author> H.K. T&oe;nshoff, et. al. 
+<title> Collected Papers on Computer Aided Process Planning 
+<year> 1987 
+
+<report id="Tofte89">
+<author> Mads Tofte
+<title> Four Lecture on Standard ML
+<inst> LFCS, Department of Computer Science, University of Edinburgh
+<no> ECS-LFCS-89-73
+<month> March
+<year> 1989
+
+<article id="Topor85">
+<author> R.W. Topor <and> T. Keddis <and> D.W. Wright 
+<title> Deductive Database Tools 
+<journal> Australian Computer Journal 
+<vol> 17 
+<no> 4 
+<pp> 163-173 
+<year> 1985 
+
+<book id="Toulmin50">
+<author> Stephan E. Toulmin
+<title> The Place of Reason in Ethics
+<publish> Cambridge University Press
+<year> 1950
+
+<book id="Toulmin58">
+<author> Stephan E. Toulmin 
+<title> The Uses of Argument 
+<publish> Cambridge University Press 
+<year> 1958 
+
+<book id="Touretzky86">
+<author> David S. Touretzky 
+<title> The Mathematics of Inheritance Systems 
+<publish> Morgan Kaufmann 
+<series> Research Notes in Artificial Intelligence 
+<year> 1986 
+
+<book id="Townsend85">
+<author> Carl Townsend 
+<title> Mastering Excel 
+<publish> Sybex 
+<address> Berkeley 
+<year> 1985 
+
+<article id="Tueni88">
+<author> Michel Tueni <and> Jianzhong Li <and> Pascal Fares 
+<title> AMS: A Knowledge-based Approach to Task Representation, Orgranization and Coordination 
+<journal> SIGOIS Bulletin 
+<vol> 9 
+<no> 2 &amp 3 
+<pp> 78-87 
+<month> April &amp July 
+<year> 1988 
+<private> Proceedings of the Conference on Office Information Systems, March 23-25, Palo Alto 
+
+<manual id="Turk87">
+<author> Andrew Turk 
+<title> ALS Prolog 1.0B1 for the Macintosh 
+<month> November 
+<year> 1987 
+<organ> ALS 
+
+<book id="Turow78">
+<author> Scott Turow
+<title> One L: An Inside Account of Life in the First Year at Harvard
+Law School
+<publish> Penguin
+<address> New York
+<year> 1978
+
+<proc id="Urban84">
+<editor> Joseph E. Urban 
+<title> International Symposium on Logic Programming 
+<organ> IEEE Computer Society 
+<publish> IEEE Computer Society Press 
+<month> February 
+<year> 1984 
+
+<incoll id="vanDalen86">
+<author> Dirk van Dalen
+<title> Intuitionistic Logic
+<editor> D. Gabbay <and> F. G&ue;nthner
+<btitle> Handbook of Philosophical Logic; Vol. III: Alternatives in Classical Logic 
+<publish> D. Reidel
+<year> 1986
+<pp> 225-339
+
+<phd id="vanMelle80">
+<author> William van Melle 
+<title> A Domain-Independent System that Aids in Constructing Knowledge-Based Consultation Programs 
+<school> Stanford University 
+<month> June 
+<year> 1980 
+<private> EMYCIN 
+
+<misc id="vanEmden">
+<author> M.H. van Emden 
+<title> Chess end-game advice: a case study in computer utilisation of knowledge 
+<private> chapter in book; need full reference 
+
+<report id="vanMelle81">
+<author> W. van Melle <and> A.C. Scott <and> J.S. Bennett <and> M. Peairs 
+<title> The EMYCIN Manual 
+<inst> Dept. of Computer Science, Stanford University 
+<no> Report No. STAND-CS-81-885 
+<month> October 
+<year> 1981 
+
+<book id="Varela90">
+<author> Francisco J. Varela
+<title> Kognitionswissenschaft-Kognitionstechnik -- Eine Skizze
+aktueller Perspektiven
+<publish> Suhrkamp
+<address> Frankfurt am Main
+<year> 1990
+
+<inproc id="Vernengo89">
+<author> Roberto J. Vernengo 
+<title> Decision Forms and Expert Systems in Law 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> Faculty of Law, University of Buenos Aires 
+
+<article id="vonWright51">
+<author> George H. von Wright
+<title> Deontic Logic
+<journal> Mind
+<vol> 60
+<no> 1
+<year> 1963
+
+<book id="Wagner70">
+<author> Heinz Wagner
+<title> Die moderne Logik in der Jurisprudenz
+<publish> Gehlen
+<address> Bad Homburg 
+<year> 1970
+
+<inproc id="Wahlgreen89">
+<author> Peter Wahlgreen 
+<title> Swedish Experiences with Decision Support Systems 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> overview of Swedish legal expert systems projects 
+
+<report id="Walther88">
+<author> J&ue;rgen Walther 
+<title> Messungen zur Performanz von Objekt- und Lispsystemen 
+<inst> GMD 
+<type> WEREX report 
+<no> 30 
+<month> December 
+<year> 1988 
+
+<proc id="Wagner87">
+<editor> R.R. Wagner <and> R. Traunm&ue;ller <and> H.C. Mayr 
+<title> Informationsbedarfsermittlung und -analyse f&ue;r den Entwurk von Informationssystemen 
+<organ> GI 
+<publish> Springer-Verlag 
+<year> 1987 
+
+<book id="Waite84">
+<author> William M. Waite <and> Gerhard Goos 
+<title> Compiler Construction 
+<publish> Springer-Verlag 
+<series> Texts and Monographs in Computer Science 
+<year> 1984 
+
+<book id="Walter85">
+<editor> Charles Walter 
+<title> Computing Power and Legal Reasoning 
+<publish> West Publishing Company 
+<year> 1985 
+<private> Proceedings of the First Annual Conference on Law and Technology held at the Univ. of Houston. Includes my "object-oriented logic" paper. 
+
+<book id="Walter88">
+<editor> Charles Walter
+<title> Computer Power and Legal Language
+<publish> Quorum Books
+<year> 1988
+<private> Proceedings of the Second "Annual" Conference on Law and
+Technology.
+
+<article id="Warmer89">
+<author> Jos Warmer <and> Sylvia van Egmond
+<title> The Implementation of the Amsterdam SGML Parser
+<journal> Electronic Publishing
+<vol> 2
+<no> 2
+<pp> 65-90
+<month> July
+<year> 1989
+
+<report id="Warmer90">
+<author> Jos Warmer <and> Hans van Vliet
+<title> Processing SGML documents
+<inst> Vrije Universiteit Amsterdam, Faculteit Wiskunde en Informatica
+<no> IR-208
+<month> January
+<year> 1990
+<private> Extension of Amsterdam SGML Parser allowing embedded C
+processing instructions
+
+<misc id="Warren">
+<author> David H. D. Warren <and> Luis M. Pereria 
+<title> Prolog - The Language and its Implementation Compared with Lisp 
+<private> Appears to be a proceedings paper, but need full reference 
+
+<article id="Warren82">
+<author> David H.D. Warren <and> Fernando C.N. Pereira 
+<title> An Efficient Easily Adaptable System for Interpreting Natural Language Queries 
+<journal> American Journal of Computational Linguistics 
+<vol> 8 
+<no> 3-4 
+<pp> 110-122 
+<year> 1982 
+
+<report id="Warren83">
+<author> David H.D. Warren 
+<title> An Abstract Prolog Instruction Set 
+<inst> SRI International 
+<type> Technical Note 
+<no> 309 
+<month> October 
+<year> 1983 
+<note> loaned to Ulli Junker, 28.1.91
+
+<incoll id="Waterman78">
+<author> D.A. Waterman <and> Frederick Hayes-Roth 
+<title> An Overview of Pattern-Directed Inference Systems 
+<editor> D.A. Waterman <and> Frederick Hayes-Roth 
+<btitle> Pattern-directed Inference Systems 
+<publish> Academic 
+<year> 1978 
+<pp> 3-22 
+
+<incoll id="Waterman78b">
+<author> D.A. Waterman 
+<title> Exemplary Programming in RITA 
+<editor> D.A. Waterman <and> Frederick Hayes-Roth 
+<btitle> Pattern-directed inference systems 
+<publish> Academic 
+<year> 1978 
+<pp> 261-279 
+
+<article id="Waterman86">
+<author> Donald A. Waterman <and> Jody Paul <and> Mark Peterson 
+<title> Expert Systems for Legal Decision Making 
+<journal> Expert Systems 
+<vol> 3 
+<no> 4 
+<pp> 212-226 
+<month> October 
+<year> 1986 
+
+<article id="Watt86">
+<author> David A. Watt 
+<title> Executable Semantic Descriptions 
+<journal> Software - Practice and Experience 
+<vol> 16 
+<no> 1 
+<pp> 13-43 
+<month> January 
+<year> 1986 
+<private> Describes how to do denotational semantics using ML 
+
+<book id="Weinberger70">
+<author> Ota Weinberger
+<title> Rechtslogik. Versuch einer Anwendung moderner Logik auf das
+juristische Denken
+<publish> Springer-Verlag
+<year> 1970
+
+<book id="Weinberger89">
+<author> Ota Weinberger
+<title> Rechtslogik
+<edition> second
+<publish> Duncker &amp Humblot
+<address> Berlin
+<year> 1989
+
+<article id="Weiss78">
+<author> Sholom M. Weiss <and> Casimir A. Kulkowski <and> Saul Amarel 
+<title> A Model-Based Method for Computer-Aided Medical Decision-Making 
+<journal> Artificial Intelligence 
+<vol> 11 
+<pp> 145-172 
+<year> 1978 
+
+<book id="Weissman67">
+<author> Clark Weissman 
+<title> Lisp 1.5 Primer 
+<publish> Dickenson 
+<series> Series in Computer and Information Science 
+<address> Belmont, California 
+<year> 1967 
+
+<book id="Weizenbaum76">
+<author> Joseph Weizenbaum 
+<title> Computer Power and Human Reason 
+<publish> W.H. Freeman and Co. 
+<year> 1976 
+
+<proc id="Weule87">
+<editor> Weule 
+<title> Workshop 'Planen und Konfigurieren' 
+<organ> Universit&ae;t Karlsruhe 
+<address> Karlsruhe 
+<month> December 
+<year> 1987 
+
+<book id="White80">
+<author> James J. White <and> Robert S. Summers 
+<title> Handbook of the Law Under the Uniform Commercial Code 
+<publish> West 
+<series> American Casebook Series 
+<year> 1980 
+
+<article id="Wiederin90">
+<author> Ewald Wiederin
+<title> Was ist und welche Konsequenten hat ein Normenkonflikt?
+<journal> Rechtstheorie
+<vol> 21
+<no> 3
+<pp> 311-333
+<year> 1990
+
+<misc id="Wieacker">
+<author> Franz Wieacker 
+<title> Gesammelte Schriften 
+<private> About secondary sources of law. Book recommended by Edgar odenheimer. Need full reference. 
+
+<report id="Wiefel89">
+<author> Susanne Wiefel 
+<title> Anwendungsbeispiel Immobiliarvertr&ae;ge: Jura and Knowledge Engineering im Grundlagenforschungsprojekt KOKON 
+<inst> Systemtechnik Berner &amp Mattner GmbH 
+<month> March 
+<year> 1989 
+
+<misc id="Wielinga">
+<author> B. J. Wielinga <and> J. A. Breuker 
+<title> Models of Expertise 
+<private> includes discussion of KADS; which conference? 
+
+<book id="Wikstrom87">
+<author> Ake Wikstr&oe;m 
+<title> Functional Programming Using Standard ML 
+<publish> Prentice-Hall 
+<year> 1987 
+
+<article id="Wilensky84">
+<author> Robert Wilensky <and> Yigal Arens <and> David Chin 
+<title> Talking to UNIX in English: An Overview of UC 
+<journal> Communications of the ACM 
+<vol> 27 
+<no> 6 
+<pp> 574-593 
+<month> June 
+<year> 1984 
+
+<inproc id="Wilson89">
+<author> Eve Wilson 
+<title> A System for Experts v. an Expert System 
+<btitle> Proceedings of the Conference on Expert Systems in Law 
+<address> Bologna 
+<month> May 
+<year> 1985 
+<private> Automatic generation of Guide hypertext documents 
+
+<article id="Wilkins84">
+<author> David E. Wilkins 
+<title> Domain-independent Planning: Representation and Plan Generation 
+<journal> Artificial Intelligence 
+<vol> 22 
+<pp> 269-301 
+<year> 1984 
+
+<misc id="Wilkins88">
+<author> David E. Wilkins 
+<title> Special Issue on Planning 
+<year> 1988 
+<howpub> Computational Intelligence 
+
+<book id="Willis85">
+<author> W. Daniel Willis 
+<title> The Connection Machine 
+<publish> MIT 
+<series> Series in Artificial Intelligence 
+<year> 1985 
+
+<incoll id="Winograd73">
+<author> Terry Winograd
+<title> A Procedural Model of Language Understanding
+<editor> R. C. Schank <and> K. M. Colby
+<btitle> Computer Models of Thought and Language
+<publish> Freeman
+<address> San Francisco
+<year> 1973
+
+<book id="Winograd86">
+<author> Terry Winograd <and> Fernando Flores 
+<title> Understanding Computers and Cognition, A New Foundation for Design 
+<publish> Ablex 
+<address> Norwood, New Jersey 
+<year> 1986 
+
+<book id="Winston81">
+<author> Patrick Henry Winston <and> Berthold Klaus Paul Horn 
+<title> LISP 
+<publish> Addison-Wesley 
+<year> 1981 
+
+<book id="Wirth83">
+<author> Niklaus Wirth 
+<title> Programming in Modula-2 
+<edition> Second 
+<publish> Springer-Verlag 
+<series> Texts and Monographs in Computer Science 
+<address> Berlin 
+<year> 1983 
+
+<book id="Wittgenstein58">
+<author> Ludwig Wittgenstein
+<title> Philosophical Investigations
+<edition> Third
+<publish> Macmillan
+<address> New York
+<year> 1958
+
+<book id="Wos84">
+<author> Larry Wos <and> Ross Overbeek <and> Ewing Lusk <and> Jim Boyle 
+<title> Automated Reasoning, Introduction and Applications 
+<publish> Prentice-Hall 
+<year> 1984 
+
+<book id="Wos88">
+<author> Larry Wos 
+<title> Automated Reasoning; 33 Basic Research Problems 
+<publish> Prentice-Hall 
+<year> 1988 
+<private> limited to clausal theorem proving 
+
+<article id="Wroblewski72">
+<author> Jerzy Wroblewski 
+<title> Computers as an aid to the judicial process 
+<journal> Systema, International Review for Cybernetics, Informatics and Law 
+<pp> 57-70 
+<year> 1972 
+
+<inproc id="Zadeh85">
+<author> L.A. Zadeh 
+<title> A Formalization of Commonsense Reasoning Based on Fuzzy Logic 
+<editor> Brauer <and> Radig 
+<btitle> Informatik-Fachbericht 112, Wissensbasierte Systeme, GI Kongress 
+<organ> GI 
+<publish> Springer-Verlag 
+<year> 1985 
+<pp> 398-402 
+
+<inproc id="Zaniolo84">
+<author> Carlo Zaniolo 
+<title> Object-Oriented Programming in Prolog 
+<btitle> International Symposium on Logic Programming 
+<month> February 
+<year> 1984 
+<pp> 265-270 
+
+<incoll id="Zisman78">
+<author> Michael D. Zisman 
+<title> Use of Production Systems for Modeling Asynchronous, Concurrent Processes 
+<editor> D.A. Waterman <and> F. Hayes-Roth 
+<btitle> Pattern-Directed Inference Systems 
+<publish> Academic 
+<year> 1978 
+<pp> 53-68 
+
+</biblio>
+

@@ -1,0 +1,55 @@
+#! /bin/sh 
+
+# synoposis:  sortaddr <database>.sgml
+# author: Tom Gordon
+# date:  Thu Jan 14 13:57:08 MET 1993
+
+# Sorts an address list alias.  The .sgml suffix is required.
+
+FORMAT=/vol/sgmlformat
+SGMLS=/home/qwertz/local/sgmls/sgmls
+SGMLSASP=/home/qwertz/local/sgmls/sgmlsasp
+REPDIR=$FORMAT/rep/addrlst/sort
+LIB=$FORMAT/lib
+MAP=$REPDIR/mapping
+AWK=/vol/gnu/bin/gawk
+SORT=/vol/gnu/gnubin/sort
+SGML_PATH=$FORMAT/dtd/%N.dtd:$FORMAT/dtd/%P.dtd:$REPDIR/%N
+export SGML_PATH
+
+TMPFILES="/tmp/$$.sgml /tmp/$$.inter"
+
+cleanup () {	# remove temporary files
+	for i in $TMPFILES
+	do
+		if [ -f $i ]
+		then
+			/bin/rm $i
+		fi	
+	done
+}
+
+recover () {
+	if [ -f /tmp/$$.old ]
+	then
+	 	mv /tmp/$$.old $i.sgml
+		cleanup
+	fi
+}
+
+trap 'recover; exit 1' 1 2 3 9
+
+cp $1.sgml /tmp/$$.old
+$SGMLS $1.sgml  > /tmp/$$.inter
+
+if [ $? != 0 ]   # probably SGML error in the address file
+then
+	echo recovering $1.sgml
+	recover; cleanup; exit 1
+else
+	cat /tmp/$$.inter | $SGMLSASP $MAP | $SORT -df +1 -2 | $AWK  -f \
+             $REPDIR/sortaddr.awk > /tmp/$$.sgml
+	mv /tmp/$$.sgml $1.sgml
+	mv /tmp/$$.old $1.old
+	cleanup	
+fi

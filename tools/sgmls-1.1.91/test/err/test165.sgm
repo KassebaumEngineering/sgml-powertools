@@ -1,0 +1,8 @@
+sgmls: SGML error at test165.sgm, line 3 at "-":
+       Length of name, number, or token exceeded NAMELEN or LITLEN limit
+sgmls: SGML error at test165.sgm, line 3 at "-":
+       Length of name, number, or token exceeded NAMELEN or LITLEN limit
+sgmls: SGML error at test165.sgm, line 6 at end of file:
+       Illegal entity end in markup or delimited text
+sgmls: SGML error at test165.sgm, line 6 at record end:
+       Document ended invalidly within a markup declaration; parsing ended

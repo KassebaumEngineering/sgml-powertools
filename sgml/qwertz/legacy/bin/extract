@@ -1,0 +1,48 @@
+#! /bin/sh
+
+# synopsis: extract input-file
+#           cat input-file | extract
+
+# author: Tom Gordon
+
+# description: extracts the source code from a literate
+# program.  The programming language used is unimportant.  The input
+# file is expected to be an instance of the qwertz document
+# type.  If the sgml file is syntactically correct, a file containing
+# the source code is written to standard out.
+
+FORMAT=/vol/sgmlformat
+SGMLS=/home/qwertz/local/sgmls/sgmls
+SGMLSASP=/home/qwertz/local/sgmls/sgmlsasp
+REPDIR=$FORMAT/rep/qwertz/latex
+REP=$REPDIR/extract
+SGML_PATH=$FORMAT/dtd/%N.dtd:$REPDIR/%N
+export SGML_PATH
+
+cleanup () {   # remove temporary files
+	if [ -f /tmp/$$.sgml ]	
+	then 
+		/bin/rm /tmp/$$.sgml
+	fi
+}
+
+trap 'cleanup; exit 1' 1 2 3 9
+
+filter () {
+	sed -e '/<omit>/,/<\/omit>/d' 
+}
+
+if [ -f $1.sgml ]
+then
+	$SGMLS $1.sgml | $SGMLSASP $REP  | filter
+elif [ -f $1 ]
+then
+	$SGMLS $1 | $SGMLSASP $REP | filter
+else
+	# read from standard input
+        cat > /tmp/$$.sgml
+	$SGMLS /tmp/$$.sgml | $SGMLSASP $REP | filter
+        cleanup
+fi
+
+

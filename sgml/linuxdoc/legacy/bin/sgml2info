@@ -1,0 +1,276 @@
+#! /bin/sh 
+#
+# sgml2info
+# Greg Hankins and Christian Schwarz, 10 September 1995
+#
+# Based on the original 'mkinfo' scripts by Christian Schwarz.
+#
+
+# Don't make any changes here, it is all done by install!
+LINUXDOCBIN=linuxdocbin
+LINUXDOCLIB=linuxdoclib
+
+AWK=gawk
+
+TABS="-8"		      # expand replaces tabs with 8 spaces
+CHAR="groff"                  # use ASCII (groff) character set
+STYLE=			      # Use standard Linuxdoc-SGML style
+DASHI=-ifmtinfo
+
+trap "CleanUp" 0 1 2 3 9 15
+
+usage () {
+echo "  Usage: sgml2info [-l] [-style <s>] [-t <n>] <filename> ";
+echo "  -l         use latin1 character set (default ASCII)";
+echo "  -style <s> use info/<s>mapping backend in addition to default";
+echo "             info/mapping";
+echo "  -t <n>     tabstops each <n>th col (default 8)";
+echo "  <filename> SGML source file, .sgml extension is optional";
+echo 
+echo "  Output will appear in <filename>.info"
+exit 1 
+}
+
+CleanUp() {
+    rm -f /tmp/sgml2info$$tmp /tmp/sgml2info$$tmp1 /tmp/sgml2info$$tmp2
+}
+
+# check argc
+if [ $# = 0 ]
+then
+	usage
+fi
+
+# do they need help?
+case "$1" in
+	"-h" | "--help" | "-help") usage
+	exit 1
+esac
+
+# getopt
+for i in $*
+do
+        case $i in
+	      -c)	CHECK="yes"; shift;;
+	      -style) 	style=$2;shift; shift;;
+              -l)       CHAR="latin1"; shift;;
+	      -t) 	TABS="-"$2; shift; shift;;
+              --)       shift;
+			break;;
+        esac
+done
+
+# SGML_PATH for sgmls - must be exported
+SGML_PATH=$LINUXDOCLIB/dtd/%N.dtd:$LINUXDOCLIB/dtd/%P.dtd:$LINUXDOCLIB/rep/info/%N
+export SGML_PATH
+
+if [ -f $LINUXDOCLIB/dtd/${style}.dcl ]; then
+	SGMLDECL=$LINUXDOCLIB/dtd/${style}.dcl
+elif [ -f $LINUXDOCLIB/dtd/sgml.dcl ]; then
+	SGMLDECL=$LINUXDOCLIB/dtd/sgml.dcl
+# else just use sgmls's defaults
+fi
+
+if [ "$style" != "" ]; then
+	STYLE=$LINUXDOCLIB/rep/info/${style}mapping; 
+fi
+
+# check to see if there is a source file
+FILE=$1
+if [ -f $FILE.sgml ] 
+then
+	SGMLFILE=$FILE.sgml
+elif [ ! -f $FILE ] 
+then
+	echo "sgml2info: can't find $FILE or $FILE.sgml" >&2
+	exit 1
+else
+	SGMLFILE=$FILE
+fi
+INFOFILE=`basename $SGMLFILE .sgml`.info
+
+echo "Making $INFOFILE from $SGMLFILE."
+# format 
+case $CHAR in
+        latin1) sed 's/\@/\@\@/g' $SGMLDECL $SGMLFILE | sed -f \
+                $LINUXDOCLIB/latin1.sed | $LINUXDOCBIN/sgmls $DASHI \
+                > /tmp/sgml2info$$tmp;;
+        *)      sed 's/\@/\@\@/g' $SGMLDECL $SGMLFILE | $LINUXDOCBIN/sgmls \
+                $DASHI > /tmp/sgml2info$$tmp;;
+esac
+if [ $? = 1 ]
+then 
+	echo "SGML parsing error, no formatting done..."
+	exit 1
+fi
+
+# if there are no SGML parse errors, continue...
+cat /tmp/sgml2info$$tmp | $LINUXDOCBIN/sgmlsasp $STYLE \
+$LINUXDOCLIB/rep/info/mapping | expand $TABS > /tmp/sgml2info$$tmp1
+
+# Process AWK and makeinfo at a time.
+$AWK -v INFO=$INFOFILE -- '
+
+function cut(s) {
+   while ((substr(s,1,1)==" ")||(substr(s,1,1)=="\t")) 
+      s=substr(s,2,length(s)-1);
+   while ((substr(s,length(s),1)==" ")||(substr(s,length(s),1)=="\t")) 
+      s=substr(s,1,length(s)-1);
+   return s;	
+}
+
+function rest(n)
+{
+   save = $0;
+   $0 = cut($0);
+   for (i=0; i<n-1; i++)
+     $0 = cut(substr($0,length($1)+1,length($0)));
+   val = $0;
+   $0 = save;
+   return val;
+}
+
+function fill(s,l)
+{
+   while ( length(s) < l ) 
+      s = s " ";
+   return s;
+}
+
+function conv(entrytext)
+{
+   gsub( "@[A-Za-z][A-Za-z0-9]*", "", entrytext );
+   gsub( "\{", "", entrytext );
+   gsub( "\}", "", entrytext );
+   gsub( ",", "", entrytext );
+   gsub( /\./, "-", entrytext );
+   gsub( ";", "", entrytext );
+   gsub( "  ", " ", entrytext );
+   return entrytext;
+}
+
+BEGIN {
+   curmenu=0;
+   curlevel=0;
+   menustack[curlevel]=0;
+   count[menustack[curlevel]]=0;
+}
+
+NR == 2 {
+   print "@c %** START OF HEADER";
+   print "@setfilename " INFO;
+   print "@c %** END OF HEADER";
+}
+
+{
+   if ( $1=="@SUB" ) {
+      entrytext = conv(rest(2));
+      if ( cut(entrytext)=="" ) {
+         getline;
+         if ( $1=="@LABEL" ) {
+            tmp = $2;
+            getline;
+            entrytext = $0;
+            labels[tmp] = entrytext;
+         } else {
+            entrytext = $0;
+         }
+      }
+
+      entry = fill("* " entrytext "::",24);
+      
+      if ( firstnode=="" ) firstnode=entrytext;
+      menuentry[menustack[curlevel] count[menustack[curlevel]]] = entry;
+      count[menustack[curlevel]]++;
+
+      curlevel++;
+      curmenu++;
+      menustack[curlevel] = curmenu;
+      count[menustack[curlevel]]=0;
+   }
+   else if ( $1=="@ENDSUB" ) {
+      curlevel--;
+   }
+   else if ( $1=="@LABEL" ) {
+      labels[$2] = entrytext;
+   }
+   else if ( $1=="@title" ) {
+      title = rest(2);
+   }
+   else if ( $1=="@subtitle" ) {
+      subtitle = rest(2);
+   }
+   else if ( $1=="@author" ) {
+      author = rest(2);
+   }
+}
+
+END {
+   close(FILENAME);
+
+   curmenu=0;
+   curlevel=0;
+   firstsec=1;
+
+   while ( getline < FILENAME )
+   {
+      if ( $1=="@TOP" ) {
+	 print "@node top";
+	 print "@top " title;
+	 print "@example";
+	 print author;
+	 print subtitle;
+	 print "@end example";
+      }
+      else if ( ( $1=="@title" ) || ( $1=="@subtitle" ) || ( $1=="@author" ) ||
+	       ( $1=="@LABEL" ) ) 
+      {
+      }
+      else if ( $1=="@REF" ) {
+	 print "@ref{" labels[$2] "}";
+      }
+      else if ( $1=="@SUB" ) {
+         if ( firstsec==1 ) {
+	    if ( count[menustack[curlevel]] ) {
+	       print "@menu";
+	       for (i=0; i<count[menustack[curlevel]]; i++) 
+	          print menuentry[menustack[curlevel] i];
+   	       print "@end menu";
+	    }
+	 }
+
+	 s = conv(rest(2));
+         if ( s=="" ) {
+            getline < FILENAME;
+            if ( $1=="@LABEL" ) {
+               getline < FILENAME;
+               s = $0;
+            } else {
+               s = $0;
+            }
+         }
+
+	 print "@node " s;
+	 
+	 if ( curlevel==0 ) print "@chapter " s;
+	 else if ( curlevel==1 ) print "@section " s;
+	 else if ( curlevel==2 ) print "@subsection " s;
+	 else print "@subsubsection " s;
+
+	 curlevel++;
+	 curmenu++;
+	 menustack[curlevel] = curmenu;
+         firstsec=1;
+      }
+      else if ( $1=="@ENDSUB" ) {
+	 curlevel--;
+         firstsec=0;
+      }
+      else print;
+   }
+}
+' /tmp/sgml2info$$tmp1 > /tmp/sgml2info$$tmp2
+
+makeinfo /tmp/sgml2info$$tmp2 -o $INFOFILE
+
+exit 0

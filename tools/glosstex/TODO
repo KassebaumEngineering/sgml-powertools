@@ -1,0 +1,43 @@
+$Id: TODO,v 1.1 1997/08/22 04:02:15 jak Exp $
+
+* BUGS
+
+** the endmark \glosstexpage := \hfill\page doesn't work reliably. see
+   thmmarks.sty (I can't seem to find it) and ntheorem.sty for a
+   better solution.
+
+* TODO
+
+** call MakeIndex from within GlossTeX with exec(). Should also work
+   with DOS (process.h instead of unistd.h in UNIX). name of MakeIndex
+   binary should be configureable. in DOS, it's called makeindx,
+   AFAIK.
+
+** some path searching functionality to find .gdf-files and .mst files
+   (in combination with the above)
+
+** include a test-suite with files foo.glx.expect to be able to test
+   each version whether it's still fully functional.
+
+* MAYBE
+
+** include functionality of nomencl, à la include references produced
+   by \ref and not only \pageref, or eq-ref. problem: too much
+   features. it's not easy to deterimine the environment were're
+   currently in.
+
+** \newcommand{\glosstexgroup} for use with lethead_prefix in
+   MakeIndex, similar to \nomgroup. not really necessary.
+
+** each list can produce independent lists on
+   part/chapter/section-level. problem: hard to implement, featurism,
+   not really necessary.
+
+* DONE
+
+
+
+;;; Local Variables:
+;;; mode: indented-text
+;;; mode: outline-minor
+;;; End:

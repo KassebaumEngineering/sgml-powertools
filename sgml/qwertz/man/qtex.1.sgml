@@ -1,0 +1,106 @@
+<!doctype qwertz system
+[
+<!entity LaTeX sdata "LaTeX">
+<!entity TeX sdata "TeX" >
+]>
+
+<manpage title="qtex">
+<sect1> NAME
+qtex &mdash translate a &LaTeX file into PostScript
+
+<sect1> SYNOPSIS
+
+<p>
+<verb>
+qtex [-dsxgbvc] file[.tex] | lpr
+cat file.tex | qtex [-dsxgbvc] | lpr
+</verb>
+
+<sect1> DESCRIPTION
+
+<p> <tt/qtex/ is a front-end to &LaTeX;, Bib&TeX and a <tt/dvi/ to
+PostScript driver, which makes them considerably easier, and more
+Unix-like, to use.  Unlike &LaTeX;, it can also process &LaTeX files
+read from the standard input file, or in a Unix pipe.  By default,
+<tt/qtex/ writes PostScript to the standard output file, but there is
+a command line switch, described below, for generating the usual &TeX
+<tt/dvi/ file instead.   The ".tex" file extension is optional.  If
+&LaTeX finds an error in your input file, a message will be printed to
+the standard error file and execution is terminated, with a non-zero
+exit status.   There will be a ".log" file in the same directory as
+the input file describing the errors.
+
+<sect1> OPTIONS
+
+<p><descrip>
+<tag><tt>-help</>
+
+<p>If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+
+<tag><tt/-d/
+
+<p>Create a &TeX device-independent file, i.e. a <tt/dvi/ file,
+instead of PostScript.  This is piped to the standard output
+file.  To save the <tt/dvi/ file, write, for example:
+
+<verb>
+qtex -d foo > foo.dvi
+</verb>
+
+<tag><tt>-s</>
+
+<p><em>Save</> all temporary files, such as <tt>foo.tex</>,
+<tt>foo.dvi</>, and <tt>foo.aux</>.   PostScript is generated and
+written to standard out as usual.
+
+<tag><tt>-x</>
+
+<p>Use this option if the input file contains <em>cross
+references</>.  This option causes the &LaTeX file to be processed by
+&TeX twice, to resolve the references.
+
+<tag><tt>-g</>
+
+<p>Use this option if the document is written in <em/German/.  It
+causes &TeX to use another algorithm for hyphenation.  Remember to
+<em>also</> use the <tt>german</> option in the options list of the
+document itself. 
+
+<tag><tt>-b</>
+
+<p>Use this option if the file includes a list of references or
+<em>bibliography</>.  The option causes &LaTeX;, then Bib&TeX and then
+&LaTeX (twice) again to be run.   The bibliography referenced in the
+document is expected to be a Bib&TeX <tt/bib/ file in the same
+directory as the document.   If your bibliography is being
+maintained in the <tt/biblio/ SGML format, use the <tt/biblio/
+command to first translate it into <tt/bib/ format.  The <tt/-b/
+option implies the <tt/-x/ option, for cross-references, described above.
+
+<tag><tt>-v</>
+
+<p><em>Verbose</> mode.  If your document is particularly long, you
+may want to use this mode to be kept posted about just what
+<tt>qtex</> is doing at the moment.  The messages are written to
+standard error, so that they are not mixed with the PostScript being
+piped to the printer!
+
+<tag><tt/-c/
+
+<p>To process a single chapter or section not containing the necessary
+&LaTeX header (i.e. the <tt/&bsol;documentstyle/ and <tt/&bsol;begin{document}/
+commands), use this option.  They will be added to the file before it
+is processed by &TeX;   This option is necessary  when
+formatting a &LaTeX chapter or section generated from SGML using the
+<tt/format/ command. 
+</descrip>
+
+<sect1> SEE ALSO
+
+<p>
+<verb>
+tex(1), format(1)
+</verb>
+
+</manpage>

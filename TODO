@@ -1,0 +1,18 @@
+- use newer version of sgmls - sp 1.1.1.
+
+- scripts for instantiating DTD and translation templates.
+
+- . at beginning of line in groff 
+
+- do we really need "expand $TABS"
+
+- tables!
+
+- maybe a global option for languages, expand the -g option for german on 
+  sgml2latex to use alternate .sty files
+
+- there has got to be a better option for A4 paper, maybe using <dina4>
+
+- fix -man so it'll work for latin1, too
+
+- check for .SGML and .sgml files in scripts

@@ -1,0 +1,39 @@
+$Id: Changes,v 1.1 1997/08/22 04:02:14 jak Exp $
+
+* 0.2 to 0.3
+
+- GlossTeX now supports $n$ independent lists. Default is a glossary
+  and a list of acronyms. \glosstex{*} and \acronym{*} insert all
+  terms from the given .gdf-files into the according list, just like
+  BibTeX's \nocite{*}. Cross references are really usable now, use
+  \glxref and \glxref* instead of \glosstexxref. GlossTeX is much more
+  configurable.
+
+- .gdf-file syntax slightly changed: `%' at BEGINNING OF LINE is
+  recognized as comment character. A term consists of label, item,
+  long-form and text which can be accessed within the document in
+  several ways, just like acronym.sty.
+
+- now the .aux-file is used instead of the .glo-file. Also, no
+  \makeglossary is necessary any more. Also works with \include'd
+  .aux-files caused by \include{foo.tex}
+
+- package is documented using the `docstrip' utility, LaTeX-source
+  cleaned up and documentation updated
+
+- Makefile is now more standard and should also work with non-GNU make
+
+* 0.1 to 0.2
+
+- GlossTeX now works together with nomencl: glosstex.gst is now named
+  glosstex.ist, \printglosstex includes \glosstexname to produce
+  glossary heading, \printglosstex uses \jobname.glx instead of
+  \jobname.gls
+
+- Documentation updated
+
+
+;;; Local Variables:
+;;; mode: indented-text
+;;; mode: outline-minor
+;;; End:

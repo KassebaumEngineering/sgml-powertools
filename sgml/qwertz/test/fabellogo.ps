@@ -1,0 +1,1524 @@
+%!PS-Adobe-2.0 EPSF-1.2
+%%Title: logo
+%%Creator: CLARIS EPSF Export Filter V1.0
+%%CreationDate:9/16/92  11:32:14 a.m.
+%%BoundingBox: 10.500 473.500 534.500 771.500                                                          
+%%QDBoundingBox: 10.500 20.500 534.500 318.500                                                           
+%%DocumentFonts: Helvetica
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%ObjectsIncluded: tText=T tLine=F tRect=T tRRect=F tOval=F tArc=F tFree=F tPoly=F tBMap=T tNote=F tBez=F tPMap=F 
+%%AttributesIncluded: kBaWPattType=T kPixPattType=F kGradientType=F 
+%%EndComments
+/MAV 300 dict def
+MAV begin 
+/useClip true def 
+/top    0 def 
+/left   1 def 
+/bottom 2 def 
+/right  3 def 
+/CM     6 array def 
+/CTM    6 array def 
+/CTMR   6 array def 
+/MTC    6 array def 
+/blimit 1500 def 
+/bcnt   0 def 
+/rbox 8 array def 
+/segbox 8 array def 
+/bbox1 4 array def 
+/c1 3 array def 
+/c2 3 array def 
+/d 3 array def    
+/delta 3 array def 
+/mycurrentrgbcolor 3 array def 
+/ulx 0 def 
+/uly 1 def 
+/llx 2 def 
+/lly 3 def 
+/urx 4 def 
+/ury 5 def 
+/lrx 6 def 
+/lry 7 def 
+/sp [0 0] def 
+/ep [0 0] def 
+/bbox 4 array def 
+/pbox 4 array def 
+/scrnProc currentscreen 3 1 roll pop pop def
+/currentcolorscreen where {
+begin
+currentcolorscreen
+end
+3 1 roll pop pop 
+4 2 roll pop pop 
+5 -2 roll pop pop 
+6 -2 roll pop pop 
+/kProc exch def 
+/bProc exch def 
+/gProc exch def 
+/rProc exch def 
+} if 
+/Max {2 copy gt {pop}{exch pop} ifelse} bind def
+/cellPenW 72.0 /currentcolorscreen where
+{begin currentcolorscreen end pop pop
+10 1 roll pop pop 8 1 roll pop pop
+ 6 1 roll pop pop Max Max Max }
+{currentscreen pop pop} ifelse div 2.0 div def
+%%BeginProcSet : rect 
+/rect { 
+ /saveobj save def 
+ R PC PF LC SS 
+ saveobj restore 
+} bind def 
+%%EndProcSet 
+%%BeginProcSet : R 
+/R { 
+ newpath
+ pbox astore pop
+ 0 792 translate 1 -1 scale CTMR currentmatrix pop exch translate
+ /objectCord mstore def
+ pbox right get 2 div
+ dup pbox left get exch sub
+ pbox left 3 -1 roll put 
+ dup pbox right 3 -1 roll put
+ pbox bottom get 2 div 
+ dup pbox top get exch sub
+ pbox top 3 -1 roll put
+ dup pbox bottom 3 -1 roll put
+ translate 
+ CTM currentmatrix pop
+ 57.3 mul rotate
+ RT
+} bind def
+%%EndProcSet
+%%BeginProcSet : SaveScreenBW
+ /SaveScreenBW {
+ currentscreen
+ /scrnProc exch def
+ /scrnAngle exch def
+ /scrnFreq exch def
+  } bind def
+%%EndProcSet
+%%BeginProcSet : RestoreScreenBW
+ /RestoreScreenBW {
+ scrnFreq scrnAngle MAV /scrnProc get setscreen
+ } bind def
+%%EndProcSet
+%%BeginProcSet : SetFreqAngleBW
+ /SetFreqAngleBW {
+ currentscreen
+ 3 1 roll
+ pop pop
+ setscreen
+ } bind def
+%%EndProcSet
+%%BeginProcSet : SaveScreenColor 
+ /SaveScreenColor {
+ currentcolorscreen
+ /grayProc exch def
+ /grayAngle exch def
+ /grayFreq exch def
+ /bProc exch def
+ /bAngle exch def
+ /bFreq exch def
+ /gProc exch def
+ /gAngle exch def
+ /gFreq exch def
+ /rProc exch def
+ /rAngle exch def
+ /rFreq exch def
+  } bind def
+%%EndProcSet
+%%BeginProcSet : RestoreColorScreen
+ /RestoreColorScreen {
+ rFreq rAngle MAV /rProc get gFreq gAngle MAV /gProc get bFreq bAngle MAV /bProc get grayFreq grayAngle MAV /grayProc get setcolorscreen
+ } bind def
+%%EndProcSet
+%%BeginProcSet : SetFreqAngleColor
+ /SetFreqAngleColor { 
+ currentcolorscreen 
+ 3 1 roll pop pop
+ 4 2 roll pop pop
+ 5 -2 roll pop pop
+ 6 -2 roll pop pop
+ 4 1 roll 
+ 6 1 roll 
+ 8 1 roll 
+ 10 1 roll 
+ setcolorscreen 
+ } bind def 
+%%EndProcSet 
+/initmsaverestore { 
+userdict begin 
+/mdict 10 dict def 
+mdict begin 
+/mindex -1 def 
+/mstacksize 25 def 
+/mstack mstacksize array def 
+/incmindex { 
+/mindex mindex 1 add def 
+} bind def 
+/decmindex { 
+/mindex mindex 1 sub def 
+} bind def 
+/checkmindex { 
+mindex 0 lt { 
+(%ERROR: msave/mrestore stack underflow: Offending command 'mrestore'
+) print flush 
+stop 
+} 
+{ 
+mindex mstacksize ge { 
+(%ERROR: msave/mrestore stack overflow: Offending command 'msave'
+) print flush 
+stop 
+} if 
+} ifelse 
+} bind def 
+/mpush { 
+incmindex 
+checkmindex 
+mstack mindex 
+3 -1 roll put 
+} bind def 
+/mpop { 
+checkmindex 
+mstack mindex get 
+decmindex 
+} bind def 
+end 
+end 
+} bind def 
+/msave { 
+mdict begin 
+matrix currentmatrix mpush 
+end 
+} bind def 
+/mrestore { 
+mdict begin 
+mpop setmatrix 
+end 
+} bind def 
+/msavelevel { 
+mdict begin 
+mindex 1 add 
+end 
+} bind def 
+/mstore {
+matrix currentmatrix
+} bind def
+/AutoSizeY {
+0 0 pl
+dup 3 1 roll
+4 -1 roll  
+add
+pl exch pop
+exch sub
+} bind def
+/pl {  
+transform
+0.25 sub round 0.25 add exch
+0.25 sub round 0.25 add exch
+itransform
+} bind def
+/pll {
+transform
+round exch
+round exch
+itransform
+} bind def
+/pr { 
+dtransform
+round exch
+round exch
+idtransform
+} bind def
+/m { 
+pl  moveto
+} bind def
+/l { 
+pl lineto
+} bind def
+/c { 
+pl curveto
+} bind def
+/rm { 
+pr rmoveto
+} bind def
+/rl { 
+pr rlineto
+} bind def
+/ar { 
+5 -2 roll pl
+5 2 roll
+arc
+} bind def
+/an { 
+5 -2 roll pl
+5 2 roll
+arcn
+} bind def
+/MakePatternFont {
+/FontDict 20 dict def
+FontDict begin
+/FontName exch def
+/Encoding exch def
+/FontMatrix [1 0 0 1 0 0 ] def
+/FontType 3 def
+/FontBBox [ 0 0 1 1 ] def
+/PatternDict exch def
+/RenderPattern {
+patternDict exch get
+exec
+} bind def
+/BuildChar {
+exch begin
+1 0 0 0 1 1 setcachedevice
+Encoding exch get RenderPattern
+end
+} bind def
+FontName FontDict definefont pop
+end
+} bind def
+/SnapToPattenGrid
+	{
+	exch
+	dup 0 lt {
+		1 index sub
+	} if
+	1 index
+	div truncate
+	mul
+} bind def
+/FillPatternString {
+dup length
+1 sub
+0 1 3 -1 roll {
+2 index
+2 index
+3 -2 roll
+put
+} for
+pop pop
+} bind def
+/AutoSizeY {
+	0.0 exch dtransform
+	round
+	idtransform exch pop
+} bind def
+ /AutoSizeX {
+	0.0 dtransform
+	exch
+	round
+	exch
+	idtransform pop
+} bind def 
+/AutoCellSize {
+	AutoSizeY
+	exch
+	AutoSizeX
+	exch
+} bind def
+/CheckPath {
+	false
+	{ pop pop pop true exit}
+	{ pop pop pop true exit}
+	{ pop pop pop pop pop pop pop true exit}
+	{ pop true exit}
+	pathforall
+} bind def
+/PatternFill {					%		patternCharacter
+	/patternString 1 string def
+	/cm mstore def
+	patternMatrix setmatrix
+	1 1 AutoCellSize
+	dup 0 eq { pop 1} if
+	exch
+	dup 0 eq { pop 1} if
+	exch
+	/patternSize exch 24.0 mul def
+	/PatternSizeX exch 24.0 mul patternString length mul def
+	/flaterror 0 def
+	patternString FillPatternString
+	gsave
+		flaterror 1 add setflat
+		flattenpath
+		pathbbox
+	grestore
+	psy add flaterror add psy SnapToPattenGrid
+	exch psx add flaterror add psx SnapToPattenGrid
+	3 -1 roll flaterror sub psy SnapToPattenGrid
+	4 -1 roll flaterror sub psx SnapToPattenGrid
+	4 2 roll pll
+	4 2 roll pll
+	/llxsnap exch def
+	/llysnap exch def
+	/urxsnap exch def
+	/urysnap exch def
+	gsave
+		useClip true eq {clip}{eoclip} ifelse newpath
+		/PatternFont findfont [psx 0.0 0.0 psy 0.0 0.0] makefont setfont
+		llysnap patternSize urysnap {
+			llxsnap exch moveto
+			llxsnap PatternSizeX urxsnap {
+				pop
+				patternString show
+				%currentpoint am
+			} for
+		} bind for
+	grestore
+	cm setmatrix
+} bind def				%		End 'PatternFill'
+/DefaultPatternFont {
+	/cm mstore def
+	patternMatrix setmatrix
+	1 1 AutoCellSize
+	dup 0 eq { pop 1} if
+	exch
+	dup 0 eq { pop 1} if
+	exch
+	/psy exch iSizeY mul def
+	/psx exch iSizeX mul def
+	/patternDict 64 dict def
+	patternDict begin
+		/NotDef {} def
+		/LiteDiagLines {
+			iSizeX iSizeY false [iSizeX 0.0 0.0 iSizeY -1.0 mul  0.0 iSizeY]
+			{pat}
+			imagemask
+		} bind def
+	end
+	/CustEncoding 256 array def
+	0 255 1 {
+		CustEncoding exch /NotDef put
+	} bind for
+	CustEncoding 65 /LiteDiagLines put
+	patternDict CustEncoding /PatternFont MakePatternFont
+	/pathSegProc {
+		strokepath
+		CheckPath {
+			65 PatternFill newpath
+		} if
+	} bind def
+	cm setmatrix
+} bind def
+/XRound {
+	dup
+	3 -1 roll
+	exch mul round
+	exch div
+} bind def
+/RoundMatrix {
+	/i 0 def
+	dup {
+		100000.0 XRound
+		1 index
+		exch i exch put
+		/i i 1 add def
+	} forall
+} bind def
+/GetBoxesRatio {
+3 -1 roll sub
+7 1 roll
+exch sub
+6 1 roll
+3 -1 roll sub
+5 1 roll
+exch sub
+4 1 roll
+3 -1 roll div
+3 1 roll
+exch div
+exch
+} bind def
+%%BeginProcSet : Text Attributes Procs
+/T {792 exch sub} bind def
+/sx 0 def
+/sy 0 def
+/ex 0 def
+/ey 0 def
+/lw  0 def
+/siz 0 def
+/U {gsave 0 setlinecap
+/lw siz 0.078125 mul def  /ey exch neg def /ex exch def /sy exch neg def /sx exch def
+fontkind plain eq 
+ {
+  lw siz 0.0119444 mul sub setlinewidth sx sy moveto ex ey lineto stroke
+ }
+ {
+   currentdict /outlineFontSize known outlineFontSize 0 gt and
+     {
+       fontkind outline eq
+         {
+           /sy sy 0.0119444 siz mul sub def
+           /ey ey 0.0119444 siz mul sub def
+           gsave 
+           1 1 1 setrgbcolor lw siz 0.0119444 mul sub setlinewidth sx sy moveto ex ey lineto stroke
+           grestore
+           lw siz 0.0119444 mul sub setlinewidth sx sy moveto ex ey lineto
+           strokepath 0.0119444 siz mul setlinewidth stroke
+         } if
+       fontkind shadow eq fontkind outlineshadow eq or
+         {
+           /sy sy 0.0358332 siz mul sub def
+           /ey ey 0.0358332 siz mul sub def
+           lw setlinewidth
+           lw 2 div sx add sy
+           lw 2 div sub moveto
+           lw 2 div ex add ey
+           lw 2 div sub lineto stroke 
+           gsave
+           1 1 1 setrgbcolor lw siz 0.0119444 mul sub setlinewidth sx sy moveto ex ey lineto stroke
+           grestore
+           lw siz 0.0119444 mul sub setlinewidth sx sy moveto ex ey lineto
+           strokepath 0.0119444 siz mul setlinewidth stroke
+         } if
+      } if
+ } ifelse
+grestore} bind def
+/plain 1 def
+/outline 2 def
+/shadow 3 def
+/outlineshadow 4 def
+/fess {
+	currentdict /outlineFontSize known {
+		/outlineFontSize 2 index def
+	} if
+	findfont exch dup /siz exch def scalefont setfont
+} bind def
+/SHDW {gsave siz oldfontname fess siz 0.055 mul x add y siz 0.05 mul sub moveto c show grestore} def
+/NRML {gsave 1 1 1 setrgbcolor siz oldfontname fess x y moveto c show grestore siz /Outline fess  x y moveto c show} def
+/S {
+fontkind plain eq {neg moveto show} if
+fontkind outline eq {neg /y exch def /x exch def /c exch def NRML} if
+fontkind shadow eq {neg /y exch def /x exch def /c exch def SHDW NRML} if
+fontkind outlineshadow eq {neg /y exch def /x exch def /c exch def SHDW NRML} if
+} bind def
+/F {
+/fontkind exch def
+fontkind plain eq {fess} if
+fontkind outline eq {dup /oldfontname exch def exch dup /siz exch def exch OLF} if
+fontkind shadow eq {dup /oldfontname exch def exch dup /siz exch def exch OLF} if
+fontkind outlineshadow eq {dup /oldfontname exch def exch dup /siz exch def exch OLF} if
+} bind def
+/makeoutlinedict 15 dict def
+/makeoutlinefont
+ {
+  makeoutlinedict begin
+   /uniqueid exch def
+   /strokewidth exch def
+   /newfontname exch def
+   /basefontname exch def
+   /basefontdict basefontname findfont def
+   /numentries basefontdict maxlength 1 add def
+   basefontdict /UniqueID known not
+   {/numentries numentries 1 add def} if
+   /outfontdict numentries dict def
+   basefontdict
+   {
+     exch dup /FID ne {exch outfontdict 3 1 roll put} {pop pop} ifelse
+	  }forall
+   outfontdict /FontName newfontname put
+   outfontdict /PaintType 2 put
+   outfontdict /StrokeWidth strokewidth put
+   outfontdict /UniqueID uniqueid put
+   newfontname outfontdict definefont pop
+  end
+  }def
+/UID {
+ findfont dup /UniqueID known
+  {/UniqueID get 1 add}
+  {pop 1}
+  ifelse
+} def
+/OLF {
+dup
+/Outline
+1000 62 div
+4 -1 roll
+UID
+/outlineFontSize 5 index def
+makeoutlinefont
+/Outline findfont exch scalefont setfont
+} def
+/CopyEncoding {
+findfont
+/Encoding get
+dup length array
+/tarrayz exch def
+tarrayz 0
+3 -1 roll
+putinterval
+tarrayz
+} bind def
+/Re-encode {
+dup length array copy
+/eap 0 def
+exch {
+dup type /integertype eq {
+/eap exch def
+} {
+1 index
+exch
+eap exch
+put
+/eap eap 1 add def
+} ifelse
+} forall
+} bind def
+/EncodeFont	{
+findfont dup
+length dict
+begin
+{	1 index /FID ne
+{ def }
+{ pop pop } ifelse
+} forall
+/FontName exch def
+/Encoding exch def
+FontName currentdict
+end
+definefont pop
+} bind def
+%%EndProcSet
+%%BeginProcSet : SR 
+/SR { 
+ pbox left get pbox top get moveto 
+ pbox right get pbox top get lineto 
+ pbox right get pbox bottom get lineto 
+ pbox left get pbox bottom get lineto 
+ closepath
+} bind def 
+%%EndProcSet 
+%%BeginProcSet : BitMap
+/BitMap {
+ /buffer ^1 string def
+ ^2 ^5 2 div add 792 ^3 sub ^6 2 div add translate
+ ^4 57.3 mul rotate
+  0 ^5 2 div sub 0 ^6 2 div sub translate
+ ^5 ^6 scale
+ ^5 ^6 ^7 [^5 0 0 -^6 0 ^6] {currentfile buffer readhexstring pop} image
+}bind def 
+%%EndProcSet 
+
+/StripFromFront { 
+dup length
+2 index sub
+3 1 roll
+exch 3 -1 roll
+getinterval
+} bind def
+/MakePathArray { 
+ /k 0 def 
+ {/k k 1 add def pop pop}{/k k 1 add def pop pop}{/k k 1 add def pop pop pop pop pop pop}{/k k 1 add def }pathforall 
+ k array
+ /k 0 def 
+ {{moveto} 3 array astore 1 index k 3 -1 roll put /k k 1 add def} 
+ {{lineto} 3 array astore 1 index k 3 -1 roll put /k k 1 add def} 
+ {{curveto} 7 array astore 1 index k 3 -1 roll put /k k 1 add def} 
+ {{closepath} 1 array astore 1 index k 3 -1 roll put /k k 1 add def} 
+pathforall 
+}bind def 
+/MakeFlatPathArray { 
+/k 0 def 
+{/k k 1 add def pop pop}{/k k 1 add def pop pop}{pop pop pop pop pop pop}{}pathforall 
+k array
+/k 0 def 
+{{moveto} 3 array astore 1 index k 3 -1 roll put /k k 1 add def} 
+{{lineto} 3 array astore 1 index k 3 -1 roll put /k k 1 add def} 
+{ pop pop pop pop pop pop} 
+{} 
+pathforall 
+}bind def 
+/FractionalLine {
+2 index sub
+.00001 mul
+exch
+3 index sub
+.00001 mul
+4 -1 roll add
+3 1 roll
+add
+} bind def
+/calcLineLength {
+ exch
+ 4 -1 roll
+ sub
+ dup mul
+ 3 1 roll exch
+ sub
+ dup mul
+ add sqrt
+} bind def
+/InitTotalLineLength {
+ /oldY exch def
+ /oldX exch def
+ theDash aload pop currentLineLength add setdash
+} bind def
+/AccumeLineLength {
+ 3 copy pop
+ 2 copy
+ oldX oldY
+ 4 2 roll calcLineLength
+ /segmentLength exch def
+ /currentLineLength currentLineLength segmentLength add def
+ /oldY exch def
+ /oldX exch def
+} bind def
+/DecumeLastLineLength {
+ /currentLineLength currentLineLength segmentLength sub def
+} bind def
+/DrawFlattendSegment {
+ /pointCount 2 def
+ dup 0 lt { pop 0 } if
+ fpc
+ 3 1 roll
+ 2 index
+ 1 index
+ gt {
+ 2 copy get
+ dup length
+ dup 3 eq {
+ pop
+ dup 0 get
+ exch 1 get
+ 2 copy InitTotalLineLength  
+ m
+ } {
+ } ifelse
+ } {
+ pop 1 index
+ } ifelse
+ dup 1 add
+ 3 index
+ exch sub
+ dup 10 gt { pop 10} if
+ {
+ 1 add
+ 2 copy
+ get aload pop
+ AccumeLineLength
+ exec
+ } repeat
+ 3 1 roll pop pop
+ DecumeLastLineLength
+} bind def
+/IncFPC {
+ fpc add
+ /fpc exch def
+} bind def
+/DrawFlatPathArray {
+ fpc
+ 0 { 
+ dup 2 index
+ 1 sub
+ lt { 
+ flatPathArray exch
+ newpath
+ 1 sub DrawFlattendSegment
+ gsave
+ pathSegProc
+ grestore
+ newpath
+ }
+ {
+ pop pop
+ exit
+ } ifelse
+ } loop
+} bind def
+/RecordFirstSubSegment {
+ closepathArray 0 pathArray 0 get
+ put
+ closepathArray 1
+ pathArray 0 get aload pop pop
+ pathArray 1 get dup length 3 eq {
+ aload pop pop
+ } {
+ newpath
+ 0 0 moveto
+ aload pop exec
+ /segmentArray flattenpath MakeFlatPathArray def
+ segmentArray 1 get aload pop pop
+ } ifelse
+ FractionalLine {lineto} 3 array astore
+ put
+} bind def
+/AppendClosePath {
+ closepathArray 0 get 2 {lineto} put
+ flatPathArray fpc closepathArray 0 get put
+ 1 IncFPC
+ flatPathArray fpc closepathArray 1 get put
+ 1 IncFPC
+} bind def
+/RecordCurrentDash {
+ /theDash
+ currentdash 2 array astore def
+ /currentLineLength 0 def
+} bind def
+/PatternStroke {
+	0 setlinecap
+ RecordCurrentDash
+ /saveFlat currentflat def
+ .5 setflat
+ /pathArray MakePathArray def
+ /closepathArray 2 array def
+ /pathLength pathArray length def
+ /flatPathArray 513 array def
+ /currentLineLength 0 def
+ /fpc 0 def
+ pathArray pathLength 1 sub get
+ length 1 eq {
+ /usingClosepath true def
+ RecordFirstSubSegment
+ /pathLength pathLength 1 sub def
+ } {
+ /usingClosepath false def
+ } ifelse
+ 0 1 pathLength 1 sub {
+ pathArray exch get
+ dup length 3 eq {
+ fpc 1 add 512 ge {
+ DrawFlatPathArray
+ fpc 2 ge {
+ flatPathArray flatPathArray fpc 2 sub get 0 put
+ flatPathArray flatPathArray fpc 1 sub get 1 put
+ /fpc 2 def
+ }{
+ /fpc 0 def
+ } ifelse
+ } if
+ flatPathArray exch fpc exch put
+ 1 IncFPC
+ } {
+ dup length 7 eq {
+ newpath
+ /nToStrip 0 def
+ fpc 1 gt {
+ flatPathArray fpc 2 sub get aload pop pop m
+ flatPathArray fpc 1 sub get aload pop exec
+ /nToStrip 2 def
+ } {
+ fpc 1 eq {
+ flatPathArray fpc 1 sub get aload pop exec
+ /nToStrip 2 def
+ } if
+ } ifelse
+ aload pop exec
+ /segmentArray flattenpath MakeFlatPathArray def
+ /segmentArray nToStrip segmentArray StripFromFront def
+ segmentArray length fpc add 512 lt {
+ flatPathArray fpc segmentArray putinterval
+ segmentArray length IncFPC
+ } {
+ DrawFlatPathArray
+ fpc 1 gt {
+ flatPathArray flatPathArray fpc 2 sub get 0 exch put
+ flatPathArray flatPathArray fpc 1 sub get 1 exch put
+ /fpc 2 def
+ }{
+ /fpc 0 def
+ } ifelse
+ segmentArray length 512 lt {
+ flatPathArray fpc segmentArray putinterval
+ segmentArray length IncFPC
+ } {
+ segmentArray length
+ /exitLoop false def
+ 0 
+ {
+ 2 copy sub
+ dup 500 gt {
+ pop 500
+ } { 
+ /exitLoop true def
+ } ifelse 
+ segmentArray 2 index 2 index getinterval
+ flatPathArray fpc 3 -1 roll putinterval
+ dup IncFPC
+ add 
+ exitLoop {
+ exit 
+ } {
+ DrawFlatPathArray
+ fpc 1 gt {
+ flatPathArray flatPathArray fpc 2 sub get 0 exch put
+ flatPathArray flatPathArray fpc 1 sub get 1 exch put
+ /fpc 2 def
+ }{
+ /fpc 0 def
+ } ifelse
+ } ifelse
+ } loop
+ } ifelse
+ } ifelse
+ } if
+ } ifelse
+ } for
+ fpc 0 gt {
+ usingClosepath {
+ AppendClosePath
+ } if
+ DrawFlatPathArray
+ } if
+ saveFlat setflat
+} bind def
+
+%%EndProlog
+initmsaverestore
+/tctm matrix currentmatrix def
+tctm RoundMatrix setmatrix
+/patternMatrix mstore def
+10 setmiterlimit
+2 setlinecap
+newpath
+%
+%tLayer
+%
+%@BeginEPSFobject
+save
+10.500 -9.500 translate
+262.000 632.000 translate
+0.000 rotate
+1.000 1.000 scale
+1 1 scale
+-262.000 -632.000 translate
+%!PS-Adobe-2.0 EPSF-1.2
+%%Creator:Cricket Draw 1.1
+%%Title:Untitled #2
+%%CreationDate:7/6/92   3:05 PM
+%%BoundingBox:0 483 524 781 
+%%Pages:0
+%%EndComments
+/vmstate save def
+[] settransfer
+/$cricket 210 dict def
+$cricket begin 1 -1 scale
+0 -781  translate
+2 setlinecap
+/d /def load def
+/b {bind d}bind d
+/l {load d}b
+/e /exch l
+/x {e d}b
+/C /closepath l
+/CP /currentpoint l
+/SH /show l
+/g /gsave l
+/G /grestore l
+/i /if l
+/I /ifelse l
+/v /getinterval l
+/V /putinterval l
+/W /stringwidth l
+/SG /setgray l
+/N /newpath l
+/M /moveto l
+/L /lineto l
+/R /rlineto l
+/T /translate l
+/D /dup l
+/* /mul l
+/+ /add l
+/- /sub l
+/? /div l
+/ma {* +}b 
+/h {D * e D ma sqrt}d
+/np {} d 
+systemdict D /setpacking known D {/packstate currentpacking d D setpacking}i /pack? x
+begin /settransfer load /setscreen load end 
+/setscreen x /settransfer x
+systemdict /setcmykcolor known not { /setcmykcolor {pop pop pop pop 0 SG} d} if
+/dt [ currenttransfer ] cvx d 
+/ds [ currentscreen D [ e ] cvx /devSpot x ] cvx d 
+/jp {e [ 3 1 roll aload pop counttomark -1 roll aload pop ] cvx}b 
+/settransfer {dt jp settransfer}b 
+/macvec dup where not { 256 array d 
+macvec 0 StandardEncoding
+0 128 getinterval putinterval
+macvec 16#27 /quotesingle put
+macvec 16#60 /grave put
+/Adieresis /Aring /Ccedilla /Eacute /Ntilde /Odieresis /Udieresis /aacute
+/agrave /acircumflex /adieresis /atilde /aring /ccedilla /eacute /egrave
+/ecircumflex /edieresis /iacute /igrave /icircumflex /idieresis /ntilde /oacute
+/ograve /ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex /udieresis
+/dagger /degree /cent /sterling /section /bullet /paragraph /germandbls
+/registersans /copyrightsans /trademarksans /acute /dieresis /notequal /AE /Oslash
+/infinity /plusminus /lessequal /greaterequal /yen /mu /partialdiff /summation
+/product /pi /integral /ordfeminine /ordmasculine /Omega /ae /oslash
+/questiondown /exclamdown /logicalnot /radical /florin /approxequal /Delta /guillemotleft
+/guillemotright /ellipsis /space /Aacute /Atilde /Otilde /OE /oe
+/endash /emdash /quotedblleft /quotedblright /quoteleft /quoteright /divide /lozenge
+/ydieresis /Ydieresis /fraction /currency /guilsinglleft /guilsinglright /fi /fl
+/daggerdbl /periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Agrave
+/Edieresis /Egrave /Iacute /Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex
+/apple /Ograve /Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde
+/macron /breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+macvec 128 128 v astore pop}{pop pop}I
+/ad {+ d}b 
+/sd {- d}b 
+/td {* d}b 
+/dd {? d}b
+/c {2 ? e 2 ? e}b 
+/n0 {D 0 eq {pop}}b
+/m1 matrix d /m2 matrix d /m3 matrix d
+/ct 0 d 
+/s+ 0 d 
+/po 0 d 
+/ts 40 string d
+/s1 (|______) d
+ts 0 s1 V
+/sp ( ) d
+/SM {/m3 m3 currentmatrix d}b 
+/RM {m3 setmatrix}b 
+/dpi 72 0 matrix defaultmatrix dtransform h d
+/inch {72 *}b
+/cm {28.3465 *}b
+/pi 3.1415923 d
+/fs 256 string d 
+/sh {m1 m2 copy 2 3 -1 roll sin put m2 concat}b 
+/fc {T n0 {rotate}I scale n0 {sh}I}b 
+/a {/ea x /sa x SM -1 * scale 0 0 1 sa ea 2 copy gt {arcn}{arc}I RM}b 
+/cn {SM T x1 y1 scale 0 0 1 ct 90 * D 90 + arc /ct ct 1 ad RM}b 
+/rr {/y1 x /x1 x /ct 0 d c y1 - /yr x x1 - /xr x N xr yr cn xr neg yr cn xr neg yr neg cn xr yr neg cn C}b 
+/dg 
+{/lc x clip rotate T /dy x /dx x
+0 eq {N 
+1 eq {1 10 lc ? 10{log dy * 0 e neg M dx 0 R}for lc 10 gt{dy 0 e neg M dx 0 R}i}
+{lc 1 eq {0 0 e neg M dx 0 R}{/st dy lc 1 - dd 0 1 lc 1 - {st * 0 e neg M dx 0 R}for}I}I
+stroke}
+{1 eq {/st 0 d /inc 10 lc 1 + dd dx dy lt {/rd dx d}{/rd dy d}I
+1 1 lc {/di st 1 + log 10 log ? rd td N dx di - dy di - 0 360 a C stroke /st st inc ad}for} 
+{dx dy lt {/st dx lc dd}{/st dy lc dd}I lc {N dx dy 0 360 a C stroke /dx dx st sd /dy dy st sd}repeat} I
+}I}b
+/sb {/ea x /ia x /sa x /yr x /xr x ea sa lt{/ia ia neg d}i N sa ia ea{D /x1 e cos xr td /y1 e sin yr * neg d x1 y1 M 0 0 L}for}b
+/bm {/y1 x /x1 x bitgray SG x1 y1 /md where {pop md /invertflag 2 copy known {get not}{pop pop true}I }{true}I 
+[x1 0 0 y1 0 0] {currentfile picstring readhexstring pop}imagemask}b
+/c1 .166667 d /c2 .833333 d /c3 .5 d
+/p3 {+ c3 *}b 
+/dc{/y2 x /x2 x x0 c1 * x1 c2 ma y0 c1 * y1 c2 ma x1 c2 * x2 c1 ma y1 c2 * y2 c1 ma x1 x2 p3 y1 y2 p3 curveto}b 
+/mp {/x0 x1 d /y0 y1 d /x1 x2 d /y1 y2 d}b
+/SPOLY_INIT
+{/SPOLY_SAVE save d /cls x
+/M {2 copy /y0 x /x0 x moveto /M /moveto load d}d
+/L {/y1 x /x1 x x0 x1 p3 y0 y1 p3
+cls {/yy y1 d /xx x1 d /C {mp xx yy dc systemdict /closepath get exec}d M}
+{lineto}I /L {{dc mp}stopped {/L {pop pop}d /noerr false d}i}d}d}d
+/SPOLY_END {SPOLY_SAVE restore}b
+/ah {g 2 copy T 3 -1 roll - 3 1 roll e - atan rotate os 0 M hl hw R 0 hw 2 * neg R C fill G}b
+/da 
+{/bp x /ep x g stroke G 
+currentlinewidth dup .24 lt {pop .24}i 
+D -10 * D /hl x -2 ? /os x 2 * /hw x
+flattenpath /out? false d
+bp{g {/by x /bx x}
+{2 copy by eq e bx eq and {pop pop}{/out? true d}I out? {exit}i}
+/np load dup pathforall N bx by ah G}i
+ep{/out? false d reversepath {/ey x /ex x} 
+{2 copy ey eq e ex eq and {pop pop}{/out? true d}I out? {exit}i}
+/np load dup pathforall N ex ey ah}i}b 
+/tp {sm0 transform}b 
+/sfp {} d 
+/op {{tp moveto}{tp lineto}{3{tp 6 2 roll}repeat curveto}{C} pathforall sfp stroke}b 
+/sm0 matrix d /sm1 matrix d
+/so 
+{SG /eg x /tg x /yt x /xt x 
+xt 0 ne yt 0 ne or {
+xt abs yt abs gt {/tt xt abs d}{/tt yt abs d}I
+tt 144 gt {/ct dpi 2 dd /sfp{g eofill G}d}
+{tt 72 gt {/ct dpi 4 dd /sfp{g eofill G}d}
+{/ct dpi 4 dd}I}I
+/ig tg eg - ct ? neg d
+/x1 xt ct ? neg d /y1 yt ct dd 
+1 0 0 1 xt yt sm0 astore pop 
+1 0 0 1 x1 y1 neg sm1 astore pop
+g op G
+1 1 ct{g ig * tg + SG sm0 D sm1 e concatmatrix pop op G}for}i}b
+/css {T 0 0 M xsp 0 32 Txt widthshow}b
+/sc 
+{g /xsp x /tg x /eg x /sg x /y1 x /x1 x /Txt x
+/sst dpi 4 dd /y2 y1 sst dd /x2 x1 neg sst dd
+eg sg eq {/sg sg .001 sd}i
+/ig eg sg - sst ? neg d 
+g tg SG x1 y1 neg css 
+eg ig + ig sg {SG x2 y2 css}for G 
+x2 y2 css CP G T 0 0 M}b 
+/gbb {pathbbox /y1 x /x1 x /y2 x /x2 x /x3 x1 x2 sd /y3 y1 y2 sd}b 
+/radf 
+{/dn dpi 300 ? 8 * 24 ad /ig rg 255 ? dn dd
+sg 255 ? SG eoclip gbb 
+x2 x3 2 ? + y2 y3 2 ? + T N
+x3 y3 h 2 ? D dn ? neg 1 
+{0 0 3 -1 roll 0 360 arc C fill currentgray ig + SG}for}b
+/dof 
+{/ff x 
+eoclip 180 - rotate gbb
+x1 y1 T 180 rotate x3 y3 scale
+0 1 255 {fs e D 255 ? ff rg * sg + round cvi put}for
+1 256 8 [1 0 0 256 0 0] fs image}b
+/gft {radf {{} dof}{{1 e - 9 * 1 + log 1 e -}dof}}b
+/df 
+{g 2 copy eq {SG pop 0 ne {pop}i fill}{255 * e 255 * e 1 index - /rg x /sg x /gft load e get exec}I G}b 
+/oc
+{/tl x /ju x /di 0 d 
+g flattenpath
+{/y1 x /x1 x}{/y2 x /x2 x /dx x2 x1 sd /dy y2 y1 sd /di dx D * dy D ma sqrt di ad /x1 x2 d /y1 y2 d}
+{}{/y2 x /x2 x /dx x2 x1 sd /dy y2 y1 sd /di dx D * dy D ma sqrt d}pathforall
+ju 0 eq{/po 0 store}i
+ju 1 eq{/po di tl - 2 ? store}i
+ju 2 eq{/po di tl - store}i G}b
+/pt {/FM true d /os x /sr x /os os sr 0 1 v W pop 2 ? ad /pd 0 d /sl os d /ct 0 d g flattenpath {mtp}{ltp}{ctp}{cpp}pathforall G}b
+/mtp {/y1 x /x1 x /x2 x1 d /y2 y1 d /ovr FM {os /FM false d}{0}I d x1 y1 transform /cpy x /cpx x}b
+/ltp 
+{/x3 x1 d /y3 y1 d /y1 x /x1 x /dx x1 x3 sd /dy y1 y3 sd /di dx D * dy D ma sqrt d 
+/di 0 ne
+{/dsx dx di ? ovr td /dsy dy di ? ovr td x3 dsx + y3 dsy + transform
+/cpy x /cpx x /pd pd di ad {sl pd le {ct sr length lt{sch}{exit}I}{/ovr sl pd sd exit}I}loop}i}b
+/ctp {}b 
+/cpp {x2 y2 ltp x2 y2 mtp}b 
+/sch 
+{/ch sr ct 1 v d /ct ct 1 ad
+/cw ch W pop 2 dd 
+g cpx cpy itransform T dy dx atan rotate cw neg 0 M ch SH
+ct sr length lt{sr ct 1 v W pop 2 ? 0 rmoveto}i
+CP transform /cpy x /cpx x G
+/sl sl cw ad /po po cw 2 ma store ct sr length lt{/sl sl sr ct 1 v W pop 2 ? ad}i}b
+/cpd {/newslots x D length newslots + dict D 3 1 roll begin {1 index /FID ne {def}i}forall pop pop end}b
+/fn? {FontDirectory exch known} b
+/mof 
+{/ui 0 d 
+/pw 1000 24 dd 
+/nn x 
+/bn x 
+ui 0 eq 
+{/ui bn findfont
+dup /UniqueID known 
+{/UniqueID get 1 add}{pop 1}ifelse
+def} if
+/bfd bn findfont def 
+/ct bfd maxlength 1 ad 
+bfd /UniqueID known not
+{/ct ct 1 ad} if
+/ofd ct dict def 
+bfd
+{ exch dup /FID ne
+{exch ofd 3 1 roll put}
+{pop pop} ifelse
+}forall
+ofd /FontName nn put
+ofd /PaintType 2 put
+ofd /StrokeWidth pw put
+ofd /UniqueID ui put
+nn ofd definefont pop}b
+/muf 
+{20 dict begin
+/ui x 
+e /BaseFont e findfont d
+ui 0 eq 
+{/ui BaseFont D /UniqueID known 
+{/UniqueID get 1 +}{pop 1}I d}i
+/FontType 3 d
+/Upos BaseFont /FontInfo 2 copy known
+{get /UnderlinePosition 2 copy known
+{get}{pop pop -100 }I}{ pop pop -100 }I d
+/Uwid BaseFont /FontInfo 2 copy known
+{get /UnderlineThickness 2 copy known
+{get}{pop pop 50}I}
+{pop pop 50}I d
+/FontMatrix BaseFont /FontMatrix get d
+/FontBBox BaseFont /FontBBox get
+D 1 get Upos gt {D 1 Upos put}i d
+/Encoding BaseFont /Encoding get d
+/theChar 1 string d
+/BuildChar
+{e begin
+theChar 0 3 -1 roll put
+BaseFont 1000 scalefont setfont
+theChar W FontBBox setcachedevice
+0 0 M
+theChar show
+0 Upos rmoveto 0 Upos L
+Uwid setlinewidth stroke
+end}d
+currentdict 
+end
+definefont pop}b
+/of {dup fn? {pop pop}{mof}I}b
+/uf {1 index fn? {pop pop pop}{muf}I}b
+/ns {g CP m3 currentmatrix nulldevice setmatrix T 0 0 M Txt CP pop G}b 
+/ft {/ftsave save d CP 3 1 roll + e T 0 0 M /show /myshow l Txt ftsave restore}b 
+/ls {/Txt x 0 ft}b 
+/cs {/Txt x ns 2 ? neg ft}b 
+/rs {/Txt x ns neg ft}b 
+/slp {/sproc x /sr x 0 1 sr length 1 - {sr e 1 v sproc}for}b 
+/ss 
+{/Txt x /fsave save d
+CP 2 copy T 0 0 M 
+/ffsave save d pop - /lw x ns /tw x /wsp lw tw sd /nsp 0 d
+/show {nsp e {sp eq {1 +}i}slp /nsp x}d 
+Txt 0 nsp 0 gt {wsp nsp ? +}i ffsave restore /s+ x
+/myshow load D systemdict /show get ne
+{D D length 1 - get cvlit /charshadow eq {[ e aload pop e pop s+ e ] cvx}i}
+{pop {s+ 0 32 4 -1 roll widthshow}}I
+/show x Txt fsave restore}b
+/cf{D /fn x length 7 + string /ts x ts 0 s1 V ts 7 fn V /fnm ts cvn d 
+FontDirectory fnm known not {fn cvn findfont 0 cpd /nfd x nfd D /FontName fnm put /Encoding macvec put fnm nfd definefont pop}i}b
+ 
+/JoinProcs /jp l
+/fixcoordinates /fc l
+/doarc /a l
+/doroundrect /rr l
+/dograte /dg l
+/pathoffset /po l
+/pathtext /pt l
+/dostarburst /sb l
+/dobitmap /bm l
+/strokearrow /da l
+/shadow /so l
+/charshadow /sc l
+/fountain /df l
+/offsetcalc /oc l
+/MakeOutlineFont /of l
+/MakeUnderlineFont /uf l
+/leftshow /ls l
+/rightshow /rs l
+/centershow /cs l
+/fullshow /ss l
+/coordinatefont /cf l
+ 
+pack? {packstate setpacking}i
+
+%----- Begin Main Program -----%
+gsave % Rectangle
+0 1  1  0 261.5 148.5  fixcoordinates
+newpath
+-260.5 -147.5  moveto
+260.5 -147.5 lineto
+260.5 147.5 lineto
+-260.5 147.5 lineto
+closepath
+gsave 1 setgray fill grestore
+grestore
+gsave % BitMap
+0 1  1  0 261.5 148.5  fixcoordinates
+/bitgray 0 def
+newpath
+-260.5 -147.5 moveto
+260.5 -147.5 lineto
+260.5 147.5 lineto
+-260.5 147.5 lineto
+closepath clip
+-260 -147 translate
+/picstring 66 string def
+528 295 scale
+
+528 295 dobitmap
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000C02A
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000038000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000078000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001D0000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000330000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000E60000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001CC0004
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003380000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000E600000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001CC00008
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000071800000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000EB000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003E6000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000078C00002A
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000E1C000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001818000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060E0000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000C1C0000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018300000020
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000033E00000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000FDC00000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001E1800000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000303000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000607000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0C000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003818000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007030000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C000000000000000000000000C0E0000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000F00000000000000000000000187C0000000013
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000008000000000000000003F180000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001880008000000000000000007030000000007F
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000201CC009800000000000000001C0600000000004
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000301C6018C0000000000000000380C0000000002A
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000381C3018E0000000000000000601800000000044
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000038000F3C701CF0100000000000000C03000000000022
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000180007AC701C7C180000000000001802000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000C0401ECF00E399C000000000000300C000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007EF01ECF00FDEEF0000000000006038000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003EF81EDB006FBB3C06000000001DFF0000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000073C16D90030CD9E0E000000003F060000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001BC1659801C6C9B1C00000000700C0000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000941669C00E34CF1800000000E0380000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009E1238E00634CD380000000380600000000000029
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008E191E780734D9B80000000700C00000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000380008F08871E033CD1380000000E01800000000000020
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000003E0008B9C6067033CF7380000001C07000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000060008BFC5C1BC37DB614000000300E000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000030048580F187BA4DA61E00000063F8000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000011C0383F86C01867CE45B60B000000F83000000000000000C
+000000000000000000000000000000000000000000000000000000000000000000000000000000000001FE03830C2600617E664B78D018001C060000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000007F017C0613A030CB224F5C78380070060000000000000041
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000C001C19EC20C0C184BB24766283002C01C0000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000006200E1D819838388699123B33C7001803A0000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000003F80F0F004C030C878C9A1D934600300700000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000001FB05CE006300734706C50E734600600C00000000000000010
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000D86E80420E00943036286334600C03800000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000683E03B300E0C838182C4334603007000000000000000047
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000002C09FC0D00184A180E2C473470601C000000000000000002
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000360F7C0680062D1803241E2C71CC70000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000120C00C36003148C03ACF6EC77DD60000000000000000006
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000001384006098C1946600AD9D885700C0000000000000000008
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000018C60020C070D61E006B3E18DC0180000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000C630010600E6A070073E030DB0300000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000E3FF00DB00329038031B8F3970600000000000000000018
+00000000000000000000000000000000000000000000000000000000000C0000000000000000000000000D8001C038019581C01875EC360C00000000000000000000
+00000000000000000000000000000000000000000000000000000000000E0000000000000000000000000670003E0EC09AC0E0187810761800000000000000000000
+00000000000000000000000000000000000000000000000000000000000F00400000000000000000003EC60CB038C2308771B0080700DE3800000000000000000000
+0000000000000000000000000000000000000000000000000000C038001D80E00000000000000003E0E83B000E18310CC3EC1E001C81BEF000000000000000000000
+0000000000000000000000000000000000000000000000000000E01E303C80E0000000000000000777E38D800308188340300600037E7EF800000000000000000029
+0000000000000000000000000000000000000000000000000000701B786EC0F000000000000000000FF046E0018808C160E00084003BFDE800000000000000000000
+0000000000000000000000000000000000000000000000000000581DECEFC0F8000000000000000001CE333000C80460B1800004002FCD8000000000000000000020
+000000000000000000000000000000000000000000000000000E583DFDEF3FCC00000000000000078003098EE06C0630DC00000400337B8000000000000000000000
+000000000000000000000000000000000000000000000000007DF87D7E767DEC000000000000041DF00184FE3C24021860007806001BFF8000000000000000000000
+0000000000000000000000000000000000000000000000000079F0773C1DDCF780C00000000007FE1C0F86380E32010C38078080000E630000000000000000000000
+000000000000000000000000000000000000000000000000003FDFF7E601BFE6DEC00000000001C1C77BC300031100C3D06800800006460000000000000000000000
+0000000000000000000000000000000000000000000000000000D03EE60373B75BE000000000000071C071800088C0606000018080039C0000000000000000000000
+0000000000000000000000000000000000000000000000000000F01EF607C033D76000000000000018000C607848301D800001018001600000000000000000000000
+0000000000000000000000000000000000000000000000000000E005BC060039D5600000000000000C00033983C40C01000001009801200000000000000000000000
+0000000000000000000000000000000000000000000000000000E0070800000FF360000000000000061FC0FF80E20302000001001E6D60000000000000000000007F
+0000000000000000000000000000000000000000000000000000C0070000000C6EE0C000000000007FE03000706180F40000010003F5600000000000000000000000
+0000000000000000000000000000000000000000000000000000800600000019EBF0C00000000001FF8308001830E0180000008003FC300000000000000000000000
+000000000000000000000000000000000000000000000000000000060000003F6D7CE0000000001F9E0E7600C30830300000008002EC180000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000006DFCE0060000000C03FB8D0300C408200000000000300C000000000000000000004C
+000000000000000000000000000000000000000000000000000000000000000037B5B007000000E003C3C3E8006300C0000000000000060000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000001DF7B007800007FC070079800010C180000000000040070000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000019FFB00380001EFFFC001C607F883E0000000000006001800000000000000000004C
+0000000000000000000000000000000000000000000000000000000000000000379BB81FC000380FF03C031F4038020000010000402001C000000000000000000027
+00000000000000000000000000000000000000000000000000000000000000003E16FE3EF0000003718380C00E0F580000020000001800E00000000000000000005A
+0000000000000000000000000000000000000000000000000000000000000000381B9633F80000018E00C070F186400000060000000C007000000000000000000049
+0000000000000000000000000000000000000000000000000000000000000000301F9E1FDC000000E000200F0073C000000C0000000000380000000000000000000A
+0000000000000000000000000000000000000000000000000000000000000000000FDE075C000000797E1000001FC000001800000000001C00000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000E7807DC0060003981D8007800C000003000000000200E00000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000001DD8079F01F81F0C006601C6018000002000000000180600000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000003E0C0F1F81DFF3C61FB386038300000040200000000E0300000000000000000002
+00000000000000000000000000000000000000000000000000000000000000000000060C1F80070073F82C30103A0000004030000000010180000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000002001F80F1801FE01600EE1C000000803000000000C0C0000000000000000075
+000000000000000000000000000000000000000000000000000000000000000000003A000F03FFDD83C0098301E4000000003000000000606000000000000000007D
+000000000000000000000000000000000000000000000000000000000000000000003F4007031F8078000FF000180000000030000000001060000000000000000071
+000000000000000000000000000000000000000000000000000000000000000000000DE18F0003600E0038180010000000003000000000083000000000000000007D
+0000000000000000000000000000000000000000000000000000000000000000000007B38F8000F00300C00600200000000010000000000018000000000000000040
+0000000000000000000000000000000000000000000000000000000000000000000001DBCDD000CC04E300038040000000001000000000000C000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000EECFF80063FB8C0000F3800000000018000000000006000000000000000047
+0000000000000000000000000000000000000000000000000000000000000000000010F6C7CC00303EB01E800D800000000018000000000006000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000001FC6C3D40038E06D7C300300000000001800000000040300000000000000000D
+000000000000000000000000000000000000000000000000000000000000000000001DDEC17C000F9439500E0E000000000018000000000601800000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000067EF37E0007818FC183FC000000000018000000000380C0000000000000000B
+0000000000000000000000000000000000000000000000000000000000080800000003F7DB6E00060060CE305C00000000000C000000000080600000000000000000
+000000000000000000000000000000000000000000000000000000001FFFFFFE000000EFFF3E000C003F300C7800000000000C000000000001B00000000000000041
+0000000000000000000000000000000000000000000000000000000FE9000001FA00003DDDF607DC08002003B000000000000E000000000005780000000000000000
+000000000000000000000000000000000000000000000000000000F80000000007F0001DEDF61FF8F38067F0C000000000000B00000000000738000000000000005B
+0000000000000000000000000000000000000000000000000000078000000000001FD00EE5FC3FF7F060CC1F80000000000019C00000000001B80000000000000000
+00000000000000000000000000000000000000000000000000003C000000000000003FA3BD78703F0619BDFC0000000000001870001C000000C80000000000000043
+0000000000000000000000000000000000000000000000000000E00000000000000001FDAF30601FF1C2766000000000000030180018000000680000000000000000
+0000000000000000000000000000000000000000000000000007800000000000000000038E18003E173BE4C0000000000000300F9FC0000000380000000000000027
+000000000000000000000000000000000000000000000000001E00000000000000000000FE3800700383E5800000000000002000FE78000000180000000000000000
+0000000000000000000000000000000000000000000000000070000000000000000000003FFFF6C007FE6D0000000000000020000007800000180000000000000065
+00000000000000000000000000000000000000000000000000C0000000000000000000000A7C7FDEFC00CB0000000000000060000001E00000080000000000000000
+0000000000000000000000000000000000000000000000000380000000000000000000000D6D9E0C00039B000000000000006000000030000018000000000000007B
+0000000000000000000000000000000000000000000000000E00000000000000000000000DEFCC0007FE1F70000000000000C0000000308000180000000000000000
+0000000000000000000000000000000000000000000000001C00000000000000000000003EAD46001F6C3E7C000000000000C000000070E00030000000000000000F
+000000000000000000000000000000000000000000000000380000000000000000000000F73FCE003F806FFE000000000000C0000003E83600300000000000000000
+000000000000000000000000000000000000000000000000600000000000000000000000F7DECE002F31BDC40000000000008000001FE0078070000000000000005F
+000000000000000000000000000000000000000000000000C000000000000000000000003CD79B001A007AC0000000000001800001FF0006E1E00000000000000000
+00000000000000000000000000000000000000003E00000180000000000000000000000000DFFB003FEB9B40000000000001800003FF00003F800000000000000030
+0000000000000000000000000000000000000007C6F00003000000000000000000000000006FBB00703C0FC00000000000010040073E00000C000000000000000000
+000000000000000000000000000000000000007800078006000000000000000000000000003B5B18E0000F8000000000000303FC0678000EB800000000000000002F
+00000000000000000000000000000000000001C00000783C00000000000000000000000000014F9CC0000DC0000000000003078DFFC0003D80000000000000000000
+0000000000000000000000000000000000000E0000000FE00000000000000000000000000001CDDC80000FC580000000000FD7FC0E00006000000000000000000072
+0000000000000000000000000000000000007000000000000000000000000000000000000000FC5400000FDF00000000003C3F0F000000C000000000000000000000
+000000000000000000000000000000000000C0000000000000000000000000000000000000007DF6000007EE000000000077A1EBF001818000000000000000000076
+00000000000000000000000000000000000300000000000000000000000000000000000000007FF6000007DC0000000000F0007FF90E03000000000000000000007D
+00000000000000000000000000000000000E00000000000000000000000000000000000000003F33100007F80000000001D3800D87300E0000000000000000000018
+0000000000000000000000000000000000380000000000000000000000000000000000000000FF6B38000DBC0080000003BDFF0300001C0000000000000000000000
+00000000000000000000000000000000006000000000004000000000000000000000000000039ECFBE010D6E30C0000003E001F0640070000000000000000000007E
+0000000000000000000000000000000001C00040000400C000000000000000000000000000077E9AE6338E2B7040000007A0000E078F800000000000000000000000
+0000000000000000000000000000000003000000000C05C0000000000000000000000000000FEE0AD2FB8E3BD02000000E600001E9FC000000000000000000000046
+000000000000000000000000000000000600010001180DC000000000000000000000000000060F0F6E9F8C1FB02000000C4000003E00000000000000000000000000
+000000000000000000000000000000000C0006000330494000000000000000000000000000000707F7BF400F7030000008C000000000000000000000000000000042
+0000000000000000000000000000000018000C180620D9C00000000000000000000000000000070193AB400F60100000008000000000000000000000000000000000
+0000000000000000000000000000000030001830046199C000000000000000000000000000000200FFDB601BC010000001800000000000000000000000000000002E
+00000000000000000000000000000000E00030200C639BC000000000000000000000000000000000FD71700DC0100000010000000000000000000000000000000000
+000000000000000000000000000000018000604008431B80000000000000000000000000000000001B6FBC076010000003000000000000000000000000000000004E
+000000000000000000000000000000030000008008C71B8000000000000000000000000000000000377B6C07F4030000060000000000000000000000000000000000
+000000000000000000000000000000060000018008C71B80000000000000000800000000000000007E6DAB09BE07000004000000000000000000000000000000007C
+0000000000000000000000000000000C0006010008C71B8000000000000000200000000000000000F0279F9DBF0F00000C0000000000000000000000000000000000
+000000000000000000000007E00000180004030088451B0000000000000000200000000000000000C03E37DCBB1B0000180000000000000000000000000000000030
+0000000000000000000007EF1E0000300008220089C59F00000000000000003000000000000000000006E77CFFB30000100000000000000000000000000000000000
+000000000000000000001CDEE3800060001A660189CDBF0000000000000000180000000000000000000F867ECFF6000030000000000000000000000000000000005B
+000000000000000000007E0738E001C00016C40189ADBD00000000000000000E0000000000000000000E03FA87DC0000600000000000000000000000000000000000
+00000000000000000000C0C1C83807B000148C1B8BAD790000000000000000030000000000000000000C019E076E0000C0000000000000000000000000000000005E
+000000000000000000008030340E1EF00028881A8BAD710000000000000000000000000000000000000003FF83EF0F00800000000000000000000000000000000000
+00000000000000000000081C1E03FF000069881A8B8B61000000000000000000400000000000000000000739C1F71F01800000000000000000000000000000000057
+00000000000000000000F7CE070070000059883A9BDB810000000000000000006000000000000000008007FD40F5B303600000000000000000000000000000000000
+0000000000000000060780BE83C0000000D1903C97DB010000000000000000003000000000000000010001CD60EF6606E00000000000000000000000000000000055
+000000000000000003DC0007607E00C00191907495960180000000000000000030000000000000000100000778E76C07C00000000000000000000000000000000000
+000000000000000001FC40039000038001B390F59FBC00800000000000000000180000000000000001000003B4E1FC0D400000000000000000000000000000000049
+000000000000000000FF1C00CC000E0003A310E51B3800C00000000000000000180000000000000002000003D480FE0FC00000000000000000000000000000000000
+000000000000000000FF858030EFE000032331CD3F7000C00000000000000000080000000000000002000003F4C076EEC0000000000000000000000000000000004B
+000000000000000001C063600C0000000723238A7CC000600000000000000000080000000000000002000000DDE03FBF800000000000000000000000000000000000
+0000000000000000038019980780F0000743278AED8000200000000000000000080000000000000002000000EFB83F7DBC000000000000000000000000000000004C
+000000000000000003000CCE01FA00000743270CDB00003000000000000000001800000000000000020000007FF6065DEF0000000000000000000000000000000000
+000000000000000002000631801F800007432F19B6000018000000000000000018000000000000000200000039FA0E5ECF0000000000000000000000000000000049
+000000000000000000000308700020000F472E133C000008000000000000000018000000000000000600000037FF3F7BDC0000000000000000000000000000000000
+0000000000000000000F03860F01E0000E473E363800000C00000000000000001800000000000000060000003C77F3FEF0000000000000000000000000000000004A
+0000000000000000003CF18180FB80000E477C7C7000000600000000000000001000000000000000020000000019DE17F00000000000000000000000000000000000
+0000000000000000003F1CC0780E00000E475CF8600000030001000000000000300000000000000002000000003BDFD7F80000000000000000000000000000000044
+00000000000000F80003C660030000800E8779B0400000018001000000000000300000000000000002000000003C7DB5B00000000000000000000000000000000000
+0000000000001FD5E00063B8000001000E877B30C0000000C000C0000000000030000000000000000200000000006FEFF0000000000000000000000000000000004B
+000000000000F0003C0030FC000002000E8D6E30C0000000600060000000000020000000000000000300000000001EE3F00000000000000000000000000000000000
+000000000003800003800C3FA80004001E8D6C30C00000003800180000000000600000000000000000000000000033FF300000000000000000000000000000000037
+000000000006000000C00603800008011E8D7C30C00000000C00060000000000600000000000000000000000000067E7F80000000000000000000000000000000000
+00000000001C800000700300000010011E8B5C3000000000060001600000000060000000000000000000000000006FDDF80000000000000000000000000000000050
+00000000003780000038018000006203161BD8100000000003000018000000004000000000000000000000000000E17C88000000000000000000000000000000006D
+00000000007C0000000700E00000C4221717B0000000000000C0000600000000C00000000000000000000000000061D7800000000000000000000000000000000074
+0000000000F800000001C03800030CC63737E000000000000070000100000000E00000000000000000000000000021C3800000000000000000000000000000000072
+0000000001F0000000007C1B000E198E262F400000000000006C000180000001B8000000000000000000000000006383000000000000000000000000000000000075
+0000000003E0000001000FDEE070631C667E00000000000000470000000000018C000000000000000000000000004381000000000000000000000000000000000066
+0000000007C001F00FC0002F0500C6384CFC000000000000004180000000000187000000000000000000000000008600000000000000000000000000000000000054
+000000003FC00E80383C0000E0070C70CDF000000000000000C060000000000101800000000000000000000000018600000000000000000000000000000000000048
+0000000019800B007007C0003E7831F19B0000000000000000C038000000000100E00000000000000000000000030C00000000000000000000000000000000000065
+000000000300180060007C000FC0E767120000000000000001800C0000000003007800000000000000000000000C0C00000000000000000000000000000000000066
+000000000E00B000C00007FEF803BCCE3E000000000000000180070000000002001C0000000000000000000000081800000000000000000000000000000000000063
+000000003D814000C0000001E0B6E1DCF800000000000000030001800000000600060000000000000000000000003000000000000000000000000000000000000053
+00000000F306800180000001CFFD03B1F000000000000000060000C00000000C00038000000000000000000000C03000000000000000000000000000000000000074
+0000000F9C05000180000003BD7E06E3C0000000000000000C000020000000180000E00000000000000000000180600000000000000000000000000000000000006C
+000000FFF80A000300000007E03C0D8700000000000000001800003000000030000030000000000000C000000300C000000000000000000000000000000000000074
+000001E86016000600000007C0380B0C0000000000000000300000180000006000001C000000000000C000002E018000000000000000000000000000000000000064
+00000381C02C000C0000000F00701E18000000000000000060000018000000C00000070000000000004000003C030000000000000000000000000000000000000066
+0000370F00D800380000000E00E03C100000000000000000C000001800000180000001C00000000000400000180E000000000000000000000000000000000000004C
+0001FD5000B01BC00000001C00E038000000000000000001800000180000010000000070000000000040000018380000000000000000000000000000000000000074
+0007FE000040FC000000001C01C03000000000000000000180000018000003000000001C00000000004000000CE0000000000000000000000000000000000000006F
+000FB1C0018380000000003807802000000000000000000300000030000006000000000700000000004000000D800000000000000000000000000000000000000069
+003CFEFCCE0E0000000000701E0060000000000000000006020000700000060000000001800000000040000007000000000000000000000000000000000000000004
+01E1CFFFB0180000000001E018006000000000000000001C0600006000000C0000000000600000000040000006000000000000000000000000000000000000000009
+010303DE0060000000000780000040000000000000000070040000C000001800000000001C0000000060800006000000000000000000000000000000000000000061
+000000E001C00000000006000000400000000000000000E0180003C00000300000000000070000000030800002000000000000000000000000000000000000000064
+0000001F0F000000000000000000000000000000000000C030001F80000020000000000001E00000001A800002000000000000000000000000000000000000000072
+00000003F800000000000000000000000000000000000080C0007980000060000000000000780000000EC00003000000000000000000000000000000000000000065
+0000000000000000000000000000000000000000000000870000E3000000C00000000000000700000006400003000000000000000000000000000000000000000063
+0000000000000000000000000000000000000000000000840001830000018000000000000000F0000002600001000000000000000000000000000000000000000044
+00000000000000000000000000000000000000000000008000070600000700000000000000000F800003200001000000000000000000000000000000000000000005
+000000000000000000000000000000000000000000000080001C0600000C000000000000000001FFD803000001800000000000000000000000000000000000000063
+0000000000000000000000000000000000000000000000C000380C000038000000000000000000019FFB800001800000000000000000000000000000000000000041
+0000000000000000000000000000000000000000000000C000701900007000000000000000000001C00080000080000000000000000000000000000000000000006C
+0000000000000000000000000000000000000000000000800058120000C0000000000000000000018000C0000080000000000000000000000000000000000000006C
+0000000000000000000000000000000000000000000000C0000C36000380000000000000000000018000400000C00000000000000000000000000000000000000020
+000000000000000000000000000000000000000000000041000E6C000600000000000000000000010000600000C00000000000000000000000000000000000000072
+0000000000000000000000000000000000000000000000610006F8001C00000000000000000000010000600000C00000000000000000000000000000000000000072
+000000000000000000000000000000000000000000000038000380003800000000000000000000030000300000400000000000000000000000000000000000000077
+00000000000000000000000000000000000000000000000E000180016000000000000000000000020000100000400000000000000000000000000000000000000010
+00000000000000000000000000000000000000000000000300030001C00000000000000000000006000018000040000000000000000000000000000000000000006F
+00000000000000000000000000000000000000000000000180020000E000000000000000000000040000180000600000000000000000000000000000000000000020
+000000000000000000000000000000000000000000000000C006000030000000000000000000000C0000340000600000000000000000000000000000000000000020
+0000000000000000000000000000000000000000000000006006000018000000000000000000000C000066000060000000000000000000000000000000000000006C
+000000000000000000000000000000000000000000000000200400000C00000000000000000000080000430000600000000000000000000000000000000000000054
+000000000000000000000000000000000000000000000000300600800300000000000000000000180000C18000600000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000180600800180000000000000000000100001808000600000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000C020080006000000000000000000030000180C000600000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000070300000030000000000000000000200003006000200000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000003810040001C000000000000000000600002002000200000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000038180600006000000000000000000600006003000300000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000180E000000300000000000000000040000C001800300000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001C03E000001C00000000000000000C0000C001800300000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000018003C00000600000000000000000C00018000C00100000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001E000700000300000000000000000800030000600100000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000160001C00000C0000000000000001800060000600180000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000140000600000600000000000000018000C0000200180000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000014000030000030000000000000001000080000300080000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001500001800000C000000000000003000180000100080000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001D00000E0000060000000000000030003000001800C0000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001D00000F000003000000000000006000600000180040000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000C00000D800000C00000000000006000C000000C0060000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000E00000CC0000060000000000000C0008000001C0060000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000C00000CE0000030000000000001AE7F800000F40020000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000C00040C600000180000000000033F7660000F8C0060000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000090016187000000C0000000000035E0CF86C7C180060000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001B021A1828000006000000000007BE400FEFC0000040000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001E042A303C00000300000000001C0EC000F3400000C0000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000003C1854301C1000018000000000F00700000000000180000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001CE1B0201A1000008000000003800EC0000000000300000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000001FC200600A100000C000000007003300000000000600000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000018F800600A080000C000000003802300000000000C00000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000011A00040030800106000000003B1C000000000003800000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000001A00040034800106000000001FC8000000000017000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000A300C0034800102000000000FF000000000007E000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000001A180C00168005020000000018F8000000000F90000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000A1C18001E802D0300000000301C00000000F000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000A0830000E802D0100000000F0070000001F0000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000E06600007812C0180000001E001C40000F00000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000E07400007823800C000000380007F903F000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000E1E00000F827000C000000E0000C01FF0000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000067800000F667000C000003A0001800000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000003C0000007FFD305C00003F80007000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000038000000FF3327D4003FF80001C000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000001EE0300BC007E0000038000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000C0018018007E00000E0000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000C01803E000001C0000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000060380E000000300000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000030381F000000600000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000187838000000C00000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000C78E0000003800000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000671C0000006000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000003778000000C000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000001DE00000038000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000C7C0000060000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000019800001C0000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000001FA0000380000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000001E00000700000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000039C000C00000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000661A31800000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000005FE6C3000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000D20306000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000092000C000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000001B10018000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000001B180F0000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000013001C0000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000003200300000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000003205400000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000003607800000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000002407000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000007C1E000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000007DF8000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000F00000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000C00000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+grestore
+
+%------ End Main Program ------%
+
+end
+vmstate restore
+
+%%Trailer
+
+%%Pages:1
+
+restore
+%@EndEPSFobject
+%%Trailer
+end

@@ -1,0 +1,93 @@
+.if n .ds Q \&"
+.if t .ds Q ``
+.if n .ds U \&"
+.if t .ds U ''
+.TH fax 1 
+.tr \&
+.nr bi 0
+.nr ll 0
+.nr el 0
+.de Pp
+.ie \\n(ll>0 \{\
+.ie \\n(bi=1 \{\
+.nr bi 0
+.if \\n(t\\n(ll=0 \{.IP \\(bu\}
+.if \\n(t\\n(ll=1 \{.IP \\n+(e\\n(el.\}
+.\}
+.el .sp 
+.\}
+.el \{\
+.ie \\nh=1 \{\
+.LP
+.nr h 0
+.\}
+.el .PP 
+.\}
+..
+.SH NAME
+fax -- send a Telefax message
+
+.Pp
+.SH SYNOPSIS
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format file | qtex | fax [-a]
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH DESCRIPTION
+
+.Pp
+\f(CRfax\fP is simple front-end to the \f(CRlpr\fP command, customized for
+sending Telefax messages.   It is designed to be used within a Unix
+pipe, as shown in the synopsis.
+.Pp
+.SH OPTIONS
+
+.Pp
+.RS
+.nr ll +1
+.nr t\n(ll 2
+.IP "\f(CR-help\fP"
+.nr bi 1
+.Pp
+If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+.Pp
+.IP "\f(CR-a\fP"
+.nr bi 1
+.Pp
+Send an acknowledgement, by electronic mail, if the fax message was
+received without difficulty.
+.Pp
+.nr ll -1
+.RE
+.Pp
+.SH BUGS
+
+.Pp
+The telefax number is written to a file named \*Q.fax=num\*U, in the
+current directory, by \f(CRqtex\fP.  This file is read and then deleted
+by this \f(CRfax\fP program.   Should there coincidentally be a file
+with this name which is not write protected, it will be removed.
+.Pp
+.Pp
+.SH SEE ALSO
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format(1), qtex(1)
+.fi 
+.ec
+.ft P
+.sp
+.Pp

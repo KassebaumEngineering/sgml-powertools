@@ -1,0 +1,2 @@
+sgmls: SGML error at test149.sgm, line 9 at """:
+       A = "\015foo" attribute value defaulted: invalid character

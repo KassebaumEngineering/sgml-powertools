@@ -1,0 +1,125 @@
+#! /bin/sh 
+#
+# sgml2rtf
+# Steve Tynor 26 Oct 95
+#
+# Actually, this converts to RTF specifically marked up for
+#   compilation by the Windows Help Compiler (hc31.exe).
+#
+
+# Don't make any changes here, it is all done by install!
+LINUXDOCBIN=linuxdocbin
+LINUXDOCLIB=linuxdoclib
+
+# SGML_PATH for sgmls - must be exported
+SGML_PATH=$LINUXDOCLIB/dtd/%N.dtd:$LINUXDOCLIB/dtd/%P.dtd:$LINUXDOCLIB/rep/rtf/%N
+export SGML_PATH
+
+TABS="-8"		      # expand replaces tabs with 8 spaces
+CHAR="groff"                  # use ASCII (groff) character set 
+STYLE=			      # Use standard Linuxdoc-SGML style
+SPLIT=
+
+trap "CleanUp" 0 1 2 3 9 15
+
+usage () {
+echo "  Usage: sgml2rtf [-2] [-l] [-style <s>] [-t <n>] <filename> ";
+echo "  -2         split pages at n. and n.m. sections";
+echo "  -l         use latin1 character set (default ASCII)";
+echo "  -style <s> use rtf/<s>mapping backend in addition to default";
+echo "             rtf/mapping";
+echo "  -t <n>     tabstops each <n>th col (default 8)";
+echo "  <filename> SGML source file, .sgml extension is optional";
+echo 
+echo "  Output will appear in <filename>.rtf and in <filename>-n.rtf for"
+echo "  each section"
+exit 1 
+}
+
+CleanUp() {
+    rm -f $tmp /tmp/sgml2rtf$$tmp
+}
+
+# check argc
+if [ $# = 0 ]
+then
+	usage
+fi
+
+# do they need help?
+case "$1" in
+	"-h" | "--help" | "-help") usage
+	exit 1
+esac
+
+# getopt
+for i in $*
+do
+        case $i in
+	      -2)	SPLIT="-2";shift;;
+	      -style) 	style=$2; shift; shift;;
+	      -t) 	TABS="-"$2; shift; shift;;
+              -l)       CHAR="latin1"; shift;;
+              --)       shift;
+			break;;
+        esac
+done
+
+SGML_PATH=$LINUXDOCLIB/dtd/%N.dtd:$LINUXDOCLIB/dtd/%P.dtd:$LINUXDOCLIB/rep/rtf/%N
+export SGML_PATH
+
+if [ -f $LINUXDOCLIB/dtd/${style}.dcl ]; then
+	SGMLDECL=$LINUXDOCLIB/dtd/${style}.dcl
+elif [ -f $LINUXDOCLIB/dtd/sgml.dcl ]; then
+	SGMLDECL=$LINUXDOCLIB/dtd/sgml.dcl
+# else just use sgmls's defaults
+fi
+
+if [ "$style" != "" ]; then
+	STYLE=$LINUXDOCLIB/rep/rtf/${style}mapping; 
+fi
+
+# check to see if there is a source file
+FILE=$1
+if [ -f $FILE.sgml ] 
+then
+	SGMLFILE=$FILE.sgml
+elif [ ! -f $FILE ] 
+then
+	echo "sgml2rtf: can't find $FILE or $FILE.sgml" >&2
+	exit 1
+else
+	SGMLFILE=$FILE
+fi
+RTFROOT=`basename $SGMLFILE .sgml`
+
+echo "Making $RTFROOT.rtf from $SGMLFILE."
+# format
+# Use "cat -s" to compact multiple blank lines to a single blank line:
+case $CHAR in
+        latin1) cat -s $SGMLDECL $SGMLFILE | sed -f $LINUXDOCLIB/latin1.sed | \
+                $LINUXDOCBIN/sgmls $DASHI > /tmp/sgml2rtf$$tmp;;
+        *)      cat -s $SGMLDECL $SGMLFILE | $LINUXDOCBIN/sgmls $DASHI > \
+                /tmp/sgml2rtf$$tmp
+esac
+if [ $? = 1 ] 
+then 
+	echo "SGML parsing error, no formatting done..."
+	exit 1
+fi
+
+tmp=/tmp/sgml2rtf$$tmp2
+
+# if there are no SGML parse errors, continue...
+# NOTE: we need to turn "\n" into " \n" since RTF does not
+# treat newline as whitespace (so without the extra space, two
+# words separated only by a newline will get jammed together
+# in the RTF output. 
+cat /tmp/sgml2rtf$$tmp | \
+sed -f $LINUXDOCLIB/prertf.sed | \
+$LINUXDOCBIN/sgmlsasp $STYLE $LINUXDOCLIB/rep/rtf/mapping | \
+expand $TABS > $tmp
+
+$LINUXDOCBIN/rtf2rtf $SPLIT $RTFROOT < $tmp > $RTFROOT.rtf
+
+exit 0

@@ -1,0 +1,46 @@
+<!doctype qwertz system >
+
+<manpage title="extract">
+
+<sect1> NAME
+extract &mdash filter the source code out of a "literate program"
+
+<sect1> SYNOPSIS
+
+<p>
+<verb>
+extract file[.sgml]
+</verb>
+
+<sect1> DESCRIPTION
+
+<p> Extracts the source code out of a literate program written using
+the <tt>qwertz</> SGML document type.  The syntax of the document is
+checked while the source code is being extracted.  If syntax errors
+are found, error messages are written to standard error and the
+program may terminate before all code has been extracted.  The code
+being extracted is written to standard out, but this will usually be
+redirected to a file with some appropriate file name extension,
+depending on the programming language being used. The ".sgml" filename
+extension of the input file is optional.
+
+<p> For example, if the input file is named <tt>foo.sgml</> and
+contains the source code of a C program, you could extract and compile
+the program by typing:
+
+<verb>
+extract foo > foo.c
+cc foo
+</verb>
+
+<p> In this example, as standard error has not been redirected, error
+messages will appear on the terminal.
+
+<sect1> DIAGNOSTICS
+
+<p> SGML syntax errors are written to standard error.  If the input file
+contains such errors, <tt>extract</> will terminate with exit status 1
+before all the code has been extracted from the file.
+
+
+</manpage>

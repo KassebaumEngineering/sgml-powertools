@@ -1,0 +1,314 @@
+\documentstyle[qwertz,dina4,xlatin1,11pt]{report}
+\input{epsf.tex}
+\pagestyle{headings}
+\title{The {\tt qwertz} SGML Document Types
+\\
+{\large (Version 1.1 Reference Manual)}
+}
+\author{Tom Gordon \\
+\\
+The {\tt qwertz} Project \\ Institute for Applied Information Technology (F3) \\ \\ German National Research Center \\ for Computer Science (GMD)}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Why Not Just Use LaTeX?}
+
+The {\tt qwertz} document types are a set of Standard Generalized
+Markup Language (SGML) document type definitions (DTDs) for articles,
+reports, books, letters, notes, slides (or overhead transparencies),
+bibliographies, and manual pages.  Except for manual pages, the
+document types have been heavily influenced by the LaTeX document
+types of the same names \cite{Lamport86}, so LaTeX users should
+feel right at home.  Indeed, we presently translate most {\tt qwertz}
+documents into LaTeX for printing and the LaTeX produced is quite
+readable by anyone familiar with LaTeX.
+
+{\ldots}
+
+
+
+
+\chapter{The {\tt qwertz} Document Type Definition}
+
+\markboth{The {\tt qwertz} Document Types}{The {\tt qwertz} DTD}
+{\ldots}
+
+We will be making use of several {\em parameter entities\/} in this
+DTD:
+
+\par
+\addvspace{\medskipamount}
+\nopagebreak\hrule
+\begin{verbatim}
+<!entity % emph 
+        " em | it | bf | sf | sl | tt " >
+
+<!entity % inline 
+        " f | x | %emph; | sq | label | ref | 
+          pageref | cite | ncite " >
+\end{verbatim} 
+\nopagebreak\hrule 
+\addvspace{\medskipamount}
+
+
+{\ldots}
+
+
+
+
+\section{General Purpose Entities and Elements}
+
+\markboth{The {\tt qwertz} Document Types}{General Purpose Entities}
+{\ldots}
+
+When may it be necessary to use of an entity reference to produce
+some character?  There are three cases to watch out for:
+
+\begin{description}
+\item[SGML Concrete Syntax Delimiters.] \mbox{}
+
+Although the SGML standard allows alternative concrete syntaxes to
+be defined, we use the so-called {\em reference concrete syntax\/} in
+the {\tt qwertz} document types.  {\ldots}
+
+
+
+\item[SGML Short Reference Delimiters.] \mbox{}
+
+In SGML document types {\em short reference maps\/} may be defined
+which allow single characters to be interpreted as arbitrarily complex
+sequences of characters, including SGML tags and entity references. {\ldots}
+
+\begin{verbatim}
+" # % ' ( ) * + , - : ; = @ [ ] ^ _ { | } ~
+\end{verbatim}
+
+
+For each of these characters, there is an SGML entity which may be
+used to generate the ASCII character in the printed document, listed
+in table \ref{GPC}. {\em Usually, it will not be necessary to use these
+entities; the character can simply be typed and will be interpreted
+literally.\/} However, {\ldots}
+
+
+
+\item[TeX Special Characters.] \mbox{}
+
+Ideally, it should be possible to hide the conventions of the
+underlying formatting system completely.  In fact, SGML parsers which
+implement the full ISO standard have a feature which makes this
+possible. {\ldots}
+
+
+
+\end{description}
+
+
+
+
+
+\subsection{Spacing, Dashes and Ellipsis}
+
+\markboth{The {\tt qwertz} Document Types}{Spacing, Dashes and Ellipsis}
+{\ldots}
+
+There are also three different kinds of dashes: {\tt hyphen}
+which was already mentioned above, is to be used for intra-word dashes, as
+in the word ``intra-word''.\footnote{However, the {\tt hyphen} entity
+was not actually necessary here, as the - character was not being used
+in this context as a short reference.}
+
+{\ldots}
+
+
+
+
+\subsection{Foreign Characters}
+
+\markboth{The {\tt qwertz} Document Types}{Foreign Characters}
+There are a large set of entities for other Western European
+languages.  Altogether, there are entities for almost all of the
+foreign language characters in ISO 8859, the Latin 1 character set for
+Western European languages.\footnote{Only the four
+Icelandic characters are missing.} {\ldots}
+
+\begin{table}[tbp]
+\begin{center}
+\begin{tabular}{ll|ll|ll|ll}
+AElig &         {\AE} & Aacute &        Á & Acirc       &       Â & Ae &  Ä     \\ 
+Ntilde &        \~{N} & Oacute &        Ó & Ocirc &     Ô & Oe &  Ö \\ 
+Ue &  Ü & Ugrave &      Ù & Uuml &      Ü & Yacute &    Ý \\ 
+aacute &        á & acirc &     â & ae &  ä & aelig &   {\ae} \\ 
+oe &  ö & ograve &      ò & oslash &    {\o} & otilde &         \^{o} \\ 
+sz &  ß & szlig &       ß & thinsp &  & tilde &  \verb+~+ \\ 
+times &  \mch{\times} & uacute &        ú & ucirc &     û & ue &  ü \\ 
+\end{tabular}
+\end{center}
+\caption{\label{GPC} (Some) General Purpose Characters}
+\end{table}
+
+
+{\ldots}
+
+
+
+
+\subsection{Sentences, Paragraphs, Footnotes and Emphasis}
+
+\markboth{The {\tt qwertz} Document Types}{Sentences {\ldots} Emphasis}
+{\ldots}
+
+Sentences or phrases within paragraphs can be emphasized in a
+number of ways.  The {\tt em} tag is used to choose the default form
+of emphasis, which is usually {\em italic\/} type, but depends on the
+style of the background text.  If the background text is formatted in
+italics type, as it usually is in definitions, for example, than
+emphasized text will be formatted using a plain, roman typeface.
+However, various forms of emphasis can be explicitly chosen.  These
+include: {\bf bold face} ({\tt bf}), {\it italics\/} ({\tt it}),
+{\sf sans serif} ({\tt sf}), {\sl slanted} ({\tt sl}), and
+{\tt typewriter} ({\tt tt}) styles.
+
+{\ldots}
+
+Long quotes are formatted in LaTeX by indenting the left and
+right margins.  For example, \cite[pp. xiii]{Lamport86}:
+
+\begin{quotation}
+The LaTeX document preparation system is a special version of
+Donald Knuth's TeX program.  TeX is a sophisticated program designed
+to produce high-quality typesetting, especially for mathematical text.
+{\ldots}
+
+LaTeX represents a balance between functionality and ease of use.
+Since I implemented most of it myself, there was also a continual
+compromise between what I wanted to do and what I could do in a
+reasonable amount of time.  {\ldots}
+
+
+\end{quotation}
+
+
+
+
+
+
+\subsection{Lists}
+
+\markboth{The {\tt qwertz} Document Types}{Lists}
+Three types of lists are supported, which differ according to the
+type of label used to mark each item in the list.  Use {\tt itemize}
+to create a list in which each item is marked with some symbol such as
+a dash or bullet. The {\tt enum} tag is used to create an
+enumeration, i.e. a list in which each item is labelled with a number
+(or letter) indicating its rank or position in the list. Finally, use
+{\tt descrip} to create a list in which each item is labelled by some
+tag of your own choice. Lists of various types can nested.  For
+example:
+
+{\ldots}
+
+\begin{itemize}
+\item  A level one item.
+\item  Here's level two 
+\begin{enumerate}
+\item  A level two item.
+\item  Here's level three:
+\begin{enumerate}
+\item  A level three item.
+\item  Here's level four:
+\begin{description}
+\item[Red.] \mbox{}
+
+ Is the color of my true love's hair.
+\item[Blue.] \mbox{}
+
+ Is a property of some movies.
+\item[Yellow.] \mbox{}
+
+ Characterizes some forms of journalism.
+\end{description}
+\item A last level three item
+\end{enumerate}
+\item  A last level two item
+\end{enumerate}
+\item A last level one item.
+\end{itemize}
+
+
+{\ldots}
+
+
+
+
+\subsection{Figures and Tables}
+
+Encapsulated PostScript graphics can be created using a variety of
+different editors.  If you are using Unix with an X11-based graphical
+user-interface, you may want to try {\tt idraw}, which stores its
+documents directly as Encapsulated PostScript files. Another
+interesting X11-based drawing program is {\tt tgif}.
+
+{\ldots}
+
+Which would then appear as in figure \ref{issues}.
+
+\begin{figure}[tbp]
+\centerline{\epsffile{issues.ps}}
+\caption{\label{issues}An {\tt idraw} Drawing }
+\end{figure}
+
+
+
+
+
+\subsection{Literate Programming}
+
+The original motivation behind the development of these document
+types was to create an environment for literate programming in an
+arbitrary programming language similar to Donald Knuth's WEB system
+for literate programming in Pascal \cite{Knuth84}.  {\ldots}
+
+When formatted, spaces and line breaks are preserved:
+
+\begin{verbatim}
+main ()
+{
+        /* This is the famous hello world program */
+
+        printf("hello world\n");
+}
+\end{verbatim}
+
+
+
+
+
+\subsection{Mathematical Formulas}
+
+The {\tt qwertz} document types include elements for describing
+mathematical formulas completely within SGML, similar to the system
+described in \cite{daphne89}.  {\ldots}
+
+So, for example, 
+
+\[         \sum_{i=1}^{n}x_{i} =         \int_{0}^{1}f \]
+
+was typed as:
+\begin{verbatim}
+<dm>
+        <sum><ll>i=1<ul>n<opd>x<inf>i</></sum> =
+        <in><ll>0<ul>1<opd>f</in>
+</dm>
+\end{verbatim}
+
+
+{\ldots}
+
+
+
+\bibliographystyle{qwertz}
+\bibliography{lit}
+\end{document}

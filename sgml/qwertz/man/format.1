@@ -1,0 +1,247 @@
+.if n .ds Q \&"
+.if t .ds Q ``
+.if n .ds U \&"
+.if t .ds U ''
+.TH format 1 
+.tr \&
+.nr bi 0
+.nr ll 0
+.nr el 0
+.de Pp
+.ie \\n(ll>0 \{\
+.ie \\n(bi=1 \{\
+.nr bi 0
+.if \\n(t\\n(ll=0 \{.IP \\(bu\}
+.if \\n(t\\n(ll=1 \{.IP \\n+(e\\n(el.\}
+.\}
+.el .sp 
+.\}
+.el \{\
+.ie \\nh=1 \{\
+.LP
+.nr h 0
+.\}
+.el .PP 
+.\}
+..
+.SH NAME
+format -- translate SGML into LaTeX or nroff/troff
+
+.Pp
+.SH SYNOPSIS
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format [-c] [-t int] [-T format] [-r mapping] file[.sgml]
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH DESCRIPTION
+
+.Pp
+\f(CRformat\fP translates an SGML file of the \f(CRqwertz\fP
+document type into LaTeX and various forms of \f(CRnroff/troff\fP.  The
+\*Q.sgml\*U file name extension is optional. It first checks that the file
+is a syntactically correct instance of the \f(CRqwertz\fP document type.
+The default action is to write LaTeX to the standard output.  To
+print a \f(CRqwertz\fP file named \f(CRfoo.sgml\fP, using LaTeX, just type
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format foo | qtex | lpr
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+\f(CRqtex\fP is a front-end to LaTeX designed to be used as a filter
+in this way.  See \f(CRqtex(1)\fP for more information.
+.Pp
+If you need more control over printing than is available using
+\f(CRlpr\fP alone, you can first create a \f(CRdvi\fP file, and then
+print the file using a \f(CRdvi\fP to PostScript converter, such as
+\f(CRdvips\fP.  For example, to print pages 3 to 10 of \f(CRfoo\fP, you
+could type
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format foo | qtex -d > foo.dvi
+dvips -p 3 -n 8 foo | lpr
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+If there is a PostScript previewer available, such as
+\f(CRghostview\fP, from the GNU distribution, you can preview the
+document by typing
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format foo | qtex > foo.ps; ghostview foo.ps
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Or, you may also preview the document using a \f(CRdvi\fP previewer
+such as \f(CRxdvi\fP by typing
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format foo | qtex -d > foo.dvi;  xdvi foo
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+You can also use \f(CRnroff\fP to view the document on an ASCII
+terminal:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format -T nroff foo | nroff -ms | more
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Finally, \f(CRnroff\fP may also be suitable for sending the document to
+someone by electronic mail:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format -T nroff foo | nroff -ms | mail thomas@gmdzi.gmd.de
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH OPTIONS
+
+.Pp
+In the following, it is assumed that the file to be formatted is
+named \f(CRfoo.sgml\fP, or simply \f(CRfoo\fP.
+.Pp
+.RS
+.nr ll +1
+.nr t\n(ll 2
+.IP "\f(CR-help\fP"
+.nr bi 1
+.Pp
+If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+.Pp
+.IP "\f(CR-c\fP"
+.nr bi 1
+.Pp
+Just \fIcheck\fP the syntax of the document, to see that it is a
+correct instance of the \f(CRqwertz\fP document type.
+.Pp
+.IP "\f(CR-T [latex | nroff | grops | man]\fP"
+.nr bi 1
+.Pp
+Use \f(CR-T\fP to select the format in which to translate the
+\f(CRqwertz\fP document.  By default, LaTeX is used.  \f(CRnroff\fP is
+appropriate for ASCII devices.  \f(CRgrops\fP is a \f(CRtroff\fP format for
+\f(CRgroff\fP, a reconstruction of \f(CRtroff\fP from the Free Software
+Foundation.  \f(CRgrops\fP uses \f(CRgroff's\fP names for non-ASCII
+characters and symbols.  To use \f(CRgroff\fP to generate an ASCII
+version of the document, use the \f(CRnroff\fP format, as in:
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+format -T nroff foo | groff -ms -T ascii | more 
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Both the \f(CRgrops\fP and \f(CRnroff\fP formats use the \f(CRms\fP macro
+package. Also, documents containing tables and formulas will need to
+be preprocesed by \f(CRtbl(1)\fP and \f(CReqn(1)\fP, respectively.
+.Pp
+The \f(CRman\fP format generates \f(CRnroff\fP using the \f(CRman\fP macro
+package for Unix manual pages.   Manual pages may also be formatted
+using any of the other formats.
+.Pp
+By default, \f(CRformat\fP looks in the \f(CR$FORMAT/rep\fP
+directory for the files controlling the translation of \f(CRqwertz\fP
+documents into various formats.  If you wish to customize the
+appearance of your documents, or support additional formats, you may
+create your own mappings.  Just set the \f(CRREPDIR\fP shell variable to
+the directory containing your formats.  For each format, \f(CRf\fP, there
+should be a subdirectory named \f(CRf\fP in the \f(CRREPDIR\fP directory.
+Within this subdirectory, there must be three files, named:
+\f(CRmapping\fP, \f(CRgeneral\fP and \f(CRmath\fP.  The \f(CRmapping\fP file is a
+simple table from SGML start and end tags into instructions or
+commands for the goal formatting system.  (The table must be in the
+format first used by the Amsterdam SGML Parser.)
+See \f(CR$FORMAT/rep/qwertz/latex/mapping\fP and
+\f(CR$FORMAT/rep/qwertz/grops/mapping\fP for examples.  The
+\f(CRgeneral\fP and \f(CRmath\fP files are SGML files containing the
+formatter specific definitions of general purpose characters and
+mathematical symbols, respectively.  Again, see the examples in
+\f(CR$FORMAT/rep/qwertz/latex\fP.  See also the \f(CR-r\fP option, below.
+.Pp
+.IP "\f(CR-r\fP \fIreplacement file\fP"
+.nr bi 1
+
+
+The \f(CRREPDIR\fP shell variable is used to set the default
+directory for complete replacement files.  The \f(CR-r\fP option is
+used to override the replacements for some of the start and end
+tags in a default replacement file.   Only the start or end tags
+which are to be formatted differently than specified in the default
+file need to be included.
+
+.IP "\f(CR-t \fP\fIn\fP"
+.nr bi 1
+.Pp
+\f(CRformat\fP always pipes the input document through \f(CRexpand\fP
+to replace tabs by spaces.  By default, each \fItab\fP is replaced by eight
+spaces.  You can change this by using this option.
+.Pp
+.nr ll -1
+.RE
+.Pp
+.SH SEE ALSO
+
+.Pp
+.sp 
+.ft CR
+.eo 
+.nf
+ 
+qtex(1), nroff(1), tbl(1), eqn(1), groff(1), dvips(1),
+expand(1), sed(1), lpr(1), ghostview(1), xdvi(1) 
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+.SH DIAGNOSTICS
+
+.Pp
+SGML syntax errors are reported to standard out.  Each error message
+mentions the line number containing the error.
+.Pp

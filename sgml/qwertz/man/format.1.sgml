@@ -1,0 +1,161 @@
+<!doctype qwertz system [
+<!entity LaTeX sdata "LaTeX">
+<!entity et "&etago;">
+<!entity l "&lsqb;">
+<!entity r "&rsqb;">
+]>
+
+<manpage title="format">
+<sect1> NAME
+format &mdash translate SGML into &LaTeX or nroff/troff
+
+<sect1> SYNOPSIS
+
+<p>
+<verb>
+format [-c] [-t int] [-T format] [-r mapping] file[.sgml]
+</verb>
+
+<sect1> DESCRIPTION
+
+<p><tt>format</> translates an SGML file of the <tt>qwertz</>
+document type into &LaTeX and various forms of <tt>nroff/troff</>.  The
+".sgml" file name extension is optional. It first checks that the file
+is a syntactically correct instance of the <tt>qwertz</> document type.
+The default action is to write &LaTeX to the standard output.  To
+print a <tt>qwertz</> file named <tt>foo.sgml</>, using &LaTeX;, just type
+
+<verb>
+format foo | qtex | lpr
+</verb>
+
+<p><tt/qtex/ is a front-end to &LaTeX designed to be used as a filter
+in this way.  See <tt/qtex(1)/ for more information.
+
+<p> If you need more control over printing than is available using
+<tt>lpr</> alone, you can first create a <tt>dvi</> file, and then
+print the file using a <tt>dvi</> to PostScript converter, such as
+<tt>dvips</>.  For example, to print pages 3 to 10 of <tt>foo</>, you
+could type
+
+<verb>
+format foo | qtex -d > foo.dvi
+dvips -p 3 -n 8 foo | lpr
+</verb>
+
+<p> If there is a PostScript previewer available, such as
+<tt>ghostview</>, from the GNU distribution, you can preview the
+document by typing
+
+<verb>
+format foo | qtex > foo.ps; ghostview foo.ps
+</verb>
+
+<p> Or, you may also preview the document using a <tt>dvi</> previewer
+such as <tt>xdvi</> by typing
+
+<verb>
+format foo | qtex -d > foo.dvi;  xdvi foo
+</verb>
+
+<p> You can also use <tt/nroff/ to view the document on an ASCII
+terminal:
+
+<verb>
+format -T nroff foo | nroff -ms | more
+</verb>
+
+<p>Finally, <tt/nroff/ may also be suitable for sending the document to
+someone by electronic mail:
+
+<verb>
+format -T nroff foo | nroff -ms | mail thomas@gmdzi.gmd.de
+</verb>
+
+<sect1> OPTIONS
+
+<p> In the following, it is assumed that the file to be formatted is
+named <tt>foo.sgml</>, or simply <tt>foo</>.
+
+<descrip>
+<tag><tt>-help</>
+
+<p>If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+
+<tag><tt>-c</>
+
+<p> Just <em>check</> the syntax of the document, to see that it is a
+correct instance of the <tt>qwertz</> document type.
+
+<tag><tt>-T [latex | nroff | grops | man]</>
+
+<p> Use <tt/-T/ to select the format in which to translate the
+<tt/qwertz/ document.  By default, &LaTeX is used.  <tt/nroff/ is
+appropriate for ASCII devices.  <tt/grops/ is a <tt/troff/ format for
+<tt/groff/, a reconstruction of <tt/troff/ from the Free Software
+Foundation.  <tt/grops/ uses <tt/groff's/ names for non-ASCII
+characters and symbols.  To use <tt/groff/ to generate an ASCII
+version of the document, use the <tt/nroff/ format, as in:
+
+<verb>
+format -T nroff foo | groff -ms -T ascii | more 
+</verb>
+
+<p>Both the <tt/grops/ and <tt/nroff/ formats use the <tt/ms/ macro
+package. Also, documents containing tables and formulas will need to
+be preprocesed by <tt/tbl(1)/ and <tt/eqn(1)/, respectively.
+
+<p> The <tt/man/ format generates <tt/nroff/ using the <tt/man/ macro
+package for Unix manual pages.   Manual pages may also be formatted
+using any of the other formats.
+
+<p>By default, <tt/format/ looks in the <tt>&dollar;FORMAT/rep</>
+directory for the files controlling the translation of <tt/qwertz/
+documents into various formats.  If you wish to customize the
+appearance of your documents, or support additional formats, you may
+create your own mappings.  Just set the <tt/REPDIR/ shell variable to
+the directory containing your formats.  For each format, <tt/f/, there
+should be a subdirectory named <tt/f/ in the <tt/REPDIR/ directory.
+Within this subdirectory, there must be three files, named:
+<tt/mapping/, <tt/general/ and <tt/math/.  The <tt/mapping/ file is a
+simple table from SGML start and end tags into instructions or
+commands for the goal formatting system.  (The table must be in the
+format first used by the Amsterdam SGML Parser.)
+See <tt>&dollar;FORMAT/rep/qwertz/latex/mapping</> and
+<tt>&dollar;FORMAT/rep/qwertz/grops/mapping</> for examples.  The
+<tt/general/ and <tt/math/ files are SGML files containing the
+formatter specific definitions of general purpose characters and
+mathematical symbols, respectively.  Again, see the examples in
+<tt>&dollar;FORMAT/rep/qwertz/latex</>.  See also the <tt/-r/ option, below.
+
+<tag><tt/-r/ <em/replacement file/</>
+
+<p>The <tt/REPDIR/ shell variable is used to set the default
+directory for complete replacement files.  The <tt/-r/ option is
+used to override the replacements for some of the start and end
+tags in a default replacement file.   Only the start or end tags
+which are to be formatted differently than specified in the default
+file need to be included.
+
+<tag><tt>-t </><em>n</>
+
+<p><tt>format</> always pipes the input document through <tt>expand</>
+to replace tabs by spaces.  By default, each <em/tab/ is replaced by eight
+spaces.  You can change this by using this option.
+
+</descrip>
+
+<sect1> SEE ALSO
+
+<p><verb> 
+qtex(1), nroff(1), tbl(1), eqn(1), groff(1), dvips(1),
+expand(1), sed(1), lpr(1), ghostview(1), xdvi(1) 
+</verb>
+
+<sect1> DIAGNOSTICS
+
+<p>SGML syntax errors are reported to standard out.  Each error message
+mentions the line number containing the error.
+
+</manpage>

@@ -1,0 +1,159 @@
+% mapping file for refer, using groff's ASCII driver.
+% Except for the font changes at the end of the file, this is the same
+% as the grops refer replacement file.
+% Both need to be post processed using the ask script in format/lib/refer.post
+
+<article>	+ 	"\%& L [ID]"	+
+</article>		"\n\n"
+
+<book>		+	"\%& L [ID]"	+
+</book>			"\n\n"
+
+<booklet>	+	"\%& L [ID]"	+
+</booklet>		"\n\n"
+
+<inbook>	+	"\%& L [ID]"	+
+</inbook>		"\n\n"
+
+<incoll>	+	"\%& L [ID]"	+
+</incoll>		"\n\n"
+
+<inproc>	+	"\%& L [ID]"	+
+</inproc>		"\n\n"
+
+<manual>	+	"\%& L [ID]"	+
+</manual>		"\n\n"
+
+<masters>	+	"\%& L [ID]"	+
+</masters>		"\n\n"
+
+<misc>		+	"\%& L [ID]"	+
+</misc>			"\n\n"
+
+<phd>		+	"\%& L [ID]"	+
+</phd>			"\n\n"
+
+<proc>		+	"\%& L [ID]"	+
+</proc>			"\n\n"
+
+% reports need to be distinguished, as the 
+% translation of <no> element is different for reports.
+
+<report>	+	"\%&REPORT [ID]" +
+</report>		"\n\n"
+
+<unpub>		+	"\%& L [ID]"	+
+</unpub>		"\n\n"
+
+% The translation of <and> is context-dependent.  The output of asp 
+% should be piped through awk, using the refer.post script in the rep 
+% directory.
+
+<and>		+	"\%&& "
+
+<author>	+	"\%&A "
+</author>	
+
+<title>		+	"\%& T"
+</title>
+
+<editor>	+	"\%&E "
+</editor>	
+
+<btitle>	+	"\%& B"
+</btitle>	
+
+<chap>		+	"\%& Y"
+</chap>		
+
+<edition>	+	"\%& Y"
+</edition>	
+
+<publish>	+	"\%& I"
+</publish>	
+
+<address>	+	"\%& C"
+</address>	
+
+<series>	+	"\%& S"
+</series>	
+
+<journal>	+	"\%& J"
+</journal>	
+
+<vol>		+	"\%& V"
+</vol>		
+
+% <no> element is N in journals, but R in reports
+
+<no>		+	"\%&N"
+</no>		
+
+<month>		+	"\%& Y"
+</month>	
+
+<year>		+	"\%& D"
+</year>		
+
+<pp>		+	"\%& P"
+</pp>		
+
+<inst>		+	"\%& I"
+</inst>		
+
+<organ>		+	"\%& O"
+</organ>	
+
+<school>	+	"\%& O"
+</school>	
+
+<howpub>	+	"\%& O"
+</howpub>	
+
+<type>		+	"\%& O"
+</type>		
+
+<note>		+	"\%& O"
+</note>		
+
+<key>		+	"\%& A"
+</key>		
+
+<keywrds>	+	"\%& K"
+</keywrds>	
+
+<annote>	+	"\%& X"
+</annote>	
+
+<private>	+	"\%& Z"
+</private>
+
+<loc>		+	"\%& Z"
+</loc>		
+
+<id>		+	"\%& Y"
+</id>		
+
+<sq>		"\\*Q"
+</sq>		"\\*U"
+
+
+
+<em>			"\\fI"			
+</em>		 	"\\fP"			
+
+<bf>			"\\fB"			
+</bf>			"\\fP"			
+
+<it>			"\\fI"			
+</it>			"\\fP"		
+
+<sf>			"\\fR"		
+</sf>			"\\fP"			
+
+<sl>			"\\fI"		
+</sl>			"\\fP"			
+
+<tt>			"\\fR"
+</tt>			"\\fP"
+

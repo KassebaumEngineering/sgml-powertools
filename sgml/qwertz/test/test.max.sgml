@@ -1,0 +1,221 @@
+<!DOCTYPE QWERTZ PUBLIC "-//GMD//DTD qwertz//EN">
+
+<QWERTZ>
+<REPORT OPTS="times,11pt">
+<TITLEPAG>
+<TITLE>The <TT>qwertz</TT> SGML Document Types
+<SUBTITLE>(Version 1.1 Reference Manual)</SUBTITLE></TITLE>
+<AUTHOR><NAME>Tom Gordon</NAME>
+<INST>The <TT>qwertz</TT> Project<NEWLINE>
+Institute for Applied Information Technology (F3) <NEWLINE>
+<NEWLINE>German National Research Center <NEWLINE>
+for Computer Science (GMD)</INST>
+</AUTHOR>
+</TITLEPAG>
+<CHAPT><HEADING>Why Not Just Use LaTeX?</HEADING>
+<P>The <TT>qwertz</TT> document types are a set of Standard Generalized
+Markup Language (SGML) document type definitions (DTDs) for articles,
+reports, books, letters, notes, slides (or overhead transparencies),
+bibliographies, and manual pages.  Except for manual pages, the
+document types have been heavily influenced by the LaTeX document
+types of the same names <CITE ID="Lamport86">, so LaTeX users
+should feel right at home.  Indeed, we presently translate most <TT>qwertz</TT>
+documents into LaTeX for printing and the LaTeX produced is quite
+readable by anyone familiar with LaTeX.</P>
+<P>&hellip;</P>
+<P></P>
+</CHAPT>
+<CHAPT><HEADING>The <TT>qwertz</TT> Document Type Definition</HEADING>
+<P>&hellip;</P>
+<P>We will be making use of several <EM>parameter entities</EM>
+ in this DTD:</P>
+<P>
+<CODE><!entity % emph 
+        " em | it | bf | sf | sl | tt " >
+<!entity % inline 
+        " f | x | %emph; | sq | label | ref | 
+          pageref | cite | ncite " >
+</CODE>
+</P>
+<P>&hellip;</P>
+<P></P>
+<SECT><HEADING>General Purpose Entities and Elements</HEADING>
+<P>&hellip;</P>
+<P>When may it be necessary to use of an entity reference to
+produce some character?  There are three cases to watch out for:</P>
+<P>
+<DESCRIP>
+<TAG>SGML Concrete Syntax Delimiters.</TAG><P>Although the SGML
+standard allows alternative concrete syntaxes to be defined,
+we use the so-called <EM>reference concrete syntax</EM> in the <TT>qwertz</TT>
+document types.  &hellip;</P><TAG>SGML Short Reference Delimiters.</TAG><P>In
+SGML document types <EM>short reference maps</EM> may be defined
+which allow single characters to be interpreted as arbitrarily
+complex sequences of characters, including SGML tags and entity
+references. &hellip;</P><P><VERB>" # % ' ( ) * + , - : ; = @ [ ] ^ _ { | } ~</VERB></P><P>For
+each of these characters, there is an SGML entity which may be
+used to generate the ASCII character in the printed document,
+listed in table <REF ID="GPC">. <EM>Usually, it will not be necessary
+to use these entities; the character can simply be typed and
+will be interpreted literally.</EM> However, &hellip;</P><TAG>TeX
+Special Characters.</TAG><P>Ideally, it should be possible to
+hide the conventions of the underlying formatting system completely.
+ In fact, SGML parsers which implement the full ISO standard
+have a feature which makes this possible. &hellip;</P></DESCRIP>
+</P>
+<SECT1><HEADING>Spacing, Dashes and Ellipsis</HEADING>
+<P>&hellip;</P>
+<P>There are also three different kinds of dashes: <TT>hyphen</TT>
+which was already mentioned above, is to be used for intra-word
+dashes, as in the word <SQ>intra-word</SQ>. <FOOTNOTE>However,
+the <TT>hyphen</TT> entity was not actually necessary here, as
+the - character was not being used in this context as a short
+reference.</FOOTNOTE>
+</P>
+<P>&hellip;</P></SECT1>
+<SECT1><HEADING>Foreign Characters</HEADING>
+<P>There are a large set of entities for other Western European
+languages. Altogether, there are entities for almost all of the
+foreign language characters in ISO 8859, the Latin 1 character
+set for Western European languages.
+<FOOTNOTE>Only the four Icelandic characters are missing.</FOOTNOTE>
+ &hellip;</P>
+<P>
+<TABLE>
+<TABULAR CA="ll|ll|ll|ll">AElig 	<COLSEP>  &AElig; 	<COLSEP>Aacute
+	&Aacute;
+	<COLSEP>Acirc  <COLSEP>	&Acirc; <COLSEP>	Ae <COLSEP> 	   	&Ae;<ROWSEP>
+Ntilde 	<COLSEP>  &Ntilde; 	<COLSEP>Oacute 	<COLSEP>&Oacute;
+	<COLSEP>Ocirc <COLSEP>
+	&Ocirc; 	<COLSEP>Oe <COLSEP> 	   	&Ouml; <ROWSEP>Ue <COLSEP>
+		 &Uuml; <COLSEP>	Ugrave <COLSEP>     	&Ugrave; 	<COLSEP>Uuml <COLSEP>
+ 	&Uuml; <COLSEP> 	Yacute <COLSEP>
+ 	&Yacute; <ROWSEP>
+aacute <COLSEP> 	&aacute; 	<COLSEP>acirc <COLSEP> 	&acirc; <COLSEP>	ae <COLSEP>
+		&auml;      	<COLSEP>aelig <COLSEP> 	&aelig; <ROWSEP>
+oe <COLSEP> 		&ouml; <COLSEP>	ograve <COLSEP>      &ograve; <COLSEP>	oslash
+<COLSEP>      &oslash; <COLSEP>	otilde <COLSEP>   	&otilde; <ROWSEP>
+sz <COLSEP> 		&szlig; <COLSEP>	szlig <COLSEP>      	&szlig; <COLSEP>	thinsp
+<COLSEP> 	<COLSEP>	tilde <COLSEP> 	   	&tilde; <ROWSEP>times <COLSEP>
+	&times;
+<COLSEP>	uacute <COLSEP>  	&uacute; <COLSEP>	ucirc <COLSEP> 	&ucirc;
+ 	<COLSEP>ue <COLSEP>	  	&uuml; <ROWSEP>
+</TABULAR>
+<CAPTION><LABEL ID="GPC"> (Some) General Purpose Characters</CAPTION>
+</TABLE>
+</P>
+<P>&hellip;</P></SECT1>
+<SECT1><HEADING>Sentences, Paragraphs, Footnotes and Emphasis</HEADING>
+<P>&hellip;</P>
+<P>Sentences or phrases within paragraphs can be emphasized in
+a number of ways.  The <TT>em</TT> tag is used to choose the
+default form of emphasis, which is usually <EM>italic</EM> type,
+but depends on the style of the background text.  If the background
+text is formatted in italics type, as it usually is in definitions,
+for example, than emphasized text will be formatted using a plain,
+roman typeface. However, various forms of emphasis can be explicitly
+chosen.  These include: <BF>bold face</BF> (<TT>bf</TT>), <IT>italics</IT>
+(<TT>it</TT>), <SF>sans serif</SF> (<TT>sf</TT>), <SL>slanted</SL>
+(<TT>sl</TT>), and <TT>typewriter</TT> (<TT>tt</TT>) styles.</P>
+<P>&hellip;</P>
+<P>Long quotes are formatted in LaTeX by indenting the left and
+right margins.  For example, <NCITE ID="Lamport86" NOTE="pp. xiii">:</P>
+<P>
+<LQ>
+<P>The LaTeX document preparation system is a special version
+of Donald Knuth's TeX program.  TeX is a sophisticated program
+designed to produce high-quality typesetting, especially for
+mathematical text.
+&hellip;</P>
+<P>LaTeX represents a balance between functionality and ease
+of use. Since I implemented most of it myself, there was also
+a continual compromise between what I wanted to do and what I
+could do in a reasonable amount of time.  &hellip;</P>
+</LQ></P>
+<P></P>
+</SECT1>
+<SECT1><HEADING>Lists</HEADING>
+<P>Three types of lists are supported, which differ according
+to the type of label used to mark each item in the list.  Use <TT>itemize</TT>
+to create a list in which each item is marked with some symbol
+such as a dash or bullet. The <TT>enum</TT> tag is used to create
+an enumeration, i.e. a list in which each item is labelled with
+a number (or letter) indicating its rank or position in the list.
+Finally, use
+<TT>descrip</TT> to create a list in which each item is labelled
+by some tag of your own choice. Lists of various types can nested.
+ For example:</P>
+<P>&hellip;</P>
+<P>
+<ITEMIZE>
+<ITEM> A level one item.</ITEM>
+<ITEM> Here's level two: <ENUM>
+<ITEM> A level two item.</ITEM>
+<ITEM> Here's level three: <ENUM>
+<ITEM> A level three item.</ITEM>
+<ITEM> Here's level four: <DESCRIP>
+<TAG>Red.</TAG> Is the color of my true love's hair. <TAG>Blue.</TAG>
+Is a property of some movies. <TAG>Yellow.</TAG> Characterizes
+some forms of journalism. </DESCRIP>
+</ITEM>
+<ITEM>A last level three item</ITEM>
+</ENUM>
+</ITEM>
+<ITEM> A last level two item</ITEM>
+</ENUM>
+</ITEM>
+<ITEM>A last level one item.</ITEM>
+</ITEMIZE>
+</P>
+<P>&hellip;</P></SECT1>
+<SECT1><HEADING>Figures and Tables</HEADING>
+<P>Encapsulated PostScript graphics can be created using a variety
+of different editors.  If you are using Unix with an X11-based
+graphical user-interface, you may want to try <TT>idraw</TT>,
+which stores its documents directly as Encapsulated PostScript
+files. Another interesting X11-based drawing program is <TT>tgif</TT>.</P>
+<P>&hellip;</P>
+<P>Which would then appear as in figure <REF ID="issues">.</P>
+<P>
+<FIGURE>
+<EPS FILE="issues">
+<CAPTION><LABEL ID="issues">An <TT>idraw</TT> Drawing </CAPTION>
+</FIGURE></P></SECT1>
+<SECT1><HEADING>Literate Programming</HEADING>
+<P>The original motivation behind the development of these document
+types was to create an environment for literate programming in
+an arbitrary programming language similar to Donald Knuth's WEB
+system for literate programming in Pascal <CITE ID="Knuth84">.
+ &hellip;</P>
+<P>When formatted, spaces and line breaks are preserved:</P>
+<P>
+<VERB>main ()
+{
+        /* This is the famous hello world program */
+        printf("hello world\n");
+}
+</VERB>
+</P>
+</SECT1>
+<SECT1><HEADING>Mathematical Formulas</HEADING>
+<P>The <TT>qwertz</TT> document types include elements for describing
+mathematical formulas completely within SGML, similar to the
+system described in <CITE ID="daphne89">.  &hellip;</P>
+<P>So, for example, </P>
+<P>
+<DM>
+         <SUM><LL>i=1</LL><UL>n</UL><OPD>x<INF>i</INF></OPD></SUM>
+=         <SUM><LL>0</LL><UL>1</UL><OPD>f</OPD></SUM>  </DM>
+was typed as:
+<VERB><dm>
+        <sum><ll>i=1<ul>n<opd>x<inf>i>sum> =
+        <in><ll>0<ul>1<opd>fin>
+dm>
+</VERB>
+</P>
+<P>&hellip;</P></SECT1>
+</SECT>
+</CHAPT>
+<BIBLIO STYLE="qwertz" FILES="lit"></REPORT></QWERTZ>
+
+

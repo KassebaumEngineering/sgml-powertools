@@ -1,0 +1,2 @@
+sgmls: SGML error at test154.sgm, line 4 at ">":
+       DOC end-tag ignored: doesn't end any open element (current is *DOC)

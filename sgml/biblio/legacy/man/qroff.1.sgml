@@ -1,0 +1,58 @@
+<!doctype qwertz system
+[
+<!entity LaTeX sdata "LaTeX ">
+]>
+
+<manpage title="qroff">
+<sect1> NAME
+qroff &mdash translate a <tt/groff ms/ file into ASCII
+
+<sect1> SYNOPSIS
+
+<p>
+<verb>
+format -T nroff file | qroff [-b <sgml bibliography>] 
+format -T grops file | qroff -p [-b <sgml bibliography>] | lpr
+</verb>
+
+<sect1> DESCRIPTION
+
+<p><tt/qroff/ is a greatly simplified front end to <tt/groff/ and
+<tt/grefer/.  Its primary purpose is to generate formatted <tt/ASCII/
+versions of <tt/qwertz/ SGML documents suitable, e.g., for electronic
+messages.  However, it may also be used as an alternative to &LaTeX
+for printing the document.  Some may prefer <tt/groff/'s layout style.
+(Unfortunately, <tt/groff/ does not support cross-references, so if
+you use these, you will need to &LaTeX;.)
+
+<p><tt/qroff/ only reads from the standard input; it is designed to be
+used in a pipe, as in the examples in the synopsis, above.  
+
+<sect1> OPTIONS
+
+<p><descrip>
+<tag><tt/-help/
+
+<p> If this is the only option, a short message listing all the
+options available, and their purpose, is printed to the standard out.
+
+<tag><tt/-p/
+
+<p>Create a PostScript file, instead of <tt/ASCII/.
+
+<tag><tt/-b &lt;sgml bibliography>/
+
+<p>If the document contains a list of references, you will need to use
+this option to provide the name of the file containing the
+bibliography, which must be in the format defined in the <tt/biblo/
+document type definition.  See also <tt/biblio (1)/.
+
+</descrip>
+
+<sect1> SEE ALSO
+
+<p><verb>
+grefer(1), gtbl(1), geqn(1), groff(1), biblio(1)
+</verb>
+
+</manpage>

@@ -1,0 +1,32 @@
+(EXP
+(TEST.A
+(A
+-James Clark
+)A
+)TEST.A
+-\n
+(TEST.B
+(A
+-James Clark
+)A
+(D
+-sgmls
+)D
+)TEST.B
+-\n
+(TEST.C
+(A
+-James Clark
+)A
+)TEST.C
+-\n
+(TEST.D
+(A
+-James Clark
+)A
+(D
+-sgmls
+)D
+)TEST.D
+)EXP
+C
